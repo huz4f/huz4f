@@ -1,0 +1,29 @@
+baseURL = 'https://huz4f.github.io/huz4f/'
+languageCode = 'en-us'
+title = 'huz4f'
+theme = ['paper']
+
+[params]
+
+  color = 'linen'                           # linen, wheat, gray, light
+
+
+  twitter = 'hu_z4f'               
+  github = 'huz4f'                 
+  linkedin = 'huz4f'            
+  rss = true                               
+
+
+  avatar = 'https://i.ibb.co/NpWVfZg/me.jpg'                 
+  name = 'Huzaif'
+  bio = '...'
+
+
+
+  disableHLJS = true                        # disable highlight.js
+  disablePostNavigation = true              # disable post navigation
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  gravatarCdn = 'https://i.ibb.co/NpWVfZg/me.jpg'       
+  math = true                               # enable KaTeX math typesetting globally
+  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+
