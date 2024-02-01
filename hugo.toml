@@ -64,7 +64,7 @@ buildExpired = false
       url = "/tags/"
 
   [params.homeInfoParams]
-    Title = "x"
+    Title = "twitter"
     Content = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
@@ -76,8 +76,8 @@ buildExpired = false
     #url = ""
 
   [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/hu_z4f"
+    #name = "x"
+    #url = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
     name = "linkedin"
