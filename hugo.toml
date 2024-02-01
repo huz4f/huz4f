@@ -1,29 +1,134 @@
-baseURL = 'https://huz4f.github.io/huz4f/'
-languageCode = 'en-us'
-title = 'huz4f'
-theme = ['paper']
+baseURL = 'https://github.com/huz4f/huz4f.git'
+title = 'Huzaif'
+theme= "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+#googleAnalytics = "UA-123-45"
+
+[minify]
+  disableXML = true
+  minifyOutput = true
 
 [params]
+  env = "production" # to enable google analytics, opengraph, twitter-cards, and schema.
+  title = "Huzaif"
+  description = "This is "
+  keywords = ["Blog", "Computer Science", "Life"]
+  author = "Huzaif"
+  # author = ["Me", "You"] # multiple authors
+  #images = [""]
+  DateFormat = "January 2, 2006"
+  defaultTheme = "auto" # dark, light
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = false
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
 
-  color = 'linen'                           # linen, wheat, gray, light
+  [params.label]
+    text = "ʜᴜᴢ𝟰ғ"
+    icon = "/huz4f.png"
+    iconHeight = 40
 
+  [params.assets]
+    favicon = "/favicons/favicon.ico"
+    favicon16x16 = "/favicons/favicon-16x16.png"
+    favicon32x32 = "/favicons/favicon-32x32.png"
+    apple_touch_icon = "/favicons/apple-touch-icon.png"
+    safari_pinned_tab = "/favicons/safari-pinned-tab.svg"
 
-  twitter = 'hu_z4f'               
-  github = 'huz4f'                 
-  linkedin = 'huz4f'            
-  rss = true                               
+  [params.profileMode]
+    enabled = true # needs to be explicitly set
+    subtitle = "i am **Huzaif** Shabir "
+    title = "Welcome! \U0001F44B"
+    imageUrl = "https://i.ibb.co/NpWVfZg/me.jpg"
+    imageWidth = 140
+    imageHeight = 140
+    imageTitle = "Huzaif"
 
+    [[params.profileMode.buttons]]
+      identifier = "tags"
+      name = "tags"
+      url = "/tags/"
 
-  avatar = 'https://i.ibb.co/NpWVfZg/me.jpg'                 
-  name = 'Huzaif'
-  bio = '...'
+  [params.homeInfoParams]
+    Title = "x"
+    Content = "x."
 
+  [[params.socialIcons]]
+    #name = "youtube"
+    #url = "http://youtube.com/huz4f"
 
+  [[params.socialIcons]]
+    #name = "medium"
+    #url = ""
 
-  disableHLJS = true                        # disable highlight.js
-  disablePostNavigation = true              # disable post navigation
-  monoDarkIcon = true                       # show monochrome dark mode icon
-  gravatarCdn = 'https://i.ibb.co/NpWVfZg/me.jpg'       
-  math = true                               # enable KaTeX math typesetting globally
-  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/hu_z4f"
 
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/huz4f/"
+
+  [[params.socialIcons]]
+    name = "Github"
+    url = "https://github.com/huz4f"
+
+  [[params.socialIcons]]
+    name = "StackOverflow"
+    url = "https://stackoverflow.com/users/21145510/huz4f"
+
+  [params.analytics.google]
+    SiteVerificationTag = ""
+
+  [params.analytics.bing]
+    SiteVerificationTag = ""
+
+  [params.analytics.yandex]
+    SiteVerificationTag = ""
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+  identifier = "tags"
+  name = "tags"
+  url = "/tags/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "Blogs"
+  name = "Blogs"
+  url = "/blogs/"
+  weight = 4
+
+[[menu.main]]
+  identifier = "Articles"
+  name = "Articles"
+  url = "/Articles/"
+  weight = 3
