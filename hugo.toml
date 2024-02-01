@@ -16,7 +16,7 @@ buildExpired = false
 [params]
   env = "production" # to enable google analytics, opengraph, twitter-cards, and schema.
   title = "Huzaif"
-  description = "This is "
+  description = "was bored created a website, now i write "
   keywords = ["Blog", "Computer Science", "Life"]
   author = "Huzaif"
   # author = ["Me", "You"] # multiple authors
