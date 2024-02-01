@@ -1,5 +1,5 @@
 
-name: hugo.toml
+name: hugo.yaml
 
 on:
   # Runs on pushes targeting the default branch
