@@ -65,7 +65,7 @@ buildExpired = false
 
   [params.homeInfoParams]
     Title = "x"
-    Content = "x."
+    Content = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
     #name = "youtube"
