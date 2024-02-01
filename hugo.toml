@@ -63,21 +63,21 @@ buildExpired = false
       name = "tags"
       url = "/tags/"
 
-  [params.homeInfoParams]
-    Title = "twitter"
-    Content = "https://twitter.com/hu_z4f"
+  #[params.homeInfoParams]
+    #Title = ""
+    #Content = ""
 
-  [[params.socialIcons]]
+  #[[params.socialIcons]]
     #name = "youtube"
     #url = "http://youtube.com/huz4f"
 
-  [[params.socialIcons]]
+  #[[params.socialIcons]]
     #name = "medium"
     #url = ""
 
   [[params.socialIcons]]
-    #name = "x"
-    #url = "https://twitter.com/hu_z4f"
+    name = "x"
+    url = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
     name = "linkedin"
