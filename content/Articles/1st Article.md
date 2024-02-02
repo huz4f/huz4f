@@ -1,7 +1,7 @@
 ---
 date: 2024-02-02
 summary: "Unsupervised Machiene Learning | DevOps | Cyber Security | Networks | Cloud computing | AWS"
-description: "5 weeks of 2024:"
+title: "5 weeks of 2024:"
 tags: ["Artifical Intelligence","Machiene Learning","Cloud Computing","DevOps"]
 showtoc: false
 author: "Me"
