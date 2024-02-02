@@ -47,3 +47,20 @@ i don't remember rn if i learnt anything else, will add here
 
 ---
 # Networks & CyberSecurity 
+i wont write about this,it will be waste of time and i don't need to revise, \
+for Cyber Sec you need to start from basic understanding of data and what networks are, i will provide link if you want to check your interest:
+- [Networks](https://www.geeksforgeeks.org/computer-network-tutorials/)
+- [Basic CyberSec](https://www.simplilearn.com/tutorials/cyber-security-tutorial/cyber-security-for-beginners)
+
+---
+# Machine Learning
+i will provide handwritten notes if anyone is intereseted lol \
+[-1-](https://freeimage.host/i/JlLkQ3b)
+[-2-](https://freeimage.host/i/JlLkiGe)
+[-3-](https://freeimage.host/i/JlLk4Z7)
+[-4-](https://freeimage.host/i/JlLkpwB)
+[-5-](https://freeimage.host/i/JlLvBup)
+[-6-](https://freeimage.host/i/JlLvFcJ)
+[-7-](https://freeimage.host/i/JlLv3Fa)
+
+>i also have for AWS and CyberSec but only i can understand my handwriting so nvm
