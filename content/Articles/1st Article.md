@@ -39,8 +39,11 @@ Companies like NVIDIA are also working towards ML | AI as toolkits like TensorFl
 
 ---
 >Spent first 10 days of jan completing a ML course that i had enrolled for 6 months ago
-(spent most of that time learning maths) after that i started studying for CompTIA A+
-Got sick so staying in bed all day learnt to use AWS and made this website, \
+>(spent most of that time learning maths) after that i started studying for CompTIA A+
+>>Got sick, so staying in bed all day learnt to use AWS and made this website 
+>
+
 i don't remember rn if i learnt anything else, will add here
+
 ---
 # Networks & CyberSecurity 
