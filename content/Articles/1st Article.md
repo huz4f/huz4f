@@ -63,5 +63,5 @@ i will provide handwritten notes if anyone is intereseted \
 [-6-](https://freeimage.host/i/JlLvFcJ)
 [-7-](https://freeimage.host/i/JlLv3Fa)
 
->have notes for AWS and CyberSec also but only i can understand my handwriting 
+>have notes for AWS and DevOps also but only i can understand my handwriting 
 >so never mind
