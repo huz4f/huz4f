@@ -60,7 +60,7 @@ buildExpired = false
 
     [[params.profileMode.buttons]]
       identifier = "tags"
-      name = "tags"
+      name = "explore"
       url = "/tags/"
 
   #[params.homeInfoParams]
@@ -108,12 +108,6 @@ buildExpired = false
     threshold = 0.4
     minMatchCharLength = 0
     keys = ["title", "permalink", "summary", "content"]
-
-[[menu.main]]
-  identifier = "tags"
-  name = "tags"
-  url = "/tags/"
-  weight = 2
 
 [[menu.main]]
   identifier = "about"
