@@ -59,7 +59,7 @@ buildExpired = false
     imageTitle = "Huzaif"
 
     [[params.profileMode.buttons]]
-      identifier = "EXPLORE:"
+      identifier = "tags"
       name = "Explore"
       url = "/tags/"
 
