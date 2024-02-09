@@ -1,9 +1,11 @@
 ---
-title: "About this website"
+title: "About this website:"
 date: 2024-01-29
 summary: "Updates and Changes"
 tags: ["words"]
 author: "Me"
+weight: 1
+hidemeta: true
 ---
 # Writing this on: January 29, 2024  03:48
 Probably last week, \

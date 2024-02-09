@@ -1,6 +1,7 @@
 ---
-title: "About me"
-author: "Huzaif"
-ShowReadingTime: false
+title: "About me:"
+author: "⠀"
+hidemeta: true
+disableShare: true
 ---
-it just looks cool on a blog lol, i wont write about me go read articles
+### it just looks cool on a blog lol, i wont write about me
