@@ -10,6 +10,11 @@ ShowToc: true
 
 ---
 # Cloud Computing & Modern day ML
+>Cloud computing makes practice of ML accessible and readily availabe for use.
+>
+From being able to run tensorflow on google collab to training models on sagemaker, \
+Complicated tasks of installing and managing dependencies on your local computer is taken care of, not to mention the limiting factors of your hardware. 
+
 ## Evolvement and need of Machine Learning:
 We know, Machine Learning has evolved tremendously over the past decade and now has applications in nearly every field. There is a need for mastery of a wider toolset to move ML experiments from resource phase to more practical applications. \
 But the work of building ML projects is really complex and tedious with a lot of manual workflows.We know we are still at the beginning of AI and ML although incredible amount of progress is being made and it holds the future of various industries from business, education, tech to healthcare. \
