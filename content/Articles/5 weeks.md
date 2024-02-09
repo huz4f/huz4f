@@ -2,7 +2,7 @@
 date: 2024-02-02
 summary: "Supervised Machine Learning | DevOps | Cyber Security | Networks | Cloud computing | AWS"
 title: "5 weeks of 2024:"
-tags: ["Artifical Intelligence","Machine Learning","Cloud Computing","DevOps"]
+tags: ["Machine Learning","Cloud Computing","CyberSecurity","DevOps","Networks"]
 showtoc: false
 author: "Me"
 ShowToc: true
