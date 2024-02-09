@@ -38,9 +38,9 @@ buildExpired = false
   tocopen = false
 
   [params.label]
-    text = "ʜᴜᴢ𝟰ғ"
+    text = "⠀"
     icon = "/huz4f.png"
-    iconHeight = 40
+    iconHeight = 69
 
   [params.assets]
     favicon = "/favicons/favicon.ico"
