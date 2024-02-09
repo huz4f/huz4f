@@ -38,8 +38,8 @@ buildExpired = false
   tocopen = false
 
   [params.label]
-    text = "⠀"
-    icon = "/huz4f.png"
+    text = "< 𝖍𝖚/>"
+    icon = ""
     iconHeight = 69
 
   [params.assets]
