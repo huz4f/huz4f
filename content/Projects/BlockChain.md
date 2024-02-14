@@ -1,23 +1,45 @@
 ---
-date: 2024-02-13
+date: 2024-02-12
 title: "Blockchain & Smart Contracts"
-tags: ["Blockchain","Solidity","Swift"]
-author: "Me"
+tags: ["Blockchain","Solidity","Swift","Web3"]
+author: "Huzaif"
 showreadingtime: false
 hideSummary: true
-draft: true
+draft: false
 ---
+
+- [Blocks and Hashing](#understanding-code)
+- [Smart Contract](#smart-contract)
+
 # Blockchain:
->-> I have written about [Blockchain](/Articles/BlockChain.md) in Articles.
+
+>->  Have written about [Blockchain](/Articles/BlockChain.md) in Articles.
 >
-Demonstration of how BlockChain works using cocoa and inbuilt  SHA-1 checksum utility
+**Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility**
 
+-> One block connected to the genesis block and hash function with 2 zeroes at start
 {{<youtube dsYQxNIGCRk>}} 
-#### -> Shows one block connected to the genesis block and hash function with 2 zeroes at start
 
-Have also uploaded this swift code on GitHub:  [Here](https://github.com/huz4f/Blockchain) ( needs shasum file for the hash ) 
+
+>Have also uploaded this swift code on GitHub:  [Here](https://github.com/huz4f/Blockchain) ( needs shasum file for the hash ) 
+
+---
+
 ###  Understanding Code:
-Here are main components of this program for understanding blockchain mechanism
+>Block in a blockchain consists of **Block Header & Body**
+>
+**The head consists of**:
+- Previous block's hash
+- Merkel root (compact hash sum of all transactions)
+- Block version
+- Nonce (it is calculated)
+- Timestamp 
+- The condition you set for which nonce is calculated
+
+**The body** consists of Transaction lists. Exact contents depend on the type of blockchain. \
+Exact compostion can slightly vary from blockchain to blockchain.
+
+Main components of the program for brief understanding of blockchain mechanism:
 ```swift
 class Block : Codable {
     var index: Int = 0
@@ -44,7 +66,11 @@ class Block : Codable {
     }
 }
 ```
-
+This part of the code above is a blueprint.You can clearly see the properties declared in above class. \
+Used a read only key for using cryptographic hash of the block \
+Key is created by combining the index, previous hash and transaction + finding the right nounce that follows rule we set. In this code i will set it to two initial 0's (Proof of work)
+**addTransaction method** adds a transcation to the list \
+-used JSON for enabeling transmission
 
 ```swift
     class Blockchain : Codable {
@@ -91,6 +117,10 @@ class Block : Codable {
         return lastBlock
     }
 ```
+This class is container and a manager for instances of block class, managing index and previous hash of new blocks. Creating the chain structure, starting with genesis block.
+
+GenerateHash is initalized (more below)
+
 
 ```swift
     func generateHash(for block: Block) -> String {
@@ -108,8 +138,12 @@ extension String{
 
     func sha1Hash() -> String{using shasum}}
 ```
+This is out generateHash func \
+i have used a loop to find hash with respect to above key defined, that follows rule of having intially two zeroes \
+SHA-1 func is used here while bitcoin uses SHA-256 and it's first 13 digits are 0 iirc \
+using generateHash each block gets it's own unique identfier
 
-
+---
 
 # Smart Contract:
  **-> Solidity contract for inheritance of assets after death:**

@@ -1,8 +1,12 @@
 ---
-title: "Browsing internet"
-summary: Web | Browsers | Ai 
-tags: ["Web","Artifical Intelligence"]
-author: "Me"
+cover:
+  image: articles/wb.png
+
+tags: ["Web","Artifical Intelligence",]
+
+date: 2024-02-08
+
+author: "Huzaif"
 hideSummary: true
 draft: true
 ---

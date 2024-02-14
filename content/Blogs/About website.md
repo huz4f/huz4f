@@ -38,5 +38,5 @@ anyways this is how it used to look:
 
 ---
 
-> **Added Wiki,Projects and did some sorting on 18 Feb 2024**
+> **Added wiki,Projects and updates on 12 Feb 2024**
 
