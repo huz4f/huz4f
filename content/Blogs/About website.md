@@ -1,11 +1,14 @@
 ---
-title: "About this website:"
+title: "About this website"
 date: 2024-01-29
-summary: "Updates and Changes"
 tags: ["words"]
 author: "Me"
 weight: 1
 hidemeta: true
+hidesummary: true
+---
+>**Updates and Changes**
+
 ---
 # Writing this on: January 29, 2024  03:48
 Probably last week, \
@@ -21,8 +24,7 @@ i remember in 6th grade i made a html css website i wish i could get that file s
 anyways **Previous static website:**
 ![](/images/1st.png)
 
-
-
+---
 # Updated website on: Feb 1st, 2024
 > Redesigned the whole website and gave it a frame 
 >
@@ -33,3 +35,8 @@ we realize it's an illusion, goes without saying writing gives clarity and i've 
 (i've a pretty bad handwriting) \
 anyways this is how it used to look:
 ![jan 2024](/images/old.png)
+
+---
+
+> **Added Wiki,Projects and did some sorting on 18 Feb 2024**
+

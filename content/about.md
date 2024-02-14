@@ -1,7 +1,7 @@
 ---
-title: "About me:"
+title: "About me?"
 author: "⠀"
 hidemeta: true
 disableShare: true
 ---
-### it just looks cool on a blog lol, i wont write about me
+### 'it just looks cool' lol, i wont write about me
