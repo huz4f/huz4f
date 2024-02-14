@@ -4,6 +4,7 @@ title: "Cloud Computing & Modern day ML"
 tags: ["Machine Learning","Cloud Computing","DevOps"]
 author: "Me"
 hideSummary: true
+draft: true
 ---
 >Cloud computing makes practice of ML accessible and implementation readily availabe.
 >

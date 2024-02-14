@@ -4,7 +4,7 @@ summary: Web | Browsers | Ai
 tags: ["Web","Artifical Intelligence"]
 author: "Me"
 hideSummary: true
-draft: false
+draft: true
 ---
 ## Every questioned how do you see a website?
 > by using a browser?

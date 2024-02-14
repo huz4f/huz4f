@@ -5,6 +5,7 @@ title: "5 weeks of 2024:"
 tags: ["Machine Learning","DevOps","Networks","CyberSecurity","Cloud Computing"]
 author: "Me"
 ShowToc: true
+draft: true
 ---
 ---
 >Spent first 10 days of jan completing a ML course that i had enrolled for 6 months ago

@@ -3,6 +3,7 @@ cover:
   image: images/cover.png
 hideSummary: true
 hidemeta: true
+draft: true
 ---
 ### DATA AND LIFE
 Data is Everywhere and Everything in today's day and age, \
