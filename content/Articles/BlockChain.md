@@ -1,11 +1,13 @@
 ---
-date: 2024-02-12
-title: "BlockChain"
-tags: ["Blockchain","Solidity","Swift"]
-author: "Me"
-hideSummary: true
 cover:
-  image: "</images/coverblock.jpg>"
+  image: "<images/cover.png>"
+  # can also paste direct link from external site
+  # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "<alt text>"
+  caption: "<text>"
+  relative: false # To use relative path for cover image, used in hugo Page-bundles
+hideSummary: true
+hidemeta: true
 ---
 ### DATA AND LIFE
 Data is Everywhere and Everything in today's day and age, \
