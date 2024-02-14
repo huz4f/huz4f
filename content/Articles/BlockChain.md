@@ -5,7 +5,7 @@ tags: ["Blockchain","Solidity","Swift"]
 author: "Me"
 hideSummary: true
 cover:
-  image: "</Blockchain/cover.jpg>"
+  image: "</images/coverblock.jpg>"
 ---
 ### DATA AND LIFE
 Data is Everywhere and Everything in today's day and age, \
