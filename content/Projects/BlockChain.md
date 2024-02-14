@@ -13,7 +13,7 @@ draft: false
 
 # Blockchain:
 
->->  Have written about [Blockchain](/Articles/BlockChain.md) in Articles.
+>->  Have written about [Blockchain](https://huz4f.online/articles/blockchain/) in Articles.
 >
 **Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility**
 
@@ -138,8 +138,10 @@ extension String{
 
     func sha1Hash() -> String{using shasum}}
 ```
-This is out generateHash func \
-i have used a loop to find hash with respect to above key defined, that follows rule of having intially two zeroes \
+This is our generateHash function
+
+i have used a loop to find hash with respect to above key defined, \
+that follows rule of having intially two zeroes \
 SHA-1 func is used here while bitcoin uses SHA-256 and it's first 13 digits are 0 iirc \
 using generateHash each block gets it's own unique identfier
 
