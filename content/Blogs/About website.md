@@ -6,7 +6,6 @@ author: "Me"
 weight: 1
 hidemeta: true
 hidesummary: true
-draft: true
 ---
 >**Updates and Changes**
 
@@ -23,7 +22,7 @@ will deploy it after i sleep hopefully.
 >
 i remember in 6th grade i made a html css website i wish i could get that file somehow :/ \
 anyways **Previous static website:**
-![](/images/1st.png)
+![](/about/1st.png)
 
 ---
 # Updated website on: Feb 1st, 2024
@@ -35,7 +34,7 @@ our mind tricks us into thinking we've learnt alot but when we sit to write abou
 we realize it's an illusion, goes without saying writing gives clarity and i've always hated writing on pages :P so maybe i'll write about what i've to revision or idk. \
 (i've a pretty bad handwriting) \
 anyways this is how it used to look:
-![jan 2024](/images/old.png)
+![jan 2024](/about/old.png)
 
 ---
 

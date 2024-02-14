@@ -115,7 +115,7 @@ extension String{
  **-> Solidity contract for inheritance of assets after death:**
 
 
-![](/images/sol.png)
+![](/Projects/sol.png)
 
 > Use Truffle and Ganache for simulating local environment, older versions of solidity compiler and node are required (wasted most of my time on this dependecy hell)
 
