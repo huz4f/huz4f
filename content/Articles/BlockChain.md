@@ -35,7 +35,7 @@ Network participants must reach a consensus on its validity to add a new block t
 Blockchain has the potential to streamline financial processes by reducing the need for intermediaries, automating tasks through smart contracts, and improving the speed and efficiency of transactions. 
 
 By having transparent access to data and it's history, blockchain can change many things in the world from being able to see usage of taxes to elimination of fake news, \
-Future of decentralization will be exciting and many organizations are already switching like **Dapps, DeFi, Smart contracts** or even [**science**](https://www.nanowerk.com/spotlight/spotid=62136.php#:~:text=Blockchain%20technology%20has%20the%20potential%20to%20enhance%20the%20peer%20review,opportunities%20for%20decentralization%20and%20collaboration.). \
+Future of decentralization will be exciting and many organizations are already switching like **Dapps, DeFi, NFTs, Smart contracts** or even [**science**](https://www.nanowerk.com/spotlight/spotid=62136.php#:~:text=Blockchain%20technology%20has%20the%20potential%20to%20enhance%20the%20peer%20review,opportunities%20for%20decentralization%20and%20collaboration.). \
 Block chain will take away the power of media and the data that centralized authoritises collect.Even individuals will benefit as there won't be any specific data that can be used against their individuality.
 
 Youtube video was recommended to me last night (as they always know what i am doing) showing India is already adopting to blockchain as Andra Pradesh has decided to fully switch [it's two govt sectors](https://www.thefuturescentre.org/signal/indian-state-andhra-pradesh-the-first-to-utilise-blockchain-for-governance/#:~:text=Andhra%20Pradesh%2C%20or%20“AP”,technology%20across%20the%20entire%20administration.) to decentralized entities and has already been putting data on block chain to **eliminate land record tampering**.
@@ -44,7 +44,7 @@ Youtube video was recommended to me last night (as they always know what i am do
 ## Working of Blockchain
 Blockchain started in 1991 as a way to store and secure digital data, \
 It works on a vast network of nodes and each node maintains a copy of the blockchain.
-Blockchain is made up of blocks that have:
+Blockchain is made up of blocks that contain:
 - A collection of transactions
 - Timestamp
 - Cryptographic hash of the pervious block
