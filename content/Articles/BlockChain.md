@@ -1,6 +1,6 @@
 ---
 cover:
-  image: "<images/cover.png>"
+  image: "images/cover.png"
   # can also paste direct link from external site
   # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
   alt: "<alt text>"
