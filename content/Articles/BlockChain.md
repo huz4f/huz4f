@@ -1,6 +1,6 @@
 ---
 cover: 
-  image: images/cover.png
+  image: ("articles/bcc.png")
 hideSummary: true
 hidemeta: true
 draft: true
