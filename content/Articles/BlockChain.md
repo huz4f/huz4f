@@ -1,9 +1,12 @@
 ---
-cover: 
-  image: ("articles/bcc.png")
+cover:
+  image: articles/bcc.png
+
+date: 2024-02-12
+tags: []
+author: "Huzaif"
 hideSummary: true
-hidemeta: true
-draft: false
+draft: true
 ---
 ### DATA AND LIFE
 Data is Everywhere and Everything in today's day and age, \
