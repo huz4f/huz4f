@@ -3,7 +3,7 @@ cover:
   image: ("articles/bcc.png")
 hideSummary: true
 hidemeta: true
-draft: true
+draft: false
 ---
 ### DATA AND LIFE
 Data is Everywhere and Everything in today's day and age, \
