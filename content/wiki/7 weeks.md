@@ -10,12 +10,26 @@ draft: false
 - Blockchain
 - App Dev
 - Deep Learning
-- DSA
+---
+>### Python for Cybersecurity 
 
-## Using python for Cybersecurity 
+---
+>### Creation of blockchain, working and use
+Learnt solidity and learnt mechanism of blockchain by simulating blocks \
+Wrote an article and uploaded some code to Projects
 
-## Blockchain creation, working and implemntation
-Learnt solidity and wrote an Article also
+---
+>### Started App dev 
+i had already started learning flutter for blockchain, made some basic apps also.
 
+>Will complete this one app and put it in projects.
 
+---
+>### Completed some courses on Deep Learning
 
+---
+>### Also studied about Data science
+
+---
+>Practiced Tensorflow and 
+>

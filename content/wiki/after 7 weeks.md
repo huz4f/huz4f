@@ -6,6 +6,7 @@ tags: ["DSA",""]
 author: "Huzaif"
 draft: true
 ---
+- DSA
 ## Data Structures & Algorithms
 >Data structures are ways of organizing and storing data \
 Algorithms are sequence of steps taking an input and transforming it into a target output
