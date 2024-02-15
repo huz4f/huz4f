@@ -2,7 +2,7 @@
 date: 2024-02-11
 summary: "App Dev | Blockchain | Linux | Deep Learning | Wrote an Article"
 title: "7 weeks of 2024:"
-tags: ["DSA","Machine Learning"]
+tags: ["",""]
 author: "Huzaif"
 draft: false
 ---
