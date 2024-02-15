@@ -10,7 +10,7 @@ author: "Huzaif"
 hideSummary: true
 draft: false
 ---
-o'Data is everywhere and everything in today's day and age' \
+'Data is everywhere and everything in today's day and age' \
 Advancement in technology has enabled us to keep our data online from our private credentials to backup of our gallery photos. You don't need local storage and access.
 
 **But there is no cloud is there?** \
