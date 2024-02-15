@@ -38,5 +38,15 @@ anyways this is how it used to look:
 
 ---
 
-> **Added wiki,Projects and updates on 12 Feb 2024**
+> **Added wiki,Projects aon given  on 12 Feb 2024** 
+>
+Removed wiki section as i will have to write more content that way lol , \
+An empty menu is what i don't want, keeping it minimal \
+I will put everything other than articles in blog.
 
+
+Writing not only makes you reflect, realize and think about new possibilites , \
+In your professional life you need to write reports even last month i was doing some courses and part of the exam was writing your reports and perspectives on given topic.
+
+
+A lot of people are writing on their personal blogs. The trend spiked up again since changes in twitter (i personally know a friend who was active, even had verified account and deleted it after 'X' started). People are realising that no centralized social media is gonna be reliable so they are starting their own personal spaces on the web which they own and where they can put anything they want. I just bumped into an article explaining why some prolific writer on medium switched to his personal blog.

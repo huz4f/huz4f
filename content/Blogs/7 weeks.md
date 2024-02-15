@@ -4,7 +4,7 @@ summary: "App Dev | Blockchain | Linux | Deep Learning | Wrote an Article"
 title: "7 weeks of 2024:"
 tags: ["",""]
 author: "Huzaif"
-draft: false
+draft: true
 ---
 - Scripting
 - Blockchain
