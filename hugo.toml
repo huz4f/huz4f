@@ -127,11 +127,11 @@ buildExpired = false
   url = "/Articles/"
   weight = 1
 
-[[menu.main]]
-  identifier = "wiki"
-  name = "wiki"
-  url = "/wiki/"
-  weight = 3
+#[[menu.main]]
+  #identifier = "wiki"
+  #name = "wiki"
+  #url = "/wiki/"
+  #weight = 3
 
 [[menu.main]]
   identifier = "Projects"

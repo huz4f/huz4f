@@ -10,7 +10,7 @@ author: "Huzaif"
 hideSummary: true
 draft: false
 ---
-# -> Cloud Computing & Modern day ML
+# Cloud Computing & Modern day ML
 >From being able to run tensorflow on collab to training models on sagemaker, \
 By using cloud, complicated tasks of installing and managing dependencies on your local computer are taken care of. Not to mention worring about the limiting factors of your hardware.
 Cloud computing makes practice of ML accessible to everyone and implementation readily availabe.
