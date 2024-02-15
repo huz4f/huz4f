@@ -11,10 +11,16 @@ draft: true
 - App Dev
 - Deep Learning
 ---
->### Python for Cybersecurity 
+### Scripting
+- Shells 
+
+Zsh, Power Shell, Bash
+
+- Python for Cybersecurity
 
 ---
->### Creation of blockchain, working and use
+
+#### Creation of blockchain, working and use
 Learnt solidity and learnt mechanism of blockchain by simulating blocks \
 Wrote an article and uploaded some code to Projects
 
