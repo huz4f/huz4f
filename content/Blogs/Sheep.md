@@ -23,4 +23,7 @@ God sees far beyond what he is showing you right now.
 Do we realize how short life is and humans can attain only certain amount of wisdom ?
 
 
-- A baby is taught basic stuff by his parents but they are also mere humans
+- A baby is taught basic stuff by his parents but they are also mere humans \
+are we able to trust with our eyes closed?
+
+A story worth coming back to reflect.
