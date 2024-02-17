@@ -60,3 +60,13 @@ web 3: federated model
 web2 is participative social web while in web3 you have 
 You might have heard of DeFi,dApp but let me tell you about better information sharing protocols we can have
 DeSci facilitates the creation of decentralized platforms where scientific knowledge is accessible .Researchers can share findings, collaborate, and access data without traditional barriers, fostering open access to information
+
+
+
+---
+
+What inspired me to write this. \
+I've have been using Arc browser now for more than a year, Got an invitation link during it's beta phase and let me tell you i've used 20+ browsers before it. Even though safari is synced with my phone and i like to get back to reading what i left on my mac. Since arc i've hardly used any other browser. It gets updates every week and has been only getting better. I wont explain why just try it yourself.
+
+But why am i writing this? \
+Because arc recently released new app currently only on ios called 'Arc search' and i believe it's future of browsing the internet. Core concept is you can do a basic search or you can ask the **AI built into the browser** to create a personalized webpage for your search that will take information from relevant webpages in real time and put it in a custom page presented to you. Amazing right :)

@@ -1,41 +1,35 @@
 ---
 date: 2024-02-11
-summary: "App Dev | Blockchain | Linux | Deep Learning | Wrote an Article"
+summary: "App Dev | Blockchain | Linux | Deep Learning | Writing"
 title: "7 weeks of 2024:"
 tags: ["",""]
 author: "Huzaif"
 draft: true
+ShowToc: true
 ---
-- Scripting
-- Blockchain
-- App Dev
-- Deep Learning
 ---
-### Scripting
-- Shells 
-
-Zsh, Power Shell, Bash
-
+### Linux
+Spent most of my time in terminal doing
+- Shell Scripting
 - Python for Cybersecurity
 
 ---
 
-#### Creation of blockchain, working and use
-Learnt solidity and learnt mechanism of blockchain by simulating blocks \
-Wrote an article and uploaded some code to Projects
+### Creation of blockchain, working and use
+Learnt solidity and mechanism of blockchain by simulating blocks \
+Wrote an article and uploaded some code to Projects \
+- spent 2 whole days on this
 
 ---
->### Started App dev 
-i had already started learning flutter for blockchain, made some basic apps also.
-
->Will complete this one app and put it in projects.
-
----
->### Completed some courses on Deep Learning
-
----
->### Also studied about Data science
-
----
->Practiced Tensorflow and 
+###  App development
+i had already started learning flutter for blockchain, made some basic apps using swiftUI \
+Here is calculator app i made [GitHub](https://github.com/huz4f/calcApp) 
+>was thinking about making a journal app using new journal api for swift or a news summarizing app but i dont have much time and making apps feels boring.
 >
+- tried flutter course by angela yu
+
+---
+### Completed some courses
+Studied about Deep learning, Practiced Tensorflow and Spent some time on data science.
+
+---
