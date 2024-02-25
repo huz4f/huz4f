@@ -40,14 +40,15 @@ anyways this is how it used to look:
 
 > **Added wiki,Projects and did some tweaks on 12 Feb 2024** 
 >
-Removed wiki section as i will have to write more content that way,An empty menu is what i don't want, keeping it minimal \
+Removed wiki section as i will have to write more content that way, \
+An empty menu is what i don't want, so keeping it minimal \
 I will put everything other than articles in blog lol.
 
 
-Writing not only makes you reflect, realize and think about new possibilites , \
-In your professional life you need to write reports even last month i was doing some courses and part of the examination was writing your report.
+Writing not only makes you reflect, realize and explore about new possibilites , \
+In your professional life you need to write reports even last month i was doing some courses and part of the examination was writing your report. Being able to write thesis or dissertation is an essential skill to add to your toolkit.
 
 
-A lot of people are writing on their personal blogs. The trend spiked up again since changes in twitter (i personally know a friend who was active, even had verified account and deleted it after 'X' started). 
+A lot of people are writing on their personal blogs. The trend spiked up again since changes in twitter (personally know a friend who was pretty active on twitter, even had verified account and deleted it after 'X'). 
 
 People are realising that no centralized social media is gonna be reliable so they are starting their own personal spaces on the web which they own and where they can put anything they want. I just bumped into an article explaining why some prolific writer on medium switched to his personal blog.

@@ -23,7 +23,10 @@ Wrote an article and uploaded some code to Projects \
 ---
 ###  App development
 i had already started learning flutter for blockchain, made some basic apps using swiftUI \
-Here is calculator app i made [GitHub](https://github.com/huz4f/calcApp) 
+Here is calculator app i made [GitHub](https://github.com/huz4f/calcApp) \
+also made a [Experience](https://github.com/huz4f/ExpApp/tree/master) App but it didnt turn out how i wanted it to 
+
+
 >was thinking about making a journal app using new journal api for swift or a news summarizing app but i dont have much time and making apps feels boring.
 >
 - tried flutter course by angela yu
