@@ -1,7 +1,7 @@
 ---
 date: 2024-02-12
 title: "Blockchain & Smart Contracts"
-tags: ["Blockchain","Solidity","Swift","Web3"]
+tags: ["Blockchain","Solidity","Swift","web3"]
 author: "Huzaif"
 showreadingtime: false
 hideSummary: true

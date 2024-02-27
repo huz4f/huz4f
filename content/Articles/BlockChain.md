@@ -2,7 +2,7 @@
 cover:
   image: articles/bcc.png
 
-tags: ["Blockchain","Web","Web3"]
+tags: ["Blockchain","web","web3"]
 
 date: 2024-02-10
 
