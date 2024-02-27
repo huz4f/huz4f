@@ -123,7 +123,7 @@ buildExpired = false
 
 [[menu.main]]
   identifier = "Articles"
-  name = "Articles"
+  name = "Tech"
   url = "/Articles/"
   weight = 1
 
