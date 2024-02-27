@@ -45,7 +45,7 @@ An empty menu is what i don't want, so keeping it minimal \
 I will put everything other than articles in blog lol.
 
 
-Writing not only makes you reflect, realize and explore about new possibilites , \
+Writing not only makes you reflect, realize and explore new possibilites , \
 In your professional life you need to write reports even last month i was doing some courses and part of the examination was writing your report. Being able to write thesis or dissertation is an essential skill to add to your toolkit.
 
 
