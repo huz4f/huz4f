@@ -2,16 +2,15 @@
 cover:
   image: articles/wb.png
 
-tags: ["web","web3","Dark web","Artifical Intelligence"]
+tags: ["web","web3","Dark web","Artifical Intelligence","Blockchain"]
 
 date: 2024-02-08
-
 author: "Huzaif"
 hideSummary: true
-draft: true
+draft: 
 ---
 ## Every questioned how do you see a website?
-> You are here by using a browser?
+> visiting my website through a **Browser**?
 >
 The browser goes to the DNS server and finds the real address of the server that the website lives on (IP address).
 Browser sends an HTTP request to the server, asking it to send a copy of the website you asked for. This message and all other data sent between the client and the server, is sent across your internet connection using TCP/IP.
@@ -77,18 +76,14 @@ Aims: A more secure, censorship-resistant web, new models of ownership and monet
 - meta managment thruogh DAOs
 - assets as NFTs
 
-### More about web3-------
-It is a push back against suveliance captialism,everyone has power and control over assets.
-real world manifestation of the feeling of powerlessness that comes with so called free services that collet every bit of data and used to manipulate the user more [here]().
-Being called techno-utopian libertarian view of the world, where every problem can be solved if we use enough technology at it.
-everyon knows about bitcoin (based on Laissez-faire capitalism+Meritocratic rule) motivation behind it was also to be transparent and take out fraunds of centralised financial system. 
+### More about web3
 
+Being called techno-utopian libertarian view of the world, where every problem can be solved if we use enough technology at it. \
+It is real world manifestation of the feeling of powerlessness that comes with so called free services that collet every bit of data and is used to manipulate the user more.It is a push back against suveliance captialism, everyone has power and control over assets.
 
-**Including various goals Web3 aims to foster  open access to information**
-- Re engineer the web ecosystem to run on the distributed decentralized blockchain
-- Tockenize all data on the web and make it tradable
-- To be single source of truth ~from social media posts to property deeds
-in proposed future all the valuable data will be decentralized
+Including various goals Web3 aims to foster  open access to information and Re engineer the web ecosystem to run on the distributed decentralized blockchain, to Tockenize all data on the web and make it tradable. To be single source of truth and from social media posts to property deeds in proposed future all the valuable data will be decentralized
+
+Everyone knows bitcoin (based on Laissez-faire capitalism+Meritocratic rule) motivation behind it was also to be transparent and take out fraunds of centralised financial system.
 
 More about decentralization [HERE](https://huz4f.online/articles/blockchain/)
 
@@ -98,8 +93,21 @@ More about decentralization [HERE](https://huz4f.online/articles/blockchain/)
 There is a a collection of websites that operate in a shadowy corner of the internet, it can be accessed using secure,anonymized connection called Tor network.
 
 Criminal activity is the highest profile use of dark web.Yet the onion routing, cornerstone tech that makes dark web possible was actually developed by a team of mathematicians and computer scientists in 1990s at US research  govt laboratory. \
-After this many large tech companies,govt agencies and other non profit organizations funded **The non profit Tor Foundation** for it's potential benefits. \
-Govt agencies use Dark web to communicate with their agents.
-Washington post uses dark web to communicate with it's journalists, without revealing their true identity. There are many legitimate uses of Dark web.
+After this many large tech companies,govt agencies and other non profit organizations funded **The non profit Tor Foundation** for it's potential benefits. 
 
-Tor network can bypass govt firewalls and content filtering.
+Govt agencies use Dark web to communicate with their agents.
+Washington post uses dark web to communicate with it's journalists, without revealing their true identity. There are many legitimate uses of Dark web. \
+Tor network can bypass govt firewalls and content filtering. 
+
+
+**But how do you use Tor network?** \
+You need Tor browser or os integration like whonix. You can also use CLI tools like cURL.
+
+Dark web works on the Perfect Forward secrecy:
+![](/articles/Darkweb.png)
+- Entry node (only this knows you)
+- Relay node (can have multiple relay nodes)
+- Exit node (knows destination)
+
+Directory servers play a crucial role in Dark web by maintaining Tor nodes.
+There are unadvertised Bridge Nodes that serve as entry when Directory servers are blocked.
