@@ -112,7 +112,7 @@ Dark web works on the Perfect Forward secrecy:
 Directory servers play a crucial role in Dark web by maintaining Tor nodes.
 There are unadvertised Bridge Nodes that serve as entry when Directory servers are blocked.
 
-[Here is a gift for cybersecurity enthusiasts](https://www.theguardian.com/world/interactive/2013/oct/04/tor-stinks-nsa-presentation-document) ;)
+[Here is a gift for cybersecurity enthusiasts](https://www.theguardian.com/world/interactive/2013/oct/04/tor-stinks-nsa-presentation-document) ;) 
 
 ---
 
