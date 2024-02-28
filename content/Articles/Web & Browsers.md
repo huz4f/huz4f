@@ -2,7 +2,7 @@
 cover:
   image: articles/wb.png
 
-tags: ["web","web3","Dark web","Artifical Intelligence","Blockchain"]
+tags: ["web","web3","Dark web","Blockchain","Cryptography"]
 
 date: 2024-02-08
 author: "Huzaif"
@@ -116,5 +116,4 @@ There are unadvertised Bridge Nodes that serve as entry when Directory servers a
 
 ---
 
-### Deep web
-It refers to anything on the internet that is not indexed and accessible via a search engine like Google. Deep web content includes anything behind a paywall or requires sign-in credentials. It also includes any content that its owners have blocked web crawlers from indexing.
+>Deep web refers to anything on the internet that is not indexed and accessible via a search engine like Google. Deep web content includes anything behind a paywall or requires sign-in credentials. It also includes any content that its owners have blocked web crawlers from indexing.
