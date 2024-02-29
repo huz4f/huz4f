@@ -83,7 +83,7 @@ Being different is good but having support for you weaknesses and stupidity then
 
 ### There are many other issues like 
 
-- Changes in Problem Solving: Easy access to search engines can sometimes encourage a reliance on readily available solutions rather than cultivating deeper critical thinking and problem-solving skills.
+- Easy access to search engines can sometimes encourage a reliance on readily available solutions rather than cultivating deeper critical thinking and problem-solving skills.
 
 - [Technology is Killing Creativity](https://rindle.com/blog/is-technology-killing-creativity)
 
