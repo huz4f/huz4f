@@ -76,9 +76,6 @@ Being obsessed with psychology since my early teens i can talk about this topic 
 
 - [Technology is Killing Creativity](https://rindle.com/blog/is-technology-killing-creativity)
 
-
-
-
 ---
 # Physical
 ![](/articles/physical.png)
@@ -104,19 +101,47 @@ While technology enhances connectivity, it can also hinder the development of in
 ### Change of character
 The internet can create a sense of individuality, making us feel unique. However, it's important to reflect on whether this feeling is genuine.
 
-Many technological advancements including advertising and social media often fuel personality disorders. \
-There are many studies showing depression and feeling envious has increased with spending more time on the interent. Not only limtited to making a person feel weak or having low self esteem. A person can also live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many problems and being stuck in a loop. 
+Many technological advancements including advertising and social media often fuel bad decisions and  personality disorders. \
+There are many studies showing depression and feeling envious has increased with spending more time on the interent. Not only limtited to making a person feel weak or having low self esteem. A person can also start to live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many sociological problems and being stuck in a loop. Making it hard for people to confide in real life, in future maybe people will prefer talking to ai bots over real humans.
 
-Being able to find communities online is very beneficial yet there is also another side to this coin.
-[Impulsivity, narcissism, and aggression](https://www.researchgate.net/publication/315349367_The_Internet%27s_effect_on_personality_traits_An_important_casualty_of_the_Internet_addiction_paradigm#:~:text=Results%20Impulsivity%2C%20narcissism%2C%20and%20aggression,with%20possible%20negative%20offline%20consequences.) has increased. 
+On the other hand, we can also say that social media has made us unnecessary self conscious. \
+A teenager feels he/she has to do certain things to be accepted by his/her friends. Go watch that netflix documentary maybe. Everyone has an instagram profile you should too? 
+
+Being able to find communities online can be very beneficial yet there is also another side to this coin.
+[Impulsivity, narcissism, and aggression](https://www.researchgate.net/publication/315349367_The_Internet%27s_effect_on_personality_traits_An_important_casualty_of_the_Internet_addiction_paradigm#:~:text=Results%20Impulsivity%2C%20narcissism%2C%20and%20aggression,with%20possible%20negative%20offline%20consequences.) rate is showing significant increase. Isn't it self explanatory at this point?
 
 Being different is good but having support for you weaknesses and stupidity then portraying it as normal is not. Spending time without your phone and detoxifying once in a while from the internet to reflect should be encouraged.
 
 ---
 
-### Exposure of kids at very young age
+# Exposure of kids at very young age
 ![](/articles/kids.png)
-delays in language development
-delays in social and emotional development.
-low creativity.
-TODO
+- delays in language development
+- delays in social and emotional development.
+- lower creativity.
+- Children experience the thinning of the brain cortex, a precursor of aging and neurodegenerative diseases.
+
+>These are some researched effects on children and here are some on YT consumption
+
+- YouTube game videos have been found to have an effect on traditional game culture, leading children to imitate people and events in the videos and diminishing their creativity. 
+- YouTuber videos produced for children often contain negative verbal expressions, visual content related to violence, aggression, slang, slander, harmful habits, product advertisements, and sexuality. 
+- The consumption of videos on YouTube by young children can influence their knowledge, behaviors, and attitudes, making it important to understand the types of content they are consuming [3]. YouTubers have been observed to use language that deviates from the linguistic norm, which can have a negative impact on the development of correct language patterns in children. 
+
+However, YouTube can also have positive effects on children's learning, such as increasing their interest in learning English vocabulary or to teach them certain things in a fun way if parents don't have time (though it should be strictly supervised and limited) 
+
+
+Early childhood experiences from birth to age 8 affect the development of the brain's architecture, which provides the foundation for all future learning, behavior and health.
+
+Even after 8 years, \
+During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for charecter development.
+
+Ok so this is not a guide to raise kids lol, \
+i'll just end this with writing about the good old days when i was 9, \
+Being an only child i spent most of my time with my computer, it was like a whole universe in my hands all inside my room.
+
+Back then you needed a big system just to run windows and a 1GB file took a whole day to download, streaming hd videos was next to  impposible ( yea my generation was the last one who didnt watch chuchutv growing up lol ), even then my parents used to cut off electricity so i could only  access it for few hours a day, yea poor kid me.
+
+---
+
+>Wanted to study more about this and write a note to myself for a really long time now.
+>So i made it probably the last blog of this year. Good Topic
