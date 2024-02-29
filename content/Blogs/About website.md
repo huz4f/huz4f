@@ -38,17 +38,16 @@ anyways this is how it used to look:
 
 ---
 
-> **Did some tweaks on 12 Feb 2024** 
->
-Added Projects,Removed wiki section as i will have to write more content that way, \
+# Did some tweaks on 12 Feb 2024
+
+>Added Projects,Removed wiki section as i will have to write more content that way, \
 An empty menu is what i don't want, so keeping it minimal \
 I will put everything other than articles in blog lol.
 
 
-Realized writing not only makes you reflect, realize and explore new possibilites, \
+- Realized writing not only makes you reflect, realize and explore new possibilites, \
 In your professional life you need to write reports even last month i was doing some courses and part of the examination was writing your report. Being able to write thesis or dissertation is an essential skill to add to your toolkit.
 
+- A lot of people are starting to write on their personal blogs. The trend spiked up again since changes in twitter, personally know a friend who was pretty active on twitter, even had verified account and deleted it after 'X'. 
 
-A lot of people are starting to write on their personal blogs. The trend spiked up again since changes in twitter, personally know a friend who was pretty active on twitter, even had verified account and deleted it after 'X'. 
-
-People are realising that no centralized social media is gonna be reliable so they are starting their own personal spaces on the web which they own and where they can put anything they want. I just bumped into an article explaining why some prolific writer on medium switched to his personal blog.
+- People are realising that no centralized social media is gonna be reliable so they are starting their own personal spaces on the web which they own and where they can put anything they want. I just bumped into an article explaining why some prolific writer on medium switched to his personal blog.
