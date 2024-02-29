@@ -6,11 +6,11 @@ author: "Huzaif"
 hidesummary: true
 draft: 
 ---
-We all know technological advancements have been drastically changing human lives, from extending lifespan to ease of many tasks we now take forgranted.
+We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks we now take forgranted.
 
 So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
 
-### i will be dividing this into 3 parts.
+### Dividing this into 3 parts
 - [Psychological effects](#psychological)
 - [Physical changes](#physical)
 - [Social Adaptation](#social)
@@ -87,14 +87,25 @@ Being different is good but having support for you weaknesses and stupidity then
 
 - [Technology is Killing Creativity](https://rindle.com/blog/is-technology-killing-creativity)
 
+
 Being obsessed with psychology since my early teens i can talk about this topic for hours, i'll just end it here with words (of someone i don't remember who) \
 ' We should regularly ask ourselves am i using this, or is it using me? '
 
 ---
 # Physical
+
 Let's start with Sleep disturbance? 
-posture
-physical inactivity and obesity.
+- Light from electronic devices at night can hinder circadian rhythm. [more](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.)
+
+Prolonged sitting in front of screens contributes to a sedentary lifestyle, which increases the risk of:
+- Obesity
+- Heart disease
+- Type 2 diabetes
+- Muscle and joint problems
+- Poor posture and weakness as humans were designed for physical activity 
+
+Human body is made to endure certain conditions that have been taken care of by technology, as a result we have become weak.
+
 
 ---
 # Social
