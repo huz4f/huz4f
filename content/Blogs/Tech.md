@@ -46,9 +46,9 @@ Have you needed a calculator to solve basic calculations.
 Ok let me rephrase it, \
 I've only 2-3 phone numbers memorized and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their phone and have even my phone number memorized (even i used to get confused sometimes what my phone number is). \
 If  you are thinking we have our mobile phone we don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks. \
-Let me suggest you to read this : [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf)
+Let me suggest you this : [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf)
 
-"If you don't use something, You lose it" it was written in some book \
+"If you don't use something, You lose it" this was written in some book \
 (i am bad at remembering names)
 
 The dependency on GPS navigation systems reduces the brain density matter in the hippocampus, causing diseases like depression and dementia. [check](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7156656/)
@@ -67,19 +67,8 @@ When we are distracted, we fail to pay attention and do not form good memories. 
 
 Brain can become hyperstimulated by dopamine. This overstimulation can make our brain's pleasure centers less responsive to other enjoyable experiences, such as eating a meal, reading a book, having a conversation, or holding hands.
 
-
-
-
-### Change of character
-The internet can create a sense of individuality, making us feel unique. However, it's important to reflect on whether this feeling is genuine.
-
-Many technological advancements including advertising and social media often fuel personality disorders. \
-There are many studies showing depression and feeling envious has increased with spending more time on the interent. Not only limtited to making a person feel weak or having low self esteem. A person can also live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many problems and being stuck in a loop. 
-
-Being able to find communities online is very beneficial yet there is also another side to this coin.
-[Impulsivity, narcissism, and aggression](https://www.researchgate.net/publication/315349367_The_Internet%27s_effect_on_personality_traits_An_important_casualty_of_the_Internet_addiction_paradigm#:~:text=Results%20Impulsivity%2C%20narcissism%2C%20and%20aggression,with%20possible%20negative%20offline%20consequences.) has increased. 
-
-Being different is good but having support for you weaknesses and stupidity then portraying it as normal is not. Spending time without your phone and detoxifying once in a while from the internet to reflect should be encouraged.
+Being obsessed with psychology since my early teens i can talk about this topic for hours, i'll just end it here with a quote (from someone i don't remember who) \
+'*We should regularly ask ourselves am i using this, or is it using me?*'
 
 ### There are many other issues like 
 
@@ -88,8 +77,7 @@ Being different is good but having support for you weaknesses and stupidity then
 - [Technology is Killing Creativity](https://rindle.com/blog/is-technology-killing-creativity)
 
 
-Being obsessed with psychology since my early teens i can talk about this topic for hours, i'll just end it here with words (of someone i don't remember who) \
-' We should regularly ask ourselves am i using this, or is it using me? '
+
 
 ---
 # Physical
@@ -112,6 +100,17 @@ Human body is made to endure certain conditions that have been taken care of by 
 # Social
 ![](/articles/social.png)
 While technology enhances connectivity, it can also hinder the development of in-depth, face-to-face social skills necessary for strong interpersonal relationships. 
+
+### Change of character
+The internet can create a sense of individuality, making us feel unique. However, it's important to reflect on whether this feeling is genuine.
+
+Many technological advancements including advertising and social media often fuel personality disorders. \
+There are many studies showing depression and feeling envious has increased with spending more time on the interent. Not only limtited to making a person feel weak or having low self esteem. A person can also live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many problems and being stuck in a loop. 
+
+Being able to find communities online is very beneficial yet there is also another side to this coin.
+[Impulsivity, narcissism, and aggression](https://www.researchgate.net/publication/315349367_The_Internet%27s_effect_on_personality_traits_An_important_casualty_of_the_Internet_addiction_paradigm#:~:text=Results%20Impulsivity%2C%20narcissism%2C%20and%20aggression,with%20possible%20negative%20offline%20consequences.) has increased. 
+
+Being different is good but having support for you weaknesses and stupidity then portraying it as normal is not. Spending time without your phone and detoxifying once in a while from the internet to reflect should be encouraged.
 
 ---
 
