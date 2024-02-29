@@ -9,7 +9,7 @@ author: "Huzaif"
 hideSummary: true
 draft: 
 ---
-## Every questioned how do you see a website?
+## Ever questioned how do you see a website?
 > visiting my website through a **Browser**?
 >
 The browser goes to the DNS server and finds the real address of the server that the website lives on (IP address).
