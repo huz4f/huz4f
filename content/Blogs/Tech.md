@@ -93,6 +93,7 @@ Being obsessed with psychology since my early teens i can talk about this topic 
 
 ---
 # Physical
+![](/articles/physical.png)
 
 Let's start with Sleep disturbance? 
 - Light from electronic devices at night can hinder circadian rhythm. [more](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.)
@@ -109,11 +110,13 @@ Human body is made to endure certain conditions that have been taken care of by 
 
 ---
 # Social
+![](/articles/social.png)
 While technology enhances connectivity, it can also hinder the development of in-depth, face-to-face social skills necessary for strong interpersonal relationships. 
 
 ---
 
 ### Exposure of kids at very young age
+![](/articles/kids.png)
 delays in language development
 delays in social and emotional development.
 low creativity.
