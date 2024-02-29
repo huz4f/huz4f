@@ -109,8 +109,7 @@ Human body is made to endure certain conditions that have been taken care of by 
 
 ---
 # Social
-
-TODO
+While technology enhances connectivity, it can also hinder the development of in-depth, face-to-face social skills necessary for strong interpersonal relationships. 
 
 ---
 
