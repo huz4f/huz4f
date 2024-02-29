@@ -71,7 +71,7 @@ Brain can become hyperstimulated by dopamine. This overstimulation can make our 
 
 
 ### Change of character
-The internet can create a sense of individuality, making us feel unique when we see ourselves as different from those around us. However, it's important to reflect on whether this feeling is genuine.
+The internet can create a sense of individuality, making us feel unique. However, it's important to reflect on whether this feeling is genuine.
 
 Many technological advancements including advertising and social media often fuel personality disorders. \
 There are many studies showing depression and feeling envious has increased with spending more time on the interent. Not only limtited to making a person feel weak or having low self esteem. A person can also live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many problems and being stuck in a loop. 
