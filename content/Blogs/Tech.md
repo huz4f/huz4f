@@ -6,7 +6,6 @@ author: "Huzaif"
 hidesummary: true
 draft: 
 ---
-Ok choosing a name for this was quite hard, \
 We all know technological advancements have been drastically changing human lives, from extending lifespan to ease of many tasks we now take forgranted.
 
 So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
@@ -93,8 +92,8 @@ Being obsessed with psychology since my early teens i can talk about this topic 
 ---
 # Physical
 Let's start with Sleep disturbance? 
-
-TODO
+posture
+physical inactivity and obesity.
 
 ---
 # Social
@@ -104,5 +103,7 @@ TODO
 ---
 
 ### Exposure of kids at very young age
-
+delays in language development
+delays in social and emotional development.
+low creativity.
 TODO
