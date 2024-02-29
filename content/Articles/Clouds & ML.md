@@ -2,7 +2,7 @@
 cover:
   image: articles/mlc.png
 
-tags: ["Machine Learning","Cloud Computing","DevOps"]
+tags: ["Machine Learning","Cloud Computing","DevOps", "Quantum computers"]
 
 date: 2024-02-02
 
@@ -43,6 +43,19 @@ To utilize the computational power of GPUs we need strong software, \
 Companies like NVIDIA are also working towards ML | AI as toolkits like TensorFlow need well designed acceleration libraries like 
 [Cuda X](https://developer.nvidia.com/gpu-accelerated-libraries#:~:text=NVIDIA%20CUDA%2DX™%2C%20built,AI%20and%20high%2Dperformance%20computing.), everyone knows Ai Ml is a growing market with bright future, NVIDIA also has invested in [containers](https://catalog.ngc.nvidia.com/containers) that can help avoid dependencies hell.
 
-(this is time consuming,will write more maybe)
+
+Updated: 
+
+Gordon Moore, co-founder of Intel, in 1965 observed that the number of transistors that could be packed onto an integrated circuit (IC) was doubling roughly every year. He later revised this to a doubling every two years.
+![](/articles/Moore.png)
+The pace of doubling has slowed significantly in recent years. We are still seeing improvements, not strictly at the same rate as before. But new possibilities we have today from 10 years ago are reshaping the boundaries of what is possible. Also quantum computers might be the future and after 10 years we will look at Integrated Circuits as vaccum tubes, who knows.
+![](/articles/quantum.png)
+**NVIDIA's capitalisation increased by the whole value of Coca-Cola in a single day**. 
+>Why? 
+>
+It is the focus on AI that is pushing forward the requirement for increasing computing level. However, NVIDIA knows that they need to build on their base and advance into other areas. And, so one of these is the move into quantum computing [here](https://www.nvidia.com/en-us/solutions/quantum-computing/)
+
+As advancement in internet and Quantum computers, All the power will be accessed through cloud, \
+Quantum computers need cold environment to work (current technology),
 
 ---

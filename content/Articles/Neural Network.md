@@ -10,9 +10,7 @@ author: "Huzaif"
 hideSummary: true
 draft: true
 ---
-Gordon Moore, co-founder of Intel, in 1965 observed that the number of transistors that could be packed onto an integrated circuit (IC) was doubling roughly every year. He later revised this to a doubling every two years.
-![](/articles/Moore.png)
-The pace of doubling has slowed significantly in recent years. We are still seeing improvements, but not strictly at the same rate as before. But new possibilities we have today from 10 years ago are reshaping the boundaries of what is possible.
+
 
 ## Machine Learning
 - Supervised Learning
