@@ -96,7 +96,7 @@ Being obsessed with psychology since my early teens i can talk about this topic 
 ![](/articles/physical.png)
 
 Let's start with Sleep disturbance? 
-- Light from electronic devices at night can hinder circadian rhythm. [more](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.)
+- Light from electronic devices has showen to hinder circadian rhythm. [more](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.)
 
 Prolonged sitting in front of screens contributes to a sedentary lifestyle, which increases the risk of:
 - Obesity
