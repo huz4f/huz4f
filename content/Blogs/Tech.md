@@ -6,7 +6,7 @@ author: "Huzaif"
 hidesummary: true
 draft: 
 ---
-We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks we now take forgranted.
+We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks we now take for granted.
 
 So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
 
@@ -30,7 +30,7 @@ Perception of time and patience has been altered, \
 We all have a superfast computer in our pockets with 4G this has fostered an expectation of immediate results. Patience for slower processes has eroded in our lives. \
 Here is a pretty good documentary i watched few years ago [The Social Dilemma](https://www.youtube.com/watch?v=uaaC57tcci0), 
 
-Emphasizing how attention span has decreased, \
+Emphasising how attention span has decreased, \
 You might have heard an average human has lower attention span than a goldfish now, not going to research if it's true but here is a truth: 
 >6 hours and 58 minutes per day is screen time of an average human today. 
 >
@@ -44,7 +44,7 @@ Which become weaker and forcing us to depend more on the devices.
 
 Have you needed a calculator to solve basic calculations.
 Ok let me rephrase it, \
-I've only 2-3 phone numbers memorized and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their phone and have even my phone number memorized (even i used to get confused sometimes what my phone number is). \
+I've only 2-3 phone numbers memorised and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their phone and have even my phone number memorised (even i used to get confused sometimes what my phone number is). \
 If  you are thinking we have our mobile phone we don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks. \
 Let me suggest you this : [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf)
 
@@ -57,7 +57,7 @@ Short term memory is destroyed by short videos, \
 this is a personal experience and i am glad i hardly use any social media. 
 
 Here is a convincing example, \
- When you watch short videos on instagram or YouTube . There has been surveyes which shows that if you watch a full movie or read a book, you will be able to narrate the story even after few days. But if you watch 100s of short videos (10–20 sec videos), you are not be able to recollect even 5 of them right after you put down your mobile. These short videos are like junk food for brain, it does not allow or give enough time for your brain to settle down and process. Brain keep switching between different videos which are of different theme, different genre, different types.
+ When you watch short videos on instagram or YouTube . There has been surveys which shows that if you watch a full movie or read a book, you will be able to narrate the story even after few days. But if you watch 100s of short videos (10–20 sec videos), you are not be able to recollect even 5 of them right after you put down your mobile. These short videos are like junk food for brain, it does not allow or give enough time for your brain to settle down and process. Brain keep switching between different videos which are of different theme, different genre, different types.
 
 
 ### Feeling content
@@ -65,7 +65,7 @@ Let's talk about living in the moment and pleasure. \
 When you go out, sit in the rain or watch sunset ask yourself how much time do you actually spend feeling that feeling. Remember when we were kids and all we focused on was the current experience. Aren't those one of the best memories we all have. \
 When we are distracted, we fail to pay attention and do not form good memories. Short-term memories fail to get transferred into long-term memories and we don’t form insights.
 
-Brain can become hyperstimulated by dopamine. This overstimulation can make our brain's pleasure centers less responsive to other enjoyable experiences, such as eating a meal, reading a book, having a conversation, or holding hands.
+Brain can become hyperstimulated by dopamine. This overstimulation can make our brain's pleasure centres less responsive to other enjoyable experiences, such as eating a meal, reading a book, having a conversation, or holding hands.
 
 Being obsessed with psychology since my early teens i can talk about this topic for hours, i'll just end it here with a quote (from someone i don't remember who) \
 '*We should regularly ask ourselves am i using this, or is it using me?*'
@@ -102,7 +102,7 @@ While technology enhances connectivity, it can also hinder the development of in
 The internet can create a sense of individuality, making us feel unique. However, it's important to reflect on whether this feeling is genuine.
 
 Many technological advancements including advertising and social media often fuel bad decisions and  personality disorders. \
-There are many studies showing depression and feeling envious has increased with spending more time on the interent. Not only limtited to making a person feel weak or having low self esteem. A person can also start to live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many sociological problems and being stuck in a loop. Making it hard for people to confide in real life, in future maybe people will prefer talking to ai bots over real humans.
+There are many studies showing depression and feeling envious has increased with spending more time on the Internet. Not only limited to making a person feel weak or having low self esteem. A person can also start to live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many sociological problems and being stuck in a loop. Making it hard for people to confide in real life, in future maybe people will prefer talking to ai bots over real humans.
 
 On the other hand, we can also say that social media has made us unnecessary self conscious. \
 A teenager feels he/she has to do certain things to be accepted by his/her friends. Go watch that netflix documentary maybe. Everyone has an instagram profile you should too? 
@@ -125,21 +125,21 @@ Being different is good but having support for you weaknesses and stupidity then
 
 - YouTube game videos have been found to have an effect on traditional game culture, leading children to imitate people and events in the videos and diminishing their creativity. 
 - YouTuber videos produced for children often contain negative verbal expressions, visual content related to violence, aggression, slang, slander, harmful habits, product advertisements, and sexuality. 
-- The consumption of videos on YouTube by young children can influence their knowledge, behaviors, and attitudes, making it important to understand the types of content they are consuming [3]. YouTubers have been observed to use language that deviates from the linguistic norm, which can have a negative impact on the development of correct language patterns in children. 
+- The consumption of videos on YouTube by young children can influence their knowledge, behaviours, and attitudes, making it important to understand the types of content they are consuming. YouTubers have been observed to use language that deviates from the linguistic norm, which can have a negative impact on the development of correct language patterns in children. 
 
 However, YouTube can also have positive effects on children's learning, such as increasing their interest in learning English vocabulary or to teach them certain things in a fun way if parents don't have time (though it should be strictly supervised and limited) 
 
 
-Early childhood experiences from birth to age 8 affect the development of the brain's architecture, which provides the foundation for all future learning, behavior and health.
+Early childhood experiences from birth to age 8 affect the development of the brain's architecture, which provides the foundation for all future learning, behaviour and health.
 
 Even after 8 years, \
-During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for charecter development.
+During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for character development.
 
 Ok so this is not a guide to raise kids lol, \
 i'll just end this with writing about the good old days when i was 9, \
 Being an only child i spent most of my time with my computer, it was like a whole universe in my hands all inside my room.
 
-Back then you needed a big system just to run windows and a 1GB file took a whole day to download, streaming hd videos was next to  impposible ( yea my generation was the last one who didnt watch chuchutv growing up lol ), even then my parents used to cut off electricity so i could only  access it for few hours a day, yea poor kid me.
+Back then you needed a big system just to run windows and a 1GB file took a whole day to download, streaming hd videos was next to  impossible ( yea my generation was the last one who didn't watch chuchutv growing up lol ), even then my parents used to cut off electricity so i could only  access it for few hours a day, yea poor kid me.
 
 ---
 
