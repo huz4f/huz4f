@@ -4,6 +4,7 @@ title: "Technological Ramifications"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
+draft: true
 ---
 Choosing a name for this was quite hard, \
 We all know technological advancements have been drastically changing human lives, from extending lifespan to ease of many tasks we now take forgranted, 
