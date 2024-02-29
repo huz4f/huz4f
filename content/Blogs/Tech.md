@@ -104,7 +104,7 @@ The internet can create a sense of individuality, making us feel unique. However
 Many technological advancements including advertising and social media often fuel bad decisions and  personality disorders. \
 There are many studies showing depression and feeling envious has increased with spending more time on the Internet. Not only limited to making a person feel weak or having low self esteem. A person can also start to live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many sociological problems and being stuck in a loop. Making it hard for people to confide in real life, in future maybe people will prefer talking to ai bots over real humans.
 
-On the other hand, we can also say that social media has made us unnecessary self conscious. \
+On the other hand, we can also say that social media has made us unnecessarily self conscious. \
 A teenager feels he/she has to do certain things to be accepted by his/her friends. Go watch that netflix documentary maybe. Everyone has an instagram profile you should too? 
 
 Being able to find communities online can be very beneficial yet there is also another side to this coin.
