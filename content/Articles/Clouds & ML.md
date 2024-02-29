@@ -53,9 +53,9 @@ The pace of doubling has slowed significantly in recent years. We are still seei
 **NVIDIA's capitalisation increased by the whole value of Coca-Cola in a single day**. 
 >Why? 
 >
-It is the focus on AI that is pushing forward the requirement for increasing computing level. However, NVIDIA knows that they need to build on their base and advance into other areas. And, so one of these is the move into quantum computing [here](https://www.nvidia.com/en-us/solutions/quantum-computing/)
+It is the focus on AI that is pushing forward the requirement for increasing computing level. However, NVIDIA knows that they need to build on their base and advance into other areas. And, here is the move into [quantum computing](https://www.nvidia.com/en-us/solutions/quantum-computing/)
 
-As advancement in internet and Quantum computers, All the power will be accessed through cloud, \
-Quantum computers need cold environment to work (current technology),
+As advancement in internet and Quantum computers, All the power will be accessed through cloud.
+As quantum computers need cold environment to work, it is hard to imagine to bring all the setup home.
 
 ---
