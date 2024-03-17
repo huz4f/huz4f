@@ -6,9 +6,10 @@ author: "Huzaif"
 hidesummary: true
 draft: 
 ---
+
 We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks we now take for granted.
 
-So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
+Technology is so intertwined with our lives right now that it's hard to imagine life without modern conveniences. So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
 
 ### Dividing this into 3 parts
 - [Psychological effects](#psychological)
@@ -83,14 +84,9 @@ Being obsessed with psychology since my early teens i can talk about this topic 
 Let's start with Sleep disturbance? 
 - Light from electronic devices has showen to hinder circadian rhythm. [more](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.)
 
-Prolonged sitting in front of screens contributes to a sedentary lifestyle, which increases the risk of:
-- Obesity
-- Heart disease
-- Type 2 diabetes
-- Muscle and joint problems
-- Poor posture and weakness as humans were designed for physical activity 
+ Prolonged sitting in front of screens contributes to a sedentary lifestyle. This increases the risk of obesity, heart disease, type 2 diabetes, muscle and joint problems and poor posture. Humans were designed for physical activity, and prolonged sitting can lead to weakness.
 
-Human body is made to endure certain conditions that have been taken care of by technology, as a result we have become weak.
+Human body is made to endure certain conditions that have been taken care of by technology, as a result our minds and body have become weak.
 
 
 ---
@@ -102,7 +98,7 @@ While technology enhances connectivity, it can also hinder the development of in
 The internet can create a sense of individuality, making us feel unique. However, it's important to reflect on whether this feeling is genuine.
 
 Many technological advancements including advertising and social media often fuel bad decisions and  personality disorders. \
-There are many studies showing depression and feeling envious has increased with spending more time on the Internet. Not only limited to making a person feel weak or having low self esteem. A person can also start to live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many sociological problems and being stuck in a loop. Making it hard for people to confide in real life, in future maybe people will prefer talking to ai bots over real humans.
+Studies demonstrate that increased time spent on internet use correlates with higher rates of depression and envy. Not only limited to making a person feel weak or having low self esteem. A person can also start to live in fantasy world online and have high confidence while achieving nothing in real life, not only limited to causing further hate towards real life but causing many sociological problems and being stuck in a loop. Making it hard for people to confide in real life, in future maybe people will prefer talking to ai bots over real humans.
 
 On the other hand, we can also say that social media has made us unnecessarily self conscious. \
 A teenager feels he/she has to do certain things to be accepted by his/her friends. Go watch that netflix documentary maybe. Everyone has an instagram profile you should too? 
@@ -131,6 +127,7 @@ However, YouTube can also have positive effects on children's learning, such as 
 
 
 Early childhood experiences from birth to age 8 affect the development of the brain's architecture, which provides the foundation for all future learning, behaviour and health.
+Some studies suggest potential links between heavy technology use and alterations in brain structure and functioning, especially in areas related to attention control and emotional regulation. This is mostly studied in children, where developing brains might be more vulnerable.
 
 Even after 8 years, \
 During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for character development.
