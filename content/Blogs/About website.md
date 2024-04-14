@@ -31,7 +31,7 @@ anyways **Previous static website:**
 -i've also decided to keep it alive \
 as last year one of my friends suggested me to write stuff saying,
 our mind tricks us into thinking we've learnt alot but when we sit to write about the knowledge we've gained, 
-we realize it's an illusion, goes without saying writing gives clarity and i've always hated writing on pages :P so maybe i'll write about what i've to revision or idk. \
+we realize it's an illusion, goes without saying writing gives clarity and i've always hated writing on pages :P so maybe i'll write about what i've to revise or idk. \
 (i've a pretty bad handwriting) \
 anyways this is how it used to look:
 ![jan 2024](/about/old.png)
@@ -51,3 +51,5 @@ In your professional life you need to write reports even last month i was doing 
 - A lot of people are starting to write on their personal blogs. The trend spiked up again since changes in twitter, personally know a friend who was pretty active on twitter, even had verified account and deleted it after 'X'. 
 
 - People are realising that no centralized social media is gonna be reliable so they are starting their own personal spaces on the web which they own and where they can put anything they want. I just bumped into an article explaining why some prolific writer on medium switched to his personal blog.
+
+**Learning in public is important**
