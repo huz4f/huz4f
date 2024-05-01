@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Huzaif</title>
+    <link>http://localhost:1313/huz4f/huz4f.git/tags/web/</link>
+    <description>Recent content in Web on Huzaif</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/huz4f/huz4f.git/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/huz4f/huz4f.git/articles/blockchain/</link>
+      <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/articles/blockchain/</guid>
+      <description>&amp;lsquo;Data is everywhere and everything in today&amp;rsquo;s day and age&amp;rsquo; Advancement in technology has enabled us to keep our data online from our private credentials to backup of our gallery photos. You don&amp;rsquo;t need local storage and access.
+But there is no cloud is there?
+Just some server on the internet that contains our precious data, that can be used in devastating ways against us from knowing our personal info to having our every digital footprint recorded.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/huz4f/huz4f.git/articles/web--browsers/</link>
+      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/articles/web--browsers/</guid>
+      <description>Ever questioned how do you see a website? visiting my website through a Browser?
+The browser goes to the DNS server and finds the real address of the server that the website lives on (IP address). Browser sends an HTTP request to the server, asking it to send a copy of the website you asked for. This message and all other data sent between the client and the server, is sent across your internet connection using TCP/IP.</description>
+    </item>
+  </channel>
+</rss>
