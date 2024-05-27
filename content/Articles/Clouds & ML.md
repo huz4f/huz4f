@@ -8,7 +8,7 @@ date: 2024-02-02
 
 author: "Huzaif"
 hideSummary: true
-draft: false
+draft: true
 ---
 # Cloud Computing & Modern day ML
 >From being able to run tensorflow on collab to training models on sagemaker, \

@@ -9,15 +9,6 @@
     <lastBuildDate>Thu, 29 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/huz4f/huz4f.git/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>📚 Completed</title>
-      <link>http://localhost:1313/huz4f/huz4f.git/blogs/books/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/huz4f/huz4f.git/blogs/books/</guid>
-      <description>List of books i&amp;rsquo;ve read and courses i&amp;rsquo;ve went through:
-Data Structure &amp;amp; Algorithms
-Grokking Algorithms -Aditya Bhargava </description>
-    </item>
-    <item>
       <title>Technological Ramifications</title>
       <link>http://localhost:1313/huz4f/huz4f.git/blogs/tech/</link>
       <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
@@ -57,27 +48,11 @@ But there is no cloud is there?
 Just some server on the internet that contains our precious data, that can be used in devastating ways against us from knowing our personal info to having our every digital footprint recorded.</description>
     </item>
     <item>
-      <title></title>
-      <link>http://localhost:1313/huz4f/huz4f.git/articles/web--browsers/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/huz4f/huz4f.git/articles/web--browsers/</guid>
-      <description>Ever questioned how do you see a website? visiting my website through a Browser?
-The browser goes to the DNS server and finds the real address of the server that the website lives on (IP address). Browser sends an HTTP request to the server, asking it to send a copy of the website you asked for. This message and all other data sent between the client and the server, is sent across your internet connection using TCP/IP.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/huz4f/huz4f.git/articles/clouds--ml/</link>
-      <pubDate>Fri, 02 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/huz4f/huz4f.git/articles/clouds--ml/</guid>
-      <description>Cloud Computing &amp;amp; Modern day ML From being able to run tensorflow on collab to training models on sagemaker, By using cloud, complicated tasks of installing and managing dependencies on your local computer are taken care of. Not to mention worring about the limiting factors of your hardware. Cloud computing makes practice of ML accessible to everyone and implementation readily availabe.
-Evolvement and need of Machine Learning: We know, Machine Learning has evolved tremendously over the past decade and now has applications in nearly every field.</description>
-    </item>
-    <item>
       <title>About me?</title>
       <link>http://localhost:1313/huz4f/huz4f.git/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/huz4f/huz4f.git/about/</guid>
-      <description>&amp;lsquo;it just looks cool&amp;rsquo; , i won&amp;rsquo;t write about myself go read articles</description>
+      <description>&amp;lsquo;it just looks cool&amp;rsquo; , i won&amp;rsquo;t write about myself</description>
     </item>
   </channel>
 </rss>
