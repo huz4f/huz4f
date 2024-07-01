@@ -9,15 +9,6 @@
     <lastBuildDate>Thu, 29 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/huz4f/huz4f.git/tags/words/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>📚 Completed</title>
-      <link>http://localhost:1313/huz4f/huz4f.git/blogs/books/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/huz4f/huz4f.git/blogs/books/</guid>
-      <description>List of books i&amp;rsquo;ve read and courses i&amp;rsquo;ve went through:
-Data Structure &amp;amp; Algorithms
-Grokking Algorithms -Aditya Bhargava </description>
-    </item>
-    <item>
       <title>Technological Ramifications</title>
       <link>http://localhost:1313/huz4f/huz4f.git/blogs/tech/</link>
       <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>

@@ -75,21 +75,31 @@ buildExpired = false
     #name = "medium"
     #url = ""
 
-  [[params.socialIcons]]
-    name = "x"
-    url = "https://twitter.com/hu_z4f"
+  #[[params.socialIcons]]
+    #name = "x"
+    #url = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/huz4f/"
 
   [[params.socialIcons]]
+    name = "CV"
+    url = ""
+
+  [[params.socialIcons]]
     name = "Github"
     url = "https://github.com/huz4f"
 
-  [[params.socialIcons]]
-    name = "StackOverflow"
-    url = "https://stackoverflow.com/users/21145510/huz4f"
+  #[[params.socialIcons]]
+    #name = "discord"
+    #url = "https://discordapp.com/users/huz4f/"
+
+  #[[params.socialIcons]]
+    #name = "phone"
+    #url = "https://Vsco.co/huz4f"
+  
+
 
   [params.analytics.google]
     SiteVerificationTag = ""
