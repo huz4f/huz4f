@@ -58,10 +58,6 @@ buildExpired = false
     imageHeight = 140
     imageTitle = "Huzaif"
 
-
-  #"https://i.ibb.co/NpWVfZg/me.jpg" 
-
-
     [[params.profileMode.buttons]]
       identifier = "tags"
       name = "Explore"
@@ -130,9 +126,9 @@ buildExpired = false
   weight = 5
 
 [[menu.main]]
-  identifier = "Blog"
-  name = "Blog"
-  url = "/blog/"
+  identifier = "Blogs"
+  name = "Blogs"
+  url = "/blogs/"
   weight = 4
 
 [[menu.main]]
