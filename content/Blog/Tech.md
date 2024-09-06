@@ -7,7 +7,7 @@ hidesummary: true
 draft: 
 ---
 
-We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks we now take for granted.
+We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks that now we take for granted.
 
 Technology is so intertwined with our lives right now that it's hard to imagine life without modern conveniences. So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
 
@@ -28,34 +28,37 @@ Let's start with the obvious one,
 ### "Lack of Focus"  
 With instant access to information and rapid communication. \
 Perception of time and patience has been altered, \
-We all have a superfast computer in our pockets with 4G this has fostered an expectation of immediate results. Patience for slower processes has eroded in our lives. \
+We all have a superfast computer in our pockets with 4G connection, this has fostered an expectation of immediate results. Patience for slower processes has eroded in our lives. \
 Here is a pretty good documentary i watched few years ago [The Social Dilemma](https://www.youtube.com/watch?v=uaaC57tcci0), 
 
 Emphasising how attention span has decreased, \
 You might have heard an average human has lower attention span than a goldfish now, not going to research if it's true but here is a truth: 
 >6 hours and 58 minutes per day is screen time of an average human today. 
 >
-Let that sink it, If you ever reduce it to less than 1hr you will realize alot of things change.
+Let that sink it, If we are able to reduce it to less than an hour we will realize and notice alot of things changing.
 
 Researchers from France and the United Kingdom found that frequent media multitasking may contribute to diminished gray matter in the anterior cingulate cortex, an area of the brain where attentional control resides (Loh & Kanai, 2014).
 
 ### Digital Amnesia
 The more we outsource tasks to smartphones, the less we use our memories. \
-Which become weaker and forcing us to depend more on the devices. 
+Which becomes weaker thus forcing us to depend more on the devices. 
 
 Have you needed a calculator to solve basic calculations.
 Ok let me rephrase it, \
-I've only 2-3 phone numbers memorised and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their phone and have even my phone number memorised (even i used to get confused sometimes what my phone number is). \
+I've only one or two phone numbers memorised and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their smartphones (few of them have memorised my phone number also, even i used to get confused sometimes what my phone number is). \
 If  you are thinking we have our mobile phone we don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks. \
 Let me suggest you this : [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf)
 
 "If you don't use something, You lose it" this was written in some book \
 (i am bad at remembering names)
 
+>Here is something more:
+
+
 The dependency on GPS navigation systems reduces the brain density matter in the hippocampus, causing diseases like depression and dementia. [check](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7156656/)
 
 Short term memory is destroyed by short videos, \
-this is a personal experience and i am glad i hardly use any social media. 
+this is a personal experience and i am glad i hardly need like using any social media. 
 
 Here is a convincing example, \
  When you watch short videos on instagram or YouTube . There has been surveys which shows that if you watch a full movie or read a book, you will be able to narrate the story even after few days. But if you watch 100s of short videos (10–20 sec videos), you are not be able to recollect even 5 of them right after you put down your mobile. These short videos are like junk food for brain, it does not allow or give enough time for your brain to settle down and process. Brain keep switching between different videos which are of different theme, different genre, different types.
@@ -136,7 +139,7 @@ Ok so this is not a guide to raise kids lol, \
 i'll just end this with writing about the good old days when i was 9, \
 Being an only child i spent most of my time with my computer, it was like a whole universe in my hands all inside my room.
 
-Back then you needed a big system just to run windows and a 1GB file took a whole day to download, streaming hd videos was next to  impossible ( yea my generation was the last one who didn't watch chuchutv growing up lol ), even then my parents used to cut off electricity so i could only  access it for few hours a day, yea poor kid me.
+Back then you needed a big system just to run windows and a simple 1GB file took whole day to download, streaming hd videos was next to  impossible ( yea my generation was the last one who didn't watch chuchutv growing up lol ), even then my parents used to cut off electricity so i could only access my pc for few hours a day, poor kid me.
 
 ---
 
