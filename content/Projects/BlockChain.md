@@ -13,7 +13,7 @@ draft: false
 
 # Blockchain:
 
->->  Have written about [Blockchain](https://huz4f.online/articles/blockchain/) in Articles.
+>->  Have also written: [Blockchain](https://huz4f.com/articles/blockchain/).
 >
 **Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility**
 
@@ -21,7 +21,7 @@ draft: false
 {{<youtube dsYQxNIGCRk>}} 
 
 
->Have also uploaded this swift code on GitHub:  [Here](https://github.com/huz4f/Blockchain) ( needs shasum file for the hash ) 
+>Swiftcode on GitHub:  [Here](https://github.com/huz4f/Blockchain) ( needs shasum file for the hash ) 
 
 ---
 

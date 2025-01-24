@@ -49,10 +49,10 @@ Blockchain is made up of blocks that contain:
 - Timestamp
 - Cryptographic hash of the pervious block
 
-Cryptography is the key component as hashing serves as base for the integrity of the network, You can refer to my [**blockchain project**](https://huz4f.online/projects/blockchain/) for deeper understanding.
+Cryptography is the key component as hashing serves as base for the integrity of the network, You can refer to my [**blockchain project**](https://huz4f.com/projects/blockchain/) for deeper understanding.
 
 Bitcoin (that's what everyone thinks when they hear blockchain) was first famous implementation of block chain but with ethereum **new world of possibilities** was introduced as now we could embed **Smart Contracts**. Putting it simply, \
-You program the genesis block (1st block of blockchain) with a script that will only be executed when certain condition is met. I have uploaded a [soldity contract](https://huz4f.online/projects/blockchain/), you can check that. If you plan on learning blockchain you will understand how important it is to create a perfect contract as it cannot be altered in the future
+You program the genesis block (1st block of blockchain) with a script that will only be executed when certain condition is met. I have uploaded a [soldity contract](https://huz4f.com/projects/blockchain/), you can check that. If you plan on learning blockchain you will understand how important it is to create a perfect contract as it cannot be altered in the future
 
 
 Recently, Ethereum shifted from Proof of Work to Proof of Stake. This significantly reduced energy usage, setting an example for future sustainability in the blockchain sector. As huge amount of power was needed for generating nonce in Proof of Work, not to mention powerful hardware needed and heat produced by it limiting significant mining to certain cold regions only. There is also DPoS and much more to Blockchains. 
