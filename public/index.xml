@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Huzaif</title>
+    <link>http://localhost:1313/huz4f/huz4f.git/</link>
+    <description>Recent content on Huzaif</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/huz4f/huz4f.git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Technological Ramifications</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/blogs/tech/</link>
+      <pubDate>Thu, 29 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/blogs/tech/</guid>
+      <description>We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks that now we take for granted.
+Technology is so intertwined with our lives right now that it&amp;rsquo;s hard to imagine life without modern conveniences. So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs?
+Dividing this into 3 parts Psychological effects Physical changes Social Adaptation Also wrote about Exposure of kids to youtube / social media at a very young age</description>
+    </item>
+    <item>
+      <title>Shepherd, Sheep and Legs</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/blogs/sheep/</link>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/blogs/sheep/</guid>
+      <description>Came across this while reading a book:
+Story is about a little sheep in a Shepherd&amp;rsquo;s flock,
+This little sheep liked to wander off and Mr.Shepherd after noticing it couple times broke off all his legs (brutal right). Aren&amp;rsquo;t shephered supposed to love sheep?
+Now he holds this 4 legged broken sheep everywhere around his neck, feeding, washing and taking care of everything and when finally the sheep is ready to go.</description>
+    </item>
+    <item>
+      <title>Blockchain &amp; Smart Contracts</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/projects/blockchain/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/projects/blockchain/</guid>
+      <description>Blocks and Hashing Smart Contract Blockchain: -&amp;gt; Have written about Blockchain in Articles.
+Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility
+-&amp;gt; One block connected to the genesis block and hash function with 2 zeroes at start Have also uploaded this swift code on GitHub: Here ( needs shasum file for the hash )
+Understanding Code: Block in a blockchain consists of Block Header &amp;amp; Body
+The head consists of:</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/huz4f/huz4f.git/articles/blockchain/</link>
+      <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/articles/blockchain/</guid>
+      <description>&amp;lsquo;Data is everywhere and everything in today&amp;rsquo;s day and age&amp;rsquo; Advancement in technology has enabled us to keep our data online from our private credentials to backup of our gallery photos. You don&amp;rsquo;t need local storage and access.
+But there is no cloud is there?
+Just some server on the internet that contains our precious data, that can be used in devastating ways against us from knowing our personal info to having our every digital footprint recorded.</description>
+    </item>
+    <item>
+      <title>About me?</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/about/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
