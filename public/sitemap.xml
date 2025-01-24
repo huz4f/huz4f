@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/huz4f/huz4f.git/blog/</loc>
+    <loc>http://localhost:1313/huz4f/huz4f.git/blogs/</loc>
     <lastmod>2024-02-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/huz4f/huz4f.git/</loc>
@@ -11,7 +11,7 @@
     <loc>http://localhost:1313/huz4f/huz4f.git/tags/</loc>
     <lastmod>2024-02-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/huz4f/huz4f.git/blog/tech/</loc>
+    <loc>http://localhost:1313/huz4f/huz4f.git/blogs/tech/</loc>
     <lastmod>2024-02-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/huz4f/huz4f.git/tags/words/</loc>
@@ -20,7 +20,7 @@
     <loc>http://localhost:1313/huz4f/huz4f.git/articles/</loc>
     <lastmod>2024-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/huz4f/huz4f.git/blog/sheep/</loc>
+    <loc>http://localhost:1313/huz4f/huz4f.git/blogs/sheep/</loc>
     <lastmod>2024-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/huz4f/huz4f.git/tags/blockchain/</loc>

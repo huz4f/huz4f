@@ -53,7 +53,7 @@ buildExpired = false
     enabled = true # needs to be explicitly set
     subtitle = "i am **Huzaif** Shabir "
     title = "Welcome! \U0001F44B"
-    imageUrl = "https://media.licdn.com/dms/image/v2/D5603AQESMSAWBnAqkw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725566340260?e=1730937600&v=beta&t=j5PHyjz4Hr5mj88-nDA4n8Os8cLVIuGebCOiThUt-Ro"
+    imageUrl = "/me.jpg"
     imageWidth = 140
     imageHeight = 140
     imageTitle = "Huzaif"
