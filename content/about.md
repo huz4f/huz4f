@@ -1,5 +1,5 @@
 ---
-title: "About me?"
+title: "About me"
 author: "⠀"
 hidemeta: true
 disableShare: true
