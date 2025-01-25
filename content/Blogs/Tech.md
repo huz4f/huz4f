@@ -4,7 +4,7 @@ title: "Technological Ramifications"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: 
+draft: true
 ---
 
 We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks that now we take for granted.

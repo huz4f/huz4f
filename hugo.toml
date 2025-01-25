@@ -51,10 +51,9 @@ buildExpired = false
 
   [params.profileMode]
     enabled = true # needs to be explicitly set
-    subtitle = " **Huzaif** Shabir here "
+    subtitle = "i am **Huzaif** Shabir"
     title = "Welcome! \U0001F44B"
-    imageUrl = "https://lh3.googleusercontent.com/pw/AP1GczNJu15rPlBGCvGHE4eCzh_tU6-BGJpTnso1ftK-_6AwsTyOgkc0lWxbdnY8voiPYT2ObfzHcJ4Hpwm-5nTn1uV_IBTfwVa2cqTcBfScDvv3smRCoDNladkAfqkeggEMlzCni0qW0ATqyMmvtdJNHkIKpITP8dqDIfxPryVHJxBGR7uqq4SvtMuZB_Qv-GcPW_J8PLJdCGpxsSXI1JbqSfnzUWqXRVL5HgTWIF7oEbCxe7KLMw7V9-5ntYXHSOKFlMLaPLxG28E3BXWiTAicZnZmfnIhrILywT-DN-MEYegnWs906l2ChsD--lodlRIdorxoCZWV0FBIiiOUgJrA8_sT1kYVU0k9_phSGnxqS5zCNYBEjb3dV-Y0Qwp68agGPzxjKEynhZnZGTgowCk4zB_Ldhumgq9tOACWdWiVXwSNp3ntY82NHTorsSbWTjsGUACvY960Q_ib47eCTNSffm8c79UWfMolkiNxxtxZMRQYTKJ0iNu5ZK_EhmzIB5ugIIn7SkL6n236P1mvKaN9q_1AeaE84bPXqs07Jp5eVszWfLyFjztmyxNJqfaJV6ndVeq_Nw8_X9egahY-LhhNjYoHa1y1v2dsn5Hlge32NrajRg1Dmeb6yw5UcsiF-Q-YwY6d-9mF9bXxBErT58Nu5XWAw6oLO7apxAP5-neZSpOOn3gZmbuUVYj9YMe9Hu5m4X49rjiDmBqxmsnIpQehqqZlBaGCmbq2eIuzx4sPD3qUKshE6gVUoyioFqlhGY5QCiqt-S-NlLvtQ3lweMc7BLfcSDZGvZJ-Qf0wd7CpZh1u-2_2EkitJ3uShxcZw15V66YVsf0dDhpMF-sR0GV1x4jXpCkiPZHxEFWsLTK2PLknk1vYUDnsyGtpmSrmcHe25Tb3e5lmcYBKZkOU_IqtTBQHZ14=w963-h944-s-no?authuser=0"
-    imageWidth = 140
+    imageUrl = "/favicons//me.png"
     imageHeight = 140
     imageTitle = "Huzaif"
 
