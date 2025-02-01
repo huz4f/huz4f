@@ -107,11 +107,9 @@ Being different is good but having support for you weaknesses and stupidity then
 
 ---
 
-# Exposure of kids at very young age
+# Exposure of kids at young age
 ![](/articles/kids.png)
-- delays in language development
-- delays in social and emotional development.
-- lower creativity.
+- Delays in language development, social and emotional development also lower creativity.
 - Children experience the thinning of the brain cortex, a precursor of aging and neurodegenerative diseases.
 
 >These are some researched effects on children and here are some on YT consumption
