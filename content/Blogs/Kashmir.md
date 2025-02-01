@@ -18,7 +18,7 @@ As a local i can tell you my fair share of insights but here are some stories th
 #### This topic won't be in news channels or highlighted on social media because when kashmir is mentioned, kashmiris are the least interesting topic to discuss.
 ![](/blogs/kash.jpg)
 ## Mimetic Desires & Financial Pressure
-Being interested in psychology since 14, i always questioned things and cultural shifts. \
+Being interested in psychology since childhood, i always questioned things and cultural shifts. \
 If you ask yourself what things you want right now, you will realize most of them are general wants, almost everyone wants them. Like the latest iPhone or a specific car, You want to be good at something (that maybe you don't even actually like) , is it validation? 
 #### But why?
 > Sense of belonging? Clinical psychology says, most of our desires aren't even our own. Deep down every human being needs connection, sense of belonging to a community. Most of our desires are rooted in this since early childhood.

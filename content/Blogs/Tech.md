@@ -82,9 +82,9 @@ Brain can become hyperstimulated by dopamine. This overstimulation can make our 
 Let's start with Sleep disturbance? 
 - Light from electronic devices has showen to [hinder circadian rhythm](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.).
 
- Prolonged sitting in front of screens contributes to a sedentary lifestyle. This increases the risk of obesity, heart disease, type 2 diabetes, muscle and joint problems and poor posture. Humans are designed for physical activity, and prolonged sitting can lead to weakness.
+- Prolonged sitting in front of screens contributes to a sedentary lifestyle. This increases the risk of obesity, heart disease, type 2 diabetes, muscle and joint problems and poor posture. Humans are designed for physical activity, and prolonged sitting can lead to weakness.
 
-Human body is made to endure certain conditions such as cold or complicated hard daily tasks that have been taken care of by technology, as a result our minds and body have become weak.
+- Human body is made to endure certain conditions such as cold or complicated hard daily tasks that have been taken care of by technology, as a result our minds and body have become weak.
 
 ---
 # Social
