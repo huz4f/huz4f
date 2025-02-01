@@ -15,7 +15,7 @@ This might be the most important thing kashmir should focus on yet it is getting
 >Urban areas now having TFR of 1.2 and rural 1.5, 35% women and 45 % men have fertility problems. **Steepest decline of TFR in our nation.** Why and how ?
 
 As a local i can tell you my fair share of insights but here are some stories that might give you a deeper understanding of what might be the problem.
-#### This topic won't be in news channels or highlighted on social media because when kashmir is mentioned, kashmiris are the least intresting topic to discuss.
+#### This topic won't be in news channels or highlighted on social media because when kashmir is mentioned, kashmiris are the least interesting topic to discuss.
 ![](/blogs/kash.jpg)
 ## Mimetic Desires & Financial Pressure
 Being interested in psychology since 14, i always questioned things and cultural shifts. \
