@@ -4,7 +4,7 @@ title: "Technological Ramifications"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: true
+draft: false
 ---
 
 We all know technological advancements have been drastically changing human lives, from extending our lifespan to ease of many tasks that now we take for granted.
@@ -16,7 +16,8 @@ Technology is so intertwined with our lives right now that it's hard to imagine 
 - [Physical changes](#physical)
 - [Social Adaptation](#social)
 
-Also [Exposure of kids to youtube / social media at a very young age](#exposure-of-kids-at-very-young-age)
+
+-  [Exposure of kids to youtube / social media at young age](#exposure-of-kids-at-very-young-age)
 
 ---
 
@@ -27,17 +28,17 @@ Let's start with the obvious one,
 
 ### "Lack of Focus"  
 With instant access to information and rapid communication. \
-Perception of time and patience has been altered, \
+Perception of time and patience has altered, \
 We all have a superfast computer in our pockets with 4G connection, this has fostered an expectation of immediate results. Patience for slower processes has eroded in our lives. \
-Here is a pretty good documentary i watched few years ago [The Social Dilemma](https://www.youtube.com/watch?v=uaaC57tcci0), 
+Here is a pretty good documentary if you have time that i watched few years ago [The Social Dilemma](https://www.youtube.com/watch?v=uaaC57tcci0), 
 
 Emphasising how attention span has decreased, \
-You might have heard an average human has lower attention span than a goldfish now, not going to research if it's true but here is a truth: 
+You might have heard an average human has lower attention span than a goldfish now (not sure if it's true), but here are some interesting facts:
 >6 hours and 58 minutes per day is screen time of an average human today. 
 >
-Let that sink it, If we are able to reduce it to less than an hour we will realize and notice alot of things changing.
 
-Researchers from France and the United Kingdom found that frequent media multitasking may contribute to diminished gray matter in the anterior cingulate cortex, an area of the brain where attentional control resides (Loh & Kanai, 2014).
+>Researchers from France and the United Kingdom found that frequent media multitasking may contribute to diminished gray matter in the anterior cingulate cortex, an area of the brain where attentional control resides (Loh & Kanai, 2014).
+>
 
 ### Digital Amnesia
 The more we outsource tasks to smartphones, the less we use our memories. \
@@ -45,52 +46,48 @@ Which becomes weaker thus forcing us to depend more on the devices.
 
 Have you needed a calculator to solve basic calculations.
 Ok let me rephrase it, \
-I've only one or two phone numbers memorised and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their smartphones (few of them have memorised my phone number also, even i used to get confused sometimes what my phone number is). \
-If  you are thinking we have our mobile phone we don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks. \
-Let me suggest you this : [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf)
+I've only one or two phone numbers memorised and it is not easy for me to remember a phone number, on the other hand i know few people who don't save contacts on their smartphones (few of them have memorised my phone number also, even i get confused sometimes what my phone number is). \
+Because we have contacts saved in our mobile phone right? we don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks? \
+This is what i used to think then i came across this [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf).
 
 "If you don't use something, You lose it" this was written in some book \
 (i am bad at remembering names)
 
->Here is something more:
 
+The dependency on GPS navigation systems reduces the brain density matter in the hippocampus, causing diseases like depression and dementia. [reference](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7156656/)
 
-The dependency on GPS navigation systems reduces the brain density matter in the hippocampus, causing diseases like depression and dementia. [check](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7156656/)
+Short term memory is destroyed by short videos (this is a personal experience) and i am glad i hardly feel like i need to be active on any social platform. 
 
-Short term memory is destroyed by short videos, \
-this is a personal experience and i am glad i hardly need like using any social media. 
-
-Here is a convincing example, \
- When you watch short videos on instagram or YouTube . There has been surveys which shows that if you watch a full movie or read a book, you will be able to narrate the story even after few days. But if you watch 100s of short videos (10–20 sec videos), you are not be able to recollect even 5 of them right after you put down your mobile. These short videos are like junk food for brain, it does not allow or give enough time for your brain to settle down and process. Brain keep switching between different videos which are of different theme, different genre, different types.
+There has been surveys which shows that if you watch a full movie or read a book, you will be able to narrate the story even after few days. But if you watch 100s of short videos (10–20 sec videos), you are not be able to recollect even 5 of them right after you put down your mobile. These short videos are like **junk food for brain**, it does not allow or give enough time for your brain to settle down and process. Brain keep switching between different videos which are of different theme, different genre, different types.
 
 
 ### Feeling content
 Let's talk about living in the moment and pleasure. \
-When you go out, sit in the rain or watch sunset ask yourself how much time do you actually spend feeling that feeling. Remember when we were kids and all we focused on was the current experience. Aren't those one of the best memories we all have. \
-When we are distracted, we fail to pay attention and do not form good memories. Short-term memories fail to get transferred into long-term memories and we don’t form insights.
+When you go out, sit in the rain or watch sunset ask yourself how much time do you actually spend feeling that feeling. Remember when we were kids and all we focused on was the current situation, no phones. Aren't those one of the best memories we all have. \
+When we are constantly distracted, we fail to pay attention to important moments in life and cannot form good memories. 
 
-Brain can become hyperstimulated by dopamine. This overstimulation can make our brain's pleasure centres less responsive to other enjoyable experiences, such as eating a meal, reading a book, having a conversation, or holding hands.
+Short term memories fail to get transferred into long term memories and we don’t form insights.
 
-Being obsessed with psychology since my early teens i can talk about this topic for hours, i'll just end it here with a quote (from someone i don't remember who) \
-'*We should regularly ask ourselves am i using this, or is it using me?*'
+Brain can become hyperstimulated by dopamine. This overstimulation can make our brain's pleasure centres less responsive to other enjoyable experiences, such as eating a meal, reading a book, having a conversation or holding hands.
+
+'**We should regularly ask ourselves am i using this, or is it using me?**'
 
 ### There are many other issues like 
 
-- Easy access to search engines can sometimes encourage a reliance on readily available solutions rather than cultivating deeper critical thinking and problem-solving skills.
+- Easy access to web search can sometimes encourage a reliance on readily available solutions rather than cultivating deeper critical thinking and problem-solving skills.
 
-- [Technology is Killing Creativity](https://rindle.com/blog/is-technology-killing-creativity)
+- [Technology is Killing Creativity](https://hackernoon.com/technology-is-killing-creativity)
 
 ---
 # Physical
 ![](/articles/physical.png)
 
 Let's start with Sleep disturbance? 
-- Light from electronic devices has showen to hinder circadian rhythm. [more](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.)
+- Light from electronic devices has showen to [hinder circadian rhythm](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.).
 
- Prolonged sitting in front of screens contributes to a sedentary lifestyle. This increases the risk of obesity, heart disease, type 2 diabetes, muscle and joint problems and poor posture. Humans were designed for physical activity, and prolonged sitting can lead to weakness.
+ Prolonged sitting in front of screens contributes to a sedentary lifestyle. This increases the risk of obesity, heart disease, type 2 diabetes, muscle and joint problems and poor posture. Humans are designed for physical activity, and prolonged sitting can lead to weakness.
 
-Human body is made to endure certain conditions that have been taken care of by technology, as a result our minds and body have become weak.
-
+Human body is made to endure certain conditions such as cold or complicated hard daily tasks that have been taken care of by technology, as a result our minds and body have become weak.
 
 ---
 # Social
@@ -135,13 +132,10 @@ Some studies suggest potential links between heavy technology use and alteration
 Even after 8 years, \
 During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for character development.
 
-Ok so this is not a guide to raise kids lol, \
-i'll just end this with writing about the good old days when i was 9, \
+Ok so this is not a guide to raise kids, \
+i'll just end this with writing about the good old days when i was 7, \
 Being an only child i spent most of my time with my computer, it was like a whole universe in my hands all inside my room.
 
-Back then you needed a big system just to run windows and a simple 1GB file took whole day to download, streaming hd videos was next to  impossible ( yea my generation was the last one who didn't watch chuchutv growing up lol ), even then my parents used to cut off electricity so i could only access my pc for few hours a day, poor kid me.
+Back then i had a PC that was not portable at all and a simple 1GB file took 6 hours to download, streaming hd videos was next to impossible ( my generation was the last one who didn't watch chuchutv growing up), even then my parents used to cut off electricity so i could only access my pc for few hours a day.
 
 ---
-
->Wanted to study more about this and write a note to myself for a really long time now.
->So i made it probably the last blog of this year. Good Topic
