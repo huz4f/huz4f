@@ -33,7 +33,7 @@ So where am i going with this? This is not about how there is no time for bondin
 What shifted society's focus from building a healthy home to constructing a bigger house
 
 ---
-
+![](/blogs/fam.jpg)
 My neighbor, also a doctor who fought cancer twice, lives alone and is around 80. He reads newspaper in the garden after mowing the lawn (cool right). A few years ago I also wanted to be like him, living in my own world but at the end what do you take with you? How did you impact lives around you? The family you built ? Or What you did for the people, who will remember you?
 
 
