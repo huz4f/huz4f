@@ -37,22 +37,12 @@ What shifted society's focus from building a healthy home to constructing a bigg
 My neighbor, also a doctor who fought cancer twice, lives alone and is around 80. He reads newspaper in the garden after mowing the lawn (cool right). A few years ago I also wanted to be like him, living in my own world but at the end what do you take with you? How did you impact lives around you? The family you built ? Or What you did for the people, who will remember you?
 
 
->Someone once told me "It's about what you leave in people not what we leave for them". People who continue the good in you and people who are there to take care of you is something you need to earn and actually need at the end.
+Someone once told me "It's about what you leave in people not what we leave for them". People who continue the good in you and people who are there to take care of you is something you need to earn and actually need at the end.
 
-This story is followed by almost everyone,\
+>This story is followed by almost everyone,\
 Many of my own relatives moved away with their families, Leaving their parents behind  with houses they spent their whole lives building.
 
  **Pressure of having these "culture made prerequisite for marriage" not only delays it but affects mental and physical health adversely**
 
 
 
-### Blue collar
-I met a guy last week, sitting next to jehlum. his cat got our conversation started, \
-Got to know he is exactly my age and has been working for 8 years in a local hotel (since he was 15), how he has to support his family and how he only gets 5 days off in a month, this guy was happy in what he earnt, how he could provide for his family. I used to think we kashmiris are lazy but 
-
-
-utting on my anc and watching people
-
-## cultural deformation
-## shrinking workforce
-dutch disease
