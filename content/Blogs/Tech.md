@@ -127,10 +127,10 @@ Some studies suggest potential links between heavy technology use and alteration
 Even after 8 years, \
 During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for character development.
 
+---
+
 Ok so this is not a guide to raise kids, \
 i'll just end this with writing about the good old days when i was 7, \
 Being an only child i spent most of my time with my computer, it was like a whole universe in my hands all inside my room.
 
 Back then i had a PC that was not portable at all and a simple 1GB file took 6 hours to download, streaming hd videos was next to impossible ( my generation was the last one who didn't watch chuchutv growing up), even then my parents used to cut off electricity so i could only access my pc for few hours a day.
-
----
