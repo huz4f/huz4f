@@ -45,11 +45,6 @@ Its hard to rewire yourself and understand what you actually want, harder to cha
 
  **Pressure of having these "culture made prerequisite for marriage" not only delays it but affects mental and physical health adversely.**
 ### Blue collar
-Met this guy near Jehlum and his cat got our conversation started. It was his lunch break (This guy works at a local restaurant) \
-As he told me more about himself,i came to know that he is of my age and has been working for more than 8 years (he started at 14), he provides for his family and couldn't get education but 
-
-
-
 
 ## shrinking workforce
 - laziness of people

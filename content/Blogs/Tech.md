@@ -112,7 +112,7 @@ Being different is good but having support for you weaknesses and stupidity then
 - Delays in language development, social and emotional development also lower creativity.
 - Children experience the thinning of the brain cortex, a precursor of aging and neurodegenerative diseases.
 
->These are some researched effects on children and here are some on YT consumption
+### These are some researched effects on children and here are some on YT consumption
 
 - YouTube game videos have been found to have an effect on traditional game culture, leading children to imitate people and events in the videos and diminishing their creativity. 
 - YouTuber videos produced for children often contain negative verbal expressions, visual content related to violence, aggression, slang, slander, harmful habits, product advertisements, and sexuality. 
