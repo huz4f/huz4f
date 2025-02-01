@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Huzaif</title>
+    <link>http://localhost:1313/huz4f/huz4f.git/blogs/</link>
+    <description>Recent content in Blogs on Huzaif</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/huz4f/huz4f.git/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kashmir Fertility</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/blogs/kashmir/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/blogs/kashmir/</guid>
+      <description>When you Google &amp;lsquo;Kashmir&amp;rsquo;s Fertility Rate&amp;quot; you get this: Google gives reasons that actually make sense but what can be the underlying cause? People are not even aware, this might be the most important thing to focus on yet is getting negleted and unnoticed by almost everyone, even to me it randomly crossed my mind and i googled about it.
+Urban areas now having TFR of 1.2 and rural 1.5, 35% women and 45 % men have fertility problems.</description>
+    </item>
+    <item>
+      <title>Shepherd, Sheep and Legs</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/blogs/sheep/</link>
+      <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/blogs/sheep/</guid>
+      <description>Came across this while reading a book:
+Story is about a little sheep in a Shepherd&amp;rsquo;s flock.
+This little sheep liked to wander off and Shepherd after noticing it couple of times broke off all it&amp;rsquo;s legs (brutal right). Aren&amp;rsquo;t shephered supposed to love sheep?
+Now he carries this 4 legged broken sheep everywhere around his neck, feeding, washing and taking care of everything till finally the sheep is ready to go.</description>
+    </item>
+  </channel>
+</rss>
