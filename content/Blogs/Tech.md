@@ -11,13 +11,10 @@ We all know technological advancements have been drastically changing human live
 
 Technology is so intertwined with our lives right now that it's hard to imagine life without modern conveniences. So what are these Ramifications of Technology and how has it affected our lives beyond its marvellous breakthroughs? 
 
-### Dividing this into 3 parts, we have:
+### Dividing this into 3 parts,
 - [Psychological effects](#psychological)
 - [Physical changes](#physical)
 - [Social Adaptation](#social)
-
-
--  [Exposure of kids to youtube / social media at young age](#exposure-of-kids-at-very-young-age)
 
 ---
 
