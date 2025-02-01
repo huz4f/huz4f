@@ -25,7 +25,7 @@ If you ask yourself what things you want right now, you will realize most of the
 
 ![](/blogs/mimetic.jpg)
 ### White collar
-So, last month around 4 am when i couldn't sleep, i hopped on a call with an old friend. This guy currently lives in Melbourne, so naturally he must have beeen awake and we talked for hours about how he is doing and stuff going on in his personal life. How he recently completed his masters and now he is looking for a job there, since companies have to pay more for immigrant employee so they prefer hiring local ones and no advancement in kashmir's job market. His dad came to visit him for the first time so he was busy showing him around. This guy's parents are doctors here and he said drug abuse is on rise and health is declining in kashmir, \
+So, last month around 4 am when i couldn't sleep, i hopped on a call with an old friend. This guy currently lives in Melbourne, so naturally he must have beeen awake and we talked for hours about how he is doing and stuff going on in his personal life. How he recently completed his masters and now he is looking for a job there, since companies have to pay more for immigrant employee so they prefer hiring local ones and there is no advancement in kashmir's job market. His dad came to visit him for the first time so he was busy showing him around. This guy's parents are doctors here and he said drug abuse is on rise and health is declining in kashmir, \
 how various different kind of casualties have become more common now...
 
 So where am i going with this? This is not about how there is no time for bonding or forming genuine connections as life moves fast today. My friends who have moved out or travel alot, almost all of them agree on kashmiri obsession of owning a house and having a big wedding, like there is nothing else to life to live for. Like the friend i mentioned above, he also told me that his father has bought and sold properties and they've relocated couple of times, "what for?" he said, Now he lives in an empty house.
@@ -41,8 +41,19 @@ Someone once told me "It's about what you leave in people not what we leave for 
 
 >This story is followed by almost everyone,\
 Many of my own relatives moved away with their families, Leaving their parents behind  with houses they spent their whole lives building.
+Its hard to rewire yourself and understand what you actually want, harder to change a larger system.
 
  **Pressure of having these "culture made prerequisite for marriage" not only delays it but affects mental and physical health adversely**
+### Blue collar
+get met jehlum
 
 
 
+
+## shrinking workforce
+- laziness of people
+local barber shop (umer)
+dutch disease
+Human resource part of kashmiris
+
+## cultural deformation
