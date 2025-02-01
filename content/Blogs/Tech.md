@@ -103,7 +103,7 @@ A teenager feels he/she has to do certain things to be accepted by his/her frien
 Being able to find communities online can be very beneficial yet there is also another side to this coin.
 [Impulsivity, narcissism, and aggression](https://www.researchgate.net/publication/315349367_The_Internet%27s_effect_on_personality_traits_An_important_casualty_of_the_Internet_addiction_paradigm#:~:text=Results%20Impulsivity%2C%20narcissism%2C%20and%20aggression,with%20possible%20negative%20offline%20consequences.) rate is showing significant increase. Isn't it self explanatory at this point?
 
-Being different is good but having support for you weaknesses and stupidity then portraying it as normal is not. Spending time without your phone and detoxifying once in a while from the internet to reflect should be encouraged.
+Person's individuality is essential but having support for you weaknesses and stupidity then portraying it as normal is not. Spending time without your phone and detoxifying your brain once in a while from the internet for reflection should be encouraged.
 
 ---
 
