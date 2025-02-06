@@ -62,7 +62,7 @@ buildExpired = false
     [[params.profileMode.buttons]]
       identifier = "Projects"
       name = "Projects"
-      url = "/Projects/"
+      url = "/projects/"
 
     [[params.profileMode.buttons]]
       identifier = "tags"
