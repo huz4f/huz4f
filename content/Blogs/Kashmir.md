@@ -25,7 +25,7 @@ From 4.5 in 80's to 1.5 in 2020. Why and how ?
 As a local i can tell you my fair share of insights but here are some stories that might give us a deeper understanding of what might be the underlying cause [mean while](https://theprint.in/opinion/despite-conflict-kashmiris-economically-better-than-people-of-most-indian-states/222038/).
 
 #### This topic won't be in news channels or highlighted on social media because when kashmir is mentioned, kashmiris are the least interesting topic to discuss.
-![](/blogs/ck.jpg)
+![](/blogs/kash.jpg)
 
 ## Mimetic Desires & Financial Pressure
 Since childhood i've always questioned things and cultural shifts. \
@@ -56,7 +56,7 @@ Met this guy sitting next to jehlum, his cat got our conversation started and he
 
 
 Solo living not only affects your mental health but also takes away the luxury of extended family's care which contributes to marriage and child-care support complicaices.
-![](/blogs/kash.jpg)
+![](/blogs/ck.jpg)
 Having spent most of my life with my grandparents, i've always heard stories of how everyone used to live together and every family had more than 3 kids. Everyone treated all the kids in family as their own. Now having 3 kids is considered as being lucky.
 
 ---
