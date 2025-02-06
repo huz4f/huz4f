@@ -56,7 +56,7 @@ Met this guy sitting next to jehlum, his cat got our conversation started and he
 
 
 Solo living not only affects your mental health but also takes away the luxury of extended family's care which contributes to marriage and child-care support complicaices.
-![](/blogs/ck.jpg)
+![](/blogs/kash.jpg)
 Having spent most of my life with my grandparents, i've always heard of stories how everyone used to live together and every family had more than 3 kids. Everyone treated all the kids in family as their own. Now having 3 kids is considered as being lucky.
 
 ---
