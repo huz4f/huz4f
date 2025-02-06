@@ -64,10 +64,10 @@ buildExpired = false
       name = "Projects"
       url = "/projects/"
 
-    [[params.profileMode.buttons]]
-      identifier = "tags"
-      name = "Explore"
-      url = "/tags/"
+    #[[params.profileMode.buttons]]
+      #identifier = "tags"
+      #name = "Explore"
+      #url = "/tags/"
 
     [[params.profileMode.buttons]]
       identifier = "Blogs"
@@ -159,4 +159,10 @@ buildExpired = false
   #name = "Projects"
   #url = "/Projects/"
   #weight = 2
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Explore"
+  url = "/tags/"
+  weight = 1
 
