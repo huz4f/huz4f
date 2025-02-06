@@ -57,10 +57,22 @@ buildExpired = false
     imageHeight = 140
     imageTitle = "Huzaif"
 
+
+
+    [[params.profileMode.buttons]]
+      identifier = "Projects"
+      name = "Projects"
+      url = "/Projects/"
+
     [[params.profileMode.buttons]]
       identifier = "tags"
       name = "Explore"
       url = "/tags/"
+
+    [[params.profileMode.buttons]]
+      identifier = "Blogs"
+      name = "Blogs"
+      url = "/blogs/"
 
   #[params.homeInfoParams]
     #Title = ""
@@ -124,11 +136,11 @@ buildExpired = false
   url = "/about/"
   weight = 5
 
-[[menu.main]]
-  identifier = "Blogs"
-  name = "Blogs"
-  url = "/blogs/"
-  weight = 4
+#[[menu.main]]
+  #identifier = "Blogs"
+  #name = "Blogs"
+  #url = "/blogs/"
+  #weight = 4
 
 [[menu.main]]
   identifier = "Tech"
@@ -142,9 +154,9 @@ buildExpired = false
   #url = "/wiki/"
   #weight = 3
 
-[[menu.main]]
-  identifier = "Projects"
-  name = "Projects"
-  url = "/Projects/"
-  weight = 2
+#[[menu.main]]
+  #identifier = "Projects"
+  #name = "Projects"
+  #url = "/Projects/"
+  #weight = 2
 
