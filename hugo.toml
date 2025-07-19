@@ -53,7 +53,7 @@ buildExpired = false
     enabled = true # needs to be explicitly set
     subtitle = "i am **Huzaif** Shabir"
     title = "Welcome! \U0001F44B"
-    imageUrl = "/favicons//me.png"
+    imageUrl = "/favicons//me.jpg"
     imageHeight = 140
     imageTitle = "Huzaif"
 
