@@ -54,7 +54,8 @@ buildExpired = false
     subtitle = "i am **Huzaif** Shabir"
     title = "Welcome! \U0001F44B"
     imageUrl = "/favicons//me.jpg"
-    imageHeight = 140
+    imageHeight = 150
+    imageWidth = 150
     imageTitle = "Huzaif"
 
 
