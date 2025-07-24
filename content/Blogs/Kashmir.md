@@ -4,6 +4,7 @@ title: "Kashmir's Demographic Development"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
+draft: true
 ---
 
 ### Google ["Kashmir's Fertility rate"](https://www.google.com/search?client=safari&rls=en&q=kashmir%27s+feritlity+rate&ie=UTF-8&oe=UTF-8) and you get:
