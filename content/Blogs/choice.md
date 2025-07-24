@@ -1,6 +1,6 @@
 ---
 date: 2025-07-24
-title: "Paradox Human Freedom"
+title: "Paradox of Freedom"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
