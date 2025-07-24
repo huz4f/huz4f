@@ -24,7 +24,7 @@ every milestone you hit, every desire that once burned within you — when final
 Looking into my personal life, \
 I cannot say I’ve been a nihilist. \
 I didn’t suffer from clinical anhedonia. \
-But I’ve always hovered somewhere in between **not quite empty, but never quite full.**
+But I’ve always hovered somewhere in between **not quite empty, never quite full.**
 
 #### It’s the summer of ‘25. 
 I just completed my final exams, cleared all my backlogs — goals I set a year ago, \
@@ -37,7 +37,7 @@ Today, as I walked out of that exam room with every logical reason to feel relie
 
 #### i wonder: were the milestones too small?  
 Or am I forever chasing something bigger — always stretching toward a horizon that keeps moving? Maybe it's just \
-**Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion:
+**Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion~
 > *“People fear loss \
 more than they value gain.”*  
 
@@ -45,12 +45,13 @@ Maybe the moment something is achieved, the gain is already devalued in our MIND
 We search for the next high.
 
 
-Even as a teenager, I had glimpses of this strange awareness: \
-that **chasing something with the hope it will change how you feel inside is the most elaborate illusion of all**.
-It’s strange — I’ve gotten almost everything I’ve ever wanted. And yet, I’ve never been able to fully hold it. Just teaching me the absurdity of it all.
+Even during my early teens, I had glimpses of this strange awareness: \
+**chasing something with the hope it will change how you feel inside is the most elaborate illusion of all**.
+And it’s strange — i’ve gotten almost everything i’ve ever wanted. And yet, i’ve never been able to fully hold it. Just teaching me the absurdity of it all.
 
 Maybe it's just
- ***“The struggle itself toward the heights is enough to fill a man’s heart. One must imagine Sisyphus happy.”***  — Albert Camus
+ ***“The struggle itself toward the heights is enough to fill a man’s heart. One must imagine Sisyphus happy.”***  \
+ — Albert Camus
 
 ---
 
