@@ -1,6 +1,6 @@
 ---
 date: 2025-07-24
-title: "Paradox of Freedom"
+title: "Dissonance"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
