@@ -28,7 +28,8 @@ But I’ve always hovered somewhere in between **not quite empty, never quite fu
 
 #### It’s the summer of ‘25. 
 I just completed my final exams, cleared all my backlogs — goals I set a year ago, \
-most of which I’ve now accomplished. But looking back… \
+most of which I’ve now accomplished. \
+But looking back… \
 **I wonder did I really believe these things would make me feel something?** \
 Would they make me love myself more or increase my self respect? 
 
@@ -45,8 +46,7 @@ Maybe the moment something is achieved, the gain is already devalued in our MIND
 We search for the next high.
 
 
-Even during my early teens, I had glimpses of this strange awareness: \
-**chasing something with the hope it will change how you feel inside is the most elaborate illusion of all**.
+Even during my early teens, I had glimpses of this strange awareness that ***chasing something with the hope it will change how you feel inside is the most elaborate illusion of all***.
 And it’s strange — i’ve gotten almost everything i’ve ever wanted. And yet, i’ve never been able to fully hold it. Just teaching me the absurdity of it all.
 
 Maybe it's just
