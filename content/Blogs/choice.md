@@ -11,8 +11,8 @@ draft: false
  *“We search for purpose. The universe offers silence.”* **-The Myth of Sisyphus**
 
 ---
-Every goal you achieve, every milestone you hit, every desire that once burned within you — when finally attained, \
-somehow loses its power.  
+#### Every goal you achieve, 
+every milestone you hit, every desire that once burned within you — when finally attained, somehow loses its power.  
 
 ## Choice is not about “right or wrong” 
 > **— it’s about choosing to live with full consciousness, despite the absurd.**
@@ -22,8 +22,9 @@ somehow loses its power.
 #### It fades. The shine dulls. And you're left wondering: *Was that it?*
 
 Looking into my personal life, \
-I cann’t say I’ve ever been a nihilist. \
-I didn’t suffer from clinical anhedonia. But I’ve always hovered somewhere in between \
+I cannot say I’ve been a nihilist. \
+I didn’t suffer from clinical anhedonia. \
+But I’ve always hovered somewhere in between \
  **not quite empty, but never quite full.**
 
 #### It’s the summer of ‘25. 
@@ -37,7 +38,8 @@ Today, as I walked out of that exam room with every logical reason to feel relie
 
 #### i wonder: were the milestones too small?  
 Or am I forever chasing something bigger — always stretching toward a horizon that keeps moving? \
-Maybe this is just **Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion. 
+Maybe this is just \
+**Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion. 
 > *“People fear loss \
 more than they value gain.”*  
 
