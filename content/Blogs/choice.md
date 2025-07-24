@@ -24,12 +24,11 @@ every milestone you hit, every desire that once burned within you — when final
 Looking into my personal life, \
 I cannot say I’ve been a nihilist. \
 I didn’t suffer from clinical anhedonia. \
-But I’ve always hovered somewhere in between \
- **not quite empty, but never quite full.**
+But I’ve always hovered somewhere in between **not quite empty, but never quite full.**
 
 #### It’s the summer of ‘25. 
-I just completed my final exams, cleared all my backlogs \
-— goals I set a year ago, most of which I’ve now accomplished. But looking back… \
+I just completed my final exams, cleared all my backlogs — goals I set a year ago, \
+most of which I’ve now accomplished. But looking back… \
 **I wonder did I really believe these things would make me feel something?** \
 Would they make me love myself more or increase my self respect? 
 
@@ -37,9 +36,8 @@ Would they make me love myself more or increase my self respect?
 Today, as I walked out of that exam room with every logical reason to feel relief or triumph, there wasn’t even a sigh. Just… **emptiness**
 
 #### i wonder: were the milestones too small?  
-Or am I forever chasing something bigger — always stretching toward a horizon that keeps moving? \
-Maybe this is just \
-**Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion. 
+Or am I forever chasing something bigger — always stretching toward a horizon that keeps moving? Maybe it's just \
+**Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion:
 > *“People fear loss \
 more than they value gain.”*  
 
