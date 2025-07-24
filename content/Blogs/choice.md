@@ -1,42 +1,48 @@
 ---
 date: 2025-07-24
-title: "The Paradox of Human Freedom"
+title: "Paradox Human Freedom"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
 draft: false
 ---
-### Choices Create illusion, No Liberation.
+#### Choices Create illusion, No Liberation.
 
  *“We search for purpose. The universe offers silence.”* **-The Myth of Sisyphus**
 
 ---
+Every goal you achieve, every milestone you hit, every desire that once burned within you — when finally attained, \
+somehow loses its power.  
 
-## Choice is not about “right or wrong” paths 
+## Choice is not about “right or wrong” 
 > **— it’s about choosing to live with full consciousness, despite the absurd.**
-
-Every goal you achieve, every milestone you hit, every desire that once burned within you — when finally attained, somehow loses its power.  
 
 ---
 
 #### It fades. The shine dulls. And you're left wondering: *Was that it?*
 
-Looking into my personal life, I wouldn’t say I’ve ever been a nihilist. \
+Looking into my personal life, \
+I cann’t say I’ve ever been a nihilist. \
 I didn’t suffer from clinical anhedonia. But I’ve always hovered somewhere in between \
  **not quite empty, but never quite full.**
 
-It’s the summer of ‘25. I just completed my final exams, cleared all my backlogs \
+#### It’s the summer of ‘25. 
+I just completed my final exams, cleared all my backlogs \
 — goals I set a year ago, most of which I’ve now accomplished. But looking back… \
 **I wonder did I really believe these things would make me feel something?** \
-Would they make me love myself more or increase my self respect? \
+Would they make me love myself more or increase my self respect? 
+
+
 Today, as I walked out of that exam room with every logical reason to feel relief or triumph, there wasn’t even a sigh. Just… **emptiness**
 
-### i wonder: were the milestones too small?  
+#### i wonder: were the milestones too small?  
 Or am I forever chasing something bigger — always stretching toward a horizon that keeps moving? \
 Maybe this is just **Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion. 
-> *“People fear loss more than they value gain.”*  
+> *“People fear loss \
+more than they value gain.”*  
 
-Maybe the moment something is achieved, the gain is already devalued in our psychology. We discount it.  We move on. We search for the next high.
+Maybe the moment something is achieved, the gain is already devalued in our MIND. We discount it.  We move on. \
+We search for the next high.
 
 
 Even as a teenager, I had glimpses of this strange awareness: \
