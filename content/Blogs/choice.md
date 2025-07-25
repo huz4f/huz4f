@@ -67,7 +67,7 @@ We think we want freedom. But we forget:
 
 ### Because contentment is not in having everything
 
-> **Freedom is choosing one thing — and letting go of everything else.**
+> **it is in choosing one thing — and letting go of everything else.**
 
 
 
@@ -85,6 +85,6 @@ There is no better feeling than chasing a goal you know is *authentically your o
 Not to prove something. Not to please someone. But because ***maybe it moves something inside you.*
 *The destination will never fulfill you.***
 
-> **The journey is the only place you ever really live. Your ***'maktub'*** is always at play.**
+> **The journey is the only place you ever really live. Trust your ***'maktub'***.**
 
 
