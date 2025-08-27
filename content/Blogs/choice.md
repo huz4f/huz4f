@@ -11,8 +11,7 @@ draft: false
  *“We search for purpose. The universe offers silence.”* **-The Myth of Sisyphus**
 
 ---
-#### Every goal you achieve, 
-Every milestone you hit, every desire that once burned within you — when finally attained, somehow loses its power.  
+
 
 ## Choice is not about “right or wrong” 
 **— it’s about choosing to live with full consciousness, despite the absurd.**
@@ -25,6 +24,9 @@ Looking into my personal life, \
 I cannot say I’ve been a nihilist. \
 I didn’t suffer from clinical anhedonia. \
 But i’ve always hovered somewhere in between **not quite empty, never quite full.**
+
+#### Every goal you achieve, 
+Every milestone you hit, every desire that once burned within you — when finally attained, somehow loses its power.  
 
 #### It’s the summer of ‘25. 
 I just completed my final exams, cleared all my backlogs — goals I set a year ago, \
