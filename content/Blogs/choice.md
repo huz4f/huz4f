@@ -19,9 +19,10 @@ Without childhood wounds driving us…
 → Would ambition be softer or sharper? 
 
 
-The actual question should be would it even exist. We work on our psychological, social and physiological goal but maybe the only actual goal of lies in the spritual side, we are chasing it because everyone else is also chasing just an illusion. \
-Human's prefrontal cortex takes 25 years (more than any other being) to mature, the death gives meaning to life and the one's who came before us we take direction from them but where are we going, do we want to end up where they did but  here is the thing, \
-choices are never about “right or wrong”
+The actual question should be would it even exist. We work on our psychological, social and physiological goal but maybe the only actual goal of lies in the spritual side. \
+Human's prefrontal cortex (brain's programming od what is right and wrong) takes 25 years (more than any other being) to mature, the death gives meaning to life and the one's who came before us we take direction from them but where are we going, do we want to end up like them because our mind's been programmed for \
+familiarity = safety = right thing, \
+but the choices are never about “right or wrong” and so is freedom 
 it’s about choosing to live with full consciousness, despite the absurd.
 
 Study of Universe 25 shows us how there only exists illusion of an utopia. \
