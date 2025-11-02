@@ -12,7 +12,7 @@ draft: false
 
 ---
 #### "we dont want freedom we want the struggle for freedom" -ibsen
-What would we want if our memetic desires did not contribute to the identity that we have given ourselves. Who are we in this world, if our childhood did not imprint our attachment style in us, \
+What would we want if our memetic desires did not contribute to the identity that we have given ourselves. Who are we in this world, if our childhood experiences did not imprint our attachment style in us, \
 And what are we chasing if it all becomes absurd in the end ?
 ![](/blogs/dis.jpg)
 Without childhood wounds driving us…
