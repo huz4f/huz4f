@@ -10,10 +10,47 @@ draft: false
 
  *“We search for purpose. The universe offers silence.”* **-The Myth of Sisyphus**
 
+
+
+> ibsen
+#### "we dont want freedom we want the struggle for freedom"
 ---
+What do we want if our memetic desires did not contribute to the identity that we have given ourselves \
+Who are we in this world, if our childhood did not imprint our attachment style in us, \
+And what are we chasing if no one will remember anything we do in next 100 years ?
+![](/blogs/dis.jpg)
+Without childhood wounds driving us…
+→ Would ambition be softer or sharper? 
 
 
-## Choice is not about “right or wrong” 
+We work on our mental and physical health but the only actual goal of lies in the spritual side, everyone is chasing just an illusion. \
+Study of Universe 25 shows us how there only exists illusion of an utopia. \
+Did you know human's prefrontal cortex takes 25 years (more than any other being) to mature
+
+
+Sense of purpose is the main driving force for a man. \
+There is this story about a man in "man's serach for meaning" where he has a prophetic dream that war would end on a specific date. He belived it with his whole heart, endured everything until then. As the time passed and reality was not in his favor, not only his mind but his immune system also started to give up and he actually died in 48 hours after that date.
+
+
+No injury. No infection. \
+Just the death of hope → death of the body.
+
+
+### When the mind loses it's why, the body gives up how
+
+
+
+
+it takes 25 years to mature prefrontal cortex in humans more than any other being
+
+it allows genetic expression as the environment needs
+
+learning what counts as the right thing
+
+
+Isn't too much genius madness maybe because
+
+### Choice is not about “right or wrong” 
 **— it’s about choosing to live with full consciousness, despite the absurd.**
 
 ---
@@ -29,7 +66,8 @@ But i’ve always hovered somewhere in between **not quite empty, never quite fu
 Every milestone you hit, every desire that once burned within you — when finally attained, somehow loses its power.  
 
 #### It’s the summer of ‘25. 
-I just completed my final exams, cleared all my backlogs — goals I set a year ago, \
+I just completed my final exams, cleared all my backlogs \
+— goals I set a year ago, \
 most of which I’ve now accomplished. \
 But looking back… \
 **I wonder did I really believe these things would make me feel something?** \

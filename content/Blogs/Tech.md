@@ -27,9 +27,11 @@ Let's start with the obvious one,
 
 ### "Lack of Focus"  
 With instant access to information and rapid communication. \
-Perception of time and patience has altered for us, \
+Perception of time and patience has altered for us, 
+
+
 We all have a superfast computer in our pockets with 4G connection, this has fostered an expectation of immediate results. Patience for slower processes has eroded in our lives. \
-Here is a pretty good documentary if you have time that i watched few years ago \
+Here is a pretty good documentary that i watched few years ago illustrating our subconcious mental reprogramming \
 [The Social Dilemma](https://www.youtube.com/watch?v=uaaC57tcci0).
 
 Emphasising how attention span has decreased, \
@@ -41,24 +43,26 @@ You might have heard an average human has lower attention span than a goldfish n
 >
 
 ### Digital Amnesia
-The more we outsource tasks to smartphones, the less we use our memories. \
-Which becomes weaker thus forcing us to depend more on the devices. 
+Here is a situation that maybe everyone can relate to, needing a calculator to solve basic calculations? 
 
-Have you needed a calculator to solve basic calculations. \
-Ok let me rephrase it, 
-We hardly have one or two phone numbers memorised and it is not easy for us to remember a phone number, on the other hand i know few people who don't save contacts on their smartphones (few of them have memorised my phone number also, even i get confused sometimes what my phone number is) \
+
+Ok let me rephrase it, \
+Most people today can barely remember one or two phone numbers.It's not easy for us to memorize someone's mobile number, on the other hand you might have met people who don't save contacts on their smartphones (i know people who have memorised my phone number yet even i get confused sometimes about mine) \
 Because we have contacts saved in our mobile phone right? 
 
-We don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks? \
+
+You might be thinking that we don't need to care about such trivial things or by outsourcing tasks which require mental efforts, we are letting our minds focus on more productive tasks? \
 This is what atleast i used to think then i came across this [Harvard paper](https://scholar.harvard.edu/files/dwegner/files/sparrow_et_al._2011.pdf).
 
 "If you don't use something, You lose it" this was written in some book \
-(i am bad at remembering names)
+(i am bad at remembering names) \
+The more we outsource tasks to smartphones, the less we use our memories. \
+Which becomes weaker thus forcing us to depend more on the devices.
 
 
 - The dependency on GPS navigation systems reduces the brain density matter in the hippocampus, causing diseases like depression and dementia. [reference](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7156656/)
 
-Short term memory is destroyed by short videos, \
+Everyone at some point in their lives everyone realises that short term memory is destroyed by short videos, \
 There has been surveys which shows that if you watch a full movie or read a book, you will be able to narrate the story even after few days. But if you watch 100s of short videos (10–20 sec videos), you are not be able to recollect even 5 of them right after you put down your mobile. These short videos are like **junk food for brain**, it does not allow or give enough time for your brain to settle down and process. Brain keep switching between different videos which are of different theme, different genre, different types.
 
 
@@ -70,11 +74,21 @@ When you go out, sit in the rain or watch sunset ask yourself how much time do y
 
 Brain can become hyperstimulated by dopamine. This overstimulation can make our brain's pleasure centres less responsive to other enjoyable experiences, such as eating a meal, reading a book, having a conversation or holding hands.
 
+I remember telling my friends and family not to take photos and experience the moment fully, you don't need to capture something to look back at it. Maybe we no longer live the place, moment or even food for ourselves anymore, it's just to capture it.
+
 
 ### Some more issues:
 - Easy access to web search can sometimes encourage a reliance on readily available solutions rather than cultivating deeper critical thinking and problem-solving skills.
 
 - [Technology is Killing Creativity](https://hackernoon.com/technology-is-killing-creativity)
+
+### What about AI?
+#### AI makes you Dumb Slow Lazy
+- This study by the Swiss Business School found a significant negative correlation between frequent GenAI use and critical-thinking scores.
+
+- MIT researchers observed that LLM users had weaker brain activity during writing, generated more uniform text, remembered less, and, when AI was removed, showed lingering “cognitive debt.”
+
+Again if something is not required out of your body, the body shuts it down to save energy so yes maybe part of the reason why i started writing is also from this
 
 
 ---
@@ -133,8 +147,12 @@ Even after 8 years, \
 During early teens and tweens, humans start to learn to become more independent from being very close to parents, what a child consumes during this time is very crucial for character development.
 
 ---
+> EPILOGUE
 
-Ok so this is not a guide to raise kids, \
+
+Ok so this was not a guide to raise kids, \
 i'll just end this with writing about the good old days when i was 7, \
-Being an only child i spent most of my time with my computer, it was like a whole universe in my hands all inside my room.
-Back then we had a PCs that were not portable at all and a simple 1GB file took 6 hours to download, streaming hd videos was next to impossible ( my generation was the last one who didn't watch chuchutv growing up), even then my parents used to cut off electricity so i could only access my pc for few hours a day.
+Being an only child i loved my computer, it was like a whole universe in my hands all inside my room. \
+Back then no portable devices were available. I had a boxy PC and an internet connection which took 3 seconds to load a simple webpage, streaming hd videos was next to impossible (Yes, my generation was the last one who didn't watch chuchutv growing up), even then my parents used to cut off electricity so i could only access my pc for few hours a day.
+
+Poor kid me :/
