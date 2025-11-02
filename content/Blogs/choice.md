@@ -10,22 +10,21 @@ draft: false
 
  *“We search for purpose. The universe offers silence.”* **-The Myth of Sisyphus**
 
-
-
-> ibsen
-#### "we dont want freedom we want the struggle for freedom"
 ---
-What do we want if our memetic desires did not contribute to the identity that we have given ourselves \
-Who are we in this world, if our childhood did not imprint our attachment style in us, \
-And what are we chasing if no one will remember anything we do in next 100 years ?
+#### "we dont want freedom we want the struggle for freedom" -ibsen
+What would we want if our memetic desires did not contribute to the identity that we have given ourselves. Who are we in this world, if our childhood did not imprint our attachment style in us, \
+And what are we chasing if it all becomes absurd in the end ?
 ![](/blogs/dis.jpg)
 Without childhood wounds driving us…
 → Would ambition be softer or sharper? 
 
 
-We work on our mental and physical health but the only actual goal of lies in the spritual side, everyone is chasing just an illusion. \
+The actual question is wwould it even exist. We work on our psychological, social and physiological goal but maybe the only actual goal of lies in the spritual side, we are chasing it because everyone else is also chasing just an illusion. \
+Human's prefrontal cortex takes 25 years (more than any other being) to mature, the death gives meaning to life and the one's who came before us we take direction from them but where are we going, do we want to end up where they did but  here is the thing, \
+choices are never about “right or wrong”
+it’s about choosing to live with full consciousness, despite the absurd.
+
 Study of Universe 25 shows us how there only exists illusion of an utopia. \
-Did you know human's prefrontal cortex takes 25 years (more than any other being) to mature
 
 
 Sense of purpose is the main driving force for a man. \
@@ -50,8 +49,7 @@ learning what counts as the right thing
 
 Isn't too much genius madness maybe because
 
-### Choice is not about “right or wrong” 
-**— it’s about choosing to live with full consciousness, despite the absurd.**
+
 
 ---
 
