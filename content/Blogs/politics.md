@@ -4,10 +4,10 @@ title: "Politics"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: false
+draft: true
 ---
 
-### Meaning:Distribution of power and resources / Power dynamics. 
+### Meaning: Distribution of power and resources / Power dynamics 
 Never thought i will write about anything geopolitical or anything related to sports as most of the blogs out there that exist are  based on them and why not that's what intrigues the masses but i find very few people realizing this and blogs are for free thinkers no? \
 Remember watching dead poet's society during your school days and if you didn't i would encourage you do and analyze how humans are designed to follow what everyone else is doing and realize how individualism is sucked out of our nervous systems. Same patterns, same thought process and same values. It's very rare that an individual takes an initiative and tends to do opposite of what everyone else is doing but deep down in our nervous system that part is calling everyone maybe, that's why penguine got so much attention? 
 ![](/blogs/pang.jpg)
