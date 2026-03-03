@@ -6,6 +6,7 @@ author: "Huzaif"
 hidesummary: true
 draft: false
 ---
+Unfinished like me. i choose to let it be
 ![](/blogs/ky.jpg)
 **I have two names. They meet and they depart….. \
 And two languages, I have forgotten in which I used to dream. \
@@ -14,7 +15,7 @@ Yet, I have another language from the dialogue of the Heavens** \
 *- Mahmoud Darwaish*
 
 ![](/blogs/md.jpg)
-**Dialogue of the Heavens**, it is what helps him exist. \
+**Dialogue of the Heavens**, it is what helps a man exist. \
 It is what holds the emptiness in a man's heart and Keeps him alive.
 
 
@@ -23,7 +24,7 @@ Always keeping the 'Canvas Blank' that what i call it and maybe that is the reas
 
 
 >Life does not forgive you for not picking your permanent colours. You question future or your existence in it, your values change so do your questions and perception, at one point uncertanity of life is the biggest curse for you, you look at their grave and remember all the plans they had made with you. A friend, your family.. \
-Slowly each part of you dies and you fall into the nihilism and absurdity mindset but you 
+Slowly each part of you dies and you fall into the nihilism and learn to live with this absurdity but you 
 
 
 
