@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web3 on Huzaif</title>
+    <link>http://localhost:1313/huz4f/huz4f.git/tags/web3/</link>
+    <description>Recent content in Web3 on Huzaif</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/huz4f/huz4f.git/tags/web3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain &amp; Smart Contracts</title>
+      <link>http://localhost:1313/huz4f/huz4f.git/projects/blockchain/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/projects/blockchain/</guid>
+      <description>Blocks and Hashing Smart Contract Blockchain: -&amp;gt; Have also written: Blockchain.
+Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility
+-&amp;gt; One block connected to the genesis block and hash function with 2 zeroes at start Swiftcode on GitHub: Here ( needs shasum file for the hash )
+Understanding Code: Block in a blockchain consists of Block Header &amp;amp; Body
+The head consists of:
+Previous block&amp;rsquo;s hash Merkel root (compact hash sum of all transactions) Block version Nonce (it is calculated) Timestamp The condition you set for which nonce is calculated The body consists of Transaction lists.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/huz4f/huz4f.git/articles/blockchain/</link>
+      <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/huz4f/huz4f.git/articles/blockchain/</guid>
+      <description>&amp;lsquo;Data is everywhere and everything in today&amp;rsquo;s day and age&amp;rsquo; Advancement in technology has enabled us to keep our data online from our private credentials to backup of our gallery photos. You don&amp;rsquo;t need local storage and access.
+But there is no cloud is there?
+Just some server on the internet that contains our precious data, that can be used in devastating ways against us from knowing our personal info to having our every digital footprint recorded.</description>
+    </item>
+  </channel>
+</rss>

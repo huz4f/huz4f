@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://localhost:1313/huz4f/huz4f.git/sitemap.xml
