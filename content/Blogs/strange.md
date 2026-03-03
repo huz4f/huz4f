@@ -52,9 +52,9 @@ Identity is like smoke, real but you can't grab it. \
 >>But neither am I there, nor here.
 
 
-The reason being i'll find the absurdity at the end of it and become this empty again. 
+
+The reason being man will find the absurdity at the end of it and become this empty again. 
 -
 
-Genius is not madness it is a responsibility from god.
 
 
