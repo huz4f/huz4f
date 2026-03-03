@@ -134,7 +134,7 @@ buildExpired = false
 [[menu.main]]
   identifier = "about"
   name = "About"
-  url = "/about/"
+  url = "/about"
   weight = 5
 
 #[[menu.main]]
