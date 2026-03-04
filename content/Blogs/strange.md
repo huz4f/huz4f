@@ -1,6 +1,6 @@
 ---
 date: 2026-01-18
-title: "Name is where a dead person lives"
+title: "Name: where a dead person lives"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
@@ -55,7 +55,7 @@ Identity is like smoke, real but you can't grab it. \
 
 
 The reason being man will find the absurdity at the end of it and become this empty again.
- 
+
 -
 
 
