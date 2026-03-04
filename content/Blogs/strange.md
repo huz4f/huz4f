@@ -1,6 +1,6 @@
 ---
 date: 2026-01-18
-title: "Name is "where a dead person lives""
+title: "Name is where a dead person lives"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
