@@ -30,16 +30,16 @@ Slowly each part of you dies and you fall into the nihilism and learn to live wi
 
 
 
- what about the colors that existed because of them, in next life? or this is an inevitable part of being a man where you romanticize questions that have no answers. You find comfort, a safe place in your internal conflict that gives meaning to doing things living this life, an equivocal reality with countless possibilties because the emptiness also has no meaning like something heavy in your chest that just exists from losing your childhood ? After that you kill each person you become as life demands but what about the child, he was what others demanded? Is sense of belonging or love you call it, the ultimate meaning for existence.
+ what about the colors that existed because of them, in next life? or this is an inevitable part of being a man where you romanticize questions that have no answers. You find comfort, a safe place in your internal conflict that gives meaning to doing things living this life, an equivocal reality with countless possibilties because the emptiness also has no meaning like something heavy in your chest that just exists from losing your childhood ? After that you kill each person you become as life demands but what about the child, when and what taught him towhat was demanded? what were you before that? Is sense of belonging or love you call it, the ultimate meaning for existence.
 
-***Was man made to be perfect and not belong?***
+***Was man created to be perfect and not belong?***
 
 Identity is like smoke, real but you can't grab it. \
 
 
 
 
->>After Death 
+>After Death 
 
 
 
@@ -54,7 +54,8 @@ Identity is like smoke, real but you can't grab it. \
 
 
 
-The reason being man will find the absurdity at the end of it and become this empty again. 
+The reason being man will find the absurdity at the end of it and become this empty again.
+ 
 -
 
 
