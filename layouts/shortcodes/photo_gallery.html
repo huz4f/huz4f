@@ -1,3 +1,19 @@
+{{ $photos := slice }}
+{{ if (fileExists "static/photos") }}
+  {{ $files := readDir "static/photos" }}
+  {{ range $files }}
+    {{ if not .IsDir }}
+      {{ $ext := lower (path.Ext .Name) }}
+      {{ if in (slice ".jpg" ".jpeg" ".png" ".webp" ".avif") $ext }}
+        {{ $nameClean := replaceRE `\.[^/.]+$` "" .Name }}
+        {{ $title := replaceRE `[-_]` " " $nameClean | title }}
+        {{ $photoObj := dict "id" .Name "title" $title "src" (printf "/photos/%s" .Name) "location" "Exhibition Frame" "camera" "Art & Digital Frame" "iso" "100" "shutter" "1/250s" "aperture" "f/2.8" "likes" 100 }}
+        {{ $photos = $photos | append $photoObj }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <div class="pg-section">
   <!-- Minimal Header Bar -->
   <div class="pg-minimal-header">
@@ -24,30 +40,21 @@
     <!-- Rendered dynamically by JavaScript -->
   </div>
 
-  <!-- Photo Drag & Drop Upload Zone -->
+  <!-- Minimal Drag & Drop Live Upload Zone -->
   <div class="pg-upload-container" id="pgUploadZone">
     <input type="file" id="pgFileInput" accept="image/*" multiple style="display: none;" />
     <div class="pg-upload-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
     </div>
-    <h3 class="pg-upload-title">Drop your art &amp; photos here or click to preview</h3>
-    <p class="pg-upload-desc">Drag &amp; drop your art and photography files here to instantly see them rendered in this interactive gallery.</p>
-    <button class="pg-upload-btn" onclick="document.getElementById('pgFileInput').click()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-      <span>Select Art Files</span>
-    </button>
-    <div style="margin-top: 1rem;">
-      <span class="pg-folder-hint">
-        📁 Dedicated Storage Directory: <code>static/photos/</code>
-      </span>
-    </div>
+    <h3 class="pg-upload-title">Drop new photos here to live preview</h3>
+    <p class="pg-upload-desc">Drop images directly into <code>static/photos/</code> folder to automatically publish them instantly.</p>
   </div>
 </div>
 
 <!-- Fullscreen Cinematic Lightbox Modal -->
 <div class="pg-lightbox" id="pgLightbox">
   <div class="pg-lb-nav-top">
-    <div class="pg-lb-counter" id="pgLbCounter">1 / 6</div>
+    <div class="pg-lb-counter" id="pgLbCounter">1 / 1</div>
     <div class="pg-lb-actions">
       <button class="pg-lb-btn" id="pgLbZoomBtn" title="Toggle Zoom (Z)">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
@@ -114,88 +121,24 @@
 <script>
 (function () {
   function initGallery() {
-    const INITIAL_PHOTOS = [
+    // Automatically populated from static/photos by Hugo readDir
+    const HUGO_SCANNED_PHOTOS = {{ $photos | jsonify }};
+
+    let photos = (HUGO_SCANNED_PHOTOS && HUGO_SCANNED_PHOTOS.length > 0) ? HUGO_SCANNED_PHOTOS : [
       {
-        id: "photo-1",
-        title: "Cyberpunk Tokyo Rain",
-        category: "urban",
-        categoryName: "Urban Art",
+        id: "urban-neon-rain.jpg",
+        title: "Urban Neon Rain",
+        categoryName: "Visual Art",
         src: "/photos/urban-neon-rain.jpg",
-        location: "Shinjuku, Tokyo",
-        camera: "Sony A7IV • Prime Lens",
-        iso: "800",
-        shutter: "1/160s",
-        aperture: "f/1.4",
-        likes: 142
-      },
-      {
-        id: "photo-2",
-        title: "Dawn Over Alpine Misty Waters",
-        category: "nature",
-        categoryName: "Nature & Wilderness",
-        src: "/photos/misty-alpine-lake.jpg",
-        location: "Dolomites, Italy",
-        camera: "Fujifilm X-T5 • 16-55mm",
-        iso: "160",
-        shutter: "1/500s",
-        aperture: "f/8.0",
-        likes: 218
-      },
-      {
-        id: "photo-3",
-        title: "Geometric Shadow Play",
-        category: "architecture",
-        categoryName: "Architecture & Lines",
-        src: "/photos/minimalist-architecture.jpg",
-        location: "Copenhagen, Denmark",
-        camera: "Leica Q2 • 28mm",
-        iso: "100",
-        shutter: "1/1000s",
-        aperture: "f/5.6",
-        likes: 95
-      },
-      {
-        id: "photo-4",
-        title: "The Umbrellas of Midnight",
-        category: "street",
-        categoryName: "Street & Mood",
-        src: "/photos/noir-street-portrait.jpg",
-        location: "Paris, France",
-        camera: "Ricoh GR III • 28mm",
-        iso: "1600",
-        shutter: "1/125s",
-        aperture: "f/2.8",
-        likes: 184
-      },
-      {
-        id: "photo-5",
-        title: "Lantern Glow in Memory Alley",
-        category: "night",
-        categoryName: "Night & Cyberpunk",
-        src: "/photos/tokyo-cyber-alley.jpg",
-        location: "Omoide Yokocho, Tokyo",
-        camera: "Sony A7IV • 50mm",
-        iso: "640",
-        shutter: "1/200s",
-        aperture: "f/1.8",
-        likes: 312
-      },
-      {
-        id: "photo-6",
-        title: "Fiery Sunset Horizon",
-        category: "nature",
-        categoryName: "Nature & Waves",
-        src: "/photos/coastal-sunset-drift.jpg",
-        location: "Big Sur, California",
-        camera: "Canon R5 • 24-70mm",
+        location: "Exhibition Frame",
+        camera: "Art & Digital Frame",
         iso: "100",
         shutter: "1/250s",
-        aperture: "f/11",
-        likes: 276
+        aperture: "f/2.8",
+        likes: 142
       }
     ];
 
-    let photos = [...INITIAL_PHOTOS];
     let currentLightboxIndex = 0;
     let isZoomed = false;
 
@@ -235,7 +178,7 @@
             <img src="${photo.src}" alt="${photo.title}" class="pg-img" loading="lazy" />
             <div class="pg-card-overlay">
               <div class="pg-overlay-top">
-                <span class="pg-category-tag">${photo.categoryName}</span>
+                <span class="pg-category-tag">${photo.categoryName || 'Visual Art'}</span>
                 <div class="pg-action-btns">
                   <button class="pg-icon-btn btn-like" data-id="${photo.id}" title="Like photo">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="${isLiked(photo.id) ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="${isLiked(photo.id) ? 'color:#ef4444;' : ''}"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -250,7 +193,7 @@
                 <div class="pg-photo-meta">
                   <span class="pg-meta-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    ${photo.location}
+                    ${photo.location || 'Visual Art'}
                   </span>
                   <span class="pg-meta-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -284,7 +227,7 @@
 
     function getLikes(photo) {
       const customLikes = localStorage.getItem("likes_" + photo.id);
-      return customLikes ? parseInt(customLikes) : photo.likes;
+      return customLikes ? parseInt(customLikes) : (photo.likes || 100);
     }
 
     function isLiked(id) {
@@ -342,11 +285,11 @@
 
       // Update EXIF HUD
       if (exifTitle) exifTitle.textContent = p.title;
-      if (exifCamera) exifCamera.textContent = p.camera;
-      if (exifIso) exifIso.textContent = p.iso;
-      if (exifShutter) exifShutter.textContent = p.shutter;
-      if (exifAperture) exifAperture.textContent = p.aperture;
-      if (exifLocation) exifLocation.textContent = p.location;
+      if (exifCamera) exifCamera.textContent = p.camera || 'Art & Digital Frame';
+      if (exifIso) exifIso.textContent = p.iso || '100';
+      if (exifShutter) exifShutter.textContent = p.shutter || '1/250s';
+      if (exifAperture) exifAperture.textContent = p.aperture || 'f/2.8';
+      if (exifLocation) exifLocation.textContent = p.location || 'Exhibition Frame';
 
       // Render Filmstrip
       if (lbFilmstrip) {
@@ -462,7 +405,6 @@
             const newPhoto = {
               id: 'photo-user-' + Date.now() + '-' + index,
               title: file.name.replace(/\.[^/.]+$/, ""),
-              category: 'urban',
               categoryName: 'Uploaded Art',
               src: e.target.result,
               location: 'Local Upload',
