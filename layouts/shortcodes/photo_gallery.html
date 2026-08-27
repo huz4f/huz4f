@@ -17,13 +17,10 @@
         
         {{ $photoMeta := index $meta $fileName | default dict }}
         {{ $title := index $photoMeta "title" | default $defaultTitle }}
+        {{ $description := index $photoMeta "description" | default "" }}
         {{ $location := index $photoMeta "location" | default "Visual Art" }}
-        {{ $camera := index $photoMeta "camera" | default "Art & Digital Frame" }}
-        {{ $iso := index $photoMeta "iso" | default "100" }}
-        {{ $shutter := index $photoMeta "shutter" | default "1/250s" }}
-        {{ $aperture := index $photoMeta "aperture" | default "f/2.8" }}
 
-        {{ $photoObj := dict "id" $fileName "title" $title "src" (printf "/photos/%s" $fileName) "location" $location "camera" $camera "iso" $iso "shutter" $shutter "aperture" $aperture }}
+        {{ $photoObj := dict "id" $fileName "title" $title "description" $description "src" (printf "/photos/%s" $fileName) "location" $location }}
         {{ $photos = $photos | append $photoObj }}
       {{ end }}
     {{ end }}
@@ -57,7 +54,7 @@
   </div>
 </div>
 
-<!-- Fullscreen Cinematic Lightbox Modal -->
+<!-- Clean Fullscreen Lightbox Modal (No Side Arrow Buttons) -->
 <div class="pg-lightbox" id="pgLightbox">
   <div class="pg-lb-nav-top">
     <div class="pg-lb-counter" id="pgLbCounter">1 / 1</div>
@@ -70,43 +67,22 @@
   </div>
 
   <div class="pg-lb-main">
-    <button class="pg-lb-arrow prev" id="pgLbPrevBtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-    </button>
-
     <div class="pg-lb-img-container" id="pgLbImgWrapper">
-      <img src="" alt="" class="pg-lb-img" id="pgLbImage" draggable="false" oncontextmenu="return false;" />
-    </div>
-
-    <button class="pg-lb-arrow next" id="pgLbNextBtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-    </button>
-
-    <!-- EXIF HUD Inspector Drawer -->
-    <div class="pg-exif-hud" id="pgExifHud">
-      <div class="pg-exif-item">
-        <span class="pg-exif-label">Title:</span>
-        <span class="pg-exif-val" id="exifTitle">-</span>
-      </div>
-      <div class="pg-exif-item">
-        <span class="pg-exif-label">Camera:</span>
-        <span class="pg-exif-val" id="exifCamera">-</span>
-      </div>
-      <div class="pg-exif-item">
-        <span class="pg-exif-label">ISO:</span>
-        <span class="pg-exif-val" id="exifIso">-</span>
-      </div>
-      <div class="pg-exif-item">
-        <span class="pg-exif-label">Shutter:</span>
-        <span class="pg-exif-val" id="exifShutter">-</span>
-      </div>
-      <div class="pg-exif-item">
-        <span class="pg-exif-label">Aperture:</span>
-        <span class="pg-exif-val" id="exifAperture">-</span>
-      </div>
-      <div class="pg-exif-item">
-        <span class="pg-exif-label">Location:</span>
-        <span class="pg-exif-val" id="exifLocation">-</span>
+      <img src="" alt="" class="pg-lb-img" id="pgLbImage" decoding="async" loading="eager" draggable="false" oncontextmenu="return false;" />
+      
+      <!-- Instagram-Style Floating Caption -->
+      <div class="pg-lb-caption-overlay">
+        <div class="pg-lb-text-col">
+          <div class="pg-lb-handle-row">
+            <span class="pg-lb-handle">@huz4f</span>
+            <span class="pg-lb-title" id="lbTitle">-</span>
+          </div>
+          <p class="pg-lb-desc-text" id="lbDescText"></p>
+        </div>
+        <span class="pg-lb-location" id="lbLocation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span id="lbLocationText">-</span>
+        </span>
       </div>
     </div>
   </div>
@@ -131,14 +107,10 @@
     let photos = (Array.isArray(HUGO_SCANNED_PHOTOS) && HUGO_SCANNED_PHOTOS.length > 0) ? HUGO_SCANNED_PHOTOS : [
       {
         id: "zara.jpg",
-        title: "Zara",
-        categoryName: "Visual Art",
-        src: "/photos/zara.jpg",
-        location: "Exhibition Frame",
-        camera: "Art Frame",
-        iso: "100",
-        shutter: "1/250s",
-        aperture: "f/2.8"
+        title: "Thus spoke",
+        description: "Captured along the quiet waters of Dal Lake.",
+        location: "Dal Lake",
+        src: "/photos/zara.jpg"
       }
     ];
 
@@ -157,51 +129,47 @@
     const lbImage = document.getElementById("pgLbImage");
     const lbCounter = document.getElementById("pgLbCounter");
     const lbCloseBtn = document.getElementById("pgLbCloseBtn");
-    const lbPrevBtn = document.getElementById("pgLbPrevBtn");
-    const lbNextBtn = document.getElementById("pgLbNextBtn");
     const lbFilmstrip = document.getElementById("pgLbFilmstrip");
-
-    // EXIF Elements
-    const exifTitle = document.getElementById("exifTitle");
-    const exifCamera = document.getElementById("exifCamera");
-    const exifIso = document.getElementById("exifIso");
-    const exifShutter = document.getElementById("exifShutter");
-    const exifAperture = document.getElementById("exifAperture");
-    const exifLocation = document.getElementById("exifLocation");
+    const lbTitle = document.getElementById("lbTitle");
+    const lbDescText = document.getElementById("lbDescText");
+    const lbLocationText = document.getElementById("lbLocationText");
+    const lbImgWrapper = document.getElementById("pgLbImgWrapper");
 
     // Render Grid Cards
     function renderGallery() {
       gridEl.innerHTML = photos.map((photo, idx) => `
-        <div class="pg-card" data-id="${photo.id}" data-index="${idx}">
+        <div class="pg-card" data-id="${photo.id}" data-index="${idx}" style="cursor: pointer;">
           <div class="pg-img-wrapper">
-            <img src="${photo.src}" alt="${photo.title}" class="pg-img" loading="lazy" draggable="false" oncontextmenu="return false;" />
-            <div class="pg-card-overlay">
-              <div class="pg-overlay-top">
-                <span class="pg-category-tag">${photo.categoryName || 'Visual Art'}</span>
-                <div class="pg-action-btns">
-                  <button class="pg-icon-btn btn-quickview" data-index="${idx}" title="Fullscreen Lightbox">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-                  </button>
+            <img src="${photo.src}" alt="${photo.title}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
+            
+            <!-- Separate Location Badge on Bottom Right -->
+            <div class="pg-location-pill-br">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>${photo.location || 'Visual Art'}</span>
+            </div>
+
+            <!-- Instagram Style Overlay on Bottom Left -->
+            <div class="pg-card-overlay" style="pointer-events: none;">
+              <div class="pg-overlay-bottom-left">
+                <div class="pg-insta-header">
+                  <span class="pg-insta-handle">@huz4f</span>
+                  <span class="pg-insta-dot">•</span>
+                  <h3 class="pg-photo-title">${photo.title}</h3>
                 </div>
-              </div>
-              <div class="pg-overlay-bottom">
-                <h3 class="pg-photo-title">${photo.title}</h3>
-                <div class="pg-photo-meta">
-                  <span class="pg-meta-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    ${photo.location || 'Visual Art'}
-                  </span>
-                </div>
+                ${photo.description ? `<p class="pg-photo-desc">${photo.description}</p>` : ''}
               </div>
             </div>
           </div>
         </div>
       `).join("");
 
-      // Attach Click Events to Cards
-      document.querySelectorAll(".pg-card").forEach((card, i) => {
+      // Single Click Handler on Cards
+      document.querySelectorAll(".pg-card").forEach((card) => {
         card.addEventListener("click", function() {
-          openLightbox(i);
+          const index = parseInt(this.getAttribute("data-index"));
+          if (!isNaN(index)) {
+            openLightbox(index);
+          }
         });
       });
     }
@@ -240,20 +208,18 @@
         lbImage.alt = p.title;
       }
       if (lbCounter) lbCounter.textContent = `${currentLightboxIndex + 1} / ${photos.length}`;
-
-      // Update EXIF HUD
-      if (exifTitle) exifTitle.textContent = p.title;
-      if (exifCamera) exifCamera.textContent = p.camera || 'Art & Digital Frame';
-      if (exifIso) exifIso.textContent = p.iso || '100';
-      if (exifShutter) exifShutter.textContent = p.shutter || '1/250s';
-      if (exifAperture) exifAperture.textContent = p.aperture || 'f/2.8';
-      if (exifLocation) exifLocation.textContent = p.location || 'Visual Art';
+      if (lbTitle) lbTitle.textContent = p.title;
+      if (lbDescText) {
+        lbDescText.textContent = p.description || '';
+        lbDescText.style.display = p.description ? 'block' : 'none';
+      }
+      if (lbLocationText) lbLocationText.textContent = p.location || 'Visual Art';
 
       // Render Filmstrip
       if (lbFilmstrip) {
         lbFilmstrip.innerHTML = photos.map((photo, i) => `
           <div class="pg-film-thumb ${i === currentLightboxIndex ? 'active' : ''}" data-index="${i}">
-            <img src="${photo.src}" alt="${photo.title}" draggable="false" oncontextmenu="return false;" />
+            <img src="${photo.src}" alt="${photo.title}" decoding="async" loading="lazy" draggable="false" oncontextmenu="return false;" />
           </div>
         `).join("");
 
@@ -266,23 +232,69 @@
       }
     }
 
-    // Lightbox Controls
-    if (lbCloseBtn) lbCloseBtn.addEventListener("click", closeLightbox);
-    if (lbPrevBtn) lbPrevBtn.addEventListener("click", () => {
-      currentLightboxIndex = (currentLightboxIndex - 1 + photos.length) % photos.length;
-      updateLightboxContent();
-    });
-    if (lbNextBtn) lbNextBtn.addEventListener("click", () => {
+    function nextPhoto() {
+      if (photos.length <= 1) return;
       currentLightboxIndex = (currentLightboxIndex + 1) % photos.length;
       updateLightboxContent();
-    });
+    }
+
+    function prevPhoto() {
+      if (photos.length <= 1) return;
+      currentLightboxIndex = (currentLightboxIndex - 1 + photos.length) % photos.length;
+      updateLightboxContent();
+    }
+
+    // Lightbox Controls
+    if (lbCloseBtn) lbCloseBtn.addEventListener("click", closeLightbox);
+
+    // Touch Swipe & Drag Gestures
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (lbImgWrapper) {
+      lbImgWrapper.addEventListener("touchstart", function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      lbImgWrapper.addEventListener("touchend", function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > 35) {
+          if (diff < 0) nextPhoto();
+          else prevPhoto();
+        }
+      }, { passive: true });
+
+      // Mouse Drag Swipe on Desktop
+      let isDragging = false;
+      let dragStartX = 0;
+
+      lbImgWrapper.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        dragStartX = e.clientX;
+      });
+
+      lbImgWrapper.addEventListener("mouseup", function(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = e.clientX - dragStartX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX < 0) nextPhoto();
+          else prevPhoto();
+        }
+      });
+
+      lbImgWrapper.addEventListener("mouseleave", function() {
+        isDragging = false;
+      });
+    }
 
     // Keyboard Shortcuts
     document.addEventListener("keydown", function(e) {
       if (!lightbox || !lightbox.classList.contains("active")) return;
       if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowLeft") if (lbPrevBtn) lbPrevBtn.click();
-      if (e.key === "ArrowRight") if (lbNextBtn) lbNextBtn.click();
+      if (e.key === "ArrowLeft") prevPhoto();
+      if (e.key === "ArrowRight") nextPhoto();
     });
 
     // Initial Render
