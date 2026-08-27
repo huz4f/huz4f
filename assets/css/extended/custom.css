@@ -1362,29 +1362,27 @@ code, pre, kbd {
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-bottom: 2.25rem;
-  padding: 1.35rem 1.65rem;
-  border-radius: 22px;
-  background: var(--entry);
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(16px);
+  margin-bottom: 1.75rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .pg-header-left {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: 1.25rem;
   flex: 1;
 }
 
 .pg-avatar-ring {
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   padding: 2.5px;
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 6px 22px rgba(168, 85, 247, 0.35);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1393,8 +1391,8 @@ code, pre, kbd {
 }
 
 .pg-avatar-ring:hover {
-  transform: scale(1.08) rotate(4deg);
-  box-shadow: 0 6px 24px rgba(168, 85, 247, 0.6);
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.5);
 }
 
 .pg-header-avatar-img {
@@ -1402,7 +1400,7 @@ code, pre, kbd {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid var(--entry);
+  border: 2px solid var(--theme);
   display: block;
 }
 

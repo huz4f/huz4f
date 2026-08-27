@@ -84,9 +84,9 @@ disableKinds = ["taxonomy", "term"]
 #    name = "x"
 #    url = "https://twitter.com/hu_z4f"
 
-#  [[params.socialIcons]]
-#    name = "linkedin"
-#    url = "https://www.linkedin.com/in/huz4f/"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/huz4f/"
 
   [[params.socialIcons]]
     name = "Github"
