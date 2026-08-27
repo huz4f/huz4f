@@ -37,15 +37,16 @@
         {{- with .buttons }}
         <div class="buttons">
             {{- range . }}
-            {{- $isExplore := eq (lower .identifier) "explore" }}
+            {{- $isAbout := or (eq (lower .identifier) "about") (eq (lower .identifier) "explore") }}
             {{- $isContact := eq (lower .identifier) "contact" }}
             {{- $isServices := or (eq (lower .identifier) "services") (eq (lower .identifier) "saas") }}
-            <a class="button {{ if $isExplore }}button-explore{{ else if $isContact }}button-contact{{ else if $isServices }}button-services{{ end }}" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+            <a class="button {{ if $isAbout }}button-about{{ else if $isContact }}button-contact{{ else if $isServices }}button-services{{ end }}" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
                 <span class="button-inner">
-                    {{- if $isExplore }}
+                    {{- if $isAbout }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
                         <circle cx="12" cy="12" r="10"></circle>
-                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
                     </svg>
                     {{- else if $isContact }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">

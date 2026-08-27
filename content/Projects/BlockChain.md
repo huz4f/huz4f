@@ -13,8 +13,6 @@ draft: true
 
 # Blockchain:
 
->->  Have also written: [Blockchain](https://huz4f.com/articles/blockchain/).
->
 **Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility**
 
 -> One block connected to the genesis block and hash function with 2 zeroes at start

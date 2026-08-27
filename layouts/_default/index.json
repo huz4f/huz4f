@@ -1,0 +1,10 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- $mainSections := site.Params.mainSections | default (slice "Blogs" "Projects" "blogs" "projects") -}}
+{{- range site.RegularPages -}}
+    {{- if and (not .Params.searchHidden) (in $mainSections .Section) (ne .Layout `archives`) (ne .Layout `search`) -}}
+    {{- $summary := .Summary | plainify | htmlUnescape -}}
+    {{- $formattedDate := .Date.Format "January 2, 2006" -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "permalink" .Permalink "summary" $summary "content" .Plain "date" $formattedDate "readingTime" .ReadingTime "wordCount" .WordCount "section" .Section "unixDate" .Date.Unix) -}}
+    {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

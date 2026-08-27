@@ -6,6 +6,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
+disableKinds = ["taxonomy", "term"]
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -21,7 +22,7 @@ buildExpired = false
 
 [params]
   env = "production" # to enable google analytics, opengraph, twitter-cards, and schema.
-  mainSections = ["Articles", "Blogs", "Projects", "articles", "blogs", "projects"]
+  mainSections = ["Blogs", "Projects", "blogs", "projects"]
   title = "Huzaif"
   description = "was bored created a website, now i write"
   keywords = ["Blog", "Computer Science", "Cyber Security", "Cloud", "Life"]
@@ -65,9 +66,9 @@ buildExpired = false
     imageTitle = "Huzaif"
 
     [[params.profileMode.buttons]]
-      identifier = "Explore"
-      name = "Explore"
-      url = "/tags/"
+      identifier = "About"
+      name = "About"
+      url = "/about/"
 
     [[params.profileMode.buttons]]
       identifier = "Contact"
@@ -125,12 +126,6 @@ buildExpired = false
   weight = 1
 
 [[menu.main]]
-  identifier = "Tech"
-  name = "Tech"
-  url = "/articles/"
-  weight = 2
-
-[[menu.main]]
   identifier = "Blogs"
   name = "Blogs"
   url = "/blogs/"
@@ -142,9 +137,3 @@ buildExpired = false
   url = "/projects/"
   weight = 4
 
-
-[[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about/"
-  weight = 6

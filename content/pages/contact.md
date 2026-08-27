@@ -1,7 +1,9 @@
 ---
 title: "Contact"
+url: "/contact/"
 hidemeta: true
 disableShare: true
+searchHidden: true
 draft: false
 ---
 
