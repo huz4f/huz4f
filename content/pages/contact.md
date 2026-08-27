@@ -10,7 +10,7 @@ draft: false
 <div class="contact-hero">
 <div class="contact-status-badge">
 <span class="status-dot-pulse"></span>
-<span>Available for freelance, consulting & tech inquiries</span>
+<span>Available</span>
 </div>
 <h1 class="contact-title">Let's Connect & <span class="text-gradient">Collaborate</span></h1>
 <p class="contact-subtitle">Whether you have a project in mind, need technical architecture advice, or just want to connect — feel free to drop a message.</p>
