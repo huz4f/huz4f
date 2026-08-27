@@ -39,16 +39,6 @@
   <div class="pg-grid view-masonry" id="pgGrid">
     <!-- Rendered dynamically by JavaScript -->
   </div>
-
-  <!-- Minimal Drag & Drop Live Upload Zone -->
-  <div class="pg-upload-container" id="pgUploadZone">
-    <input type="file" id="pgFileInput" accept="image/*" multiple style="display: none;" />
-    <div class="pg-upload-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-    </div>
-    <h3 class="pg-upload-title">Drop new photos here to live preview</h3>
-    <p class="pg-upload-desc">Drop images directly into <code>static/photos/</code> folder to automatically publish them instantly.</p>
-  </div>
 </div>
 
 <!-- Fullscreen Cinematic Lightbox Modal -->
@@ -360,68 +350,6 @@
       if (e.key === "ArrowRight") if (lbNextBtn) lbNextBtn.click();
       if (e.key.toLowerCase() === "z") toggleZoom();
     });
-
-    // Drag & Drop Live Preview Upload Zone
-    const uploadZone = document.getElementById("pgUploadZone");
-    const fileInput = document.getElementById("pgFileInput");
-
-    if (uploadZone) {
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        uploadZone.addEventListener(eventName, preventDefaults, false);
-      });
-
-      function preventDefaults(e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-
-      ['dragenter', 'dragover'].forEach(eventName => {
-        uploadZone.addEventListener(eventName, () => uploadZone.classList.add('drag-over'), false);
-      });
-
-      ['dragleave', 'drop'].forEach(eventName => {
-        uploadZone.addEventListener(eventName, () => uploadZone.classList.remove('drag-over'), false);
-      });
-
-      uploadZone.addEventListener('drop', handleDrop, false);
-      if (fileInput) {
-        fileInput.addEventListener('change', function() {
-          handleFiles(this.files);
-        });
-      }
-
-      function handleDrop(e) {
-        const dt = e.dataTransfer;
-        const files = dt.files;
-        handleFiles(files);
-      }
-
-      function handleFiles(files) {
-        Array.from(files).forEach((file, index) => {
-          if (!file.type.startsWith('image/')) return;
-
-          const reader = new FileReader();
-          reader.onload = function(e) {
-            const newPhoto = {
-              id: 'photo-user-' + Date.now() + '-' + index,
-              title: file.name.replace(/\.[^/.]+$/, ""),
-              categoryName: 'Uploaded Art',
-              src: e.target.result,
-              location: 'Local Upload',
-              camera: 'User Upload • ' + Math.round(file.size / 1024) + ' KB',
-              iso: 'Auto',
-              shutter: '1/200s',
-              aperture: 'f/2.8',
-              likes: 1
-            };
-
-            photos.unshift(newPhoto);
-            renderGallery();
-          };
-          reader.readAsDataURL(file);
-        });
-      }
-    }
 
     // Initial Render
     renderGallery();
