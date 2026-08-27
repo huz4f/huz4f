@@ -1,25 +1,22 @@
 {
   "zarathustra.jpg": {
     "title": "thus spoke",
-    "location": "Dal Lake",
-  }
+    "location": "Dal Lake"
+  },
   "moon.JPG": {
     "title": "Thus spoke",
-    "location": "Dal Lake",
-  }
-
+    "location": "Dal Lake"
+  },
   "early20s.jpg": {
     "title": "broken glasses",
-    "location": "college",
-  }
-
+    "location": "college"
+  },
   "batman.jpg": {
     "title": "callings",
-    "location": "home sky",
-  }
-
+    "location": "home sky"
+  },
   "poolnight.jpg": {
     "title": "stars",
-    "location": "pool",
+    "location": "pool"
   }
 }
