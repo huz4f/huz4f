@@ -1,22 +1,46 @@
 {
-  "zarathustra.jpg": {
-    "title": "thus spoke",
-    "location": "Dal Lake"
+  "batman.JPG": {
+    "title": "Callings",
+    "description": "Silhouette against the evening sky."
+  },
+  "camp.JPG": {
+    "title": "Campfire",
+    "description": "Warmth under the open sky."
+  },
+  "early20s.JPG": {
+    "title": "Broken Glasses",
+    "description": "Framed memories from early days."
+  },
+  "golden hour.JPG": {
+    "title": "Golden Hour",
+    "description": "Soft light across the horizon."
+  },
+  "lost.JPG": {
+    "title": "Wanderer",
+    "description": "Finding perspective in quiet places."
+  },
+  "meow.JPG": {
+    "title": "Feline Companion",
+    "description": "A quiet moment captured."
   },
   "moon.JPG": {
-    "title": "Thus spoke",
-    "location": "Dal Lake"
+    "title": "Lunar Glow",
+    "description": "The moon standing out in the dark."
   },
-  "early20s.jpg": {
-    "title": "broken glasses",
-    "location": "college"
+  "norepinephrine.JPG": {
+    "title": "Adrenaline",
+    "description": "High energy in the quiet wild."
   },
-  "batman.jpg": {
-    "title": "callings",
-    "location": "home sky"
+  "poolnight.JPG": {
+    "title": "Stars & Ripples",
+    "description": "Reflections on nighttime water."
   },
-  "poolnight.jpg": {
-    "title": "stars",
-    "location": "pool"
+  "rock.JPG": {
+    "title": "Solid Ground",
+    "description": "Rugged textures and enduring stones."
+  },
+  "zarathustra.jpg": {
+    "title": "Thus Spoke",
+    "description": "Captured along quiet waters."
   }
 }

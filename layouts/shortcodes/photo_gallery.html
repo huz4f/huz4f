@@ -18,9 +18,8 @@
         {{ $photoMeta := index $meta $fileName | default dict }}
         {{ $title := index $photoMeta "title" | default $defaultTitle }}
         {{ $description := index $photoMeta "description" | default "" }}
-        {{ $location := index $photoMeta "location" | default "Visual Art" }}
 
-        {{ $photoObj := dict "id" $fileName "title" $title "description" $description "src" (printf "/photos/%s" $fileName) "location" $location }}
+        {{ $photoObj := dict "id" $fileName "title" $title "description" $description "src" (printf "/photos/%s" $fileName) }}
         {{ $photos = $photos | append $photoObj }}
       {{ end }}
     {{ end }}
@@ -36,9 +35,9 @@
       </div>
       <div class="pg-header-meta">
         <div class="pg-title-row">
-          <h2 class="pg-minimal-title">Visual Arts &amp; Frames</h2>
+          <h2 class="pg-minimal-title">Photos</h2>
         </div>
-        <p class="pg-minimal-subtitle">personal photography &amp; visual art exhibition gallery</p>
+        <p class="pg-minimal-subtitle">personal photography gallery showcase</p>
       </div>
     </div>
   </div>
@@ -107,10 +106,7 @@
           </div>
           <p class="pg-lb-desc-text" id="lbDescText"></p>
         </div>
-        <span class="pg-lb-location" id="lbLocation">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <span id="lbLocationText">-</span>
-        </span>
+
       </div>
     </div>
 
@@ -142,11 +138,10 @@
 
     let photos = (Array.isArray(HUGO_SCANNED_PHOTOS) && HUGO_SCANNED_PHOTOS.length > 0) ? HUGO_SCANNED_PHOTOS : [
       {
-        id: "zara.jpg",
-        title: "Thus spoke",
-        description: "Captured along the quiet waters of Dal Lake.",
-        location: "Dal Lake",
-        src: "/photos/zara.jpg"
+        id: "zarathustra.jpg",
+        title: "Thus Spoke",
+        description: "Captured along quiet waters.",
+        src: "/photos/zarathustra.jpg"
       }
     ];
 
@@ -174,7 +169,6 @@
     const lbFilmstrip = document.getElementById("pgLbFilmstrip");
     const lbTitle = document.getElementById("lbTitle");
     const lbDescText = document.getElementById("lbDescText");
-    const lbLocationText = document.getElementById("lbLocationText");
     const lbImgWrapper = document.getElementById("pgLbImgWrapper");
     const toast = document.getElementById("pgToast");
 
@@ -192,10 +186,6 @@
               <div class="pg-card-hover-bottom">
                 <h3 class="pg-card-hover-title">${photo.title}</h3>
                 <div class="pg-card-hover-meta">
-                  <span class="pg-card-loc-tag">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    ${photo.location || 'Visual Art'}
-                  </span>
                   <div class="pg-expand-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
                   </div>
@@ -263,7 +253,7 @@
         lbDescText.textContent = p.description || '';
         lbDescText.style.display = p.description ? 'block' : 'none';
       }
-      if (lbLocationText) lbLocationText.textContent = p.location || 'Visual Art';
+
 
       // Render Filmstrip & Auto-scroll active thumb to center
       if (lbFilmstrip) {

@@ -1398,6 +1398,7 @@ code, pre, kbd {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 50%;
   border: none !important;
   box-shadow: none !important;
@@ -1803,6 +1804,7 @@ code, pre, kbd {
 .pg-grid.view-grid .pg-img {
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* Editorial Wide Layout */
@@ -1819,6 +1821,7 @@ code, pre, kbd {
 .pg-grid.view-editorial .pg-img {
   max-height: 480px;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* 4. Photo Card Architecture & Aesthetics */
@@ -1855,6 +1858,7 @@ code, pre, kbd {
 .pg-img {
   width: 100%;
   display: block;
+  object-position: center top;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
   will-change: transform;
 }
