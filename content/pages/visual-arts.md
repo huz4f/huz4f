@@ -1,10 +1,10 @@
 ---
-title: "About me"
-url: "/about/"
+title: ""
+url: "/visual-arts/"
 author: "⠀"
 hidemeta: true
 disableShare: true
 searchHidden: true
 ---
 
-{{< about_hero >}}
+{{< photo_gallery >}}

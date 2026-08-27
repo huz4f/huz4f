@@ -27,23 +27,36 @@
   {{ end }}
 {{ end }}
 
-<div class="pg-section">
-  <!-- Minimal Header Bar -->
+<div class="pg-section" id="visual-arts-frames">
+  <!-- Upper Header Card -->
   <div class="pg-minimal-header">
-    <div class="pg-header-text">
-      <h2 class="pg-minimal-title">Visual Art &amp; Frames</h2>
-      <p class="pg-minimal-subtitle">welcome to my personal art &amp; photography exhibition gallery.</p>
+    <div class="pg-header-left">
+      <div class="pg-avatar-ring">
+        <img src='{{ "favicons/me.jpg" | absURL }}' alt="Huzaif" class="pg-header-avatar-img" />
+      </div>
+      <div class="pg-header-meta">
+        <div class="pg-title-row">
+          <h2 class="pg-minimal-title">Visual Arts &amp; Frames</h2>
+        </div>
+        <p class="pg-minimal-subtitle">personal photography &amp; visual art exhibition gallery</p>
+      </div>
     </div>
+  </div>
 
+  <!-- View Switcher Toolbar Below Upper Card -->
+  <div class="pg-toolbar-row">
     <div class="pg-view-switcher">
       <button class="pg-view-btn active" id="btnViewMasonry" title="Pinterest Masonry View">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+        <span class="btn-label">Masonry</span>
       </button>
       <button class="pg-view-btn" id="btnViewGrid" title="Instagram Square Grid View">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span class="btn-label">Grid</span>
       </button>
       <button class="pg-view-btn" id="btnViewEditorial" title="Editorial Wide View">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"></rect><rect x="3" y="14" width="18" height="6" rx="1"></rect></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"></rect><rect x="3" y="14" width="18" height="6" rx="1"></rect></svg>
+        <span class="btn-label">Editorial</span>
       </button>
     </div>
   </div>
@@ -54,11 +67,21 @@
   </div>
 </div>
 
-<!-- Clean Fullscreen Lightbox Modal (No Side Arrow Buttons) -->
+<!-- High-End Dynamic Social Gallery Lightbox Opener Modal -->
 <div class="pg-lightbox" id="pgLightbox">
   <div class="pg-lb-nav-top">
-    <div class="pg-lb-counter" id="pgLbCounter">1 / 1</div>
+    <div class="pg-lb-left-info">
+      <span class="pg-lb-counter" id="pgLbCounter">1 / 1</span>
+      <span class="pg-lb-artist-tag">@huz4f</span>
+    </div>
     <div class="pg-lb-actions">
+      <!-- Share Link Button -->
+      <button class="pg-lb-btn pg-lb-share-btn" id="pgLbShareBtn" title="Share link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        <span>Share</span>
+      </button>
+
+      <!-- Close Button -->
       <button class="pg-lb-btn pg-lb-close-btn" id="pgLbCloseBtn" title="Close (Esc)">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         <span>Close</span>
@@ -67,10 +90,15 @@
   </div>
 
   <div class="pg-lb-main">
+    <!-- Prev Arrow Button -->
+    <button class="pg-lb-arrow prev" id="pgLbPrevBtn" title="Previous photo (←)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </button>
+
     <div class="pg-lb-img-container" id="pgLbImgWrapper">
       <img src="" alt="" class="pg-lb-img" id="pgLbImage" decoding="async" loading="eager" draggable="false" oncontextmenu="return false;" />
       
-      <!-- Instagram-Style Floating Caption -->
+      <!-- Instagram-Style Floating Caption Overlay -->
       <div class="pg-lb-caption-overlay">
         <div class="pg-lb-text-col">
           <div class="pg-lb-handle-row">
@@ -85,11 +113,19 @@
         </span>
       </div>
     </div>
+
+    <!-- Next Arrow Button -->
+    <button class="pg-lb-arrow next" id="pgLbNextBtn" title="Next photo (→)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </button>
   </div>
 
   <div class="pg-lb-filmstrip" id="pgLbFilmstrip">
     <!-- Thumbnails generated dynamically -->
   </div>
+
+  <!-- Toast Notification -->
+  <div class="pg-toast" id="pgToast">Link copied to clipboard!</div>
 </div>
 
 <script>
@@ -115,6 +151,7 @@
     ];
 
     let currentLightboxIndex = 0;
+    const likesMap = {};
 
     // DOM Elements
     const gridEl = document.getElementById("pgGrid");
@@ -129,41 +166,47 @@
     const lbImage = document.getElementById("pgLbImage");
     const lbCounter = document.getElementById("pgLbCounter");
     const lbCloseBtn = document.getElementById("pgLbCloseBtn");
+    const lbPrevBtn = document.getElementById("pgLbPrevBtn");
+    const lbNextBtn = document.getElementById("pgLbNextBtn");
+    const lbLikeBtn = document.getElementById("pgLbLikeBtn");
+    const lbLikeCount = document.getElementById("pgLbLikeCount");
+    const lbShareBtn = document.getElementById("pgLbShareBtn");
     const lbFilmstrip = document.getElementById("pgLbFilmstrip");
     const lbTitle = document.getElementById("lbTitle");
     const lbDescText = document.getElementById("lbDescText");
     const lbLocationText = document.getElementById("lbLocationText");
     const lbImgWrapper = document.getElementById("pgLbImgWrapper");
+    const toast = document.getElementById("pgToast");
 
     // Render Grid Cards
     function renderGallery() {
       gridEl.innerHTML = photos.map((photo, idx) => `
-        <div class="pg-card" data-id="${photo.id}" data-index="${idx}" style="cursor: pointer;">
+        <div class="pg-card" data-id="${photo.id}" data-index="${idx}">
           <div class="pg-img-wrapper">
             <img src="${photo.src}" alt="${photo.title}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
             
-            <!-- Separate Location Badge on Bottom Right -->
-            <div class="pg-location-pill-br">
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>${photo.location || 'Visual Art'}</span>
-            </div>
-
-            <!-- Instagram Style Overlay on Bottom Left -->
-            <div class="pg-card-overlay" style="pointer-events: none;">
-              <div class="pg-overlay-bottom-left">
-                <div class="pg-insta-header">
-                  <span class="pg-insta-handle">@huz4f</span>
-                  <span class="pg-insta-dot">•</span>
-                  <h3 class="pg-photo-title">${photo.title}</h3>
+            <div class="pg-card-hover-overlay">
+              <div class="pg-card-hover-top">
+                <span class="pg-card-badge-pill">@huz4f</span>
+              </div>
+              <div class="pg-card-hover-bottom">
+                <h3 class="pg-card-hover-title">${photo.title}</h3>
+                <div class="pg-card-hover-meta">
+                  <span class="pg-card-loc-tag">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    ${photo.location || 'Visual Art'}
+                  </span>
+                  <div class="pg-expand-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                  </div>
                 </div>
-                ${photo.description ? `<p class="pg-photo-desc">${photo.description}</p>` : ''}
               </div>
             </div>
           </div>
         </div>
       `).join("");
 
-      // Single Click Handler on Cards
+      // Click Handler to Open Dynamic Lightbox
       document.querySelectorAll(".pg-card").forEach((card) => {
         card.addEventListener("click", function() {
           const index = parseInt(this.getAttribute("data-index"));
@@ -186,7 +229,7 @@
       if (viewEditorialBtn) viewEditorialBtn.classList.toggle("active", mode === "editorial");
     }
 
-    // Lightbox Implementation
+    // Dynamic Opener Lightbox Implementation
     function openLightbox(index) {
       currentLightboxIndex = index;
       updateLightboxContent();
@@ -197,6 +240,7 @@
     function closeLightbox() {
       if (lightbox) lightbox.classList.remove("active");
       document.body.style.overflow = "";
+      if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
     }
 
     function updateLightboxContent() {
@@ -204,8 +248,14 @@
       if (!p) return;
 
       if (lbImage) {
+        lbImage.style.opacity = "0";
+        lbImage.style.transform = "scale(0.95)";
         lbImage.src = p.src;
         lbImage.alt = p.title;
+        lbImage.onload = () => {
+          lbImage.style.opacity = "1";
+          lbImage.style.transform = "scale(1)";
+        };
       }
       if (lbCounter) lbCounter.textContent = `${currentLightboxIndex + 1} / ${photos.length}`;
       if (lbTitle) lbTitle.textContent = p.title;
@@ -215,7 +265,7 @@
       }
       if (lbLocationText) lbLocationText.textContent = p.location || 'Visual Art';
 
-      // Render Filmstrip
+      // Render Filmstrip & Auto-scroll active thumb to center
       if (lbFilmstrip) {
         lbFilmstrip.innerHTML = photos.map((photo, i) => `
           <div class="pg-film-thumb ${i === currentLightboxIndex ? 'active' : ''}" data-index="${i}">
@@ -229,6 +279,11 @@
             updateLightboxContent();
           });
         });
+
+        const activeThumb = lbFilmstrip.querySelector(".pg-film-thumb.active");
+        if (activeThumb) {
+          activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
       }
     }
 
@@ -244,8 +299,38 @@
       updateLightboxContent();
     }
 
-    // Lightbox Controls
+    // Share Button with Toast
+    if (lbShareBtn) {
+      lbShareBtn.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const p = photos[currentLightboxIndex];
+        const shareUrl = window.location.origin + p.src;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(shareUrl).then(showToast);
+        } else {
+          showToast();
+        }
+      });
+    }
+
+    function showToast() {
+      if (!toast) return;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    // Lightbox Navigation Controls
     if (lbCloseBtn) lbCloseBtn.addEventListener("click", closeLightbox);
+    if (lbPrevBtn) lbPrevBtn.addEventListener("click", (e) => { e.stopPropagation(); prevPhoto(); });
+    if (lbNextBtn) lbNextBtn.addEventListener("click", (e) => { e.stopPropagation(); nextPhoto(); });
+
+    // Click Image to Zoom Toggle
+    if (lbImgWrapper) {
+      lbImgWrapper.addEventListener("click", function(e) {
+        if (e.target.closest(".pg-lb-caption-overlay")) return;
+        this.classList.toggle("zoomed");
+      });
+    }
 
     // Touch Swipe & Drag Gestures
     let touchStartX = 0;
@@ -264,29 +349,6 @@
           else prevPhoto();
         }
       }, { passive: true });
-
-      // Mouse Drag Swipe on Desktop
-      let isDragging = false;
-      let dragStartX = 0;
-
-      lbImgWrapper.addEventListener("mousedown", function(e) {
-        isDragging = true;
-        dragStartX = e.clientX;
-      });
-
-      lbImgWrapper.addEventListener("mouseup", function(e) {
-        if (!isDragging) return;
-        isDragging = false;
-        const diffX = e.clientX - dragStartX;
-        if (Math.abs(diffX) > 40) {
-          if (diffX < 0) nextPhoto();
-          else prevPhoto();
-        }
-      });
-
-      lbImgWrapper.addEventListener("mouseleave", function() {
-        isDragging = false;
-      });
     }
 
     // Keyboard Shortcuts
