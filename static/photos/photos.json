@@ -1,10 +1,25 @@
 {
-  "zara.jpg": {
+  "zarathustra.jpg": {
+    "title": "thus spoke",
+    "location": "Dal Lake",
+  }
+  "moon.JPG": {
     "title": "Thus spoke",
     "location": "Dal Lake",
-    "camera": "Snapchat",
-    "iso": "100",
-    "shutter": "1/250s",
-    "aperture": "f/2.8"
   }
+}
+  "early20s.jpg": {
+  "title": "broken glasses",
+  "location": "college",
+}
+
+  "batman.jpg": {
+  "title": "callings",
+  "location": "home sky",
+}
+
+  "poolnight.jpg": {
+  "title": "stars",
+  "location": "pool",
+}
 }

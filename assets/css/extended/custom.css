@@ -1351,9 +1351,9 @@ code, pre, kbd {
 
 /* 1. Gallery Section Container & Hero */
 .pg-section {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(150, 150, 150, 0.15);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none !important;
 }
 
 .pg-minimal-header {
@@ -1364,9 +1364,9 @@ code, pre, kbd {
   gap: 1.5rem;
   margin-bottom: 1.75rem;
   padding: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .pg-header-left {
@@ -1380,19 +1380,18 @@ code, pre, kbd {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  padding: 2.5px;
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-  box-shadow: 0 6px 22px rgba(168, 85, 247, 0.35);
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  overflow: hidden;
+  display: block;
+  transition: transform 0.25s ease;
 }
 
 .pg-avatar-ring:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 28px rgba(168, 85, 247, 0.5);
+  transform: scale(1.04);
 }
 
 .pg-header-avatar-img {
@@ -1400,7 +1399,8 @@ code, pre, kbd {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid var(--theme);
+  border: none !important;
+  box-shadow: none !important;
   display: block;
 }
 
