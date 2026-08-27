@@ -73,9 +73,9 @@ buildExpired = false
       name = "Explore"
       url = "/tags/"
 
-### [[params.socialIcons]]
-    name = "x"
-    url = "https://twitter.com/hu_z4f"
+#  [[params.socialIcons]]
+#    name = "x"
+#    url = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
     name = "linkedin"
@@ -85,9 +85,9 @@ buildExpired = false
     name = "Github"
     url = "https://github.com/huz4f"
 
-###  [[params.socialIcons]]
-    name = "StackOverflow"
-    url = "https://stackoverflow.com/users/21145510/huz4f"
+#  [[params.socialIcons]]
+#    name = "StackOverflow"
+#    url = "https://stackoverflow.com/users/21145510/huz4f"
 
   [params.analytics.google]
     SiteVerificationTag = ""
