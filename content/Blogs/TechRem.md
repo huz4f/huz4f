@@ -4,7 +4,7 @@ title: "Technological Ramifications"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: false
+draft: true
 ---
 
 We all know technological advancements have drastically changed human lives, \

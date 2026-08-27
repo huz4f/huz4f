@@ -4,7 +4,7 @@ title: "Dissonance"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: false
+draft: true
 ---
 #### Choices Create illusion, Not Liberation.
 

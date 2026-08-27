@@ -14,8 +14,14 @@ buildExpired = false
   disableXML = true
   minifyOutput = true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   env = "production" # to enable google analytics, opengraph, twitter-cards, and schema.
+  mainSections = ["Articles", "Blogs", "Projects", "articles", "blogs", "projects"]
   title = "Huzaif"
   description = "was bored created a website, now i write"
   keywords = ["Blog", "Computer Science", "Cyber Security", "Cloud", "Life"]
@@ -59,19 +65,19 @@ buildExpired = false
     imageTitle = "Huzaif"
 
     [[params.profileMode.buttons]]
-      identifier = "Projects"
-      name = "Projects"
-      url = "/projects/"
-
-    [[params.profileMode.buttons]]
-      identifier = "Blogs"
-      name = "Blogs"
-      url = "/blogs/"
-
-    [[params.profileMode.buttons]]
       identifier = "Explore"
       name = "Explore"
       url = "/tags/"
+
+    [[params.profileMode.buttons]]
+      identifier = "Contact"
+      name = "Contact"
+      url = "/contact/"
+
+    [[params.profileMode.buttons]]
+      identifier = "Services"
+      name = "Services ⚡"
+      url = "/services/"
 
 #  [[params.socialIcons]]
 #    name = "x"
@@ -84,6 +90,11 @@ buildExpired = false
   [[params.socialIcons]]
     name = "Github"
     url = "https://github.com/huz4f"
+
+  [[params.socialIcons]]
+    name = "cv"
+    url = "/cv.pdf"
+    title = "Resume / CV"
 
 #  [[params.socialIcons]]
 #    name = "StackOverflow"
@@ -131,11 +142,6 @@ buildExpired = false
   url = "/projects/"
   weight = 4
 
-[[menu.main]]
-  identifier = "tags"
-  name = "Explore"
-  url = "/tags/"
-  weight = 5
 
 [[menu.main]]
   identifier = "about"

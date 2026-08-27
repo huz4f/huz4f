@@ -4,7 +4,7 @@ title: "Name is \ where a dead person lives"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: false
+draft: true
 ---
 Unfinished like me. i choose to let it be
 ![](/blogs/ky.jpg)

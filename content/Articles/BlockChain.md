@@ -8,7 +8,7 @@ date: 2024-02-10
 
 author: "Huzaif"
 hideSummary: true
-draft: false
+draft: true
 ---
 'Data is everywhere and everything in today's day and age' \
 Advancement in technology has enabled us to keep our data online from our private credentials to backup of our gallery photos. You don't need local storage and access.

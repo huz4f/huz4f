@@ -4,7 +4,7 @@ title: "void"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: false
+draft: true
 ---
 ![](/blogs/zara.jpg)
 
