@@ -2320,6 +2320,7 @@ code, pre, kbd {
 
 /* Lightbox Nav Arrows */
 .pg-lb-arrow {
+  display: none !important;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -2329,7 +2330,6 @@ code, pre, kbd {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #ffffff;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
