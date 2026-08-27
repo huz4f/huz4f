@@ -1,14 +1,20 @@
-# 📷 Photography & Art Upload Directory
+# 📷 Zero-Hassle Photo & Art Exhibition Directory
 
-Welcome to your personal photo directory!
+Welcome to your automated photo gallery directory!
 
-## How to add your own photos:
-1. Simply drop your photo files (`.jpg`, `.png`, `.webp`, or `.avif`) into this folder (`static/photos/`).
-2. Add your new photo entries to the `INITIAL_PHOTOS` array in [`layouts/shortcodes/photo_gallery.html`](file:///Users/huz4f/Dev/web/huz4f/layouts/shortcodes/photo_gallery.html#L117-L195).
-3. Your photos will automatically render in your gallery at `/about/`!
+## 🚀 How it works:
+1. **Just drop any photo file** (`.jpg`, `.png`, `.webp`, or `.avif`) directly into this folder (`static/photos/`).
+2. Hugo automatically detects the image file, generates its path (`/photos/filename`), and builds a clean title automatically!
+3. **Optional Custom Metadata**: If you want to customize a photo's title, location, or camera details, open [`static/photos/photos.json`](file:///Users/huz4f/Dev/web/huz4f/static/photos/photos.json) and add your custom data:
 
-## Supported Formats:
-- JPEG (`.jpg`, `.jpeg`)
-- PNG (`.png`)
-- WebP (`.webp`)
-- AVIF (`.avif`)
+```json
+{
+  "zara.jpg": {
+    "title": "Zara",
+    "location": "Visual Art Exhibition",
+    "camera": "Art Frame"
+  }
+}
+```
+
+No code editing or ID setup required!
