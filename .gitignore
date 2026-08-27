@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Hugo build outputs
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Node & Editors
+node_modules/
+.idea/
+.vscode/

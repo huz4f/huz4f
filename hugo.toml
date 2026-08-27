@@ -1,13 +1,14 @@
-baseURL = 'https://github.com/huz4f/huz4f.git'
+baseURL = 'https://huz4f.github.io/'
 title = 'Huzaif'
-theme= "PaperMod"
+theme = "PaperMod"
 
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
 
-#googleAnalytics = "UA-123-45"
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [minify]
   disableXML = true
@@ -16,11 +17,10 @@ buildExpired = false
 [params]
   env = "production" # to enable google analytics, opengraph, twitter-cards, and schema.
   title = "Huzaif"
-  description = "was bored created a website, now i write "
-  keywords = ["Blog", "Computer Science","Cyber Security", "Cloud", "Life"]
+  description = "was bored created a website, now i write"
+  keywords = ["Blog", "Computer Science", "Cyber Security", "Cloud", "Life"]
   author = "Huzaif"
-  # author = ["Me", "You"] # multiple authors
-  #images = [""]
+  images = ["/huz4f.png"]
   DateFormat = "January 2, 2006"
   defaultTheme = "auto" # dark, light
   disableThemeToggle = false
@@ -28,7 +28,7 @@ buildExpired = false
   ShowShareButtons = true
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
-  ShowCodeCopyButtons = false
+  ShowCodeCopyButtons = true
   disableSpecial1stPost = false
   disableScrollToTop = false
   comments = false
@@ -51,14 +51,12 @@ buildExpired = false
 
   [params.profileMode]
     enabled = true # needs to be explicitly set
+    title = "Welcome! 👋"
     subtitle = "i am **Huzaif** Shabir"
-    title = "Welcome! \U0001F44B"
-    imageUrl = "/favicons//me.jpg"
-    imageHeight = 150
+    imageUrl = "/favicons/me.jpg"
     imageWidth = 150
+    imageHeight = 150
     imageTitle = "Huzaif"
-
-
 
     [[params.profileMode.buttons]]
       identifier = "Projects"
@@ -70,48 +68,26 @@ buildExpired = false
       name = "Blogs"
       url = "/blogs/"
 
-    #[[params.profileMode.buttons]]
-      #identifier = "tags"
-      #name = "Explore"
-      #url = "/tags/"
+    [[params.profileMode.buttons]]
+      identifier = "Explore"
+      name = "Explore"
+      url = "/tags/"
 
-  #[params.homeInfoParams]
-    #Title = ""
-    #Content = ""
-
-  #[[params.socialIcons]]
-    #name = "youtube"
-    #url = "http://youtube.com/huz4f"
-
-  #[[params.socialIcons]]
-    #name = "medium"
-    #url = ""
-
-  #[[params.socialIcons]]
-    #name = "x"
-    #url = "https://twitter.com/hu_z4f"
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://twitter.com/hu_z4f"
 
   [[params.socialIcons]]
     name = "linkedin"
     url = "https://www.linkedin.com/in/huz4f/"
 
   [[params.socialIcons]]
-    name = "CV"
-    url = ""
-
-  [[params.socialIcons]]
     name = "Github"
     url = "https://github.com/huz4f"
 
-  #[[params.socialIcons]]
-    #name = "discord"
-    #url = "https://discordapp.com/users/huz4f/"
-
-  #[[params.socialIcons]]
-    #name = "phone"
-    #url = "https://Vsco.co/huz4f"
-  
-
+  [[params.socialIcons]]
+    name = "StackOverflow"
+    url = "https://stackoverflow.com/users/21145510/huz4f"
 
   [params.analytics.google]
     SiteVerificationTag = ""
@@ -132,38 +108,37 @@ buildExpired = false
     keys = ["title", "permalink", "summary", "content"]
 
 [[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about"
-  weight = 5
-
-#[[menu.main]]
-  #identifier = "Blogs"
-  #name = "Blogs"
-  #url = "/blogs/"
-  #weight = 4
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 1
 
 [[menu.main]]
   identifier = "Tech"
   name = "Tech"
-  url = "/Articles/"
-  weight = 1
+  url = "/articles/"
+  weight = 2
 
-#[[menu.main]]
-  #identifier = "wiki"
-  #name = "wiki"
-  #url = "/wiki/"
-  #weight = 3
+[[menu.main]]
+  identifier = "Blogs"
+  name = "Blogs"
+  url = "/blogs/"
+  weight = 3
 
-#[[menu.main]]
-  #identifier = "Projects"
-  #name = "Projects"
-  #url = "/Projects/"
-  #weight = 2
+[[menu.main]]
+  identifier = "Projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 4
 
 [[menu.main]]
   identifier = "tags"
   name = "Explore"
   url = "/tags/"
-  weight = 1
+  weight = 5
 
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 6
