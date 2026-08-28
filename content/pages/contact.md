@@ -13,7 +13,6 @@ draft: false
 <span>Available</span>
 </div>
 <h1 class="contact-title">Let's Connect & <span class="text-gradient">Collaborate</span></h1>
-<p class="contact-subtitle">Whether you have a project in mind, need technical architecture advice, or just want to connect — feel free to drop a message.</p>
 </div>
 
 <div class="contact-page-container">
@@ -81,6 +80,34 @@ draft: false
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('quickContactForm');
+  const nameInput = document.getElementById('contactName');
+  const subjectInput = document.getElementById('contactSubject');
+  const messageInput = document.getElementById('contactMessage');
+
+  // Pre-fill fields from URL query parameters (e.g. from Services cards)
+  const params = new URLSearchParams(window.location.search);
+  const serviceParam = params.get('service');
+  const subjectParam = params.get('subject');
+  const messageParam = params.get('message');
+
+  if (subjectParam && subjectInput) {
+    subjectInput.value = subjectParam;
+  } else if (serviceParam && subjectInput) {
+    subjectInput.value = `Inquiry: ${serviceParam}`;
+  }
+
+  if (messageParam && messageInput) {
+    messageInput.value = messageParam;
+  } else if (serviceParam && messageInput) {
+    messageInput.value = `Hi Huzaif,\n\nI'm interested in collaborating with you and your team on ${serviceParam}.\n\nProject Overview & Requirements:\n- \n\nTimeline & Goals:\n- `;
+  }
+
+  if (serviceParam || subjectParam) {
+    if (nameInput) {
+      setTimeout(() => nameInput.focus(), 150);
+    }
+  }
+
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
