@@ -6,6 +6,6 @@ author: "Huzaif"
 hidesummary: true
 draft: true
 ---
-![](/blogs/zara.jpg)
+![](/photos/zarathustra.jpg)
 
 have in my notes, did not complete the previous blog also

@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Visual Arts & Frames"
 url: "/visual-arts/"
 author: "⠀"
 hidemeta: true

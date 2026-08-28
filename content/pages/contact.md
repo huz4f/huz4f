@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const subject = document.getElementById('contactSubject').value;
       const message = document.getElementById('contactMessage').value;
 
-      const bodyText = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+      const bodyText = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
       const mailtoUrl = `mailto:ihuz4f@gmail.com?subject=${encodeURIComponent(subject)}&body=${bodyText}`;
 
       window.location.href = mailtoUrl;

@@ -4,7 +4,7 @@ title: "Shepherd, Sheep and Legs"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
-draft: true
+draft: false
 ---
 **Came across this while reading a book:** 
 >Story is about  a little sheep in a Shepherd's flock.

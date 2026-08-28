@@ -144,7 +144,6 @@
     ];
 
     let currentLightboxIndex = 0;
-    const likesMap = {};
 
     // DOM Elements
     const gridEl = document.getElementById("pgGrid");
@@ -157,32 +156,40 @@
     // Lightbox Elements
     const lightbox = document.getElementById("pgLightbox");
     const lbImage = document.getElementById("pgLbImage");
-    const lbCounter = document.getElementById("pgLbCounter");
     const lbCloseBtn = document.getElementById("pgLbCloseBtn");
     const lbPrevBtn = document.getElementById("pgLbPrevBtn");
     const lbNextBtn = document.getElementById("pgLbNextBtn");
-    const lbLikeBtn = document.getElementById("pgLbLikeBtn");
-    const lbLikeCount = document.getElementById("pgLbLikeCount");
     const lbShareBtn = document.getElementById("pgLbShareBtn");
     const lbFilmstrip = document.getElementById("pgLbFilmstrip");
     const lbTitle = document.getElementById("lbTitle");
+    const lbDescContainer = document.getElementById("lbDescContainer");
     const lbDescText = document.getElementById("lbDescText");
     const lbImgWrapper = document.getElementById("pgLbImgWrapper");
     const toast = document.getElementById("pgToast");
 
+    function escapeHtml(str) {
+      if (!str) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
     // Render Grid Cards
     function renderGallery() {
       gridEl.innerHTML = photos.map((photo, idx) => `
-        <div class="pg-card" data-id="${photo.id}" data-index="${idx}">
+        <div class="pg-card" data-id="${escapeHtml(photo.id)}" data-index="${idx}">
           <div class="pg-img-wrapper">
-            <img src="${photo.src}" alt="${photo.title}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
+            <img src="${photo.src}" alt="${escapeHtml(photo.title)}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
             
             <div class="pg-card-hover-overlay">
               <div class="pg-card-hover-top">
                 <span class="pg-card-badge-pill">@huz4f</span>
               </div>
               <div class="pg-card-hover-bottom">
-                <h3 class="pg-card-hover-title">${photo.title}</h3>
+                <h3 class="pg-card-hover-title">${escapeHtml(photo.title)}</h3>
                 <div class="pg-card-hover-meta">
                   <div class="pg-expand-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -195,11 +202,32 @@
       `).join("");
 
       // Click Handler to Open Dynamic Lightbox
-      document.querySelectorAll(".pg-card").forEach((card) => {
+      gridEl.querySelectorAll(".pg-card").forEach((card) => {
         card.addEventListener("click", function() {
           const index = parseInt(this.getAttribute("data-index"));
           if (!isNaN(index)) {
             openLightbox(index);
+          }
+        });
+      });
+    }
+
+    // Render Filmstrip Thumbnails Once
+    function renderFilmstrip() {
+      if (!lbFilmstrip) return;
+      lbFilmstrip.innerHTML = photos.map((photo, i) => `
+        <div class="pg-film-thumb ${i === currentLightboxIndex ? 'active' : ''}" data-index="${i}">
+          <img src="${photo.src}" alt="${escapeHtml(photo.title)}" decoding="async" loading="lazy" draggable="false" oncontextmenu="return false;" />
+        </div>
+      `).join("");
+
+      lbFilmstrip.querySelectorAll(".pg-film-thumb").forEach(thumb => {
+        thumb.addEventListener("click", function() {
+          const index = parseInt(this.getAttribute("data-index"));
+          if (!isNaN(index)) {
+            currentLightboxIndex = index;
+            if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
+            updateLightboxContent();
           }
         });
       });
@@ -218,16 +246,33 @@
     }
 
     // Dynamic Opener Lightbox Implementation
+    let savedScrollY = 0;
+
     function openLightbox(index) {
       currentLightboxIndex = index;
       updateLightboxContent();
       if (lightbox) lightbox.classList.add("active");
+      // Prevent background scroll (including iOS)
+      savedScrollY = window.scrollY;
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.width = "100%";
+      document.documentElement.style.overflow = "hidden";
     }
 
     function closeLightbox() {
       if (lightbox) lightbox.classList.remove("active");
+      // Restore background scroll without smooth-scroll jitter
+      const prevScrollBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = "auto";
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.documentElement.style.overflow = "";
+      window.scrollTo(0, savedScrollY);
+      document.documentElement.style.scrollBehavior = prevScrollBehavior;
       if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
     }
 
@@ -245,30 +290,20 @@
           lbImage.style.transform = "scale(1)";
         };
       }
-      if (lbCounter) lbCounter.textContent = `${currentLightboxIndex + 1} / ${photos.length}`;
       if (lbTitle) lbTitle.textContent = p.title;
-      if (lbDescText) {
-        lbDescText.textContent = p.description || '';
-        lbDescText.style.display = p.description ? 'block' : 'none';
+      if (lbDescContainer) {
+        lbDescContainer.style.display = p.description ? 'block' : 'none';
+        if (lbDescText) lbDescText.textContent = p.description || '';
       }
 
-
-      // Render Filmstrip & Auto-scroll active thumb to center
+      // Update Active Filmstrip Thumbnail & Center It
       if (lbFilmstrip) {
-        lbFilmstrip.innerHTML = photos.map((photo, i) => `
-          <div class="pg-film-thumb ${i === currentLightboxIndex ? 'active' : ''}" data-index="${i}">
-            <img src="${photo.src}" alt="${photo.title}" decoding="async" loading="lazy" draggable="false" oncontextmenu="return false;" />
-          </div>
-        `).join("");
-
-        document.querySelectorAll(".pg-film-thumb").forEach(thumb => {
-          thumb.addEventListener("click", function() {
-            currentLightboxIndex = parseInt(this.getAttribute("data-index"));
-            updateLightboxContent();
-          });
+        const thumbs = lbFilmstrip.querySelectorAll(".pg-film-thumb");
+        thumbs.forEach((thumb, i) => {
+          thumb.classList.toggle("active", i === currentLightboxIndex);
         });
 
-        const activeThumb = lbFilmstrip.querySelector(".pg-film-thumb.active");
+        const activeThumb = thumbs[currentLightboxIndex];
         if (activeThumb) {
           activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
@@ -277,12 +312,14 @@
 
     function nextPhoto() {
       if (photos.length <= 1) return;
+      if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
       currentLightboxIndex = (currentLightboxIndex + 1) % photos.length;
       updateLightboxContent();
     }
 
     function prevPhoto() {
       if (photos.length <= 1) return;
+      if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
       currentLightboxIndex = (currentLightboxIndex - 1 + photos.length) % photos.length;
       updateLightboxContent();
     }
@@ -292,7 +329,7 @@
       lbShareBtn.addEventListener("click", function(e) {
         e.stopPropagation();
         const p = photos[currentLightboxIndex];
-        const shareUrl = window.location.origin + p.src;
+        const shareUrl = window.location.origin + encodeURI(p.src);
         if (navigator.clipboard) {
           navigator.clipboard.writeText(shareUrl).then(showToast);
         } else {
@@ -312,28 +349,51 @@
     if (lbPrevBtn) lbPrevBtn.addEventListener("click", (e) => { e.stopPropagation(); prevPhoto(); });
     if (lbNextBtn) lbNextBtn.addEventListener("click", (e) => { e.stopPropagation(); nextPhoto(); });
 
+    // Click on backdrop area (lightbox main area, not on image) to close
+    if (lightbox) {
+      lightbox.addEventListener("click", function(e) {
+        if (e.target === lightbox || e.target.classList.contains("pg-lb-main")) {
+          closeLightbox();
+        }
+      });
+    }
+
     // Click Image to Zoom Toggle
     if (lbImgWrapper) {
       lbImgWrapper.addEventListener("click", function(e) {
+        e.stopPropagation();
         if (e.target.closest(".pg-lb-caption-overlay")) return;
         this.classList.toggle("zoomed");
       });
     }
 
+    // Prevent touch scrolling on lightbox (prevents page behind from scrolling)
+    if (lightbox) {
+      lightbox.addEventListener("touchmove", function(e) {
+        if (e.target.closest(".pg-lb-filmstrip")) return;
+        e.preventDefault();
+      }, { passive: false });
+    }
+
     // Touch Swipe & Drag Gestures
     let touchStartX = 0;
-    let touchEndX = 0;
+    let touchStartY = 0;
 
     if (lbImgWrapper) {
       lbImgWrapper.addEventListener("touchstart", function(e) {
         touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
       }, { passive: true });
 
       lbImgWrapper.addEventListener("touchend", function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchEndX - touchStartX;
-        if (Math.abs(diff) > 35) {
-          if (diff < 0) nextPhoto();
+        if (lbImgWrapper.classList.contains("zoomed")) return;
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        // Only navigate if horizontal swipe is dominant
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX < 0) nextPhoto();
           else prevPhoto();
         }
       }, { passive: true });
@@ -349,6 +409,7 @@
 
     // Initial Render
     renderGallery();
+    renderFilmstrip();
   }
 
   if (document.readyState === "loading") {
