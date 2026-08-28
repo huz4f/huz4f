@@ -14,8 +14,7 @@ draft: false
 <span>Available for Consulting, Architecture &amp; Team Projects</span>
 </div>
 <h1 class="services-title">Engineering &amp; <span class="text-gradient">Advisory Services</span></h1>
-<p class="services-subtitle">System Architect specializing in high-performance software systems, security research, and scalable infrastructure. I design resilient technical architectures and clean engineering solutions.</p>
-<p class="services-team-intro">In addition to direct technical advisory, I lead a dedicated multidisciplinary engineering team delivering end-to-end software development, full-stack product builds, intelligent workflow automation, and rapid proof-of-concepts with exceptional speed and craftsmanship.</p>
+<p class="services-subtitle">System Architect specializing in high-performance software systems, security research and scalable infrastructure. In addition to direct technical advisory, I lead a dedicated multidisciplinary team where we design resilient technical architectures and clean engineering solutions.  </p>
 </div>
 
 <div class="services-container">
@@ -44,13 +43,6 @@ draft: false
 <li>High-performance REST &amp; GraphQL APIs</li>
 <li>Authentication, billing integrations &amp; user management</li>
 </ul>
-<div class="service-card-action">
-<span>Discuss this project</span>
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
 </div>
 </a>
 
@@ -77,13 +69,6 @@ draft: false
 <li>Automated document processing &amp; data parsing</li>
 <li>Scheduled task runners &amp; real-time notifications</li>
 </ul>
-<div class="service-card-action">
-<span>Discuss this project</span>
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
 </div>
 </a>
 
@@ -110,84 +95,10 @@ draft: false
 <li>Low-latency backend caching &amp; load balancing</li>
 <li>Database indexing, partitioning &amp; schema design</li>
 </ul>
-<div class="service-card-action">
-<span>Discuss this project</span>
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
 </div>
 </a>
 
-<!-- Service 4: Security Audits & Hardening -->
-<a href="/contact/?service=Security+Audits+%26+Hardening" class="service-card-link" title="Start an inquiry about Security Audits &amp; Hardening">
-<div class="service-card">
-<div class="service-card-top-row">
-<div class="service-icon-box cloud-icon">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-</svg>
-</div>
-<div class="service-card-arrow">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
-</div>
-<h3 class="service-name">Security Audits &amp; Hardening</h3>
-<p class="service-desc">Comprehensive vulnerability assessments, cryptographic protocol validation, identity &amp; access architecture (IAM), and defensive threat modeling.</p>
-<ul class="service-features">
-<li>API security posture &amp; authentication audits</li>
-<li>Smart contract &amp; protocol vulnerability reviews</li>
-<li>Infrastructure hardening &amp; zero-trust network policy</li>
-</ul>
-<div class="service-card-action">
-<span>Discuss this project</span>
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
-</div>
-</a>
-
-<!-- Service 5: Rapid MVP & Product Prototyping -->
-<a href="/contact/?service=Rapid+MVP+%26+Proof+of+Concept" class="service-card-link" title="Start an inquiry about Rapid MVP &amp; Proof of Concept">
-<div class="service-card">
-<div class="service-card-top-row">
-<div class="service-icon-box arch-icon">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<circle cx="12" cy="12" r="10"></circle>
-<polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-</svg>
-</div>
-<div class="service-card-arrow">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
-</div>
-<h3 class="service-name">Rapid MVP &amp; Proof of Concept</h3>
-<p class="service-desc">Transforming product concepts into functional, production-ready MVPs within rapid turnarounds, combining quick iterations with clean architecture.</p>
-<ul class="service-features">
-<li>Fast proof-of-concept engineering &amp; prototyping</li>
-<li>Multi-platform technology stacks (Web, Mobile, Desktop)</li>
-<li>Architecture documentation &amp; developer handoff</li>
-</ul>
-<div class="service-card-action">
-<span>Discuss this project</span>
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-<line x1="5" y1="12" x2="19" y2="12"></line>
-<polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-</div>
-</div>
-</a>
-
-<!-- Service 6: Custom Tools & Internal Dashboards -->
+<!-- Service 4: Custom Tools & Internal Dashboards -->
 <a href="/contact/?service=Internal+Dashboards+%26+Custom+Tooling" class="service-card-link" title="Start an inquiry about Internal Dashboards &amp; Custom Tooling">
 <div class="service-card">
 <div class="service-card-top-row">
@@ -212,13 +123,59 @@ draft: false
 <li>Bots (Telegram, Discord, Slack) &amp; automation scripts</li>
 <li>Data export, reporting &amp; analytics workflows</li>
 </ul>
-<div class="service-card-action">
-<span>Discuss this project</span>
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+</div>
+</a>
+
+<!-- Service 5: Security Audits & Hardening -->
+<a href="/contact/?service=Security+Audits+%26+Hardening" class="service-card-link" title="Start an inquiry about Security Audits &amp; Hardening">
+<div class="service-card">
+<div class="service-card-top-row">
+<div class="service-icon-box cloud-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+</div>
+<div class="service-card-arrow">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 <line x1="5" y1="12" x2="19" y2="12"></line>
 <polyline points="12 5 19 12 12 19"></polyline>
 </svg>
 </div>
+</div>
+<h3 class="service-name">Security Audits &amp; Hardening</h3>
+<p class="service-desc">Comprehensive vulnerability assessments, cryptographic protocol validation, identity &amp; access architecture (IAM), and defensive threat modeling.</p>
+<ul class="service-features">
+<li>API security posture &amp; authentication audits</li>
+<li>Smart contract &amp; protocol vulnerability reviews</li>
+<li>Infrastructure hardening &amp; zero-trust network policy</li>
+</ul>
+</div>
+</a>
+
+<!-- Service 6: Rapid MVP & Product Prototyping -->
+<a href="/contact/?service=Rapid+MVP+%26+Proof+of+Concept" class="service-card-link" title="Start an inquiry about Rapid MVP &amp; Proof of Concept">
+<div class="service-card">
+<div class="service-card-top-row">
+<div class="service-icon-box arch-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="10"></circle>
+<polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+</svg>
+</div>
+<div class="service-card-arrow">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<line x1="5" y1="12" x2="19" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</div>
+</div>
+<h3 class="service-name">Rapid MVP &amp; Proof of Concept</h3>
+<p class="service-desc">Transforming product concepts into functional, production-ready MVPs within rapid turnarounds, combining quick iterations with clean architecture.</p>
+<ul class="service-features">
+<li>Fast proof-of-concept engineering &amp; prototyping</li>
+<li>Multi-platform technology stacks (Web, Mobile, Desktop)</li>
+<li>Architecture documentation &amp; developer handoff</li>
+</ul>
 </div>
 </a>
 
