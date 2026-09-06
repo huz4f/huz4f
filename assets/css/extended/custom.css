@@ -3280,10 +3280,17 @@ body:has(.services-hero) .post-header,
   padding: 0 0.5rem;
 }
 
+.explore-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(168, 85, 247, 0.25) 50%, transparent 100%);
+  margin: 0.35rem 0;
+}
+
 .explore-cards-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.65rem;
 }
 
 .explore-card-link,
@@ -3301,7 +3308,7 @@ body:has(.services-hero) .post-header,
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 1.35rem 1.65rem;
+  padding: 1.1rem 1.6rem;
   background: var(--entry);
   border-radius: 18px;
   position: relative;

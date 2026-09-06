@@ -77,7 +77,7 @@ disableKinds = ["taxonomy", "term"]
 
     [[params.profileMode.buttons]]
       identifier = "Explore"
-      name = "Explore 🧭"
+      name = "Explore"
       url = "/explore/"
 
 #  [[params.socialIcons]]
