@@ -26,14 +26,12 @@
     <div class="sender-mode-wrapper">
       <label class="sender-mode-label">Sender Identity Mode:</label>
       <div class="sender-mode-pills" role="radiogroup" aria-label="Sender Identity Mode">
-        <button type="button" class="sender-pill active" data-mode="anonymous" id="btnModeAnon">
+        <button type="button" class="sender-pill active" data-mode="professional" id="btnModeEmail">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 12h20"></path>
-            <path d="M20 12v8H4v-8"></path>
-            <circle cx="9" cy="8" r="2"></circle>
-            <circle cx="15" cy="8" r="2"></circle>
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
           </svg>
-          <span>Anonymous</span>
+          <span>With Email</span>
         </button>
         <button type="button" class="sender-pill" data-mode="name_only" id="btnModeName">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -42,35 +40,37 @@
           </svg>
           <span>Only Name</span>
         </button>
-        <button type="button" class="sender-pill" data-mode="professional" id="btnModeEmail">
+        <button type="button" class="sender-pill" data-mode="anonymous" id="btnModeAnon">
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            <path d="M2 12h20"></path>
+            <path d="M20 12v8H4v-8"></path>
+            <circle cx="9" cy="8" r="2"></circle>
+            <circle cx="15" cy="8" r="2"></circle>
           </svg>
-          <span>With Email</span>
+          <span>Anonymous</span>
         </button>
       </div>
     </div>
 
     <!-- Mode Notice Banner -->
     <div class="mode-notice" id="modeNotice">
-      <span class="notice-icon">🛡️</span>
-      <span class="notice-text" id="modeNoticeText">100% Anonymous: No name, email, or identity will be attached to your message.</span>
+      <span class="notice-icon">✉️</span>
+      <span class="notice-text" id="modeNoticeText">Professional Mode: Includes your name &amp; email address so I can reply back.</span>
     </div>
 
     <form class="contact-form" id="quickContactForm">
       <!-- Hidden field storing the active mode -->
-      <input type="hidden" id="senderModeInput" name="sender_mode" value="anonymous" />
+      <input type="hidden" id="senderModeInput" name="sender_mode" value="professional" />
 
-      <!-- Identity Fields (Hidden in Anonymous mode) -->
-      <div class="form-row" id="identityRow" style="display: none;">
-        <div class="form-group" id="nameGroup" style="width: 100%;">
-          <label for="contactName">Your Name / Pseudonym</label>
-          <input type="text" id="contactName" name="name" placeholder="Huzaif or Pseudonym" />
+      <!-- Identity Fields (Visible by default in Professional mode) -->
+      <div class="form-row" id="identityRow">
+        <div class="form-group" id="nameGroup">
+          <label for="contactName">Your Name</label>
+          <input type="text" id="contactName" name="name" placeholder="Your Name" required />
         </div>
-        <div class="form-group" id="emailGroup" style="display: none;">
+        <div class="form-group" id="emailGroup">
           <label for="contactEmail">Your Email ID <span class="label-hint">(for direct reply)</span></label>
-          <input type="email" id="contactEmail" name="email" placeholder="name@company.com" />
+          <input type="email" id="contactEmail" name="email" placeholder="name@company.com" required />
         </div>
       </div>
 
@@ -116,7 +116,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const FORM_BACKEND_URL = ''; // Leave empty for test mode or insert your private endpoint
+  // Replace with your endpoint URL (e.g., Formspree: https://formspree.io/f/xyz, Formspark: https://submit-form.com/xyz, Web3Forms: https://api.web3forms.com/submit)
+  const FORM_BACKEND_URL = '';
 
   const pills = document.querySelectorAll('.sender-pill');
   const modeInput = document.getElementById('senderModeInput');
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const emailGroup = document.getElementById('emailGroup');
   const nameInput = document.getElementById('contactName');
   const emailInput = document.getElementById('contactEmail');
+  const modeNotice = document.getElementById('modeNotice');
   const modeNoticeText = document.getElementById('modeNoticeText');
   const form = document.getElementById('quickContactForm');
   const submitBtn = document.getElementById('contactSubmitBtn');
@@ -136,14 +138,15 @@ document.addEventListener('DOMContentLoaded', function() {
     pills.forEach(p => p.classList.toggle('active', p.getAttribute('data-mode') === mode));
     modeInput.value = mode;
 
-    if (mode === 'anonymous') {
-      identityRow.style.display = 'none';
-      emailGroup.style.display = 'none';
-      nameInput.required = false;
-      emailInput.required = false;
-      nameInput.value = '';
-      emailInput.value = '';
-      modeNoticeText.textContent = '100% Anonymous: No name, email, or identity will be attached to your message.';
+    if (mode === 'professional') {
+      identityRow.style.display = 'grid';
+      identityRow.style.gridTemplateColumns = window.innerWidth > 580 ? '1fr 1fr' : '1fr';
+      nameGroup.style.display = 'flex';
+      emailGroup.style.display = 'flex';
+      nameInput.required = true;
+      emailInput.required = true;
+      modeNoticeText.textContent = 'Professional Mode: Includes your name & email address so I can reply back.';
+      if (modeNotice.querySelector('.notice-icon')) modeNotice.querySelector('.notice-icon').textContent = '✉️';
     } else if (mode === 'name_only') {
       identityRow.style.display = 'grid';
       identityRow.style.gridTemplateColumns = '1fr';
@@ -153,14 +156,16 @@ document.addEventListener('DOMContentLoaded', function() {
       emailInput.required = false;
       emailInput.value = '';
       modeNoticeText.textContent = 'Sender Identity: Message will include only your chosen name or pseudonym.';
-    } else if (mode === 'professional') {
-      identityRow.style.display = 'grid';
-      identityRow.style.gridTemplateColumns = window.innerWidth > 580 ? '1fr 1fr' : '1fr';
-      nameGroup.style.display = 'flex';
-      emailGroup.style.display = 'flex';
-      nameInput.required = true;
-      emailInput.required = true;
-      modeNoticeText.textContent = 'Professional Mode: Includes your name & email address so I can reply back.';
+      if (modeNotice.querySelector('.notice-icon')) modeNotice.querySelector('.notice-icon').textContent = '👤';
+    } else if (mode === 'anonymous') {
+      identityRow.style.display = 'none';
+      emailGroup.style.display = 'none';
+      nameInput.required = false;
+      emailInput.required = false;
+      nameInput.value = '';
+      emailInput.value = '';
+      modeNoticeText.textContent = '100% Anonymous: No name, email, or identity will be attached to your message.';
+      if (modeNotice.querySelector('.notice-icon')) modeNotice.querySelector('.notice-icon').textContent = '🛡️';
     }
   }
 
