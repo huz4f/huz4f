@@ -115,8 +115,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Replace with your endpoint URL (e.g., Formspree: https://formspree.io/f/xyz, Formspark: https://submit-form.com/xyz, Web3Forms: https://api.web3forms.com/submit)
-  const FORM_BACKEND_URL = '';
+  // Connected Formspree endpoint
+  const FORM_BACKEND_URL = 'https://formspree.io/f/mnpqbvja';
 
   const pills = document.querySelectorAll('.sender-pill');
   const modeInput = document.getElementById('senderModeInput');
@@ -206,14 +206,19 @@ document.addEventListener('DOMContentLoaded', function() {
       btnIcon.innerHTML = '<span class="btn-spinner"></span>';
       statusMsg.style.display = 'none';
 
+      const modeTag = mode === 'anonymous' ? '[Anonymous]' : mode === 'name_only' ? `[${name}]` : `[Email: ${name}]`;
       const payload = {
-        sender_mode: mode,
         name: name,
-        email: email || 'N/A (Not Provided)',
+        sender_mode: mode,
+        _subject: `${modeTag} ${subject}`,
         subject: subject,
-        message: message,
-        timestamp: new Date().toISOString()
+        message: message
       };
+
+      if (email) {
+        payload.email = email;
+        payload._replyto = email;
+      }
 
       try {
         if (FORM_BACKEND_URL && FORM_BACKEND_URL.startsWith('http')) {
