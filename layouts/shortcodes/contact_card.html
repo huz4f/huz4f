@@ -51,12 +51,6 @@
       </div>
     </div>
 
-    <!-- Mode Notice Banner -->
-    <div class="mode-notice" id="modeNotice">
-      <span class="notice-icon">✉️</span>
-      <span class="notice-text" id="modeNoticeText">Professional Mode: Includes your name &amp; email address so I can reply back.</span>
-    </div>
-
     <form class="contact-form" id="quickContactForm">
       <!-- Hidden field storing the active mode -->
       <input type="hidden" id="senderModeInput" name="sender_mode" value="professional" />
@@ -125,8 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const emailGroup = document.getElementById('emailGroup');
   const nameInput = document.getElementById('contactName');
   const emailInput = document.getElementById('contactEmail');
-  const modeNotice = document.getElementById('modeNotice');
-  const modeNoticeText = document.getElementById('modeNoticeText');
   const form = document.getElementById('quickContactForm');
   const submitBtn = document.getElementById('contactSubmitBtn');
   const btnText = document.getElementById('btnText');
@@ -144,8 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
       emailGroup.style.display = 'flex';
       nameInput.required = true;
       emailInput.required = true;
-      modeNoticeText.textContent = 'Professional Mode: Includes your name & email address so I can reply back.';
-      if (modeNotice.querySelector('.notice-icon')) modeNotice.querySelector('.notice-icon').textContent = '✉️';
     } else if (mode === 'name_only') {
       identityRow.style.display = 'grid';
       identityRow.style.gridTemplateColumns = '1fr';
@@ -154,8 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
       nameInput.required = true;
       emailInput.required = false;
       emailInput.value = '';
-      modeNoticeText.textContent = 'Sender Identity: Message will include only your chosen name or pseudonym.';
-      if (modeNotice.querySelector('.notice-icon')) modeNotice.querySelector('.notice-icon').textContent = '👤';
     } else if (mode === 'anonymous') {
       identityRow.style.display = 'none';
       emailGroup.style.display = 'none';
@@ -163,8 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
       emailInput.required = false;
       nameInput.value = '';
       emailInput.value = '';
-      modeNoticeText.textContent = '100% Anonymous: No name, email, or identity will be attached to your message.';
-      if (modeNotice.querySelector('.notice-icon')) modeNotice.querySelector('.notice-icon').textContent = '🛡️';
     }
   }
 
