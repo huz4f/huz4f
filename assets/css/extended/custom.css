@@ -3016,6 +3016,7 @@ body:has(.services-hero) .post-header,
   padding: 0 !important;
 }
 
+.post-content a.about-art-card-link,
 .about-art-card-link,
 .about-art-card-link:hover,
 .about-art-card-link:focus,
@@ -3023,6 +3024,7 @@ body:has(.services-hero) .post-header,
   display: block;
   text-decoration: none !important;
   border-bottom: none !important;
+  box-shadow: none !important;
   outline: none !important;
 }
 
@@ -3421,6 +3423,7 @@ body:has(.services-hero) .post-header,
   gap: 0;
 }
 
+.post-content a.explore-card-link,
 .explore-card-link,
 .explore-card-link:hover,
 .explore-card-link:focus,
@@ -3428,7 +3431,19 @@ body:has(.services-hero) .post-header,
   display: block;
   text-decoration: none !important;
   border-bottom: none !important;
+  box-shadow: none !important;
   outline: none !important;
+}
+
+body:has(.explore-hero) .post-footer,
+.post-single:has(.explore-hero) .post-footer,
+body:has(.explore-hero) hr,
+body:has(.explore-hero) .post-content hr {
+  display: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .explore-card {

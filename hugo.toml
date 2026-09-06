@@ -125,15 +125,3 @@ disableKinds = ["taxonomy", "term"]
   url = "/search/"
   weight = 1
 
-[[menu.main]]
-  identifier = "Blogs"
-  name = "Blogs"
-  url = "/blogs/"
-  weight = 3
-
-[[menu.main]]
-  identifier = "Projects"
-  name = "Projects"
-  url = "/projects/"
-  weight = 4
-
