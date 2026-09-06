@@ -120,15 +120,16 @@ code, pre, kbd {
   justify-content: center;
 }
 
-/* Row 2: Services bar spans full width across both columns on bottom */
+/* Row 2: Art bar spans full width across both columns on bottom */
+.button-art,
 .button-services {
   grid-column: 1 / -1 !important;
   grid-row: 2 !important;
   width: 100% !important;
   text-align: center;
   justify-content: center;
-  background: rgba(14, 165, 233, 0.09) !important;
-  border: 1px solid rgba(14, 165, 233, 0.35) !important;
+  background: rgba(168, 85, 247, 0.09) !important;
+  border: 1px solid rgba(168, 85, 247, 0.35) !important;
   color: var(--primary) !important;
   font-weight: 600 !important;
   font-size: 0.96rem !important;
@@ -185,20 +186,23 @@ code, pre, kbd {
   transform: translateY(-1px);
 }
 
-/* Services Button - Prominent Full-Width Top Bar Accent */
+/* Art Button - Prominent Full-Width Bottom Bar Accent */
+.button-art .btn-icon,
 .button-services .btn-icon {
-  color: #0ea5e9;
+  color: #a855f7;
   width: 17px;
   height: 17px;
 }
 
+.button-art:hover,
 .button-services:hover {
   transform: translateY(-2px) scale(1.01) !important;
-  border-color: rgba(56, 189, 248, 0.6) !important;
-  background: rgba(14, 165, 233, 0.16) !important;
-  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.18) !important;
+  border-color: rgba(192, 132, 252, 0.6) !important;
+  background: rgba(168, 85, 247, 0.16) !important;
+  box-shadow: 0 6px 18px rgba(168, 85, 247, 0.2) !important;
 }
 
+.button-art:hover .btn-icon,
 .button-services:hover .btn-icon {
   transform: translateY(-1px) scale(1.1);
 }

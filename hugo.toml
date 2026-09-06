@@ -76,9 +76,9 @@ disableKinds = ["taxonomy", "term"]
       url = "/contact/"
 
     [[params.profileMode.buttons]]
-      identifier = "Services"
-      name = "Services ⚡"
-      url = "/services/"
+      identifier = "Art"
+      name = "Art 🎨"
+      url = "/visual-arts/"
 
 #  [[params.socialIcons]]
 #    name = "x"

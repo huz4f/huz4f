@@ -39,8 +39,8 @@
             {{- range . }}
             {{- $isAbout := or (eq (lower .identifier) "about") (eq (lower .identifier) "explore") }}
             {{- $isContact := eq (lower .identifier) "contact" }}
-            {{- $isServices := or (eq (lower .identifier) "services") (eq (lower .identifier) "saas") }}
-            <a class="button {{ if $isAbout }}button-about{{ else if $isContact }}button-contact{{ else if $isServices }}button-services{{ end }}" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+            {{- $isArt := or (eq (lower .identifier) "art") (eq (lower .identifier) "visual-arts") (eq (lower .identifier) "visual_arts") (eq (lower .identifier) "gallery") }}
+            <a class="button {{ if $isAbout }}button-about{{ else if $isContact }}button-contact{{ else if $isArt }}button-art{{ end }}" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
                 <span class="button-inner">
                     {{- if $isAbout }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
@@ -53,9 +53,13 @@
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                    {{- else if $isServices }}
+                    {{- else if $isArt }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
                     </svg>
                     {{- end }}
                     {{ .name }}
