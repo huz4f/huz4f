@@ -832,6 +832,12 @@ code, pre, kbd {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
 }
 
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
 .contact-submit-btn {
   display: inline-flex;
   align-items: center;

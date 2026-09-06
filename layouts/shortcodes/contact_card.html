@@ -178,6 +178,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Clear validation styling when user starts typing
+  if (emailInput) {
+    emailInput.addEventListener('input', function() {
+      emailInput.classList.remove('input-error');
+      if (statusMsg.classList.contains('error')) {
+        statusMsg.style.display = 'none';
+      }
+    });
+  }
+
   // Pre-fill query parameters if present (e.g. ?subject=...)
   const params = new URLSearchParams(window.location.search);
   const subjectParam = params.get('subject') || (params.get('service') ? `Inquiry: ${params.get('service')}` : null);
@@ -199,6 +209,19 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = mode === 'professional' ? emailInput.value.trim() : '';
       const subject = document.getElementById('contactSubject').value.trim();
       const message = document.getElementById('contactMessage').value.trim();
+
+      // Client-side email validation for Professional mode
+      if (mode === 'professional') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        if (!email || !emailRegex.test(email)) {
+          emailInput.classList.add('input-error');
+          emailInput.focus();
+          statusMsg.className = 'contact-status-message error';
+          statusMsg.innerHTML = '✕ <strong>Invalid Email:</strong> Please enter a valid email address (e.g. name@domain.com) so I can reply back.';
+          statusMsg.style.display = 'flex';
+          return;
+        }
+      }
 
       // UI: Loading state
       submitBtn.disabled = true;
@@ -232,7 +255,24 @@ document.addEventListener('DOMContentLoaded', function() {
           });
 
           if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
+            let errorDetail = 'Unable to send at this moment. Please check your connection.';
+            try {
+              const data = await res.json();
+              if (data && data.errors && data.errors.length > 0) {
+                const emailError = data.errors.find(err => err.field === 'email');
+                if (emailError) {
+                  emailInput.classList.add('input-error');
+                  emailInput.focus();
+                  errorDetail = 'The email address entered is invalid. Please check for typos and try again.';
+                } else {
+                  errorDetail = data.errors.map(err => err.message).join('. ');
+                }
+              } else if (data && data.error) {
+                errorDetail = data.error;
+              }
+            } catch (_) {}
+
+            throw new Error(errorDetail);
           }
         } else {
           await new Promise(resolve => setTimeout(resolve, 800));
@@ -252,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setMode(mode);
       } catch (err) {
         statusMsg.className = 'contact-status-message error';
-        statusMsg.innerHTML = '✕ <strong>Delivery error:</strong> Unable to send at this moment. Please try again or check connection.';
+        statusMsg.innerHTML = `✕ <strong>Delivery issue:</strong> ${err.message || 'Unable to send at this moment. Please try again.'}`;
         statusMsg.style.display = 'flex';
       } finally {
         submitBtn.disabled = false;
