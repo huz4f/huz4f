@@ -7,7 +7,6 @@ disableShare: true
 searchHidden: true
 aliases:
   - /art/
-  - /art
 ---
 
 {{< photo_gallery >}}

@@ -103,8 +103,7 @@ code, pre, kbd {
 }
 
 /* Row 1: About (Left Column) & Contact (Right Column) */
-.button-about,
-.button-explore {
+.button-about {
   grid-column: 1 !important;
   grid-row: 1 !important;
   width: 100% !important;
@@ -120,7 +119,8 @@ code, pre, kbd {
   justify-content: center;
 }
 
-/* Row 2: Art bar spans full width across both columns on bottom */
+/* Row 2: Explore / Art bar spans full width across both columns on bottom */
+.button-explore,
 .button-art,
 .button-services {
   grid-column: 1 / -1 !important;
@@ -137,29 +137,25 @@ code, pre, kbd {
 }
 
 /* About Button - Subtle Indigo Tint */
-.button-about,
-.button-explore {
+.button-about {
   background: rgba(99, 102, 241, 0.06) !important;
   border: 1px solid rgba(99, 102, 241, 0.22) !important;
   color: var(--primary) !important;
   font-weight: 500 !important;
 }
 
-.button-about .btn-icon,
-.button-explore .btn-icon {
+.button-about .btn-icon {
   color: #818cf8;
 }
 
-.button-about:hover,
-.button-explore:hover {
+.button-about:hover {
   transform: translateY(-2px) !important;
   border-color: rgba(99, 102, 241, 0.45) !important;
   background: rgba(99, 102, 241, 0.12) !important;
   box-shadow: 0 4px 14px rgba(99, 102, 241, 0.15) !important;
 }
 
-.button-about:hover .btn-icon,
-.button-explore:hover .btn-icon {
+.button-about:hover .btn-icon {
   transform: scale(1.15);
 }
 
@@ -186,7 +182,8 @@ code, pre, kbd {
   transform: translateY(-1px);
 }
 
-/* Art Button - Prominent Full-Width Bottom Bar Accent */
+/* Explore / Art Button - Prominent Full-Width Bottom Bar Accent */
+.button-explore .btn-icon,
 .button-art .btn-icon,
 .button-services .btn-icon {
   color: #a855f7;
@@ -194,6 +191,7 @@ code, pre, kbd {
   height: 17px;
 }
 
+.button-explore:hover,
 .button-art:hover,
 .button-services:hover {
   transform: translateY(-2px) scale(1.01) !important;
@@ -202,9 +200,10 @@ code, pre, kbd {
   box-shadow: 0 6px 18px rgba(168, 85, 247, 0.2) !important;
 }
 
+.button-explore:hover .btn-icon,
 .button-art:hover .btn-icon,
 .button-services:hover .btn-icon {
-  transform: translateY(-1px) scale(1.1);
+  transform: translateY(-1px) scale(1.1) rotate(15deg);
 }
 
 /* Resume Button Styling */
@@ -2879,6 +2878,8 @@ body:has(#visual-arts-frames) .post-content {
 
 body:has(#visual-arts-frames) .post-header,
 .post-single:has(#visual-arts-frames) .post-header,
+body:has(.explore-hero) .post-header,
+.post-single:has(.explore-hero) .post-header,
 body:has(.about-hero-wrapper) .post-header,
 .post-single:has(.about-hero-wrapper) .post-header,
 body:has(.contact-hero) .post-header,
@@ -3224,3 +3225,346 @@ body:has(.services-hero) .post-header,
     text-align: center !important;
   }
 }
+
+/* ==========================================================================
+   16. Explore Hub Page Styling
+   ========================================================================== */
+.explore-hero {
+  text-align: center;
+  margin: 1.2rem auto 2.5rem auto;
+  max-width: 720px;
+  padding: 0 0.5rem;
+}
+
+.explore-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 30px;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  color: #a855f7;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.08);
+}
+
+.explore-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--primary);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.15;
+}
+
+.explore-gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.explore-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--secondary);
+  margin: 0 auto;
+  max-width: 620px;
+}
+
+.explore-container {
+  max-width: 780px;
+  margin: 0 auto 3.5rem auto;
+  padding: 0 0.5rem;
+}
+
+.explore-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.explore-card-link,
+.explore-card-link:hover,
+.explore-card-link:focus,
+.explore-card-link * {
+  display: block;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.explore-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.35rem 1.65rem;
+  background: var(--entry);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.explore-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.explore-card:hover {
+  transform: translateY(-3px);
+}
+
+.explore-card:hover::before {
+  opacity: 1;
+}
+
+.explore-card-left {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  position: relative;
+  z-index: 1;
+}
+
+.explore-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.explore-card:hover .explore-card-icon {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.explore-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.explore-card-title {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.3;
+  transition: color 0.25s ease;
+}
+
+.explore-card-desc {
+  font-size: 0.88rem;
+  color: var(--secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.explore-card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.explore-card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+}
+
+.explore-card-arrow-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.explore-card:hover .explore-card-arrow-circle {
+  transform: translateX(4px);
+  color: #ffffff !important;
+}
+
+/* Theme 1: Blogs (Indigo / Blue) */
+.blog-theme .explore-card {
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.blog-theme .explore-card::before {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(99, 102, 241, 0.08) 50%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.blog-theme:hover .explore-card {
+  border-color: rgba(99, 102, 241, 0.55);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.18);
+}
+
+.blog-theme:hover .explore-card-title {
+  color: #818cf8;
+}
+
+.blog-icon {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+}
+
+.blog-badge {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.32);
+  color: #6366f1;
+}
+
+.blog-theme:hover .blog-badge {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.6);
+  color: #818cf8;
+}
+
+.blog-theme .explore-card-arrow-circle {
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: #6366f1;
+}
+
+.blog-theme:hover .explore-card-arrow-circle {
+  background: #6366f1;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+/* Theme 2: Projects (Teal / Sky) */
+.project-theme .explore-card {
+  border: 1px solid rgba(14, 165, 233, 0.25);
+}
+
+.project-theme .explore-card::before {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(16, 185, 129, 0.08) 50%, rgba(6, 182, 212, 0.05) 100%);
+}
+
+.project-theme:hover .explore-card {
+  border-color: rgba(14, 165, 233, 0.55);
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.18);
+}
+
+.project-theme:hover .explore-card-title {
+  color: #38bdf8;
+}
+
+.project-icon {
+  background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+}
+
+.project-badge {
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.32);
+  color: #0ea5e9;
+}
+
+.project-theme:hover .project-badge {
+  background: rgba(14, 165, 233, 0.2);
+  border-color: rgba(14, 165, 233, 0.6);
+  color: #38bdf8;
+}
+
+.project-theme .explore-card-arrow-circle {
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  color: #0ea5e9;
+}
+
+.project-theme:hover .explore-card-arrow-circle {
+  background: #0ea5e9;
+  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.4);
+}
+
+/* Theme 3: Art & Exhibition (Violet / Purple / Pink) */
+.art-theme .explore-card {
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.art-theme .explore-card::before {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(236, 72, 153, 0.06) 100%);
+}
+
+.art-theme:hover .explore-card {
+  border-color: rgba(168, 85, 247, 0.55);
+  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.18);
+}
+
+.art-theme:hover .explore-card-title {
+  color: #c084fc;
+}
+
+.art-icon {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3);
+}
+
+.art-badge {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #a855f7;
+}
+
+.art-theme:hover .art-badge {
+  background: rgba(168, 85, 247, 0.22);
+  border-color: rgba(168, 85, 247, 0.6);
+  color: #c084fc;
+}
+
+.art-theme .explore-card-arrow-circle {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  color: #a855f7;
+}
+
+.art-theme:hover .explore-card-arrow-circle {
+  background: #a855f7;
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4);
+}
+
+@media (max-width: 640px) {
+  .explore-title {
+    font-size: 2.1rem;
+  }
+  .explore-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.15rem 1.25rem;
+    gap: 1rem;
+  }
+  .explore-card-right {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 0.3rem;
+    border-top: 1px solid rgba(150, 150, 150, 0.1);
+  }
+}
+

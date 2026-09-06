@@ -37,10 +37,11 @@
         {{- with .buttons }}
         <div class="buttons">
             {{- range . }}
-            {{- $isAbout := or (eq (lower .identifier) "about") (eq (lower .identifier) "explore") }}
+            {{- $isAbout := eq (lower .identifier) "about" }}
             {{- $isContact := eq (lower .identifier) "contact" }}
+            {{- $isExplore := eq (lower .identifier) "explore" }}
             {{- $isArt := or (eq (lower .identifier) "art") (eq (lower .identifier) "visual-arts") (eq (lower .identifier) "visual_arts") (eq (lower .identifier) "gallery") }}
-            <a class="button {{ if $isAbout }}button-about{{ else if $isContact }}button-contact{{ else if $isArt }}button-art{{ end }}" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+            <a class="button {{ if $isAbout }}button-about{{ else if $isContact }}button-contact{{ else if $isExplore }}button-explore{{ else if $isArt }}button-art{{ end }}" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
                 <span class="button-inner">
                     {{- if $isAbout }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
@@ -52,6 +53,11 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    {{- else if $isExplore }}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
                     </svg>
                     {{- else if $isArt }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
