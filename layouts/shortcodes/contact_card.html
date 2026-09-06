@@ -21,59 +21,26 @@
       </div>
     </div>
 
-    <!-- Sender Identity Mode Switcher -->
-    <div class="sender-mode-wrapper">
-      <label class="sender-mode-label">Sender Identity Mode:</label>
-      <div class="sender-mode-pills" role="radiogroup" aria-label="Sender Identity Mode">
-        <button type="button" class="sender-pill active" data-mode="professional" id="btnModeEmail">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-          </svg>
-          <span>With Email</span>
-        </button>
-        <button type="button" class="sender-pill" data-mode="name_only" id="btnModeName">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <span>Only Name</span>
-        </button>
-        <button type="button" class="sender-pill" data-mode="anonymous" id="btnModeAnon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 12h20"></path>
-            <path d="M20 12v8H4v-8"></path>
-            <circle cx="9" cy="8" r="2"></circle>
-            <circle cx="15" cy="8" r="2"></circle>
-          </svg>
-          <span>Anonymous</span>
-        </button>
-      </div>
-    </div>
-
-    <form class="contact-form" id="quickContactForm">
-      <!-- Hidden field storing the active mode -->
-      <input type="hidden" id="senderModeInput" name="sender_mode" value="professional" />
-
-      <!-- Identity Fields (Visible by default in Professional mode) -->
+    <form class="contact-form" id="quickContactForm" novalidate>
+      <!-- Identity Fields (Optional: auto-detects anonymous / name / email) -->
       <div class="form-row" id="identityRow">
         <div class="form-group" id="nameGroup">
-          <label for="contactName">Your Name</label>
-          <input type="text" id="contactName" name="name" placeholder="Your Name" required />
+          <label for="contactName">Your Name <span class="label-hint">(optional)</span></label>
+          <input type="text" id="contactName" name="name" placeholder="Name or pseudonym" autocomplete="name" />
         </div>
         <div class="form-group" id="emailGroup">
-          <label for="contactEmail">Your Email ID <span class="label-hint">(for direct reply)</span></label>
-          <input type="email" id="contactEmail" name="email" placeholder="name@company.com" required />
+          <label for="contactEmail">Your Email ID <span class="label-hint">(optional, for reply)</span></label>
+          <input type="email" id="contactEmail" name="email" placeholder="name@company.com" autocomplete="email" />
         </div>
       </div>
 
       <div class="form-group">
-        <label for="contactSubject">Subject</label>
+        <label for="contactSubject">Subject <span class="label-required">*</span></label>
         <input type="text" id="contactSubject" name="subject" placeholder="Project Inquiry / Tech Discussion / General" required />
       </div>
 
       <div class="form-group">
-        <label for="contactMessage">Message</label>
+        <label for="contactMessage">Message <span class="label-required">*</span></label>
         <textarea id="contactMessage" name="message" rows="4" placeholder="Write your message here..." required></textarea>
       </div>
 
@@ -109,80 +76,39 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Connected Formspree endpoint
   const FORM_BACKEND_URL = 'https://formspree.io/f/mnpqbvja';
 
-  const pills = document.querySelectorAll('.sender-pill');
-  const modeInput = document.getElementById('senderModeInput');
-  const identityRow = document.getElementById('identityRow');
-  const nameGroup = document.getElementById('nameGroup');
-  const emailGroup = document.getElementById('emailGroup');
   const nameInput = document.getElementById('contactName');
   const emailInput = document.getElementById('contactEmail');
+  const subjectInput = document.getElementById('contactSubject');
+  const messageInput = document.getElementById('contactMessage');
   const form = document.getElementById('quickContactForm');
   const submitBtn = document.getElementById('contactSubmitBtn');
   const btnText = document.getElementById('btnText');
   const btnIcon = document.getElementById('btnIcon');
   const statusMsg = document.getElementById('formStatusMsg');
 
-  function setMode(mode) {
-    pills.forEach(p => p.classList.toggle('active', p.getAttribute('data-mode') === mode));
-    modeInput.value = mode;
-
-    if (mode === 'professional') {
-      identityRow.style.display = 'grid';
-      identityRow.style.gridTemplateColumns = window.innerWidth > 580 ? '1fr 1fr' : '1fr';
-      nameGroup.style.display = 'flex';
-      emailGroup.style.display = 'flex';
-      nameInput.required = true;
-      emailInput.required = true;
-    } else if (mode === 'name_only') {
-      identityRow.style.display = 'grid';
-      identityRow.style.gridTemplateColumns = '1fr';
-      nameGroup.style.display = 'flex';
-      emailGroup.style.display = 'none';
-      nameInput.required = true;
-      emailInput.required = false;
-      emailInput.value = '';
-    } else if (mode === 'anonymous') {
-      identityRow.style.display = 'none';
-      emailGroup.style.display = 'none';
-      nameInput.required = false;
-      emailInput.required = false;
-      nameInput.value = '';
-      emailInput.value = '';
-    }
-  }
-
-  pills.forEach(btn => {
-    btn.addEventListener('click', () => setMode(btn.getAttribute('data-mode')));
-  });
-
-  window.addEventListener('resize', () => {
-    if (modeInput.value === 'professional') {
-      identityRow.style.gridTemplateColumns = window.innerWidth > 580 ? '1fr 1fr' : '1fr';
+  // Clear error highlight when typing
+  [emailInput, subjectInput, messageInput].forEach(input => {
+    if (input) {
+      input.addEventListener('input', function() {
+        input.classList.remove('input-error');
+        if (statusMsg && statusMsg.classList.contains('error')) {
+          statusMsg.style.display = 'none';
+        }
+      });
     }
   });
-
-  // Clear validation styling when user starts typing
-  if (emailInput) {
-    emailInput.addEventListener('input', function() {
-      emailInput.classList.remove('input-error');
-      if (statusMsg.classList.contains('error')) {
-        statusMsg.style.display = 'none';
-      }
-    });
-  }
 
   // Pre-fill query parameters if present (e.g. ?subject=...)
   const params = new URLSearchParams(window.location.search);
   const subjectParam = params.get('subject') || (params.get('service') ? `Inquiry: ${params.get('service')}` : null);
   const messageParam = params.get('message');
-  if (subjectParam && document.getElementById('contactSubject')) {
-    document.getElementById('contactSubject').value = subjectParam;
+  if (subjectParam && subjectInput) {
+    subjectInput.value = subjectParam;
   }
-  if (messageParam && document.getElementById('contactMessage')) {
-    document.getElementById('contactMessage').value = messageParam;
+  if (messageParam && messageInput) {
+    messageInput.value = messageParam;
   }
 
   // Handle Form Submission
@@ -190,23 +116,60 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      const mode = modeInput.value;
-      const name = mode === 'anonymous' ? 'Anonymous' : (nameInput.value.trim() || 'Anonymous');
-      const email = mode === 'professional' ? emailInput.value.trim() : '';
-      const subject = document.getElementById('contactSubject').value.trim();
-      const message = document.getElementById('contactMessage').value.trim();
+      const rawName = nameInput ? nameInput.value.trim() : '';
+      const rawEmail = emailInput ? emailInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
 
-      // Client-side email validation for Professional mode
-      if (mode === 'professional') {
+      // Mandatory validation for Subject and Message
+      if (!subject) {
+        subjectInput.classList.add('input-error');
+        subjectInput.focus();
+        statusMsg.className = 'contact-status-message error';
+        statusMsg.innerHTML = '✕ <strong>Subject required:</strong> Please provide a subject for your message.';
+        statusMsg.style.display = 'flex';
+        return;
+      }
+
+      if (!message) {
+        messageInput.classList.add('input-error');
+        messageInput.focus();
+        statusMsg.className = 'contact-status-message error';
+        statusMsg.innerHTML = '✕ <strong>Message required:</strong> Please write a message before sending.';
+        statusMsg.style.display = 'flex';
+        return;
+      }
+
+      // If email is provided, validate email format
+      if (rawEmail) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-        if (!email || !emailRegex.test(email)) {
+        if (!emailRegex.test(rawEmail)) {
           emailInput.classList.add('input-error');
           emailInput.focus();
           statusMsg.className = 'contact-status-message error';
-          statusMsg.innerHTML = '✕ <strong>Invalid Email:</strong> Please enter a valid email address (e.g. name@domain.com) so I can reply back.';
+          statusMsg.innerHTML = '✕ <strong>Invalid Email:</strong> Please enter a valid email address (or leave it blank to submit anonymously).';
           statusMsg.style.display = 'flex';
           return;
         }
+      }
+
+      // Automatically determine identity mode
+      let mode = 'anonymous';
+      let displayName = 'Anonymous';
+      let modeTag = '[Anonymous]';
+
+      if (rawName && rawEmail) {
+        mode = 'professional';
+        displayName = rawName;
+        modeTag = `[Email: ${rawName}]`;
+      } else if (rawEmail && !rawName) {
+        mode = 'email_only';
+        displayName = rawEmail.split('@')[0];
+        modeTag = `[Email: ${rawEmail}]`;
+      } else if (rawName && !rawEmail) {
+        mode = 'name_only';
+        displayName = rawName;
+        modeTag = `[Name: ${rawName}]`;
       }
 
       // UI: Loading state
@@ -215,18 +178,17 @@ document.addEventListener('DOMContentLoaded', function() {
       btnIcon.innerHTML = '<span class="btn-spinner"></span>';
       statusMsg.style.display = 'none';
 
-      const modeTag = mode === 'anonymous' ? '[Anonymous]' : mode === 'name_only' ? `[${name}]` : `[Email: ${name}]`;
       const payload = {
-        name: name,
+        name: displayName,
         sender_mode: mode,
         _subject: `${modeTag} ${subject}`,
         subject: subject,
         message: message
       };
 
-      if (email) {
-        payload.email = email;
-        payload._replyto = email;
+      if (rawEmail) {
+        payload.email = rawEmail;
+        payload._replyto = rawEmail;
       }
 
       try {
@@ -245,11 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
               const data = await res.json();
               if (data && data.errors && data.errors.length > 0) {
-                const emailError = data.errors.find(err => err.field === 'email');
-                if (emailError) {
+                const emailErr = data.errors.find(err => err.field === 'email');
+                if (emailErr) {
                   emailInput.classList.add('input-error');
                   emailInput.focus();
-                  errorDetail = 'The email address entered is invalid. Please check for typos and try again.';
+                  errorDetail = 'The email address entered is invalid. Please check for typos or leave it blank.';
                 } else {
                   errorDetail = data.errors.map(err => err.message).join('. ');
                 }
@@ -264,18 +226,18 @@ document.addEventListener('DOMContentLoaded', function() {
           await new Promise(resolve => setTimeout(resolve, 800));
         }
 
-        // UI: Success feedback
+        // UI: Success feedback tailored to how they submitted
         statusMsg.className = 'contact-status-message success';
-        statusMsg.innerHTML = '✓ <strong>Message sent successfully!</strong> ' + 
-          (mode === 'anonymous' 
-            ? 'Your message was delivered 100% anonymously.' 
-            : mode === 'name_only'
-              ? `Message sent from ${name}.`
-              : 'Thank you! I will review your message and reply via email.');
+        if (mode === 'anonymous') {
+          statusMsg.innerHTML = '✓ <strong>Message sent!</strong> Delivered 100% anonymously.';
+        } else if (mode === 'name_only') {
+          statusMsg.innerHTML = `✓ <strong>Message sent!</strong> Delivered from ${displayName} (private mode).`;
+        } else {
+          statusMsg.innerHTML = `✓ <strong>Message sent!</strong> Thank you, ${displayName}! I will review your message and reply to <strong>${rawEmail}</strong>.`;
+        }
         statusMsg.style.display = 'flex';
 
         form.reset();
-        setMode(mode);
       } catch (err) {
         statusMsg.className = 'contact-status-message error';
         statusMsg.innerHTML = `✕ <strong>Delivery issue:</strong> ${err.message || 'Unable to send at this moment. Please try again.'}`;

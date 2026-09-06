@@ -735,6 +735,12 @@ code, pre, kbd {
   font-size: 0.78rem;
 }
 
+.label-required {
+  color: #ef4444;
+  font-weight: 700;
+  margin-left: 0.15rem;
+}
+
 .contact-status-message {
   padding: 0.85rem 1rem;
   border-radius: 10px;
