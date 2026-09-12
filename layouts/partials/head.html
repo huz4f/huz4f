@@ -81,11 +81,11 @@
 <link rel="icon" href="{{ site.Params.assets.favicon | default "/favicons/favicon.ico" | absURL }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ site.Params.assets.favicon16x16 | default "/favicons/favicon-16x16.png" | absURL }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ site.Params.assets.favicon32x32 | default "/favicons/favicon-32x32.png" | absURL }}">
-<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "/favicons/apple-touch-icon.png" | absURL }}">
-<link rel="mask-icon" href="{{ site.Params.assets.safari_pinned_tab | default "/favicons/safari-pinned-tab.svg" | absURL }}" color="#6366f1">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ site.Params.assets.apple_touch_icon | default "/favicons/apple-touch-icon.png" | absURL }}">
+<link rel="mask-icon" href="{{ site.Params.assets.safari_pinned_tab | default "/favicons/safari-pinned-tab.svg" | absURL }}" color="#09090b">
 <link rel="manifest" href="{{ "/favicons/site.webmanifest" | absURL }}">
-<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#0f172a" }}">
-<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#0f172a" }}">
+<meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#09090b" }}">
+<meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#09090b" }}">
 
 {{- /* RSS */}}
 {{ range .AlternativeOutputFormats -}}

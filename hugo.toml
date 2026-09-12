@@ -55,6 +55,8 @@ disableKinds = ["taxonomy", "term"]
     favicon32x32 = "/favicons/favicon-32x32.png"
     apple_touch_icon = "/favicons/apple-touch-icon.png"
     safari_pinned_tab = "/favicons/safari-pinned-tab.svg"
+    theme_color = "#09090b"
+    msapplication_TileColor = "#09090b"
 
   [params.profileMode]
     enabled = true # needs to be explicitly set
@@ -92,10 +94,10 @@ disableKinds = ["taxonomy", "term"]
     name = "Github"
     url = "https://github.com/huz4f"
 
-  [[params.socialIcons]]
-    name = "cv"
-    url = "/cv.pdf"
-    title = "Resume / CV"
+#  [[params.socialIcons]]
+#    name = "cv"
+#   url = "/cv.pdf"
+#    title = "Resume / CV"
 
 #  [[params.socialIcons]]
 #    name = "StackOverflow"
