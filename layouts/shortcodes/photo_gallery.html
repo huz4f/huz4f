@@ -27,6 +27,10 @@
 {{ end }}
 
 <div class="pg-section" id="visual-arts-frames">
+  <script>
+    document.documentElement.classList.add("page-full-black");
+    document.body.classList.add("page-full-black");
+  </script>
   <!-- Upper Header Card -->
   <div class="pg-minimal-header">
     <div class="pg-header-left">
@@ -35,9 +39,9 @@
       </div>
       <div class="pg-header-meta">
         <div class="pg-title-row">
-          <h2 class="pg-minimal-title">Visual Arts &amp; Frames</h2>
+          <h2 class="pg-minimal-title">MONOCHOPSIS</h2>
         </div>
-        <p class="pg-minimal-subtitle">personal photography &amp; visual art exhibition gallery</p>
+        <p class="pg-minimal-subtitle">Visual Arts &amp; Frames</p>
       </div>
     </div>
   </div>
@@ -66,60 +70,58 @@
   </div>
 </div>
 
-<!-- High-End Dynamic Social Gallery Lightbox Opener Modal -->
-<div class="pg-lightbox" id="pgLightbox">
-  <div class="pg-lb-nav-top">
-    <div class="pg-lb-left-info">
-    </div>
-    <div class="pg-lb-actions">
-      <!-- Share Link Button -->
-      <button class="pg-lb-btn pg-lb-share-btn" id="pgLbShareBtn" title="Share link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-        <span>Share</span>
-      </button>
+<!-- High-End Dynamic Social Gallery Lightbox Modal -->
+<div class="pg-lightbox" id="pgLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo Frame Lightbox">
+  <!-- Floating Top Right Actions (Does not push image down) -->
+  <div class="pg-lb-actions">
+    <!-- Share Link Button -->
+    <button class="pg-lb-btn pg-lb-share-btn" id="pgLbShareBtn" title="Share frame link" aria-label="Share frame link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+      <span>Share</span>
+    </button>
 
-      <!-- Close Button -->
-      <button class="pg-lb-btn pg-lb-close-btn" id="pgLbCloseBtn" title="Close (Esc)">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        <span>Close</span>
-      </button>
-    </div>
+    <!-- Close Button -->
+    <button class="pg-lb-btn pg-lb-close-btn" id="pgLbCloseBtn" title="Close (Esc)" aria-label="Close Lightbox">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      <span>Close</span>
+    </button>
   </div>
 
   <div class="pg-lb-main">
     <!-- Prev Arrow Button -->
-    <button class="pg-lb-arrow prev" id="pgLbPrevBtn" title="Previous photo (←)">
+    <button class="pg-lb-arrow prev" id="pgLbPrevBtn" title="Previous photo (←)" aria-label="Previous photo">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
     </button>
 
     <div class="pg-lb-stage">
       <div class="pg-lb-img-container" id="pgLbImgWrapper">
+        <!-- Anti-Download Protective Shield Overlay -->
+        <div class="pg-lb-shield" id="pgLbShield"></div>
         <img src="" alt="" class="pg-lb-img" id="pgLbImage" decoding="async" loading="eager" draggable="false" oncontextmenu="return false;" />
-        
-        <!-- Compact Single-Line Floating Title Pill Overlay -->
-        <div class="pg-lb-caption-overlay">
-          <span class="pg-lb-title" id="lbTitle">-</span>
-        </div>
-      </div>
 
-      <!-- Dedicated Description Bar Below Image -->
-      <div class="pg-lb-desc-bar" id="lbDescContainer">
-        <p class="pg-lb-desc-text" id="lbDescText"></p>
+        <!-- Bottom Controls Bar (Caption on Left, Title Bubble on Right) -->
+        <div class="pg-lb-controls-bar" id="pgLbControlsBar">
+          <!-- Dedicated Description Bar (Caption - Bottom Left, Simple Non-Italic Font) -->
+          <div class="pg-lb-desc-bar" id="lbDescContainer">
+            <p class="pg-lb-desc-text" id="lbDescText"></p>
+          </div>
+
+          <!-- Compact Floating Title Pill Overlay (The Bubble - Bottom Right) -->
+          <div class="pg-lb-caption-overlay" id="pgLbCaptionOverlay">
+            <span class="pg-lb-title" id="lbTitle"></span>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Next Arrow Button -->
-    <button class="pg-lb-arrow next" id="pgLbNextBtn" title="Next photo (→)">
+    <button class="pg-lb-arrow next" id="pgLbNextBtn" title="Next photo (→)" aria-label="Next photo">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
     </button>
   </div>
 
-  <div class="pg-lb-filmstrip" id="pgLbFilmstrip">
-    <!-- Thumbnails generated dynamically -->
-  </div>
-
   <!-- Toast Notification -->
-  <div class="pg-toast" id="pgToast">Link copied to clipboard!</div>
+  <div class="pg-toast" id="pgToast">Frame link copied!</div>
 </div>
 
 <script>
@@ -155,16 +157,14 @@
 
     // Lightbox Elements
     const lightbox = document.getElementById("pgLightbox");
+    const lbImgWrapper = document.getElementById("pgLbImgWrapper");
     const lbImage = document.getElementById("pgLbImage");
     const lbCloseBtn = document.getElementById("pgLbCloseBtn");
     const lbPrevBtn = document.getElementById("pgLbPrevBtn");
     const lbNextBtn = document.getElementById("pgLbNextBtn");
     const lbShareBtn = document.getElementById("pgLbShareBtn");
-    const lbFilmstrip = document.getElementById("pgLbFilmstrip");
     const lbTitle = document.getElementById("lbTitle");
-    const lbDescContainer = document.getElementById("lbDescContainer");
     const lbDescText = document.getElementById("lbDescText");
-    const lbImgWrapper = document.getElementById("pgLbImgWrapper");
     const toast = document.getElementById("pgToast");
 
     function escapeHtml(str) {
@@ -177,57 +177,47 @@
         .replace(/'/g, "&#039;");
     }
 
-    // Render Grid Cards
+    // Render Grid Cards with Pure Pinterest Architecture & Integrated Bottom Bar
     function renderGallery() {
       gridEl.innerHTML = photos.map((photo, idx) => `
-        <div class="pg-card" data-id="${escapeHtml(photo.id)}" data-index="${idx}">
+        <div class="pg-card" data-id="${escapeHtml(photo.id)}" data-index="${idx}" tabindex="0" role="button" aria-label="View photo ${escapeHtml(photo.title)}">
           <div class="pg-img-wrapper">
+            <!-- Anti-Download Protective Shield Overlay -->
+            <div class="pg-img-shield"></div>
+            
             <img src="${photo.src}" alt="${escapeHtml(photo.title)}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
             
-            <div class="pg-card-hover-overlay">
-              <div class="pg-card-hover-top">
-                <span class="pg-card-badge-pill">@huz4f</span>
+            <!-- Perfectly Aligned Bottom Bar Inside the Photo (Pinterest Style) -->
+            <div class="pg-card-bar">
+              <div class="pg-card-bar-text">
+                <h3 class="pg-card-title">${escapeHtml(photo.title)}</h3>
+                ${photo.description ? `<p class="pg-card-desc">${escapeHtml(photo.description)}</p>` : ''}
               </div>
-              <div class="pg-card-hover-bottom">
-                <h3 class="pg-card-hover-title">${escapeHtml(photo.title)}</h3>
-                <div class="pg-card-hover-meta">
-                  <div class="pg-expand-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-                  </div>
-                </div>
+              <div class="pg-card-action-icon" title="View Frame">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
               </div>
             </div>
           </div>
         </div>
       `).join("");
 
-      // Click Handler to Open Dynamic Lightbox
+      // Click & Keyboard Handlers to Open Dynamic Lightbox
       gridEl.querySelectorAll(".pg-card").forEach((card) => {
         card.addEventListener("click", function() {
+          lastActiveCard = this;
           const index = parseInt(this.getAttribute("data-index"));
           if (!isNaN(index)) {
             openLightbox(index);
           }
         });
-      });
-    }
-
-    // Render Filmstrip Thumbnails Once
-    function renderFilmstrip() {
-      if (!lbFilmstrip) return;
-      lbFilmstrip.innerHTML = photos.map((photo, i) => `
-        <div class="pg-film-thumb ${i === currentLightboxIndex ? 'active' : ''}" data-index="${i}">
-          <img src="${photo.src}" alt="${escapeHtml(photo.title)}" decoding="async" loading="lazy" draggable="false" oncontextmenu="return false;" />
-        </div>
-      `).join("");
-
-      lbFilmstrip.querySelectorAll(".pg-film-thumb").forEach(thumb => {
-        thumb.addEventListener("click", function() {
-          const index = parseInt(this.getAttribute("data-index"));
-          if (!isNaN(index)) {
-            currentLightboxIndex = index;
-            if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
-            updateLightboxContent();
+        card.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            lastActiveCard = this;
+            const index = parseInt(this.getAttribute("data-index"));
+            if (!isNaN(index)) {
+              openLightbox(index);
+            }
           }
         });
       });
@@ -247,11 +237,19 @@
 
     // Dynamic Opener Lightbox Implementation
     let savedScrollY = 0;
+    let lastActiveCard = null;
 
-    function openLightbox(index) {
+    function openLightbox(index, updateUrl = true) {
       currentLightboxIndex = index;
       updateLightboxContent();
-      if (lightbox) lightbox.classList.add("active");
+      if (lightbox) {
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+      }
+      if (updateUrl && photos[currentLightboxIndex]) {
+        const photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+        history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
+      }
       // Prevent background scroll (including iOS)
       savedScrollY = window.scrollY;
       document.body.style.overflow = "hidden";
@@ -259,10 +257,18 @@
       document.body.style.top = `-${savedScrollY}px`;
       document.body.style.width = "100%";
       document.documentElement.style.overflow = "hidden";
+
+      if (lbCloseBtn) {
+        setTimeout(() => lbCloseBtn.focus(), 50);
+      }
     }
 
     function closeLightbox() {
-      if (lightbox) lightbox.classList.remove("active");
+      if (lightbox) {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+      }
+      history.replaceState(null, "", window.location.pathname + window.location.search);
       // Restore background scroll without smooth-scroll jitter
       const prevScrollBehavior = document.documentElement.style.scrollBehavior;
       document.documentElement.style.scrollBehavior = "auto";
@@ -273,40 +279,60 @@
       document.documentElement.style.overflow = "";
       window.scrollTo(0, savedScrollY);
       document.documentElement.style.scrollBehavior = prevScrollBehavior;
-      if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
+      if (lbImgWrapper) {
+        lbImgWrapper.classList.remove("zoomed");
+      }
+      if (lastActiveCard) {
+        lastActiveCard.focus();
+      }
     }
 
     function updateLightboxContent() {
       const p = photos[currentLightboxIndex];
       if (!p) return;
 
-      if (lbImage) {
-        lbImage.style.opacity = "0";
-        lbImage.style.transform = "scale(0.95)";
-        lbImage.src = p.src;
-        lbImage.alt = p.title;
-        lbImage.onload = () => {
-          lbImage.style.opacity = "1";
-          lbImage.style.transform = "scale(1)";
-        };
+      const captionOverlay = document.getElementById("pgLbCaptionOverlay");
+      const descContainer = document.getElementById("lbDescContainer");
+      const descText = document.getElementById("lbDescText");
+
+      // Update Title in the Bubble immediately & synchronously
+      if (lbTitle) {
+        lbTitle.textContent = p.title || "";
       }
-      if (lbTitle) lbTitle.textContent = p.title;
-      if (lbDescContainer) {
-        lbDescContainer.style.display = p.description ? 'block' : 'none';
-        if (lbDescText) lbDescText.textContent = p.description || '';
+      if (captionOverlay) {
+        captionOverlay.style.opacity = "1";
+        captionOverlay.style.display = "inline-flex";
       }
 
-      // Update Active Filmstrip Thumbnail & Center It
-      if (lbFilmstrip) {
-        const thumbs = lbFilmstrip.querySelectorAll(".pg-film-thumb");
-        thumbs.forEach((thumb, i) => {
-          thumb.classList.toggle("active", i === currentLightboxIndex);
-        });
-
-        const activeThumb = thumbs[currentLightboxIndex];
-        if (activeThumb) {
-          activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      // Update Description Bar
+      if (descContainer) {
+        if (p.description) {
+          if (descText) descText.textContent = p.description;
+          descContainer.style.display = "block";
+          descContainer.style.opacity = "1";
+        } else {
+          if (descText) descText.textContent = "";
+          descContainer.style.display = "none";
+          descContainer.style.opacity = "0";
         }
+      }
+
+      // Update Image with Smooth Loading Transition
+      if (lbImage) {
+        lbImage.src = p.src;
+        lbImage.alt = p.title || "";
+        lbImage.style.opacity = "1";
+        lbImage.style.transform = "scale(1)";
+      }
+
+      // Preload Adjacent Images for Instantaneous Navigation
+      if (photos.length > 1) {
+        const nextIdx = (currentLightboxIndex + 1) % photos.length;
+        const prevIdx = (currentLightboxIndex - 1 + photos.length) % photos.length;
+        const nextImg = new Image();
+        nextImg.src = photos[nextIdx].src;
+        const prevImg = new Image();
+        prevImg.src = photos[prevIdx].src;
       }
     }
 
@@ -315,6 +341,10 @@
       if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
       currentLightboxIndex = (currentLightboxIndex + 1) % photos.length;
       updateLightboxContent();
+      if (photos[currentLightboxIndex]) {
+        const photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+        history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
+      }
     }
 
     function prevPhoto() {
@@ -322,14 +352,18 @@
       if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
       currentLightboxIndex = (currentLightboxIndex - 1 + photos.length) % photos.length;
       updateLightboxContent();
+      if (photos[currentLightboxIndex]) {
+        const photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+        history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
+      }
     }
 
-    // Share Button with Toast
+    // Share Button with Toast (Shares website page link, NOT direct downloadable raw file)
     if (lbShareBtn) {
       lbShareBtn.addEventListener("click", function(e) {
         e.stopPropagation();
         const p = photos[currentLightboxIndex];
-        const shareUrl = window.location.origin + encodeURI(p.src);
+        const shareUrl = window.location.origin + window.location.pathname + "#" + encodeURIComponent(p.id.replace(/\.[^/.]+$/, ""));
         if (navigator.clipboard) {
           navigator.clipboard.writeText(shareUrl).then(showToast);
         } else {
@@ -340,6 +374,7 @@
 
     function showToast() {
       if (!toast) return;
+      toast.textContent = "Frame link copied!";
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 2200);
     }
@@ -362,7 +397,7 @@
     if (lbImgWrapper) {
       lbImgWrapper.addEventListener("click", function(e) {
         e.stopPropagation();
-        if (e.target.closest(".pg-lb-caption-overlay")) return;
+        if (e.target.closest("#pgLbControlsBar")) return;
         this.classList.toggle("zoomed");
       });
     }
@@ -370,28 +405,29 @@
     // Prevent touch scrolling on lightbox (prevents page behind from scrolling)
     if (lightbox) {
       lightbox.addEventListener("touchmove", function(e) {
-        if (e.target.closest(".pg-lb-filmstrip")) return;
         e.preventDefault();
       }, { passive: false });
     }
 
-    // Touch Swipe & Drag Gestures
+    // Touch Swipe & Drag Gestures Across Lightbox
     let touchStartX = 0;
     let touchStartY = 0;
 
-    if (lbImgWrapper) {
-      lbImgWrapper.addEventListener("touchstart", function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
+    if (lightbox) {
+      lightbox.addEventListener("touchstart", function(e) {
+        if (!e.changedTouches || !e.changedTouches[0]) return;
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
       }, { passive: true });
 
-      lbImgWrapper.addEventListener("touchend", function(e) {
-        if (lbImgWrapper.classList.contains("zoomed")) return;
-        const touchEndX = e.changedTouches[0].screenX;
-        const touchEndY = e.changedTouches[0].screenY;
+      lightbox.addEventListener("touchend", function(e) {
+        if (!e.changedTouches || !e.changedTouches[0]) return;
+        if (lbImgWrapper && lbImgWrapper.classList.contains("zoomed")) return;
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
         const diffX = touchEndX - touchStartX;
         const diffY = touchEndY - touchStartY;
-        // Only navigate if horizontal swipe is dominant
+        // Only navigate if horizontal swipe is dominant and above threshold
         if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
           if (diffX < 0) nextPhoto();
           else prevPhoto();
@@ -399,17 +435,51 @@
       }, { passive: true });
     }
 
-    // Keyboard Shortcuts
+    // Keyboard Shortcuts & Anti-Download Protection
     document.addEventListener("keydown", function(e) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === "s" || e.key === "S" || e.key === "p" || e.key === "P")) {
+        if (e.target.closest("#visual-arts-frames") || (lightbox && lightbox.classList.contains("active"))) {
+          e.preventDefault();
+          return false;
+        }
+      }
       if (!lightbox || !lightbox.classList.contains("active")) return;
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowLeft") prevPhoto();
       if (e.key === "ArrowRight") nextPhoto();
     });
 
-    // Initial Render
+    // Anti-Download Protections
+    document.addEventListener("contextmenu", function(e) {
+      if (e.target.closest("#visual-arts-frames") || e.target.closest("#pgLightbox") || e.target.tagName === "IMG") {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    document.addEventListener("dragstart", function(e) {
+      if (e.target.closest("#visual-arts-frames") || e.target.closest("#pgLightbox") || e.target.tagName === "IMG") {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Deep Linking: Auto-open photo if hash matches on load or hashchange
+    function checkHashForPhoto() {
+      const hash = window.location.hash.replace(/^#/, "");
+      if (!hash) return;
+      const cleanHash = decodeURIComponent(hash);
+      const targetIdx = photos.findIndex(p => p.id.replace(/\.[^/.]+$/, "") === cleanHash);
+      if (targetIdx !== -1) {
+        openLightbox(targetIdx, false);
+      }
+    }
+
+    window.addEventListener("hashchange", checkHashForPhoto);
+
+    // Initial Render & Hash Check
     renderGallery();
-    renderFilmstrip();
+    checkHashForPhoto();
   }
 
   if (document.readyState === "loading") {
