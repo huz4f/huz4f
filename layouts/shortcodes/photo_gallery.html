@@ -167,6 +167,7 @@
     }
 
     let currentViewMode = "masonry"; // 'masonry', 'albums', 'editorial'
+    let selectedAlbum = null; // null = all albums, or album name
     let activePhotoList = photos; // photos currently in navigation sequence
     let currentLightboxIndex = 0;
 
@@ -277,86 +278,105 @@
       });
     }
 
-    // Render Albums View: Micro-collage preview cards showing all photos in small size
+    // Render Albums View: Either Album Collection Cards or Selected Album Detail (without names)
     function renderAlbumsView() {
       const albums = getAlbums();
       const albumNames = Object.keys(albums);
 
-      gridEl.className = "pg-grid view-albums-collections";
+      if (selectedAlbum === null) {
+        // Show Album Collection Preview Cards Grid (Small size multi-photo collages)
+        gridEl.className = "pg-grid view-albums-collections";
 
-      const html = albumNames.map(function(name) {
-        const albumPhotos = albums[name] || [];
-        const photoCount = albumPhotos.length;
-        const safeAlbumName = escapeHtml(name);
+        const html = albumNames.map(function(name) {
+          const albumPhotos = albums[name] || [];
+          const photoCount = albumPhotos.length;
+          const safeAlbumName = escapeHtml(name);
 
-        let layoutClass = "pg-collage-" + photoCount;
-        if (photoCount > 6) {
-          layoutClass = "pg-collage-many";
-        }
+          let layoutClass = "pg-collage-" + photoCount;
+          if (photoCount > 6) {
+            layoutClass = "pg-collage-many";
+          }
 
-        const thumbsHtml = albumPhotos.map(function(photo, pIdx) {
-          const safeTitle = escapeHtml(photo.title);
-          return '<div class="pg-album-thumb" data-album="' + safeAlbumName + '" data-index="' + pIdx + '" tabindex="0" role="button" aria-label="View photo ' + safeTitle + '">' +
-            '<div class="pg-album-thumb-shield"></div>' +
-            '<img src="' + photo.src + '" alt="' + safeTitle + '" class="pg-album-thumb-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
+          const thumbsHtml = albumPhotos.map(function(photo, pIdx) {
+            const safeTitle = escapeHtml(photo.title);
+            return '<div class="pg-album-thumb" data-index="' + pIdx + '">' +
+              '<div class="pg-album-thumb-shield"></div>' +
+              '<img src="' + photo.src + '" alt="' + safeTitle + '" class="pg-album-thumb-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
+            '</div>';
+          }).join("");
+
+          return '<div class="pg-album-card" data-album-name="' + safeAlbumName + '" tabindex="0" role="button" aria-label="Open album">' +
+            '<div class="pg-album-collage ' + layoutClass + '">' +
+              thumbsHtml +
+            '</div>' +
           '</div>';
         }).join("");
 
-        return '<div class="pg-album-card" data-album-name="' + safeAlbumName + '" tabindex="0" role="region" aria-label="Photo album">' +
-          '<div class="pg-album-collage ' + layoutClass + '">' +
-            thumbsHtml +
-          '</div>' +
-        '</div>';
-      }).join("");
+        gridEl.innerHTML = html;
 
-      gridEl.innerHTML = html;
+        // Clicking on an album card opens the album same way it did before!
+        gridEl.querySelectorAll(".pg-album-card").forEach(function(card) {
+          const handleSelectAlbum = function() {
+            const albumName = card.getAttribute("data-album-name");
+            selectedAlbum = albumName;
+            renderAlbumsView();
+          };
 
-      // Click mini-photo in album preview: opens that photo directly in lightbox with album sequence
-      gridEl.querySelectorAll(".pg-album-thumb").forEach(function(thumb) {
-        const handleOpenThumb = function(e) {
-          e.stopPropagation();
-          const albumName = thumb.getAttribute("data-album");
-          const pIdx = parseInt(thumb.getAttribute("data-index"), 10);
-          const albumPhotos = albums[albumName];
-          if (albumPhotos && !isNaN(pIdx)) {
-            activePhotoList = albumPhotos;
-            lastActiveCard = thumb;
-            openLightbox(pIdx);
-          }
-        };
-
-        thumb.addEventListener("click", handleOpenThumb);
-        thumb.addEventListener("keydown", function(e) {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            handleOpenThumb(e);
-          }
-        });
-      });
-
-      // Clicking album card background outside thumbs opens first photo in album
-      gridEl.querySelectorAll(".pg-album-card").forEach(function(card) {
-        const handleOpenFirst = function(e) {
-          if (e.target.closest(".pg-album-thumb")) return;
-          const albumName = card.getAttribute("data-album-name");
-          const albumPhotos = albums[albumName];
-          if (albumPhotos && albumPhotos.length > 0) {
-            activePhotoList = albumPhotos;
-            lastActiveCard = card;
-            openLightbox(0);
-          }
-        };
-
-        card.addEventListener("click", handleOpenFirst);
-        card.addEventListener("keydown", function(e) {
-          if (e.key === "Enter" || e.key === " ") {
-            if (e.target === card) {
+          card.addEventListener("click", handleSelectAlbum);
+          card.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              handleOpenFirst(e);
+              handleSelectAlbum();
             }
-          }
+          });
         });
-      });
+      } else {
+        // Show Opened Album View: Without any name, with back button and all photos in full cards
+        gridEl.className = "pg-grid view-album-detail";
+        const albumPhotos = albums[selectedAlbum] || [];
+
+        const headerHtml = '<div class="pg-album-detail-header">' +
+          '<button class="pg-album-back-btn" id="pgAlbumBackBtn" title="Back to All Collections">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>' +
+            '<span>All Collections</span>' +
+          '</button>' +
+        '</div>' +
+        '<div class="pg-album-detail-grid">';
+
+        const cardsHtml = albumPhotos.map(function(photo, idx) {
+          return renderPhotoCard(photo, idx);
+        }).join("");
+
+        gridEl.innerHTML = headerHtml + cardsHtml + '</div>';
+
+        // Back button returns to All Collections preview cards
+        const backBtn = document.getElementById("pgAlbumBackBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function() {
+            selectedAlbum = null;
+            renderAlbumsView();
+          });
+        }
+
+        // Clicking a photo card inside the opened album opens the lightbox with this album's sequence
+        gridEl.querySelectorAll(".pg-album-detail-grid .pg-card").forEach(function(card) {
+          const handleOpen = function() {
+            lastActiveCard = card;
+            const idx = parseInt(card.getAttribute("data-index"), 10);
+            if (!isNaN(idx)) {
+              activePhotoList = albumPhotos;
+              openLightbox(idx);
+            }
+          };
+          card.addEventListener("click", handleOpen);
+          card.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleOpen();
+            }
+          });
+        });
+      }
     }
 
     // View Mode Switcher
@@ -373,6 +393,7 @@
       if (mode === "albums") {
         renderAlbumsView();
       } else {
+        selectedAlbum = null;
         gridEl.className = "pg-grid view-" + mode;
         activePhotoList = photos;
         renderPhotosList(photos);
@@ -890,6 +911,8 @@
         const matchedAlbum = Object.keys(albums).find(a => a.toLowerCase() === albumNameFromHash.toLowerCase());
         if (matchedAlbum) {
           setViewMode("albums");
+          selectedAlbum = matchedAlbum;
+          renderAlbumsView();
           return;
         }
       }

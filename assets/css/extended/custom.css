@@ -2096,6 +2096,81 @@ body:not(.dark) .status-dot-pulse {
   pointer-events: none;
 }
 
+/* Opened Album Detail View (Without names, pure photo collection) */
+.view-album-detail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.25rem;
+}
+
+.pg-album-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.2rem 0.2rem 0.85rem 0.2rem;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.12);
+  margin-bottom: 0.25rem;
+}
+
+.pg-album-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-family-sans);
+}
+
+.pg-album-back-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateX(-3px);
+}
+
+.pg-album-detail-grid {
+  column-count: 3;
+  column-gap: 1.15rem;
+  width: 100%;
+}
+
+.pg-album-detail-grid .pg-card {
+  break-inside: avoid;
+  margin-bottom: 1.15rem;
+}
+
+@media (max-width: 960px) {
+  .pg-album-detail-grid {
+    column-count: 2;
+    column-gap: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .pg-album-detail-grid {
+    column-count: 3;
+    column-gap: 0.35rem;
+  }
+  .pg-album-detail-grid .pg-card {
+    margin-bottom: 0.35rem;
+    border-radius: 8px;
+  }
+  .pg-album-detail-grid .pg-img-wrapper,
+  .pg-album-detail-grid .pg-img {
+    border-radius: 8px;
+  }
+  .pg-album-detail-grid .pg-card-bar {
+    display: none !important;
+  }
+}
+
 /* Editorial Wide Layout */
 .pg-grid.view-editorial {
   display: flex;
