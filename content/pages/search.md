@@ -1,8 +1,8 @@
 ---
-title: "Search & Explore"
+title: "Search"
 url: "/search/"
 layout: "search"
 summary: "Search posts, blogs, and projects"
-placeholder: "Search title, content, or topics..."
+placeholder: "Search articles, notes, projects..."
 searchHidden: true
 ---

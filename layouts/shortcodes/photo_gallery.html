@@ -18,8 +18,9 @@
         {{ $photoMeta := index $meta $fileName | default dict }}
         {{ $title := index $photoMeta "title" | default $defaultTitle }}
         {{ $description := index $photoMeta "description" | default "" }}
+        {{ $album := index $photoMeta "album" | default "Frames" }}
 
-        {{ $photoObj := dict "id" $fileName "title" $title "description" $description "src" (printf "/photos/%s" $fileName) }}
+        {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" (printf "/photos/%s" $fileName) }}
         {{ $photos = $photos | append $photoObj }}
       {{ end }}
     {{ end }}
@@ -39,7 +40,7 @@
       </div>
       <div class="pg-header-meta">
         <div class="pg-title-row">
-          <h2 class="pg-minimal-title">MONOCHOPSIS</h2>
+          <h2 class="pg-minimal-title">MONACHOPSIS</h2>
         </div>
         <p class="pg-minimal-subtitle">Visual Arts &amp; Frames</p>
       </div>
@@ -53,9 +54,9 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
         <span class="btn-label">Masonry</span>
       </button>
-      <button class="pg-view-btn" id="btnViewGrid" title="Instagram Square Grid View">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-        <span class="btn-label">Grid</span>
+      <button class="pg-view-btn" id="btnViewAlbums" title="Photo Albums View">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="14" rx="2"></rect><path d="M7 21h12a2 2 0 0 0 2-2V7"></path></svg>
+        <span class="btn-label">Albums</span>
       </button>
       <button class="pg-view-btn" id="btnViewEditorial" title="Editorial Wide View">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"></rect><rect x="3" y="14" width="18" height="6" rx="1"></rect></svg>
@@ -64,7 +65,10 @@
     </div>
   </div>
 
-  <!-- Interactive Photo Grid Container -->
+  <!-- Dynamic Albums Filter Pills Bar (Shown when Albums View is active) -->
+  <div class="pg-albums-nav" id="pgAlbumsNav" style="display: none;"></div>
+
+  <!-- Interactive Photo Grid / Albums Container -->
   <div class="pg-grid view-masonry" id="pgGrid">
     <!-- Rendered dynamically by JavaScript -->
   </div>
@@ -72,20 +76,24 @@
 
 <!-- High-End Dynamic Social Gallery Lightbox Modal -->
 <div class="pg-lightbox" id="pgLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo Frame Lightbox">
-  <!-- Floating Top Right Actions (Does not push image down) -->
-  <div class="pg-lb-actions">
-    <!-- Share Link Button -->
-    <button class="pg-lb-btn pg-lb-share-btn" id="pgLbShareBtn" title="Share frame link" aria-label="Share frame link">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-      <span>Share</span>
-    </button>
+  <!-- Minimalist Top Left Share Button (Icon only) -->
+  <button class="pg-lb-icon-btn pg-lb-share-btn" id="pgLbShareBtn" title="Share frame link" aria-label="Share frame link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+  </button>
 
-    <!-- Close Button -->
-    <button class="pg-lb-btn pg-lb-close-btn" id="pgLbCloseBtn" title="Close (Esc)" aria-label="Close Lightbox">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      <span>Close</span>
-    </button>
-  </div>
+  <!-- Minimalist Top Right Aesthetic Close Button -->
+  <button class="pg-lb-icon-btn pg-lb-close-btn" id="pgLbCloseBtn" title="Close (Esc)" aria-label="Close Lightbox">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
 
   <div class="pg-lb-main">
     <div class="pg-lb-stage">
@@ -104,7 +112,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
         </button>
         
-        <!-- Compact Floating Title Pill Overlay (The Bubble - Bottom Center on Photo) -->
+        <!-- Compact Floating Title Pill Overlay (The Bubble - Aligned Directly With the Photo) -->
         <div class="pg-lb-caption-overlay" id="pgLbCaptionOverlay">
           <span class="pg-lb-title" id="lbTitle"></span>
         </div>
@@ -138,18 +146,41 @@
         id: "zarathustra.jpg",
         title: "Thus Spoke",
         description: "Captured along quiet waters.",
+        album: "Solitude",
         src: "/photos/zarathustra.jpg"
       }
     ];
 
+    // Ensure all photos have an album
+    photos.forEach(p => {
+      if (!p.album) p.album = "Frames";
+    });
+
+    // Group photos into albums
+    function getAlbums() {
+      const albumMap = {};
+      photos.forEach(p => {
+        const albumName = p.album || "Frames";
+        if (!albumMap[albumName]) {
+          albumMap[albumName] = [];
+        }
+        albumMap[albumName].push(p);
+      });
+      return albumMap;
+    }
+
+    let currentViewMode = "masonry"; // 'masonry', 'albums', 'editorial'
+    let selectedAlbum = null; // null = all albums, or album name
+    let activePhotoList = photos; // photos currently in navigation sequence
     let currentLightboxIndex = 0;
 
     // DOM Elements
     const gridEl = document.getElementById("pgGrid");
     if (!gridEl) return;
 
+    const albumsNav = document.getElementById("pgAlbumsNav");
     const viewMasonryBtn = document.getElementById("btnViewMasonry");
-    const viewGridBtn = document.getElementById("btnViewGrid");
+    const viewAlbumsBtn = document.getElementById("btnViewAlbums");
     const viewEditorialBtn = document.getElementById("btnViewEditorial");
 
     // Lightbox Elements
@@ -185,67 +216,237 @@
       return short + "...";
     }
 
-    // Render Grid Cards with Pure Pinterest Architecture & Integrated Bottom Bar
+    // Render Gallery Content based on current view mode
     function renderGallery() {
-      gridEl.innerHTML = photos.map((photo, idx) => `
-        <div class="pg-card" data-id="${escapeHtml(photo.id)}" data-index="${idx}" tabindex="0" role="button" aria-label="View photo ${escapeHtml(photo.title)}">
-          <div class="pg-img-wrapper">
-            <!-- Anti-Download Protective Shield Overlay -->
-            <div class="pg-img-shield"></div>
-            
-            <img src="${photo.src}" alt="${escapeHtml(photo.title)}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
-            
-            <!-- Perfectly Aligned Bottom Bar Inside the Photo (Pinterest Style) -->
-            <div class="pg-card-bar">
-              <div class="pg-card-bar-text">
-                <h3 class="pg-card-title">${escapeHtml(photo.title)}</h3>
-                ${photo.description ? `
-                  <p class="pg-card-desc">
-                    <span class="pg-desc-short">${escapeHtml(getShortDesc(photo.description, 5))}</span>
-                    <span class="pg-desc-full">${escapeHtml(photo.description)}</span>
-                  </p>
-                ` : ''}
-              </div>
-              <div class="pg-card-action-icon" title="View Frame">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+      if (currentViewMode === "albums") {
+        renderAlbumsView();
+      } else {
+        if (albumsNav) albumsNav.style.display = "none";
+        renderPhotosList(photos);
+      }
+    }
+
+    // Render standard photo cards (for Masonry, Editorial, or Album Detail)
+    function renderPhotosList(listToRender, isInsideAlbum = false) {
+      gridEl.innerHTML = listToRender.map((photo) => {
+        // Global index in active list
+        const listIdx = listToRender.indexOf(photo);
+        return `
+          <div class="pg-card" data-id="${escapeHtml(photo.id)}" data-index="${listIdx}" tabindex="0" role="button" aria-label="View photo ${escapeHtml(photo.title)}">
+            <div class="pg-img-wrapper">
+              <!-- Anti-Download Protective Shield Overlay -->
+              <div class="pg-img-shield"></div>
+              
+              <img src="${photo.src}" alt="${escapeHtml(photo.title)}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
+              
+              <!-- Perfectly Aligned Bottom Bar Inside the Photo (Pinterest Style) -->
+              <div class="pg-card-bar">
+                <div class="pg-card-bar-text">
+                  <h3 class="pg-card-title">${escapeHtml(photo.title)}</h3>
+                  ${photo.description ? `
+                    <p class="pg-card-desc">
+                      <span class="pg-desc-short">${escapeHtml(getShortDesc(photo.description, 5))}</span>
+                      <span class="pg-desc-full">${escapeHtml(photo.description)}</span>
+                    </p>
+                  ` : ''}
+                </div>
+                <div class="pg-card-action-icon" title="View Frame">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      `).join("");
+        `;
+      }).join("");
 
-      // Click & Keyboard Handlers to Open Dynamic Lightbox
+      // Bind photo click handlers to open lightbox
       gridEl.querySelectorAll(".pg-card").forEach((card) => {
-        card.addEventListener("click", function() {
-          lastActiveCard = this;
-          const index = parseInt(this.getAttribute("data-index"));
-          if (!isNaN(index)) {
-            openLightbox(index);
+        const handleOpen = () => {
+          lastActiveCard = card;
+          const idx = parseInt(card.getAttribute("data-index"), 10);
+          if (!isNaN(idx)) {
+            activePhotoList = listToRender;
+            openLightbox(idx);
           }
-        });
+        };
+        card.addEventListener("click", handleOpen);
         card.addEventListener("keydown", function(e) {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            lastActiveCard = this;
-            const index = parseInt(this.getAttribute("data-index"));
-            if (!isNaN(index)) {
-              openLightbox(index);
-            }
+            handleOpen();
           }
         });
       });
     }
 
+    // Render Albums View: Either Album Collection Cards or Selected Album Detail
+    function renderAlbumsView() {
+      const albums = getAlbums();
+      const albumNames = Object.keys(albums);
+
+      // Render navigation pills
+      if (albumsNav) {
+        albumsNav.style.display = "flex";
+        albumsNav.innerHTML = `
+          <button class="pg-album-pill ${selectedAlbum === null ? 'active' : ''}" data-album="all">
+            All Collections
+          </button>
+          ${albumNames.map(name => `
+            <button class="pg-album-pill ${selectedAlbum === name ? 'active' : ''}" data-album="${escapeHtml(name)}">
+              ${escapeHtml(name)} <span class="pg-album-pill-count">${albums[name].length}</span>
+            </button>
+          `).join("")}
+        `;
+
+        albumsNav.querySelectorAll(".pg-album-pill").forEach(pill => {
+          pill.addEventListener("click", function() {
+            const album = this.getAttribute("data-album");
+            selectedAlbum = (album === "all") ? null : album;
+            renderAlbumsView();
+          });
+        });
+      }
+
+      if (selectedAlbum === null) {
+        // Show Album Collection Cards Grid
+        gridEl.className = "pg-grid view-albums-collections";
+        gridEl.innerHTML = albumNames.map(name => {
+          const albumPhotos = albums[name];
+          const coverPhoto = albumPhotos[0] || {};
+          const photoCount = albumPhotos.length;
+          return `
+            <div class="pg-album-card" data-album-name="${escapeHtml(name)}" tabindex="0" role="button" aria-label="Open album ${escapeHtml(name)}">
+              <div class="pg-album-card-stack">
+                <div class="pg-album-stack-layer-2"></div>
+                <div class="pg-album-stack-layer-1"></div>
+                <div class="pg-album-cover-wrapper">
+                  <div class="pg-album-shield"></div>
+                  <img src="${coverPhoto.src}" alt="${escapeHtml(name)}" class="pg-album-cover-img" loading="lazy" decoding="async" draggable="false" />
+                  <div class="pg-album-count-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>${photoCount} frame${photoCount === 1 ? '' : 's'}</span>
+                  </div>
+                  <div class="pg-album-bottom-bar">
+                    <div class="pg-album-info">
+                      <span class="pg-album-label">Album</span>
+                      <h3 class="pg-album-title">${escapeHtml(name)}</h3>
+                    </div>
+                    <div class="pg-album-arrow-circle" title="View Album">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        gridEl.querySelectorAll(".pg-album-card").forEach(card => {
+          const handleSelect = () => {
+            const albumName = card.getAttribute("data-album-name");
+            selectedAlbum = albumName;
+            renderAlbumsView();
+          };
+          card.addEventListener("click", handleSelect);
+          card.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleSelect();
+            }
+          });
+        });
+      } else {
+        // Show Album Detail View (Photos inside the chosen album)
+        gridEl.className = "pg-grid view-album-detail";
+        const albumPhotos = albums[selectedAlbum] || [];
+        
+        const headerHtml = `
+          <div class="pg-album-detail-header">
+            <button class="pg-album-back-btn" id="pgAlbumBackBtn" title="Back to All Albums">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <span>All Collections</span>
+            </button>
+            <div class="pg-album-detail-meta">
+              <h2 class="pg-album-detail-title">${escapeHtml(selectedAlbum)}</h2>
+              <span class="pg-album-detail-count">${albumPhotos.length} photographs</span>
+            </div>
+          </div>
+          <div class="pg-album-detail-grid">
+        `;
+        
+        const cardsHtml = albumPhotos.map((photo, idx) => `
+          <div class="pg-card" data-id="${escapeHtml(photo.id)}" data-index="${idx}" tabindex="0" role="button" aria-label="View photo ${escapeHtml(photo.title)}">
+            <div class="pg-img-wrapper">
+              <div class="pg-img-shield"></div>
+              <img src="${photo.src}" alt="${escapeHtml(photo.title)}" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />
+              <div class="pg-card-bar">
+                <div class="pg-card-bar-text">
+                  <h3 class="pg-card-title">${escapeHtml(photo.title)}</h3>
+                  ${photo.description ? `
+                    <p class="pg-card-desc">
+                      <span class="pg-desc-short">${escapeHtml(getShortDesc(photo.description, 5))}</span>
+                      <span class="pg-desc-full">${escapeHtml(photo.description)}</span>
+                    </p>
+                  ` : ''}
+                </div>
+                <div class="pg-card-action-icon" title="View Frame">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join("");
+
+        gridEl.innerHTML = headerHtml + cardsHtml + `</div>`;
+
+        const backBtn = document.getElementById("pgAlbumBackBtn");
+        if (backBtn) {
+          backBtn.addEventListener("click", function() {
+            selectedAlbum = null;
+            renderAlbumsView();
+          });
+        }
+
+        gridEl.querySelectorAll(".pg-album-detail-grid .pg-card").forEach((card) => {
+          const handleOpen = () => {
+            lastActiveCard = card;
+            const idx = parseInt(card.getAttribute("data-index"), 10);
+            if (!isNaN(idx)) {
+              activePhotoList = albumPhotos;
+              openLightbox(idx);
+            }
+          };
+          card.addEventListener("click", handleOpen);
+          card.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleOpen();
+            }
+          });
+        });
+      }
+    }
+
     // View Mode Switcher
     if (viewMasonryBtn) viewMasonryBtn.addEventListener("click", () => setViewMode("masonry"));
-    if (viewGridBtn) viewGridBtn.addEventListener("click", () => setViewMode("grid"));
+    if (viewAlbumsBtn) viewAlbumsBtn.addEventListener("click", () => setViewMode("albums"));
     if (viewEditorialBtn) viewEditorialBtn.addEventListener("click", () => setViewMode("editorial"));
 
     function setViewMode(mode) {
-      gridEl.className = "pg-grid view-" + mode;
+      currentViewMode = mode;
       if (viewMasonryBtn) viewMasonryBtn.classList.toggle("active", mode === "masonry");
-      if (viewGridBtn) viewGridBtn.classList.toggle("active", mode === "grid");
+      if (viewAlbumsBtn) viewAlbumsBtn.classList.toggle("active", mode === "albums");
       if (viewEditorialBtn) viewEditorialBtn.classList.toggle("active", mode === "editorial");
+
+      if (mode === "albums") {
+        renderAlbumsView();
+      } else {
+        selectedAlbum = null;
+        if (albumsNav) albumsNav.style.display = "none";
+        gridEl.className = "pg-grid view-" + mode;
+        activePhotoList = photos;
+        renderPhotosList(photos);
+      }
     }
 
     // Dynamic Opener Lightbox Implementation
@@ -339,8 +540,8 @@
         lightbox.classList.add("active");
         lightbox.setAttribute("aria-hidden", "false");
       }
-      if (updateUrl && photos[currentLightboxIndex]) {
-        var photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+      if (updateUrl && activePhotoList[currentLightboxIndex]) {
+        var photoSlug = activePhotoList[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
         history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
       }
       // Prevent background scroll (including iOS)
@@ -378,11 +579,24 @@
       }
     }
 
+    function syncWrapperToImage() {
+      if (!lbImage || !lbImgWrapper) return;
+      if (lbImage.naturalWidth && lbImage.naturalHeight) {
+        // Adjust container dimensions to match rendered image bounds tightly
+        const renderedW = lbImage.offsetWidth;
+        const renderedH = lbImage.offsetHeight;
+        if (renderedW > 0 && renderedH > 0) {
+          lbImgWrapper.style.width = renderedW + "px";
+          lbImgWrapper.style.height = renderedH + "px";
+        }
+      }
+    }
+
     function updateLightboxContent() {
-      var p = photos[currentLightboxIndex];
+      var p = activePhotoList[currentLightboxIndex];
       if (!p) return;
 
-      // Update Title in the Bubble (use cached refs)
+      // Update Title in the Bubble
       if (lbTitle) {
         lbTitle.textContent = p.title || "";
       }
@@ -391,7 +605,7 @@
         captionOverlay.style.display = "inline-flex";
       }
 
-      // Update Description Bar (use cached ref)
+      // Update Description Bar
       if (lbDescContainer) {
         if (p.description) {
           if (lbDescText) lbDescText.textContent = p.description;
@@ -408,38 +622,54 @@
       if (lbImage) {
         lbImage.style.transition = "none";
         lbImage.style.transform = "translate3d(0, 0, 0) scale(1)";
+        if (lbImgWrapper) {
+          lbImgWrapper.style.width = "auto";
+          lbImgWrapper.style.height = "auto";
+        }
+        lbImage.onload = function() {
+          syncWrapperToImage();
+        };
         lbImage.src = p.src;
         lbImage.alt = p.title || "";
         lbImage.style.opacity = "1";
+        if (lbImage.complete) {
+          syncWrapperToImage();
+        }
       }
 
       // Preload Adjacent Images for Instantaneous Navigation
-      if (photos.length > 1) {
-        var nextIdx = (currentLightboxIndex + 1) % photos.length;
-        var prevIdx = (currentLightboxIndex - 1 + photos.length) % photos.length;
-        new Image().src = photos[nextIdx].src;
-        new Image().src = photos[prevIdx].src;
+      if (activePhotoList.length > 1) {
+        var nextIdx = (currentLightboxIndex + 1) % activePhotoList.length;
+        var prevIdx = (currentLightboxIndex - 1 + activePhotoList.length) % activePhotoList.length;
+        new Image().src = activePhotoList[nextIdx].src;
+        new Image().src = activePhotoList[prevIdx].src;
       }
     }
 
+    window.addEventListener("resize", function() {
+      if (lightbox && lightbox.classList.contains("active")) {
+        syncWrapperToImage();
+      }
+    });
+
     function nextPhoto() {
-      if (photos.length <= 1) return;
+      if (activePhotoList.length <= 1) return;
       resetZoom(false);
-      currentLightboxIndex = (currentLightboxIndex + 1) % photos.length;
+      currentLightboxIndex = (currentLightboxIndex + 1) % activePhotoList.length;
       updateLightboxContent();
-      if (photos[currentLightboxIndex]) {
-        var slug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+      if (activePhotoList[currentLightboxIndex]) {
+        var slug = activePhotoList[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
         history.replaceState(null, "", "#" + encodeURIComponent(slug));
       }
     }
 
     function prevPhoto() {
-      if (photos.length <= 1) return;
+      if (activePhotoList.length <= 1) return;
       resetZoom(false);
-      currentLightboxIndex = (currentLightboxIndex - 1 + photos.length) % photos.length;
+      currentLightboxIndex = (currentLightboxIndex - 1 + activePhotoList.length) % activePhotoList.length;
       updateLightboxContent();
-      if (photos[currentLightboxIndex]) {
-        var slug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+      if (activePhotoList[currentLightboxIndex]) {
+        var slug = activePhotoList[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
         history.replaceState(null, "", "#" + encodeURIComponent(slug));
       }
     }
@@ -448,7 +678,7 @@
     if (lbShareBtn) {
       lbShareBtn.addEventListener("click", function(e) {
         e.stopPropagation();
-        const p = photos[currentLightboxIndex];
+        const p = activePhotoList[currentLightboxIndex];
         const shareUrl = window.location.origin + window.location.pathname + "#" + encodeURIComponent(p.id.replace(/\.[^/.]+$/, ""));
         if (navigator.clipboard) {
           navigator.clipboard.writeText(shareUrl).then(showToast);
@@ -479,28 +709,20 @@
       });
     }
 
-    // Click Left / Right on Stage or Photo to Navigate (Replaces Click Zoom)
+    // Click Left / Right on Stage or Photo to Navigate
     if (lbStage) {
       lbStage.addEventListener("click", function(e) {
-        // Exclude controls, title bubble, caption bar, buttons
         if (e.target.closest("#pgLbCaptionOverlay") ||
             e.target.closest("#lbDescContainer") ||
             e.target.closest(".pg-lb-arrow") ||
+            e.target.closest(".pg-lb-icon-btn") ||
             e.target.closest(".pg-lb-btn")) {
           return;
         }
 
-        // If zoomed in, do NOT navigate on click (user is interacting with zoomed photo)
-        if (currentScale > 1.05) {
-          return;
-        }
+        if (currentScale > 1.05) return;
+        if (hasMoved) return;
 
-        // If the user just completed a drag, pan, or pinch gesture, do NOT navigate
-        if (hasMoved) {
-          return;
-        }
-
-        // Left half of screen -> Prev photo, Right half -> Next photo
         const midX = window.innerWidth / 2;
         if (e.clientX < midX) {
           prevPhoto();
@@ -521,7 +743,6 @@
       lbStage.addEventListener("wheel", function(e) {
         if (!lightbox || !lightbox.classList.contains("active")) return;
 
-        // Trackpad Pinch Gesture on macOS / Windows (ctrlKey is true)
         if (e.ctrlKey) {
           e.preventDefault();
           markMoved();
@@ -543,7 +764,6 @@
           return;
         }
 
-        // Two-finger trackpad panning when zoomed in
         if (currentScale > 1.05) {
           e.preventDefault();
           markMoved();
@@ -592,7 +812,6 @@
         touchStartTime = Date.now();
 
         if (e.touches.length === 2) {
-          // Pinch Zoom Start
           isPinching = true;
           hasMoved = true;
           initialPinchDist = Math.hypot(
@@ -681,7 +900,6 @@
           var swipeDiffY = endY - touchStartY;
           var duration = Date.now() - touchStartTime;
 
-          // Check if swipe gesture
           if (Math.abs(swipeDiffX) > 45 && Math.abs(swipeDiffX) > Math.abs(swipeDiffY) && duration < 400) {
             if (swipeDiffX < 0) nextPhoto();
             else prevPhoto();
@@ -734,8 +952,23 @@
       const hash = window.location.hash.replace(/^#/, "");
       if (!hash) return;
       const cleanHash = decodeURIComponent(hash);
+
+      // Check if hash matches an album e.g. #album-nocturne
+      if (cleanHash.startsWith("album-")) {
+        const albumNameFromHash = cleanHash.replace(/^album-/, "");
+        const albums = getAlbums();
+        const matchedAlbum = Object.keys(albums).find(a => a.toLowerCase() === albumNameFromHash.toLowerCase());
+        if (matchedAlbum) {
+          setViewMode("albums");
+          selectedAlbum = matchedAlbum;
+          renderAlbumsView();
+          return;
+        }
+      }
+
       const targetIdx = photos.findIndex(p => p.id.replace(/\.[^/.]+$/, "") === cleanHash);
       if (targetIdx !== -1) {
+        activePhotoList = photos;
         openLightbox(targetIdx, false);
       }
     }
