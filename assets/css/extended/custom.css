@@ -1966,13 +1966,6 @@ body:not(.dark) .status-dot-pulse {
   margin: 0 auto;
 }
 
-@media (max-width: 640px) {
-  .pg-grid.view-albums-collections {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
 /* Album Card Container */
 .pg-album-card {
   position: relative;
@@ -3782,24 +3775,40 @@ body:has(.services-hero) .post-header,
     display: none !important;
   }
 
-  /* 2. Albums View on Mobile */
+  /* 2. Albums View on Mobile: Sleek, compact horizontal scroll strip */
   .pg-grid.view-albums-collections {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.85rem;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0.35rem 0.2rem 0.85rem 0.2rem;
+    scrollbar-width: none;
+    box-sizing: border-box;
   }
 
-  .pg-album-card {
-    padding: 8px;
-    border-radius: 16px;
+  .pg-grid.view-albums-collections::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pg-grid.view-albums-collections .pg-album-card {
+    flex: 0 0 205px;
+    width: 205px;
+    max-width: 205px;
+    scroll-snap-align: start;
+    padding: 6px;
+    border-radius: 14px;
+    box-sizing: border-box;
   }
 
   .pg-album-collage {
     border-radius: 10px;
-    gap: 4px;
+    gap: 3px;
   }
 
   .pg-album-thumb {
