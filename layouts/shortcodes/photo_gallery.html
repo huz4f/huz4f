@@ -65,9 +65,6 @@
     </div>
   </div>
 
-  <!-- Dynamic Albums Filter Pills Bar (Shown when Albums View is active) -->
-  <div class="pg-albums-nav" id="pgAlbumsNav" style="display: none;"></div>
-
   <!-- Interactive Photo Grid / Albums Container -->
   <div class="pg-grid view-masonry" id="pgGrid">
     <!-- Rendered dynamically by JavaScript -->
@@ -170,7 +167,6 @@
     }
 
     let currentViewMode = "masonry"; // 'masonry', 'albums', 'editorial'
-    let selectedAlbum = null; // null = all albums, or album name
     let activePhotoList = photos; // photos currently in navigation sequence
     let currentLightboxIndex = 0;
 
@@ -178,7 +174,6 @@
     const gridEl = document.getElementById("pgGrid");
     if (!gridEl) return;
 
-    const albumsNav = document.getElementById("pgAlbumsNav");
     const viewMasonryBtn = document.getElementById("btnViewMasonry");
     const viewAlbumsBtn = document.getElementById("btnViewAlbums");
     const viewEditorialBtn = document.getElementById("btnViewEditorial");
@@ -221,7 +216,6 @@
       if (currentViewMode === "albums") {
         renderAlbumsView();
       } else {
-        if (albumsNav) albumsNav.style.display = "none";
         renderPhotosList(photos);
       }
     }
@@ -283,133 +277,86 @@
       });
     }
 
-    // Render Albums View: Either Album Collection Cards or Selected Album Detail
+    // Render Albums View: Micro-collage preview cards showing all photos in small size
     function renderAlbumsView() {
       const albums = getAlbums();
       const albumNames = Object.keys(albums);
 
-      // Render navigation pills
-      if (albumsNav) {
-        albumsNav.style.display = "flex";
-        let pillsHtml = '<button class="pg-album-pill ' + (selectedAlbum === null ? "active" : "") + '" data-album="all">All Collections</button>';
-        albumNames.forEach(function(name) {
-          const safeName = escapeHtml(name);
-          const count = albums[name].length;
-          const isActive = selectedAlbum === name ? " active" : "";
-          pillsHtml += '<button class="pg-album-pill' + isActive + '" data-album="' + safeName + '">' +
-            safeName + ' <span class="pg-album-pill-count">' + count + '</span>' +
-            '</button>';
-        });
-        albumsNav.innerHTML = pillsHtml;
+      gridEl.className = "pg-grid view-albums-collections";
 
-        albumsNav.querySelectorAll(".pg-album-pill").forEach(pill => {
-          pill.addEventListener("click", function() {
-            const album = this.getAttribute("data-album");
-            selectedAlbum = (album === "all") ? null : album;
-            renderAlbumsView();
-          });
-        });
-      }
+      const html = albumNames.map(function(name) {
+        const albumPhotos = albums[name] || [];
+        const photoCount = albumPhotos.length;
+        const safeAlbumName = escapeHtml(name);
 
-      if (selectedAlbum === null) {
-        // Show Album Collection Cards Grid
-        gridEl.className = "pg-grid view-albums-collections";
-        gridEl.innerHTML = albumNames.map(name => {
-          const albumPhotos = albums[name];
-          const coverPhoto = albumPhotos[0] || {};
-          const photoCount = albumPhotos.length;
-          const safeName = escapeHtml(name);
-          const countText = photoCount + " frame" + (photoCount === 1 ? "" : "s");
+        let layoutClass = "pg-collage-" + photoCount;
+        if (photoCount > 6) {
+          layoutClass = "pg-collage-many";
+        }
 
-          return '<div class="pg-album-card" data-album-name="' + safeName + '" tabindex="0" role="button" aria-label="Open album ' + safeName + '">' +
-            '<div class="pg-album-card-stack">' +
-              '<div class="pg-album-stack-layer-2"></div>' +
-              '<div class="pg-album-stack-layer-1"></div>' +
-              '<div class="pg-album-cover-wrapper">' +
-                '<div class="pg-album-shield"></div>' +
-                '<img src="' + coverPhoto.src + '" alt="' + safeName + '" class="pg-album-cover-img" loading="lazy" decoding="async" draggable="false" />' +
-                '<div class="pg-album-count-badge">' +
-                  '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>' +
-                  '<span>' + countText + '</span>' +
-                '</div>' +
-                '<div class="pg-album-bottom-bar">' +
-                  '<div class="pg-album-info">' +
-                    '<span class="pg-album-label">Album</span>' +
-                    '<h3 class="pg-album-title">' + safeName + '</h3>' +
-                  '</div>' +
-                  '<div class="pg-album-arrow-circle" title="View Album">' +
-                    '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' +
-                  '</div>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
+        const thumbsHtml = albumPhotos.map(function(photo, pIdx) {
+          const safeTitle = escapeHtml(photo.title);
+          return '<div class="pg-album-thumb" data-album="' + safeAlbumName + '" data-index="' + pIdx + '" tabindex="0" role="button" aria-label="View photo ' + safeTitle + '">' +
+            '<div class="pg-album-thumb-shield"></div>' +
+            '<img src="' + photo.src + '" alt="' + safeTitle + '" class="pg-album-thumb-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
           '</div>';
         }).join("");
 
-        gridEl.querySelectorAll(".pg-album-card").forEach(card => {
-          const handleSelect = () => {
-            const albumName = card.getAttribute("data-album-name");
-            selectedAlbum = albumName;
-            renderAlbumsView();
-          };
-          card.addEventListener("click", handleSelect);
-          card.addEventListener("keydown", function(e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleSelect();
-            }
-          });
-        });
-      } else {
-        // Show Album Detail View (Photos inside the chosen album)
-        gridEl.className = "pg-grid view-album-detail";
-        const albumPhotos = albums[selectedAlbum] || [];
-        const safeAlbumTitle = escapeHtml(selectedAlbum);
-
-        const headerHtml = '<div class="pg-album-detail-header">' +
-          '<button class="pg-album-back-btn" id="pgAlbumBackBtn" title="Back to All Albums">' +
-            '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>' +
-            '<span>All Collections</span>' +
-          '</button>' +
-          '<div class="pg-album-detail-meta">' +
-            '<h2 class="pg-album-detail-title">' + safeAlbumTitle + '</h2>' +
-            '<span class="pg-album-detail-count">' + albumPhotos.length + ' photographs</span>' +
+        return '<div class="pg-album-card" data-album-name="' + safeAlbumName + '" tabindex="0" role="region" aria-label="Photo album">' +
+          '<div class="pg-album-collage ' + layoutClass + '">' +
+            thumbsHtml +
           '</div>' +
-        '</div>' +
-        '<div class="pg-album-detail-grid">';
+        '</div>';
+      }).join("");
 
-        const cardsHtml = albumPhotos.map(function(photo, idx) {
-          return renderPhotoCard(photo, idx);
-        }).join("");
+      gridEl.innerHTML = html;
 
-        gridEl.innerHTML = headerHtml + cardsHtml + '</div>';
+      // Click mini-photo in album preview: opens that photo directly in lightbox with album sequence
+      gridEl.querySelectorAll(".pg-album-thumb").forEach(function(thumb) {
+        const handleOpenThumb = function(e) {
+          e.stopPropagation();
+          const albumName = thumb.getAttribute("data-album");
+          const pIdx = parseInt(thumb.getAttribute("data-index"), 10);
+          const albumPhotos = albums[albumName];
+          if (albumPhotos && !isNaN(pIdx)) {
+            activePhotoList = albumPhotos;
+            lastActiveCard = thumb;
+            openLightbox(pIdx);
+          }
+        };
 
-        const backBtn = document.getElementById("pgAlbumBackBtn");
-        if (backBtn) {
-          backBtn.addEventListener("click", function() {
-            selectedAlbum = null;
-            renderAlbumsView();
-          });
-        }
-
-        gridEl.querySelectorAll(".pg-album-detail-grid .pg-card").forEach((card) => {
-          const handleOpen = () => {
-            lastActiveCard = card;
-            const idx = parseInt(card.getAttribute("data-index"), 10);
-            if (!isNaN(idx)) {
-              activePhotoList = albumPhotos;
-              openLightbox(idx);
-            }
-          };
-          card.addEventListener("click", handleOpen);
-          card.addEventListener("keydown", function(e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleOpen();
-            }
-          });
+        thumb.addEventListener("click", handleOpenThumb);
+        thumb.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleOpenThumb(e);
+          }
         });
-      }
+      });
+
+      // Clicking album card background outside thumbs opens first photo in album
+      gridEl.querySelectorAll(".pg-album-card").forEach(function(card) {
+        const handleOpenFirst = function(e) {
+          if (e.target.closest(".pg-album-thumb")) return;
+          const albumName = card.getAttribute("data-album-name");
+          const albumPhotos = albums[albumName];
+          if (albumPhotos && albumPhotos.length > 0) {
+            activePhotoList = albumPhotos;
+            lastActiveCard = card;
+            openLightbox(0);
+          }
+        };
+
+        card.addEventListener("click", handleOpenFirst);
+        card.addEventListener("keydown", function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            if (e.target === card) {
+              e.preventDefault();
+              handleOpenFirst(e);
+            }
+          }
+        });
+      });
     }
 
     // View Mode Switcher
@@ -426,8 +373,6 @@
       if (mode === "albums") {
         renderAlbumsView();
       } else {
-        selectedAlbum = null;
-        if (albumsNav) albumsNav.style.display = "none";
         gridEl.className = "pg-grid view-" + mode;
         activePhotoList = photos;
         renderPhotosList(photos);
@@ -945,8 +890,6 @@
         const matchedAlbum = Object.keys(albums).find(a => a.toLowerCase() === albumNameFromHash.toLowerCase());
         if (matchedAlbum) {
           setViewMode("albums");
-          selectedAlbum = matchedAlbum;
-          renderAlbumsView();
           return;
         }
       }
