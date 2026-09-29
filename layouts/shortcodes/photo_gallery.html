@@ -88,36 +88,33 @@
   </div>
 
   <div class="pg-lb-main">
-    <!-- Prev Arrow Button -->
-    <button class="pg-lb-arrow prev" id="pgLbPrevBtn" title="Previous photo (←)" aria-label="Previous photo">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-    </button>
-
     <div class="pg-lb-stage">
       <div class="pg-lb-img-container" id="pgLbImgWrapper">
         <!-- Anti-Download Protective Shield Overlay -->
         <div class="pg-lb-shield" id="pgLbShield"></div>
         <img src="" alt="" class="pg-lb-img" id="pgLbImage" decoding="async" loading="eager" draggable="false" oncontextmenu="return false;" />
 
-        <!-- Bottom Controls Bar (Caption on Left, Title Bubble on Right) -->
-        <div class="pg-lb-controls-bar" id="pgLbControlsBar">
-          <!-- Dedicated Description Bar (Caption - Bottom Left, Simple Non-Italic Font) -->
-          <div class="pg-lb-desc-bar" id="lbDescContainer">
-            <p class="pg-lb-desc-text" id="lbDescText"></p>
-          </div>
+        <!-- Small Inner Prev Arrow -->
+        <button class="pg-lb-arrow prev" id="pgLbPrevBtn" title="Previous photo (←)" aria-label="Previous photo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
 
-          <!-- Compact Floating Title Pill Overlay (The Bubble - Bottom Right) -->
-          <div class="pg-lb-caption-overlay" id="pgLbCaptionOverlay">
-            <span class="pg-lb-title" id="lbTitle"></span>
-          </div>
+        <!-- Small Inner Next Arrow -->
+        <button class="pg-lb-arrow next" id="pgLbNextBtn" title="Next photo (→)" aria-label="Next photo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+        
+        <!-- Compact Floating Title Pill Overlay (The Bubble - Bottom Center on Photo) -->
+        <div class="pg-lb-caption-overlay" id="pgLbCaptionOverlay">
+          <span class="pg-lb-title" id="lbTitle"></span>
         </div>
       </div>
-    </div>
 
-    <!-- Next Arrow Button -->
-    <button class="pg-lb-arrow next" id="pgLbNextBtn" title="Next photo (→)" aria-label="Next photo">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-    </button>
+      <!-- Dedicated Description / Caption Below Image (Clean, Scrollable if long) -->
+      <div class="pg-lb-desc-bar" id="lbDescContainer">
+        <p class="pg-lb-desc-text" id="lbDescText"></p>
+      </div>
+    </div>
   </div>
 
   <!-- Toast Notification -->
@@ -157,6 +154,7 @@
 
     // Lightbox Elements
     const lightbox = document.getElementById("pgLightbox");
+    const lbStage = document.querySelector(".pg-lb-stage");
     const lbImgWrapper = document.getElementById("pgLbImgWrapper");
     const lbImage = document.getElementById("pgLbImage");
     const lbCloseBtn = document.getElementById("pgLbCloseBtn");
@@ -164,6 +162,7 @@
     const lbNextBtn = document.getElementById("pgLbNextBtn");
     const lbShareBtn = document.getElementById("pgLbShareBtn");
     const lbTitle = document.getElementById("lbTitle");
+    const lbDescContainer = document.getElementById("lbDescContainer");
     const lbDescText = document.getElementById("lbDescText");
     const toast = document.getElementById("pgToast");
 
@@ -175,6 +174,15 @@
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
+    }
+
+    function getShortDesc(desc, maxWords = 5) {
+      if (!desc) return "";
+      const words = desc.trim().split(/\s+/);
+      if (words.length <= maxWords) return desc;
+      let short = words.slice(0, maxWords).join(" ");
+      short = short.replace(/[,;:\-–—\.\s]+$/, "");
+      return short + "...";
     }
 
     // Render Grid Cards with Pure Pinterest Architecture & Integrated Bottom Bar
@@ -191,7 +199,12 @@
             <div class="pg-card-bar">
               <div class="pg-card-bar-text">
                 <h3 class="pg-card-title">${escapeHtml(photo.title)}</h3>
-                ${photo.description ? `<p class="pg-card-desc">${escapeHtml(photo.description)}</p>` : ''}
+                ${photo.description ? `
+                  <p class="pg-card-desc">
+                    <span class="pg-desc-short">${escapeHtml(getShortDesc(photo.description, 5))}</span>
+                    <span class="pg-desc-full">${escapeHtml(photo.description)}</span>
+                  </p>
+                ` : ''}
               </div>
               <div class="pg-card-action-icon" title="View Frame">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
@@ -239,7 +252,87 @@
     let savedScrollY = 0;
     let lastActiveCard = null;
 
-    function openLightbox(index, updateUrl = true) {
+    // Zoom & Pan State for Mobile Pinch + Laptop Trackpad
+    let currentScale = 1;
+    const maxScale = 4;
+    let posX = 0;
+    let posY = 0;
+    let isPanning = false;
+    let startPanX = 0;
+    let startPanY = 0;
+    let initialPinchDist = 0;
+    let initialPinchScale = 1;
+    let isPinching = false;
+    let pinchCenterX = 0;
+    let pinchCenterY = 0;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    let hasMoved = false;
+    let moveGeneration = 0;
+
+    const captionOverlay = document.getElementById("pgLbCaptionOverlay");
+
+    function clampPosition() {
+      if (!lbImage || currentScale <= 1.02) {
+        posX = 0;
+        posY = 0;
+        return;
+      }
+      const stageRect = lbStage ? lbStage.getBoundingClientRect() : { width: window.innerWidth, height: window.innerHeight };
+      const imgW = (lbImage.offsetWidth || stageRect.width * 0.9) * currentScale;
+      const imgH = (lbImage.offsetHeight || stageRect.height * 0.8) * currentScale;
+      const maxPanX = Math.max(0, (imgW - stageRect.width) / 2 + 50);
+      const maxPanY = Math.max(0, (imgH - stageRect.height) / 2 + 50);
+      posX = Math.min(Math.max(posX, -maxPanX), maxPanX);
+      posY = Math.min(Math.max(posY, -maxPanY), maxPanY);
+    }
+
+    function applyTransform(animate) {
+      if (!lbImage) return;
+      lbImage.style.transition = animate
+        ? "transform 0.28s cubic-bezier(0.22, 1, 0.36, 1)"
+        : "none";
+
+      if (currentScale <= 1.02) {
+        currentScale = 1;
+        posX = 0;
+        posY = 0;
+        lbImage.style.transform = "translate3d(0, 0, 0) scale(1)";
+        if (lbImgWrapper) {
+          lbImgWrapper.classList.remove("zoomed");
+          lbImgWrapper.style.cursor = "pointer";
+        }
+      } else {
+        clampPosition();
+        lbImage.style.transform = "translate3d(" + posX + "px, " + posY + "px, 0) scale(" + currentScale + ")";
+        if (lbImgWrapper) {
+          lbImgWrapper.classList.add("zoomed");
+          lbImgWrapper.style.cursor = isPanning ? "grabbing" : "grab";
+        }
+      }
+    }
+
+    function resetZoom(animate) {
+      currentScale = 1;
+      posX = 0;
+      posY = 0;
+      isPanning = false;
+      isPinching = false;
+      hasMoved = false;
+      moveGeneration++;
+      applyTransform(animate);
+    }
+
+    function markMoved() {
+      hasMoved = true;
+      var gen = ++moveGeneration;
+      setTimeout(function() { if (moveGeneration === gen) hasMoved = false; }, 120);
+    }
+
+    function openLightbox(index, updateUrl) {
+      if (updateUrl === undefined) updateUrl = true;
+      resetZoom(false);
       currentLightboxIndex = index;
       updateLightboxContent();
       if (lightbox) {
@@ -247,30 +340,31 @@
         lightbox.setAttribute("aria-hidden", "false");
       }
       if (updateUrl && photos[currentLightboxIndex]) {
-        const photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+        var photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
         history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
       }
       // Prevent background scroll (including iOS)
       savedScrollY = window.scrollY;
       document.body.style.overflow = "hidden";
       document.body.style.position = "fixed";
-      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.top = "-" + savedScrollY + "px";
       document.body.style.width = "100%";
       document.documentElement.style.overflow = "hidden";
 
       if (lbCloseBtn) {
-        setTimeout(() => lbCloseBtn.focus(), 50);
+        setTimeout(function() { lbCloseBtn.focus(); }, 50);
       }
     }
 
     function closeLightbox() {
+      resetZoom(false);
       if (lightbox) {
         lightbox.classList.remove("active");
         lightbox.setAttribute("aria-hidden", "true");
       }
       history.replaceState(null, "", window.location.pathname + window.location.search);
       // Restore background scroll without smooth-scroll jitter
-      const prevScrollBehavior = document.documentElement.style.scrollBehavior;
+      var prevScrollBehavior = document.documentElement.style.scrollBehavior;
       document.documentElement.style.scrollBehavior = "auto";
       document.body.style.overflow = "";
       document.body.style.position = "";
@@ -279,23 +373,16 @@
       document.documentElement.style.overflow = "";
       window.scrollTo(0, savedScrollY);
       document.documentElement.style.scrollBehavior = prevScrollBehavior;
-      if (lbImgWrapper) {
-        lbImgWrapper.classList.remove("zoomed");
-      }
       if (lastActiveCard) {
         lastActiveCard.focus();
       }
     }
 
     function updateLightboxContent() {
-      const p = photos[currentLightboxIndex];
+      var p = photos[currentLightboxIndex];
       if (!p) return;
 
-      const captionOverlay = document.getElementById("pgLbCaptionOverlay");
-      const descContainer = document.getElementById("lbDescContainer");
-      const descText = document.getElementById("lbDescText");
-
-      // Update Title in the Bubble immediately & synchronously
+      // Update Title in the Bubble (use cached refs)
       if (lbTitle) {
         lbTitle.textContent = p.title || "";
       }
@@ -304,57 +391,56 @@
         captionOverlay.style.display = "inline-flex";
       }
 
-      // Update Description Bar
-      if (descContainer) {
+      // Update Description Bar (use cached ref)
+      if (lbDescContainer) {
         if (p.description) {
-          if (descText) descText.textContent = p.description;
-          descContainer.style.display = "block";
-          descContainer.style.opacity = "1";
+          if (lbDescText) lbDescText.textContent = p.description;
+          lbDescContainer.style.display = "flex";
+          lbDescContainer.style.opacity = "1";
         } else {
-          if (descText) descText.textContent = "";
-          descContainer.style.display = "none";
-          descContainer.style.opacity = "0";
+          if (lbDescText) lbDescText.textContent = "";
+          lbDescContainer.style.display = "none";
+          lbDescContainer.style.opacity = "0";
         }
       }
 
-      // Update Image with Smooth Loading Transition
+      // Reset transform cleanly before loading new image
       if (lbImage) {
+        lbImage.style.transition = "none";
+        lbImage.style.transform = "translate3d(0, 0, 0) scale(1)";
         lbImage.src = p.src;
         lbImage.alt = p.title || "";
         lbImage.style.opacity = "1";
-        lbImage.style.transform = "scale(1)";
       }
 
       // Preload Adjacent Images for Instantaneous Navigation
       if (photos.length > 1) {
-        const nextIdx = (currentLightboxIndex + 1) % photos.length;
-        const prevIdx = (currentLightboxIndex - 1 + photos.length) % photos.length;
-        const nextImg = new Image();
-        nextImg.src = photos[nextIdx].src;
-        const prevImg = new Image();
-        prevImg.src = photos[prevIdx].src;
+        var nextIdx = (currentLightboxIndex + 1) % photos.length;
+        var prevIdx = (currentLightboxIndex - 1 + photos.length) % photos.length;
+        new Image().src = photos[nextIdx].src;
+        new Image().src = photos[prevIdx].src;
       }
     }
 
     function nextPhoto() {
       if (photos.length <= 1) return;
-      if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
+      resetZoom(false);
       currentLightboxIndex = (currentLightboxIndex + 1) % photos.length;
       updateLightboxContent();
       if (photos[currentLightboxIndex]) {
-        const photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
-        history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
+        var slug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+        history.replaceState(null, "", "#" + encodeURIComponent(slug));
       }
     }
 
     function prevPhoto() {
       if (photos.length <= 1) return;
-      if (lbImgWrapper) lbImgWrapper.classList.remove("zoomed");
+      resetZoom(false);
       currentLightboxIndex = (currentLightboxIndex - 1 + photos.length) % photos.length;
       updateLightboxContent();
       if (photos[currentLightboxIndex]) {
-        const photoSlug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
-        history.replaceState(null, "", "#" + encodeURIComponent(photoSlug));
+        var slug = photos[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
+        history.replaceState(null, "", "#" + encodeURIComponent(slug));
       }
     }
 
@@ -384,7 +470,7 @@
     if (lbPrevBtn) lbPrevBtn.addEventListener("click", (e) => { e.stopPropagation(); prevPhoto(); });
     if (lbNextBtn) lbNextBtn.addEventListener("click", (e) => { e.stopPropagation(); nextPhoto(); });
 
-    // Click on backdrop area (lightbox main area, not on image) to close
+    // Click on backdrop area (outside stage) to close
     if (lightbox) {
       lightbox.addEventListener("click", function(e) {
         if (e.target === lightbox || e.target.classList.contains("pg-lb-main")) {
@@ -393,47 +479,226 @@
       });
     }
 
-    // Click Image to Zoom Toggle
-    if (lbImgWrapper) {
-      lbImgWrapper.addEventListener("click", function(e) {
-        e.stopPropagation();
-        if (e.target.closest("#pgLbControlsBar")) return;
-        this.classList.toggle("zoomed");
+    // Click Left / Right on Stage or Photo to Navigate (Replaces Click Zoom)
+    if (lbStage) {
+      lbStage.addEventListener("click", function(e) {
+        // Exclude controls, title bubble, caption bar, buttons
+        if (e.target.closest("#pgLbCaptionOverlay") ||
+            e.target.closest("#lbDescContainer") ||
+            e.target.closest(".pg-lb-arrow") ||
+            e.target.closest(".pg-lb-btn")) {
+          return;
+        }
+
+        // If zoomed in, do NOT navigate on click (user is interacting with zoomed photo)
+        if (currentScale > 1.05) {
+          return;
+        }
+
+        // If the user just completed a drag, pan, or pinch gesture, do NOT navigate
+        if (hasMoved) {
+          return;
+        }
+
+        // Left half of screen -> Prev photo, Right half -> Next photo
+        const midX = window.innerWidth / 2;
+        if (e.clientX < midX) {
+          prevPhoto();
+        } else {
+          nextPhoto();
+        }
       });
-    }
 
-    // Prevent touch scrolling on lightbox (prevents page behind from scrolling)
-    if (lightbox) {
-      lightbox.addEventListener("touchmove", function(e) {
-        e.preventDefault();
+      // Double-click / double-tap to reset zoom
+      lbStage.addEventListener("dblclick", function(e) {
+        if (e.target.closest("#pgLbCaptionOverlay") || e.target.closest("#lbDescContainer")) return;
+        if (currentScale > 1.05) {
+          resetZoom(true);
+        }
+      });
+
+      // Laptop Trackpad Pinch-to-Zoom & Pan via Wheel Events
+      lbStage.addEventListener("wheel", function(e) {
+        if (!lightbox || !lightbox.classList.contains("active")) return;
+
+        // Trackpad Pinch Gesture on macOS / Windows (ctrlKey is true)
+        if (e.ctrlKey) {
+          e.preventDefault();
+          markMoved();
+          var factor = -e.deltaY * 0.015;
+          var prevScale = currentScale;
+          currentScale = Math.min(Math.max(currentScale + factor, 1), maxScale);
+
+          if (currentScale <= 1.02) {
+            resetZoom(true);
+          } else {
+            var rect = lbImage.getBoundingClientRect();
+            var mouseX = e.clientX - (rect.left + rect.width / 2);
+            var mouseY = e.clientY - (rect.top + rect.height / 2);
+            var ratio = currentScale / prevScale;
+            posX -= mouseX * (ratio - 1) * 0.35;
+            posY -= mouseY * (ratio - 1) * 0.35;
+            applyTransform(false);
+          }
+          return;
+        }
+
+        // Two-finger trackpad panning when zoomed in
+        if (currentScale > 1.05) {
+          e.preventDefault();
+          markMoved();
+          posX -= e.deltaX;
+          posY -= e.deltaY;
+          applyTransform(false);
+        }
       }, { passive: false });
-    }
 
-    // Touch Swipe & Drag Gestures Across Lightbox
-    let touchStartX = 0;
-    let touchStartY = 0;
+      // Desktop Mouse Drag to Pan when Zoomed In
+      lbStage.addEventListener("mousedown", function(e) {
+        if (e.button !== 0) return;
+        if (e.target.closest("#pgLbCaptionOverlay") || e.target.closest("#lbDescContainer")) return;
+        if (currentScale > 1.05) {
+          isPanning = true;
+          startPanX = e.clientX - posX;
+          startPanY = e.clientY - posY;
+          hasMoved = false;
+          moveGeneration++;
+          if (lbImgWrapper) lbImgWrapper.style.cursor = "grabbing";
+        }
+      });
 
-    if (lightbox) {
-      lightbox.addEventListener("touchstart", function(e) {
-        if (!e.changedTouches || !e.changedTouches[0]) return;
-        touchStartX = e.changedTouches[0].clientX;
-        touchStartY = e.changedTouches[0].clientY;
+      window.addEventListener("mousemove", function(e) {
+        if (!lightbox || !lightbox.classList.contains("active")) return;
+        if (isPanning && currentScale > 1.05) {
+          posX = e.clientX - startPanX;
+          posY = e.clientY - startPanY;
+          hasMoved = true;
+          applyTransform(false);
+        }
+      });
+
+      window.addEventListener("mouseup", function() {
+        if (isPanning) {
+          isPanning = false;
+          applyTransform(true);
+          if (lbImgWrapper) lbImgWrapper.style.cursor = "grab";
+          markMoved();
+        }
+      });
+
+      // Mobile Touch Handling: 2-Finger Pinch Zoom, 1-Finger Pan when Zoomed, Swipe when Unzoomed
+      lbStage.addEventListener("touchstart", function(e) {
+        if (!lightbox || !lightbox.classList.contains("active")) return;
+        touchStartTime = Date.now();
+
+        if (e.touches.length === 2) {
+          // Pinch Zoom Start
+          isPinching = true;
+          hasMoved = true;
+          initialPinchDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          initialPinchScale = currentScale;
+          pinchCenterX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+          pinchCenterY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        } else if (e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          hasMoved = false;
+          moveGeneration++;
+          if (currentScale > 1.05) {
+            isPanning = true;
+            startPanX = e.touches[0].clientX - posX;
+            startPanY = e.touches[0].clientY - posY;
+          }
+        }
       }, { passive: true });
 
-      lightbox.addEventListener("touchend", function(e) {
-        if (!e.changedTouches || !e.changedTouches[0]) return;
-        if (lbImgWrapper && lbImgWrapper.classList.contains("zoomed")) return;
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-        const diffX = touchEndX - touchStartX;
-        const diffY = touchEndY - touchStartY;
-        // Only navigate if horizontal swipe is dominant and above threshold
-        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
-          if (diffX < 0) nextPhoto();
-          else prevPhoto();
+      lbStage.addEventListener("touchmove", function(e) {
+        if (!lightbox || !lightbox.classList.contains("active")) return;
+
+        if (isPinching && e.touches.length === 2) {
+          e.preventDefault();
+          hasMoved = true;
+          var currentDist = Math.hypot(
+            e.touches[0].clientX - e.touches[1].clientX,
+            e.touches[0].clientY - e.touches[1].clientY
+          );
+          if (initialPinchDist > 0) {
+            var scaleFactor = currentDist / initialPinchDist;
+            currentScale = Math.min(Math.max(initialPinchScale * scaleFactor, 0.85), maxScale);
+
+            var currentCenterX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+            var currentCenterY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+            posX += (currentCenterX - pinchCenterX) * 0.45;
+            posY += (currentCenterY - pinchCenterY) * 0.45;
+            pinchCenterX = currentCenterX;
+            pinchCenterY = currentCenterY;
+
+            applyTransform(false);
+          }
+        } else if (isPanning && e.touches.length === 1 && currentScale > 1.05) {
+          e.preventDefault();
+          hasMoved = true;
+          posX = e.touches[0].clientX - startPanX;
+          posY = e.touches[0].clientY - startPanY;
+          applyTransform(false);
+        } else if (e.touches.length === 1 && currentScale <= 1.05) {
+          var diffX = e.touches[0].clientX - touchStartX;
+          var diffY = e.touches[0].clientY - touchStartY;
+          if (Math.abs(diffX) > 12 || Math.abs(diffY) > 12) {
+            hasMoved = true;
+          }
+        }
+      }, { passive: false });
+
+      lbStage.addEventListener("touchend", function(e) {
+        if (!lightbox || !lightbox.classList.contains("active")) return;
+
+        if (isPinching) {
+          isPinching = false;
+          if (currentScale < 1.08) {
+            resetZoom(true);
+          } else {
+            applyTransform(true);
+          }
+          markMoved();
+          return;
+        }
+
+        if (isPanning) {
+          isPanning = false;
+          applyTransform(true);
+          markMoved();
+          return;
+        }
+
+        if (currentScale <= 1.05 && e.changedTouches && e.changedTouches[0]) {
+          var endX = e.changedTouches[0].clientX;
+          var endY = e.changedTouches[0].clientY;
+          var swipeDiffX = endX - touchStartX;
+          var swipeDiffY = endY - touchStartY;
+          var duration = Date.now() - touchStartTime;
+
+          // Check if swipe gesture
+          if (Math.abs(swipeDiffX) > 45 && Math.abs(swipeDiffX) > Math.abs(swipeDiffY) && duration < 400) {
+            if (swipeDiffX < 0) nextPhoto();
+            else prevPhoto();
+            markMoved();
+            return;
+          }
         }
       }, { passive: true });
     }
+
+    // Prevent iOS Safari page-level pinch gestures while in lightbox
+    document.addEventListener("gesturestart", function(e) {
+      if (lightbox && lightbox.classList.contains("active")) e.preventDefault();
+    }, { passive: false });
+    document.addEventListener("gesturechange", function(e) {
+      if (lightbox && lightbox.classList.contains("active")) e.preventDefault();
+    }, { passive: false });
 
     // Keyboard Shortcuts & Anti-Download Protection
     document.addEventListener("keydown", function(e) {
