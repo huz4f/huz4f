@@ -1,5 +1,5 @@
 ---
-date: 2026-09-28
+date: 2026-07-26
 title: "HU Engines"
 tags: ["Next.js", "TypeScript", "Enterprise", "AI", "Infrastructure", "Systems"]
 author: "Huzaif"
@@ -11,15 +11,13 @@ cardClass: "huengines-card"
 draft: false
 cover:
   image: "/projects/huengines-banner.png"
-  alt: "HU Engines — Intelligent Infrastructure for Modern Business"
-  caption: "Human Utility Engines • Enterprise Sovereignty"
+  alt: "HU Engines"
   relative: false
   hiddenInList: true
 ---
 
-# HU Engines — Intelligent Infrastructure for Modern Business
-
-> **Human Utility Engines** — Proprietary software, autonomous AI systems & sovereign financial infrastructure for high-growth enterprises.
+> **Intelligent Infrastructure for Modern Business**  
+> Proprietary software, autonomous AI systems & sovereign financial infrastructure for high-growth enterprises.
 
 **[huengines.com](https://huengines.com)**
 
