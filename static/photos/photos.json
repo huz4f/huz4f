@@ -1,222 +1,222 @@
 {
-  "batman.JPG": {
-    "title": "Callings",
-    "description": "have you passed through the night, is this darkness in you too",
-    "album": "Nocturne"
-  },
-  "lost.JPG": {
-    "title": "3am",
-    "description": "",
-    "album": "Nocturne"
-  },
-  "moon.JPG": {
-    "title": "Lunar Glow",
-    "description": "",
-    "album": "Nocturne"
-  },
-  "poolnight.JPG": {
-    "title": "Stars",
-    "description": "",
-    "album": "Nocturne"
-  },
-  "camp.JPG": {
-    "title": "Campfire",
-    "description": "",
-    "album": "Solitude"
-  },
-  "golden hour.JPG": {
-    "title": "Golden Hour",
-    "description": "",
-    "album": "Solitude"
-  },
-  "rock.JPG": {
-    "title": "rock",
-    "description": "",
-    "album": "Solitude"
-  },
-  "zarathustra.jpg": {
-    "title": "Nietzsche",
-    "description": "",
-    "album": "Solitude"
-  },
-  "norepinephrine.JPG": {
-    "title": "Adrenaline",
-    "description": "",
-    "album": "Solitude"
-  },
-  "fasanay.JPG": {
-    "title": "music",
-    "description": "fasanay mein zindagi k mann ko - kese or kese bhelaon",
-    "album": "Echoes"
-  },
-  "early20s.JPG": {
-    "title": "Broken Glasses",
-    "description": "",
-    "album": "Echoes"
-  },
-  "meow.JPG": {
-    "title": "Meow",
-    "description": "we don't trust you",
-    "album": "Echoes"
-  },
   "2026.JPG": {
     "title": "2026",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "abuse.JPG": {
     "title": "Abuse",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "autumn.JPG": {
     "title": "Autumn",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "bacha.JPG": {
     "title": "Bacha",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "batman.JPG": {
+    "title": "Callings",
+    "description": "have you passed through the night, is this darkness in you too",
+    "album": "1"
+  },
+  "camp.JPG": {
+    "title": "Campfire",
+    "description": "",
+    "album": "1"
   },
   "college.JPG": {
     "title": "College",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "come and go.JPG": {
     "title": "Come And Go",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "curse.JPG": {
     "title": "Curse",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "destint.JPG": {
     "title": "Destint",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "early 20s.JPG": {
     "title": "Early 20S",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "early.JPG": {
     "title": "Early",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "early20s.JPG": {
+    "title": "Broken Glasses",
+    "description": "",
+    "album": "2"
   },
   "fakhat.JPG": {
     "title": "Fakhat",
     "description": "اور بھی دُکھ ہیں زمانے میں محبت کے سوا",
-    "album": "Frames"
+    "album": "1"
+  },
+  "fasanay.JPG": {
+    "title": "music",
+    "description": "fasanay mein zindagi k mann ko - kese or kese bhelaon",
+    "album": "2"
   },
   "flicker.JPG": {
     "title": "Flicker",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "genius is madness.JPG": {
     "title": "Genius Is Madness",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "golden hour.JPG": {
+    "title": "Golden Hour",
+    "description": "",
+    "album": "2"
   },
   "ice.JPG": {
     "title": "Ice",
     "description": "",
-    "album": "Frames"
+    "album": "1"
   },
   "januray.JPG": {
     "title": "Januray",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "lines.jpg": {
     "title": "Lines",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "loop.JPG": {
     "title": "Loop",
     "description": "",
-    "album": "Frames"
+    "album": "1"
+  },
+  "lost.JPG": {
+    "title": "3am",
+    "description": "",
+    "album": "1"
   },
   "love.JPG": {
     "title": "Love",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "meow.JPG": {
+    "title": "Meow",
+    "description": "we don't trust you",
+    "album": "2"
+  },
+  "moon.JPG": {
+    "title": "Lunar Glow",
+    "description": "",
+    "album": "1"
   },
   "nights.JPG": {
     "title": "Nights",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "norepinephrine.JPG": {
+    "title": "Adrenaline",
+    "description": "",
+    "album": "2"
   },
   "pieces of me.JPG": {
     "title": "Pieces Of Me",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "point.JPG": {
     "title": "Point",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "poolnight.JPG": {
+    "title": "Stars",
+    "description": "",
+    "album": "1"
   },
   "reality.JPG": {
     "title": "Reality",
     "description": "",
-    "album": "Frames"
+    "album": "3"
+  },
+  "rock.JPG": {
+    "title": "rock",
+    "description": "",
+    "album": "2"
   },
   "screenshot.JPG": {
     "title": "Screenshot",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "selflessness.JPG": {
     "title": "Selflessness",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "soul.JPG": {
     "title": "Soul",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "sukhna lake.JPG": {
     "title": "Sukhna Lake",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "teenage.jpg": {
     "title": "Teenage",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "too early.JPG": {
     "title": "Too Early",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "urdu.jpg": {
     "title": "Urdu",
     "description": "",
-    "album": "Frames"
+    "album": "3"
   },
   "window.JPG": {
     "title": "Window",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "wings.JPG": {
     "title": "Wings",
     "description": "",
-    "album": "Frames"
+    "album": "2"
   },
   "worlds.JPG": {
     "title": "Worlds",
     "description": "",
-    "album": "Frames"
+    "album": "1"
+  },
+  "zarathustra.jpg": {
+    "title": "Nietzsche",
+    "description": "",
+    "album": "1"
   }
 }

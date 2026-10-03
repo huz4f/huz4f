@@ -18,7 +18,7 @@
         {{ $photoMeta := index $meta $fileName | default dict }}
         {{ $title := index $photoMeta "title" | default $defaultTitle }}
         {{ $description := index $photoMeta "description" | default "" }}
-        {{ $album := index $photoMeta "album" | default "Frames" }}
+        {{ $album := index $photoMeta "album" | default "1" }}
 
         {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" (printf "/photos/%s" $fileName) }}
         {{ $photos = $photos | append $photoObj }}
@@ -150,14 +150,14 @@
 
     // Ensure all photos have an album
     photos.forEach(p => {
-      if (!p.album) p.album = "Frames";
+      if (!p.album) p.album = "1";
     });
 
     // Group photos into albums
     function getAlbums() {
       const albumMap = {};
       photos.forEach(p => {
-        const albumName = p.album || "Frames";
+        const albumName = p.album || "1";
         if (!albumMap[albumName]) {
           albumMap[albumName] = [];
         }
@@ -281,7 +281,9 @@
     // Render Albums View: Either Album Collection Cards or Selected Album Detail (without names)
     function renderAlbumsView() {
       const albums = getAlbums();
-      const albumNames = Object.keys(albums);
+      const albumNames = Object.keys(albums).sort(function(a, b) {
+        return a.localeCompare(b, undefined, { numeric: true });
+      });
 
       if (selectedAlbum === null) {
         // Show Album Collection Preview Cards Grid (Small size multi-photo collages)
