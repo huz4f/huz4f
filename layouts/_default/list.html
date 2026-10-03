@@ -5,8 +5,20 @@
 {{- else }} {{/* if not profileMode */}}
 
 {{- if not .IsHome | and .Title }}
-<header class="page-header">
+{{- $isBlogsSection := or (eq (lower .Section) "blogs") (in (lower .RelPermalink) "/blogs") }}
+<header class="page-header{{ if $isBlogsSection }} blogs-writer-header{{ end }}">
   {{- partial "breadcrumbs.html" . }}
+  {{- if $isBlogsSection }}
+  <div class="writer-brand-pill">
+    <svg class="writer-mini-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+      <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+      <path d="M2 2l7.586 7.586"></path>
+      <circle cx="11" cy="11" r="2"></circle>
+    </svg>
+    <span>MANUSCRIPTS &amp; ESSAYS</span>
+  </div>
+  {{- end }}
   <h1>
     {{ .Title }}
     {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
@@ -64,8 +76,11 @@
 {{- end }}
 
 {{- $isHuEngines := or (in (lower .RelPermalink) "huengines") (eq .Params.theme "huengines") (in (lower .Title) "hu engines") }}
+{{- $isBlogCard := or (eq (lower .Section) "blogs") (in (lower .RelPermalink) "/blogs") }}
 {{- if $isHuEngines }}
 {{- $class = printf "%s huengines-card" $class }}
+{{- else if $isBlogCard }}
+{{- $class = printf "%s blog-writer-card" $class }}
 {{- end }}
 
 <article class="{{ $class }}">
