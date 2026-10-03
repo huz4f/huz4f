@@ -12,7 +12,8 @@
   "autumn.JPG": {
     "title": "Autumn",
     "description": "",
-    "album": "2"
+    "album": "2",
+    "hidden": true
   },
   "bacha.JPG": {
     "title": "Bacha",

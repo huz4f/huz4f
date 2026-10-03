@@ -2044,11 +2044,12 @@ body:not(.dark) .status-dot-pulse {
   grid-template-rows: 1fr;
 }
 
-/* 6 or More Photos Layout */
+/* 4 or More Photos Layout (Symmetrical 2x2 Grid) */
+.pg-album-collage.pg-collage-4,
 .pg-album-collage.pg-collage-6,
 .pg-album-collage.pg-collage-many {
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
 /* Individual Mini-Photo Thumbnail Inside Album */

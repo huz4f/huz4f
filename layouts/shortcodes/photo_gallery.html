@@ -16,12 +16,15 @@
         {{ $defaultTitle := replaceRE "[-_]" " " $nameClean | title }}
         
         {{ $photoMeta := index $meta $fileName | default dict }}
-        {{ $title := index $photoMeta "title" | default $defaultTitle }}
-        {{ $description := index $photoMeta "description" | default "" }}
-        {{ $album := index $photoMeta "album" | default "1" }}
+        {{ $isHidden := index $photoMeta "hidden" | default false }}
+        {{ if not $isHidden }}
+          {{ $title := index $photoMeta "title" | default $defaultTitle }}
+          {{ $description := index $photoMeta "description" | default "" }}
+          {{ $album := index $photoMeta "album" | default "1" }}
 
-        {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" (printf "/photos/%s" $fileName) }}
-        {{ $photos = $photos | append $photoObj }}
+          {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" (printf "/photos/%s" $fileName) }}
+          {{ $photos = $photos | append $photoObj }}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
@@ -147,6 +150,9 @@
         src: "/photos/zarathustra.jpg"
       }
     ];
+
+    // Filter out hidden photos (e.g. autumn.JPG)
+    photos = photos.filter(p => !p.hidden && p.id !== "autumn.JPG");
 
     // Ensure all photos have an album
     photos.forEach(p => {
@@ -291,15 +297,15 @@
 
         const html = albumNames.map(function(name) {
           const albumPhotos = albums[name] || [];
-          const photoCount = albumPhotos.length;
           const safeAlbumName = escapeHtml(name);
 
-          let layoutClass = "pg-collage-" + photoCount;
-          if (photoCount > 6) {
-            layoutClass = "pg-collage-many";
-          }
+          // For album preview cards, showcase a balanced, elegant collage of up to 4 photos (2x2 grid)
+          // Regardless of whether an album has 10, 16, or 100 photos, the preview card stays pristine!
+          const previewPhotos = albumPhotos.slice(0, 4);
+          const previewCount = previewPhotos.length;
+          const layoutClass = "pg-collage-" + (previewCount >= 4 ? 4 : previewCount);
 
-          const thumbsHtml = albumPhotos.map(function(photo, pIdx) {
+          const thumbsHtml = previewPhotos.map(function(photo, pIdx) {
             const safeTitle = escapeHtml(photo.title);
             return '<div class="pg-album-thumb" data-index="' + pIdx + '">' +
               '<div class="pg-album-thumb-shield"></div>' +
@@ -322,6 +328,10 @@
             const albumName = card.getAttribute("data-album-name");
             selectedAlbum = albumName;
             renderAlbumsView();
+            const gallerySection = document.getElementById("visual-arts-frames");
+            if (gallerySection) {
+              gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
           };
 
           card.addEventListener("click", handleSelectAlbum);
@@ -357,6 +367,10 @@
           backBtn.addEventListener("click", function() {
             selectedAlbum = null;
             renderAlbumsView();
+            const gallerySection = document.getElementById("visual-arts-frames");
+            if (gallerySection) {
+              gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
           });
         }
 
