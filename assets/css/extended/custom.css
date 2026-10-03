@@ -4291,52 +4291,52 @@ body:has(.explore-hero) .post-content hr {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Theme 2: Projects (Neutral Silver) */
+/* Theme 2: Projects (HU Engines Gold & Obsidian Theme) */
 .project-theme .explore-card {
-  border: 1px solid rgba(150, 150, 150, 0.2);
+  border: 1px solid rgba(200, 164, 110, 0.25);
 }
 
 .project-theme .explore-card::before {
-  background: linear-gradient(135deg, rgba(150, 150, 150, 0.04) 0%, rgba(120, 120, 120, 0.06) 50%, rgba(150, 150, 150, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(200, 164, 110, 0.05) 0%, rgba(19, 19, 22, 0.15) 50%, rgba(200, 164, 110, 0.03) 100%);
 }
 
 .project-theme:hover .explore-card {
-  border-color: rgba(150, 150, 150, 0.45);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(200, 164, 110, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(200, 164, 110, 0.15);
 }
 
 .project-theme:hover .explore-card-title {
-  color: var(--primary);
+  color: #c8a46e;
 }
 
 .project-icon {
-  background: var(--primary);
-  color: var(--theme);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  background: #c8a46e;
+  color: #0c0c0e;
+  box-shadow: 0 4px 14px rgba(200, 164, 110, 0.3);
 }
 
 .project-badge {
-  background: rgba(150, 150, 150, 0.08);
-  border: 1px solid rgba(150, 150, 150, 0.25);
-  color: var(--secondary);
+  background: rgba(200, 164, 110, 0.1);
+  border: 1px solid rgba(200, 164, 110, 0.3);
+  color: #c8a46e;
 }
 
 .project-theme:hover .project-badge {
-  background: rgba(150, 150, 150, 0.15);
-  border-color: rgba(150, 150, 150, 0.45);
-  color: var(--primary);
+  background: rgba(200, 164, 110, 0.2);
+  border-color: rgba(200, 164, 110, 0.6);
+  color: #f0f0f5;
 }
 
 .project-theme .explore-card-arrow-circle {
-  background: rgba(150, 150, 150, 0.08);
-  border: 1px solid rgba(150, 150, 150, 0.2);
-  color: var(--secondary);
+  background: rgba(200, 164, 110, 0.08);
+  border: 1px solid rgba(200, 164, 110, 0.25);
+  color: #c8a46e;
 }
 
 .project-theme:hover .explore-card-arrow-circle {
-  background: var(--primary);
-  color: var(--theme);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: #c8a46e;
+  color: #0c0c0e;
+  box-shadow: 0 2px 10px rgba(200, 164, 110, 0.35);
 }
 
 /* Theme 3: Art & Exhibition (Neutral Warm) */
@@ -4599,4 +4599,132 @@ body:has(.breadcrumbs a[href*="/blogs"]) .post-content li,
 body:has(.breadcrumbs a[href*="/blogs"]) .paginav,
 body:has(.breadcrumbs a[href*="/blogs"]) .paginav a {
   font-family: 'Newsreader', Georgia, serif;
+}
+
+/* ==========================================================================
+   HU ENGINES THEMED CARD & ENTERPRISE ACCENTS
+   ========================================================================== */
+
+.post-entry.huengines-card,
+.post-entry:has(a[href*="huengines"]) {
+  position: relative !important;
+  background: radial-gradient(circle at 92% 10%, rgba(200, 164, 110, 0.1) 0%, rgba(19, 19, 22, 0.98) 50%, rgba(10, 10, 12, 0.99) 100%) !important;
+  border: 1px solid rgba(200, 164, 110, 0.32) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(200, 164, 110, 0.25) !important;
+  padding: 1.45rem 1.6rem !important;
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+}
+
+.post-entry.huengines-card::before,
+.post-entry:has(a[href*="huengines"])::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c8a46e 40%, #ecd5ad 50%, #c8a46e 60%, transparent);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.post-entry.huengines-card:hover,
+.post-entry:has(a[href*="huengines"]):hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(200, 164, 110, 0.75) !important;
+  box-shadow: 0 16px 42px -10px rgba(0, 0, 0, 0.75), 0 0 35px rgba(200, 164, 110, 0.22) !important;
+}
+
+.post-entry.huengines-card:hover::before,
+.post-entry:has(a[href*="huengines"]):hover::before {
+  opacity: 1;
+}
+
+.huengines-card-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.huengines-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  background: rgba(200, 164, 110, 0.12);
+  border: 1px solid rgba(200, 164, 110, 0.35);
+  border-radius: 6px;
+  color: #c8a46e;
+  font-family: "JetBrains Mono", monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.huengines-mini-logo {
+  width: 16px;
+  height: 12px;
+  color: #c8a46e;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.huengines-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #8a8a96;
+  text-transform: uppercase;
+}
+
+.huengines-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #c8a46e;
+  box-shadow: 0 0 8px #c8a46e;
+  animation: huPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes huPulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.post-entry.huengines-card .entry-header h2,
+.post-entry:has(a[href*="huengines"]) .entry-header h2 {
+  color: #f0f0f5 !important;
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  transition: color 0.25s ease;
+}
+
+.post-entry.huengines-card:hover .entry-header h2,
+.post-entry:has(a[href*="huengines"]):hover .entry-header h2 {
+  color: #c8a46e !important;
+}
+
+.post-entry.huengines-card .entry-content,
+.post-entry:has(a[href*="huengines"]) .entry-content {
+  color: #a4a4b4 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+  margin-top: 0.4rem !important;
+}
+
+.post-entry.huengines-card .entry-footer,
+.post-entry:has(a[href*="huengines"]) .entry-footer {
+  color: #727282 !important;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem !important;
 }
