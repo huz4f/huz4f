@@ -258,11 +258,34 @@
       '</div>';
     }
 
+    function getMasonryColumnCount() {
+      var w = window.innerWidth;
+      if (w <= 640) return 3; // mobile: compact 3-column grid
+      if (w <= 960) return 2;
+      return 3;
+    }
+
     // Render standard photo cards (for Masonry, Editorial, or Album Detail)
     function renderPhotosList(listToRender) {
-      gridEl.innerHTML = listToRender.map(function(photo, idx) {
-        return renderPhotoCard(photo, idx);
-      }).join("");
+      if (gridEl.classList.contains("view-masonry")) {
+        // Distribute photos round-robin into columns so reading order
+        // (left -> right, row by row) matches the lightbox sequence.
+        const colCount = getMasonryColumnCount();
+        const cols = [];
+        for (let c = 0; c < colCount; c++) cols.push([]);
+        listToRender.forEach(function(photo, idx) {
+          cols[idx % colCount].push(renderPhotoCard(photo, idx));
+        });
+        gridEl.innerHTML = cols.map(function(colCards) {
+          return '<div class="pg-masonry-col">' + colCards.join("") + '</div>';
+        }).join("");
+        gridEl.setAttribute("data-cols", String(colCount));
+      } else {
+        gridEl.innerHTML = listToRender.map(function(photo, idx) {
+          return renderPhotoCard(photo, idx);
+        }).join("");
+        gridEl.removeAttribute("data-cols");
+      }
 
       // Bind photo click handlers to open lightbox
       gridEl.querySelectorAll(".pg-card").forEach((card) => {
@@ -604,12 +627,30 @@
         }
       }
 
-      // Preload Adjacent Images for Instantaneous Navigation
-      if (activePhotoList.length > 1) {
-        var nextIdx = (currentLightboxIndex + 1) % activePhotoList.length;
-        var prevIdx = (currentLightboxIndex - 1 + activePhotoList.length) % activePhotoList.length;
-        new Image().src = activePhotoList[nextIdx].src;
-        new Image().src = activePhotoList[prevIdx].src;
+      // Preload Adjacent Images (no wrap-around)
+      if (currentLightboxIndex + 1 < activePhotoList.length) {
+        new Image().src = activePhotoList[currentLightboxIndex + 1].src;
+      }
+      if (currentLightboxIndex - 1 >= 0) {
+        new Image().src = activePhotoList[currentLightboxIndex - 1].src;
+      }
+
+      updateArrowState();
+    }
+
+    // Hide the arrow at the first / last photo so the sequence clearly ends
+    function updateArrowState() {
+      var atStart = currentLightboxIndex <= 0;
+      var atEnd = currentLightboxIndex >= activePhotoList.length - 1;
+      if (lbPrevBtn) {
+        lbPrevBtn.classList.toggle("is-disabled", atStart);
+        lbPrevBtn.disabled = atStart;
+        lbPrevBtn.setAttribute("aria-disabled", atStart ? "true" : "false");
+      }
+      if (lbNextBtn) {
+        lbNextBtn.classList.toggle("is-disabled", atEnd);
+        lbNextBtn.disabled = atEnd;
+        lbNextBtn.setAttribute("aria-disabled", atEnd ? "true" : "false");
       }
     }
 
@@ -617,12 +658,17 @@
       if (lightbox && lightbox.classList.contains("active")) {
         syncWrapperToImage();
       }
+      // Re-flow masonry columns if the column count changed
+      if (gridEl.classList.contains("view-masonry") &&
+          gridEl.getAttribute("data-cols") !== String(getMasonryColumnCount())) {
+        renderPhotosList(photos);
+      }
     });
 
     function nextPhoto() {
-      if (activePhotoList.length <= 1) return;
+      if (currentLightboxIndex >= activePhotoList.length - 1) return; // end of sequence
       resetZoom(false);
-      currentLightboxIndex = (currentLightboxIndex + 1) % activePhotoList.length;
+      currentLightboxIndex = currentLightboxIndex + 1;
       updateLightboxContent();
       if (activePhotoList[currentLightboxIndex]) {
         var slug = activePhotoList[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
@@ -631,9 +677,9 @@
     }
 
     function prevPhoto() {
-      if (activePhotoList.length <= 1) return;
+      if (currentLightboxIndex <= 0) return; // start of sequence
       resetZoom(false);
-      currentLightboxIndex = (currentLightboxIndex - 1 + activePhotoList.length) % activePhotoList.length;
+      currentLightboxIndex = currentLightboxIndex - 1;
       updateLightboxContent();
       if (activePhotoList[currentLightboxIndex]) {
         var slug = activePhotoList[currentLightboxIndex].id.replace(/\.[^/.]+$/, "");
