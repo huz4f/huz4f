@@ -143,16 +143,19 @@
 
     let photos = (Array.isArray(HUGO_SCANNED_PHOTOS) && HUGO_SCANNED_PHOTOS.length > 0) ? HUGO_SCANNED_PHOTOS : [
       {
-        id: "zarathustra.jpg",
+        id: "45.jpg",
         title: "Thus Spoke",
         description: "Captured along quiet waters.",
         album: "Solitude",
-        src: "/photos/zarathustra.jpg"
+        src: "/photos/45.jpg"
       }
     ];
 
-    // Filter out hidden photos (e.g. autumn.JPG)
-    photos = photos.filter(p => !p.hidden && p.id !== "autumn.JPG");
+    // Filter out hidden photos (e.g. autumn, now 4.jpg)
+    photos = photos.filter(p => !p.hidden && p.id !== "4.jpg");
+
+    // Sort numerically by filename so 2.jpg comes before 10.jpg
+    photos.sort((a, b) => String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
 
     // Ensure all photos have an album
     photos.forEach(p => {
