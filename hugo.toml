@@ -8,6 +8,17 @@ buildFuture = false
 buildExpired = false
 disableKinds = ["taxonomy", "term"]
 
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/photos"
+    target = "assets/photos"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 

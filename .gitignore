@@ -16,3 +16,8 @@ resources/_gen/
 node_modules/
 .idea/
 .vscode/
+chrome/
+*-report.json
+reports/
+reports_local/
+

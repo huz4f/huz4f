@@ -1,6 +1,7 @@
 ---
 date: 2026-01-18
-title: "Name is \ where a dead person lives"
+title: "Name is \\ where a dead person lives"
+description: "Reflections on identity, displacement, duality of languages, and existential memory."
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
@@ -9,7 +10,7 @@ draft: false
 
 Unfinished like me. i choose to let it be
 
-![](/blogs/ky.jpg)
+![Nocturnal Cityscape](/blogs/ky.jpg)
 
 **I have two names. They meet and they depart….. \
 And two languages, I have forgotten in which I used to dream. \
@@ -17,7 +18,7 @@ I have English for writing, it's vocabulary is obedient, \
 Yet, I have another language from the dialogue of the Heavens** \
 *- Mahmoud Darwaish*
 
-![](/blogs/md.jpg)
+![Mahmoud Darwish](/blogs/md.jpg)
 
 **Dialogue of the Heavens**, it is what helps a man exist. \
 It is what holds the emptiness in a man's heart and Keeps him alive.

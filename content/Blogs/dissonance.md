@@ -1,6 +1,7 @@
 ---
 date: 2025-07-24
 title: "Dissonance"
+description: "Choices create illusion, not liberation — reflections on memetic desire and the myth of purpose."
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true

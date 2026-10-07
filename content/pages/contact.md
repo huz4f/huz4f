@@ -1,7 +1,8 @@
 ---
 title: "Contact"
+description: "Get in touch with Huzaif Shabir for engineering collaborations, project inquiries, or direct messaging."
 url: "/contact/"
-author: "⠀"
+author: "Huzaif"
 hidemeta: true
 disableShare: true
 searchHidden: true

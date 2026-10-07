@@ -1,6 +1,7 @@
 ---
 date: 2024-02-12
 title: "Blockchain & Smart Contracts"
+description: "Understanding blockchain primitives, proof of work hashing in Swift, and inheritance smart contracts in Solidity."
 tags: ["Blockchain","Solidity","Swift","web3"]
 author: "Huzaif"
 showreadingtime: false
@@ -8,10 +9,10 @@ hideSummary: true
 draft: false
 ---
 
-- [Blocks and Hashing](#understanding-code)
-- [Smart Contract](#smart-contract)
+- [Blocks and Hashing](#understanding-the-code)
+- [Smart Contract](#smart-contracts)
 
-# Blockchain:
+## Blockchain Architecture
 
 **Demonstration: How BlockChain works using cocoa and SHA-1 checksum utility**
 
@@ -23,7 +24,7 @@ draft: false
 
 ---
 
-###  Understanding Code:
+## Understanding the Code:
 >Block in a blockchain consists of **Block Header & Body**
 >
 **The head consists of**:
@@ -145,11 +146,11 @@ using generateHash each block gets it's own unique identfier
 
 ---
 
-# Smart Contract:
- **-> Solidity contract for inheritance of assets after death:**
+## Smart Contracts
 
+**-> Solidity contract for inheritance of assets after death:**
 
-![](/projects/sol.png)
+![Solidity Inheritance Smart Contract](/projects/sol.png)
 
 > Use Truffle and Ganache for simulating local environment, older versions of solidity compiler and node are required (wasted most of my time on this dependecy hell)
 

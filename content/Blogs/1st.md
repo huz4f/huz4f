@@ -1,6 +1,7 @@
 ---
 date: 2026-01-01
 title: "void"
+description: "Notes and reflections on stillness, absence, and void."
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true

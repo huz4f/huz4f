@@ -1,6 +1,7 @@
 ---
 date: 2024-02-29
 title: "Technological Ramifications"
+description: "An inquiry into the psychological, physical, and social ramifications of modern technology and screen ubiquity."
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
@@ -13,16 +14,16 @@ from extending our lifespan to ease of many tasks that now we take for granted.
 Technology is so intertwined with our lives right now that it's hard to imagine life without modern conveniences. So what are these Ramifications of Technology? \
 How has it affected our lives beyond its marvellous breakthroughs? 
 
-### Dividing this into 3 parts,
-- [Psychological effects](#psychological)
-- [Physical changes](#physical)
-- [Social Adaptation](#social)
+## An Inquiry Across Three Domains
+- [Psychological effects](#psychological-impacts)
+- [Physical changes](#physical-changes)
+- [Social Adaptation](#social-adaptation)
 
 ---
 
-# Psychological
+## Psychological Impacts
 
-![](/articles/rat.png)
+![Attention and Dopamine Loop](/articles/rat.png)
 Let's start with the obvious one, 
 
 ### "Lack of Focus"  
@@ -92,8 +93,8 @@ Again if something is not required out of your body, the body shuts it down to s
 
 
 ---
-# Physical
-![](/articles/physical.png)
+## Physical Changes
+![Physical Consequences of Sedentary Screen Time](/articles/physical.png)
 
 Let's start with Sleep disturbance? 
 - Light from electronic devices has showen to [hinder circadian rhythm](https://sleepdoctor.com/technology/#:~:text=transition%20to%20sleep.-,Technology%20Can%20Have%20Adverse%20Effects%20on%20Sleep,affect%20attentiveness%20the%20following%20day.).
@@ -103,8 +104,8 @@ Let's start with Sleep disturbance?
 - Human body is made to endure certain conditions such as cold or complicated hard daily tasks that have been taken care of by technology, as a result our minds and body have become weak.
 
 ---
-# Social
-![](/articles/social.png)
+## Social Adaptation
+![Social Connectivity and Fragmentation](/articles/social.png)
 While technology enhances connectivity, it can also hinder the development of in-depth, face-to-face social skills necessary for strong interpersonal relationships. 
 
 ### Change of character
@@ -125,8 +126,8 @@ Person's individuality is essential but having support for you weaknesses and st
 
 ---
 
-# Exposure of kids at young age
-![](/articles/kids.png)
+## Early Childhood Exposure
+![Screen Exposure in Children](/articles/kids.png)
 - Delays in language development, social and emotional development 
 - lower creativity.
 - Children experience the thinning of the brain cortex, a precursor of aging and neurodegenerative diseases.

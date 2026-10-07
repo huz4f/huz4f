@@ -3144,12 +3144,12 @@ body.dark.page-full-black .footer {
   background-color: #000000 !important;
   background: #000000 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
-  color: #555555 !important;
+  color: #a1a1aa !important;
 }
 
 body.dark:has(#visual-arts-frames) .footer a,
 body.dark.page-full-black .footer a {
-  color: #777777 !important;
+  color: #e4e4e7 !important;
 }
 
 body.dark:has(#visual-arts-frames) .pg-section,
@@ -3178,7 +3178,7 @@ body.dark.page-full-black .pg-minimal-title {
 
 body.dark:has(#visual-arts-frames) .pg-minimal-subtitle,
 body.dark.page-full-black .pg-minimal-subtitle {
-  color: #777777 !important;
+  color: #a1a1aa !important;
 }
 
 body.dark:has(#visual-arts-frames) .pg-view-switcher,
@@ -3361,12 +3361,12 @@ body:not(.dark).page-full-black .footer {
   background-color: #ffffff !important;
   background: #ffffff !important;
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  color: #71717a !important;
+  color: #52525b !important;
 }
 
 body:not(.dark):has(#visual-arts-frames) .footer a,
 body:not(.dark).page-full-black .footer a {
-  color: #3f3f46 !important;
+  color: #18181b !important;
 }
 
 body:not(.dark):has(#visual-arts-frames) .pg-section,
@@ -3395,7 +3395,7 @@ body:not(.dark).page-full-black .pg-minimal-title {
 
 body:not(.dark):has(#visual-arts-frames) .pg-minimal-subtitle,
 body:not(.dark).page-full-black .pg-minimal-subtitle {
-  color: #71717a !important;
+  color: #52525b !important;
 }
 
 body:not(.dark):has(#visual-arts-frames) .pg-view-switcher,
@@ -4769,4 +4769,36 @@ body:has(.breadcrumbs a[href*="/blogs"]) .paginav a {
 #menu a[href*="projects"]:hover,
 #menu a[href*="Projects"]:hover {
   color: #c8a46e !important;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & PERFORMANCE ENHANCEMENTS (WCAG AA/AAA)
+   ========================================================================== */
+
+/* Lightbox focus isolation guard */
+.pg-lightbox:not(.active) {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* View switcher button contrast */
+.dark .pg-view-btn:not(.active),
+.page-full-black .pg-view-btn:not(.active),
+body.page-full-black .pg-view-btn:not(.active),
+.page-full-black .pg-view-btn:not(.active) .btn-label,
+body.page-full-black .pg-view-btn:not(.active) .btn-label {
+  color: #e4e4e7 !important;
+}
+:not(.dark):not(.page-full-black) .pg-view-btn:not(.active) {
+  color: #3f3f46 !important;
+}
+
+/* Post pagination navigation contrast */
+.paginav .title {
+  color: #52525b !important;
+  font-weight: 600 !important;
+}
+.dark .paginav .title {
+  color: #e4e4e7 !important;
+  font-weight: 600 !important;
 }

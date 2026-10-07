@@ -1,7 +1,8 @@
 ---
 title: "About me"
+description: "Huzaif Shabir — Software Engineer & Systems Architect. Background, technical journey, experience, and engineering philosophy."
 url: "/about/"
-author: "⠀"
+author: "Huzaif"
 hidemeta: true
 disableShare: true
 searchHidden: true

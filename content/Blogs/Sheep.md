@@ -1,6 +1,7 @@
 ---
 date: 2024-02-17
 title: "Shepherd, Sheep and Legs"
+description: "A reflection on ambition, helplessness, and the hidden purpose behind painful halts in life."
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
@@ -15,7 +16,7 @@ Every time the flock grazed, this lamb would drift toward the ridges, fascinated
 
 Then, he deliberately broke its leg.
 
-![](/blogs/shepherd.jpg)
+![The Shepherd and the Flock](/blogs/shepherd.jpg)
 
 It sounds brutal. Cruel, even. \
 *Aren’t shepherds supposed to love their flock?*
@@ -28,7 +29,7 @@ By the time the bone heals and the lamb is placed back on the ground, it never r
 
 ---
 
-### The break we resent
+## The break we resent
 
 We look at our own lives through the same short lens.
 

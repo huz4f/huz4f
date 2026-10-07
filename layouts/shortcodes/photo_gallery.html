@@ -21,8 +21,16 @@
           {{ $title := index $photoMeta "title" | default $defaultTitle }}
           {{ $description := index $photoMeta "description" | default "" }}
           {{ $album := index $photoMeta "album" | default "1" }}
+          {{ $width := index $photoMeta "width" | default 800 }}
+          {{ $height := index $photoMeta "height" | default 600 }}
+          {{ $origSrc := printf "/photos/%s" $fileName }}
+          {{ $thumbSrc := $origSrc }}
+          {{ with resources.Get (printf "photos/%s" $fileName) }}
+            {{ $thumb := .Resize "600x webp q80" }}
+            {{ $thumbSrc = $thumb.RelPermalink }}
+          {{ end }}
 
-          {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" (printf "/photos/%s" $fileName) }}
+          {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" $origSrc "thumb" $thumbSrc "width" $width "height" $height }}
           {{ $photos = $photos | append $photoObj }}
         {{ end }}
       {{ end }}
@@ -38,8 +46,13 @@
   <!-- Upper Header Card -->
   <div class="pg-minimal-header">
     <div class="pg-header-left">
+      {{- $airSrc := "air.jpg" | relURL -}}
+      {{- with resources.Get "air.jpg" -}}
+        {{- $airWebp := .Resize "370x370 webp q85" -}}
+        {{- $airSrc = $airWebp.RelPermalink -}}
+      {{- end -}}
       <div class="pg-avatar-ring">
-        <img src='{{ "air.jpg" | absURL }}' alt="Huzaif" class="pg-header-avatar-img" decoding="async" loading="eager" />
+        <img src="{{ $airSrc }}" alt="Huzaif" width="370" height="370" fetchpriority="high" class="pg-header-avatar-img" decoding="async" loading="eager" />
       </div>
       <div class="pg-header-meta">
         <div class="pg-title-row">
@@ -75,7 +88,7 @@
 </div>
 
 <!-- High-End Dynamic Social Gallery Lightbox Modal -->
-<div class="pg-lightbox" id="pgLightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Photo Frame Lightbox">
+<div class="pg-lightbox" id="pgLightbox" role="dialog" aria-modal="true" aria-hidden="true" inert aria-label="Photo Frame Lightbox">
   <!-- Minimalist Top Left Share Button (Icon only) -->
   <button class="pg-lb-icon-btn pg-lb-share-btn" id="pgLbShareBtn" title="Share frame link" aria-label="Share frame link">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -244,10 +257,14 @@
           '</p>';
       }
 
+      const w = photo.width || 800;
+      const h = photo.height || 600;
+      const aspectStyle = 'style="aspect-ratio: ' + w + ' / ' + h + ';"';
+
       return '<div class="pg-card" data-id="' + safeId + '" data-index="' + listIdx + '" tabindex="0" role="button" aria-label="View photo ' + safeTitle + '">' +
-        '<div class="pg-img-wrapper">' +
+        '<div class="pg-img-wrapper" ' + aspectStyle + '>' +
           '<div class="pg-img-shield"></div>' +
-          '<img src="' + photo.src + '" alt="' + safeTitle + '" class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
+          '<img src="' + (photo.thumb || photo.src) + '" alt="' + safeTitle + '" width="' + w + '" height="' + h + '" ' + aspectStyle + ' class="pg-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
           '<div class="pg-card-bar">' +
             '<div class="pg-card-bar-text">' +
               '<h3 class="pg-card-title">' + safeTitle + '</h3>' +
@@ -335,7 +352,7 @@
             const safeTitle = escapeHtml(photo.title);
             return '<div class="pg-album-thumb" data-index="' + pIdx + '">' +
               '<div class="pg-album-thumb-shield"></div>' +
-              '<img src="' + photo.src + '" alt="' + safeTitle + '" class="pg-album-thumb-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
+              '<img src="' + (photo.thumb || photo.src) + '" alt="' + safeTitle + '" class="pg-album-thumb-img" loading="lazy" decoding="async" draggable="false" oncontextmenu="return false;" />' +
             '</div>';
           }).join("");
 
@@ -530,6 +547,7 @@
       currentLightboxIndex = index;
       updateLightboxContent();
       if (lightbox) {
+        lightbox.removeAttribute("inert");
         lightbox.classList.add("active");
         lightbox.setAttribute("aria-hidden", "false");
       }
@@ -553,6 +571,7 @@
     function closeLightbox() {
       resetZoom(false);
       if (lightbox) {
+        lightbox.setAttribute("inert", "");
         lightbox.classList.remove("active");
         lightbox.setAttribute("aria-hidden", "true");
       }

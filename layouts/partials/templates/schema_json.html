@@ -1,0 +1,193 @@
+{{- $siteUrl := site.BaseURL | default "https://huz4f.com/" -}}
+{{- $personId := printf "%s#person" $siteUrl -}}
+{{- $websiteId := printf "%s#website" $siteUrl -}}
+
+{{- /* Base Person Schema (Knowledge Graph Anchor for Huzaif) */ -}}
+{{- $person := dict
+  "@type" "Person"
+  "@id" $personId
+  "name" "Huzaif Shabir"
+  "alternateName" (slice "Huzaif" "huz4f")
+  "url" $siteUrl
+  "image" (printf "%sfavicons/me.jpg" $siteUrl)
+  "jobTitle" "Software Engineer & Systems Architect"
+  "description" "Computer science engineer building autonomous systems, decentralized networks, and sovereign digital infrastructure."
+  "sameAs" (slice "https://github.com/huz4f" "https://www.linkedin.com/in/huz4f/")
+  "knowsAbout" (slice "Computer Science" "Distributed Systems" "Peer-to-Peer Networks" "Cryptography" "Blockchain & Smart Contracts" "Swift" "TypeScript" "AI Systems" "Next.js")
+-}}
+
+{{- if .IsHome -}}
+{{- /* Home Page Graph: WebSite + Person */ -}}
+{{- $website := dict
+  "@type" "WebSite"
+  "@id" $websiteId
+  "url" $siteUrl
+  "name" site.Title
+  "description" (site.Params.description | default "Software Engineer & Systems Architect")
+  "inLanguage" "en"
+  "publisher" (dict "@id" $personId)
+  "author" (dict "@id" $personId)
+  "potentialAction" (dict
+    "@type" "SearchAction"
+    "target" (dict
+      "@type" "EntryPoint"
+      "urlTemplate" (printf "%ssearch/?q={search_term_string}" $siteUrl)
+    )
+    "query-input" "required name=search_term_string"
+  )
+-}}
+{{- $graph := dict
+  "@context" "https://schema.org"
+  "@graph" (slice $person $website)
+-}}
+<script type="application/ld+json">
+{{ $graph | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+
+{{- else -}}
+
+{{- /* Inner Pages */ -}}
+{{- $graphItems := slice $person -}}
+
+{{- /* Breadcrumbs calculation */ -}}
+{{- $crumbs := slice -}}
+{{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 1 "name" "Home" "item" $siteUrl) -}}
+
+{{- if .Parent -}}
+  {{- if and (ne .Parent.Permalink $siteUrl) (ne .Parent.Permalink .Permalink) -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" .Parent.Title "item" .Parent.Permalink) -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
+  {{- else -}}
+    {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+  {{- end -}}
+{{- else -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+{{- end -}}
+
+{{- $breadcrumbList := dict
+  "@type" "BreadcrumbList"
+  "@id" (printf "%s#breadcrumb" .Permalink)
+  "itemListElement" $crumbs
+-}}
+{{- $graphItems = $graphItems | append $breadcrumbList -}}
+
+{{- /* Specific Page Types */ -}}
+{{- $desc := .Description | default .Summary | default site.Params.description | plainify | htmlUnescape -}}
+
+{{- if eq (lower .Section) "blogs" -}}
+  {{- /* BlogPosting Schema */ -}}
+  {{- $img := printf "%shuz4f.png" $siteUrl -}}
+  {{- if .Params.cover.image -}}
+    {{- $img = .Params.cover.image | absURL -}}
+  {{- end -}}
+  {{- $article := dict
+    "@type" "BlogPosting"
+    "@id" (printf "%s#article" .Permalink)
+    "headline" (.Title | plainify)
+    "name" (.Title | plainify)
+    "description" $desc
+    "url" .Permalink
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "inLanguage" "en"
+    "wordCount" .WordCount
+    "keywords" (.Params.tags | default (slice "Technology" "Computer Science"))
+    "image" $img
+    "author" (dict "@id" $personId)
+    "publisher" (dict "@id" $personId)
+  -}}
+  {{- if not .PublishDate.IsZero -}}
+    {{- $article = merge $article (dict "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+  {{- if not .Lastmod.IsZero -}}
+    {{- $article = merge $article (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+  {{- $graphItems = $graphItems | append $article -}}
+
+{{- else if eq (lower .Section) "projects" -}}
+  {{- /* SoftwareApplication / CreativeWork Schema */ -}}
+  {{- $img := printf "%shuz4f.png" $siteUrl -}}
+  {{- if .Params.cover.image -}}
+    {{- $img = .Params.cover.image | absURL -}}
+  {{- end -}}
+  {{- $project := dict
+    "@type" "SoftwareApplication"
+    "@id" (printf "%s#project" .Permalink)
+    "name" (.Title | plainify)
+    "headline" (.Title | plainify)
+    "description" $desc
+    "url" .Permalink
+    "applicationCategory" "DeveloperApplication"
+    "operatingSystem" "Cross-platform"
+    "author" (dict "@id" $personId)
+    "publisher" (dict "@id" $personId)
+    "image" $img
+    "keywords" (.Params.tags | default (slice "Software" "Engineering"))
+  -}}
+  {{- if not .PublishDate.IsZero -}}
+    {{- $project = merge $project (dict "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")) -}}
+  {{- end -}}
+  {{- $graphItems = $graphItems | append $project -}}
+
+{{- else if or (eq (lower .Title) "visual arts & frames") (strings.Contains .RelPermalink "visual-arts") (strings.Contains .RelPermalink "/art/") -}}
+  {{- /* ImageGallery Schema */ -}}
+  {{- $gallery := dict
+    "@type" "ImageGallery"
+    "@id" (printf "%s#gallery" .Permalink)
+    "name" (.Title | plainify)
+    "description" $desc
+    "url" .Permalink
+    "creator" (dict "@id" $personId)
+    "author" (dict "@id" $personId)
+    "inLanguage" "en"
+  -}}
+  {{- $graphItems = $graphItems | append $gallery -}}
+
+{{- else if or (eq (lower .Title) "about me") (strings.Contains .RelPermalink "about") -}}
+  {{- /* ProfilePage Schema */ -}}
+  {{- $profile := dict
+    "@type" "ProfilePage"
+    "@id" (printf "%s#profile" .Permalink)
+    "name" "About Huzaif Shabir"
+    "description" $desc
+    "url" .Permalink
+    "mainEntity" (dict "@id" $personId)
+    "inLanguage" "en"
+  -}}
+  {{- $graphItems = $graphItems | append $profile -}}
+
+{{- else if or (eq (lower .Title) "contact") (strings.Contains .RelPermalink "contact") -}}
+  {{- /* ContactPage Schema */ -}}
+  {{- $contact := dict
+    "@type" "ContactPage"
+    "@id" (printf "%s#contact" .Permalink)
+    "name" "Contact Huzaif Shabir"
+    "description" $desc
+    "url" .Permalink
+    "mainEntity" (dict "@id" $personId)
+    "inLanguage" "en"
+  -}}
+  {{- $graphItems = $graphItems | append $contact -}}
+
+{{- else -}}
+  {{- /* General WebPage Schema */ -}}
+  {{- $webpage := dict
+    "@type" "WebPage"
+    "@id" (printf "%s#webpage" .Permalink)
+    "name" (.Title | plainify)
+    "description" $desc
+    "url" .Permalink
+    "inLanguage" "en"
+    "isPartOf" (dict "@id" $websiteId)
+    "author" (dict "@id" $personId)
+  -}}
+  {{- $graphItems = $graphItems | append $webpage -}}
+{{- end -}}
+
+{{- $fullGraph := dict
+  "@context" "https://schema.org"
+  "@graph" $graphItems
+-}}
+<script type="application/ld+json">
+{{ $fullGraph | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- end -}}

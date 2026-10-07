@@ -1,6 +1,7 @@
 ---
 date: 2026-03-03
 title: "Politics"
+description: "Distribution of power and resources — thoughts on conformity, individualism, and power dynamics."
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true

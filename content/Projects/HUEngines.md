@@ -1,6 +1,7 @@
 ---
 date: 2026-07-26
 title: "HU Engines"
+description: "Proprietary software, autonomous AI systems & sovereign financial infrastructure for high-growth enterprises."
 tags: ["Next.js", "TypeScript", "Enterprise", "AI", "Infrastructure", "Systems"]
 author: "Huzaif"
 showreadingtime: false
@@ -12,6 +13,8 @@ draft: false
 cover:
   image: "/projects/huengines-banner.png"
   alt: "HU Engines"
+  width: 1200
+  height: 630
   relative: false
   hiddenInList: true
 ---
@@ -23,7 +26,7 @@ cover:
 
 ---
 
-### The Thesis: The Missing Layer
+## The Thesis: The Missing Layer
 
 Most businesses are forced to assemble their operations from disconnected SaaS products, spreadsheets, manual processes, and systems that were never designed for them. 
 
@@ -37,7 +40,7 @@ FRAGMENTED SYSTEMS → DATA → WORKFLOWS → INTELLIGENCE → PROPRIETARY SYSTE
 
 ---
 
-### Core Disciplines & Systems
+## Core Disciplines & Systems
 
 | Discipline | Focus & Capabilities |
 |------------|----------------------|
@@ -49,7 +52,7 @@ FRAGMENTED SYSTEMS → DATA → WORKFLOWS → INTELLIGENCE → PROPRIETARY SYSTE
 
 ---
 
-### The Engineering Methodology
+## The Engineering Methodology
 
 A structured, 5-stage engineering lifecycle:
 
@@ -61,7 +64,7 @@ A structured, 5-stage engineering lifecycle:
 
 ---
 
-### Key Operational Metrics
+## Key Operational Metrics
 
 - **100%** Proprietary Code & IP Ownership (Zero Vendor Lock-in)
 - **< 1s** Real-Time Transaction Finality & Event Execution
@@ -70,7 +73,7 @@ A structured, 5-stage engineering lifecycle:
 
 ---
 
-### Tech Stack & Architecture
+## Tech Stack & Architecture
 
 - **Frontend & App Layer**: Next.js (App Router), TypeScript, React, Tailwind CSS
 - **Design System**: Bespoke design language with JetBrains Mono, Inter typography & custom geometric micro-interactions
@@ -79,6 +82,6 @@ A structured, 5-stage engineering lifecycle:
 
 ---
 
-### Philosophy
+## Philosophy
 
 > *"Technology should not make humans busier. It should make human capability more valuable. We build systems that absorb complexity, surface intelligence, and turn intent into execution. The objective isn't to replace people—it's to multiply what exceptional people can accomplish."*
