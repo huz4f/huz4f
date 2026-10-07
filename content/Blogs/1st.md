@@ -7,6 +7,6 @@ author: "Huzaif"
 hidesummary: true
 draft: true
 ---
-![](/photos/45.jpg)
+![Void photograph](/photos/45.jpg)
 
 have in my notes, did not complete the previous blog also

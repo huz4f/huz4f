@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# Git Pre-Commit Hook for huz4f.com
+# Enforces SEO, AEO, Accessibility, Performance & Hugo Build Quality Gates
+# ==============================================================================
+
+set -e
+
+echo ""
+echo "🚀 [Git Pre-Commit] Running huz4f.com automated quality gate..."
+echo "-------------------------------------------------------------"
+
+# Ensure python3 is available
+if ! command -v python3 &> /dev/null; then
+    echo "⚠️  Python3 is required to run verification checks. Skipping."
+    exit 0
+fi
+
+# Run verification script
+python3 scripts/verify_site.py
+
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+    echo ""
+    echo "❌ [Git Pre-Commit] Commit blocked: Verification checks failed."
+    echo "   Please fix the reported errors above before committing."
+    echo "   To bypass this in an emergency, use 'git commit --no-verify'."
+    echo ""
+    exit 1
+fi
+
+echo ""
+echo "✅ [Git Pre-Commit] All quality, SEO & AEO checks passed! Proceeding with commit."
+echo ""
+exit 0

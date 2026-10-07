@@ -6,7 +6,7 @@ author: "Huzaif"
 hidesummary: true
 draft: true
 ---
-![](/blogs/ky.jpg)
+![Mourning and remembrance artwork](/blogs/ky.jpg)
 come back as mercy, as life reaching my skin again
 >>‌If you are not rain, my love
 Be tree
@@ -27,7 +27,7 @@ then at least return as moon → a quiet sign in my nights… inside my dreams
 >>and If you are not stone, my love
 be moon
 
-![](/blogs/md.jpg)
+![Reflective silhouette artwork](/blogs/md.jpg)
 ***If death took your body, then don’t let it take your presence***
 >>In the dream of your beloved one, be moon
 

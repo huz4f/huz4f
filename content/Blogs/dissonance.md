@@ -7,15 +7,15 @@ author: "Huzaif"
 hidesummary: true
 draft: true
 ---
-#### Choices Create illusion, Not Liberation.
+## Choices Create illusion, Not Liberation.
 
  *“We search for purpose. The universe offers silence.”* **-The Myth of Sisyphus**
 
 ---
-#### "we dont want freedom we want the struggle for freedom" -ibsen
+### "we dont want freedom we want the struggle for freedom" -ibsen
 What would we want if our memetic desires did not contribute to the identity that we have given ourselves. Who are we in this world, if our childhood experiences did not imprint our attachment style in us, \
 And what are we chasing if it all becomes absurd in the end ?
-![](/blogs/dis.jpg)
+![Dissonance conceptual illustration](/blogs/dis.jpg)
 Without childhood wounds driving us…
 → Would ambition be softer or sharper? 
 
@@ -62,10 +62,10 @@ I cannot say I’ve been a nihilist. \
 I didn’t suffer from clinical anhedonia. \
 But i’ve always hovered somewhere in between **not quite empty, never quite full.**
 
-#### Every goal you achieve, 
+### Every goal you achieve, 
 Every milestone you hit, every desire that once burned within you — when finally attained, somehow loses its power.  
 
-#### It’s the summer of ‘25. 
+### It’s the summer of ‘25. 
 I just completed my final exams, cleared all my backlogs \
 — goals I set a year ago, \
 most of which I’ve now accomplished. \
@@ -76,7 +76,7 @@ Would they make me love myself or increase my self respect?
 
 Today, as I walked out of that exam room with every logical reason to feel relief or triumph, there wasn’t even a sigh. Just… **emptiness**
 
-#### i wonder: were the milestones too small?  
+### i wonder: were the milestones too small?  
 Or am I forever chasing something bigger — always stretching toward a horizon that keeps moving? Maybe it's just \
 **Daniel Kahneman & Amos Tversky’s Prospect Theory** in motion~
 > *“People fear loss \
@@ -103,7 +103,7 @@ Every time humanity advances — every time we create technology, more freedom, 
 We think we want freedom. But we forget:  
 > With every option we say “yes” to, we silently bury the rest
 
-#### Real freedom doesn’t lie in having endless options. It lies in *knowing what you want,* choosing it *with awareness,* and *not needing anything else.*
+### Real freedom doesn’t lie in having endless options. It lies in *knowing what you want,* choosing it *with awareness,* and *not needing anything else.*
 
 ### Because contentment is not in having everything
 
