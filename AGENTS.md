@@ -94,19 +94,24 @@ Always preserve these directives and the `Sitemap: https://huz4f.com/sitemap.xml
 
 ## 5. Automated Quality Gates
 
-The repository includes a 4-pillar automated safeguard system:
-1. **Verification Engine:** `python3 scripts/verify_site.py` validates all markdown, JSON metadata, Hugo build, generated HTML DOM, Schema JSON-LD, robots.txt, sitemap, and asset sizes.
-2. **Git Pre-Commit Hook:** `.githooks/pre-commit` automatically runs before every commit. Commits fail if any audit fails.
-3. **GitHub Actions CI:** `.github/workflows/hugo.yml` runs verification on every pull request and push to `main` before deployment.
-4. **Rules & Guidelines:** `AGENTS.md` and `GEMINI.md` inform all automated pair-programming sessions.
+The repository enforces a 5-pillar safeguard architecture:
+1. **Verification Engine:** `python3 scripts/verify_site.py` (with optional `--strict` flag) validates all markdown, local asset existence, JSON metadata, clean Hugo build, generated HTML DOM, Schema JSON-LD, dead internal links, robots.txt, sitemap, accessibility, and asset budgets.
+2. **Image Optimization Pipeline:** `python3 scripts/optimize_images.py` automatically compresses images to meet the 500 KB budget and synchronizes intrinsic dimensions in `static/photos/photos.json`.
+3. **Dual Git Hooks (Pre-Commit & Pre-Push):** `.githooks/pre-commit` and `.githooks/pre-push` prevent invalid commits or pushing defective changes to remote. (Install via `./scripts/setup-hooks.sh`).
+4. **GitHub Actions CI/CD:** `.github/workflows/hugo.yml` runs verification in strict mode on every pull request and push to `main` before deployment.
+5. **Universal AI Agent Directives:** `AGENTS.md`, `GEMINI.md`, `CLAUDE.md`, `.cursorrules`, `.windsurfrules`, and `.github/copilot-instructions.md` guarantee all AI tools follow these rules automatically.
 
 ---
 
 ## 6. Verification Checklist Before Any Commit
 
-Before committing any change, run:
+Before committing any change:
 ```bash
-python3 scripts/verify_site.py
+# 1. (Optional) If adding new images:
+python3 scripts/optimize_images.py
+
+# 2. Run verification engine:
+python3 scripts/verify_site.py --strict
 ```
 Ensure output displays:
 ```

@@ -3,16 +3,19 @@
 verify_site.py — Automated SEO, AEO, Performance & Accessibility Verification Engine
 Designed for huz4f.com (Hugo + PaperMod)
 
-Checks:
-1. Markdown Content Linting (Frontmatter, Headings hierarchy, Alt text)
-2. Photo Metadata & Asset Integrity (dimensions, file existence)
-3. Clean Hugo Build Execution (--gc --minify)
-4. Generated HTML DOM Audit:
+Audits:
+1. Markdown Content Linting (Frontmatter, Heading hierarchy, Alt text, Local asset existence)
+2. Photo Metadata & Asset Integrity (dimensions, file existence, CLS prevention)
+3. Clean Hugo Build Execution (--gc --minify --cleanDestinationDir)
+4. Generated HTML DOM & Link Audit:
    - Single <h1> per page
-   - No heading level skips (e.g. h1 -> h3)
+   - Sequential heading levels (no skips)
    - Meta description, title, canonical URL, OpenGraph tags
    - Valid Schema.org JSON-LD Graph (Person, WebSite, BlogPosting, SoftwareApplication, ImageGallery)
-   - Image <img> alt attributes and dimensions
+   - Image <img> alt attributes, dimensions, and file existence on disk
+   - Zero broken internal links (dead link detection)
+   - Accessibility (<html lang>) and mobile viewport (<meta name="viewport">)
+   - External link security (rel="noopener" on target="_blank")
 5. Robots.txt (AI Answer Engine bot directives: GPTBot, ClaudeBot, PerplexityBot)
 6. Sitemap.xml (validity, URL schemas)
 7. Performance Asset Budgets (image/CSS/JS file size limits)
@@ -41,6 +44,7 @@ BLUE = "\033[94m"
 BOLD = "\033[1m"
 RESET = "\033[0m"
 
+
 class AuditReport:
     def __init__(self):
         self.errors = []
@@ -58,21 +62,25 @@ class AuditReport:
     def pass_check(self, count: int = 1):
         self.passed_checks += count
 
-    def print_summary(self):
+    def print_summary(self, strict: bool = False):
         print(f"\n{BOLD}═══════════════════════════════════════════════════════════════{RESET}")
         print(f"{BOLD}                AUDIT RESULTS & VERIFICATION                  {RESET}")
         print(f"{BOLD}═══════════════════════════════════════════════════════════════{RESET}")
-        
+
         if self.warnings:
             print(f"\n{YELLOW}{BOLD}⚠ Warnings ({len(self.warnings)}):{RESET}")
             for w in self.warnings:
                 print(f"  {YELLOW}•{RESET} {w}")
 
+        has_failed = bool(self.errors) or (strict and bool(self.warnings))
+
         if self.errors:
             print(f"\n{RED}{BOLD}✖ Errors ({len(self.errors)}):{RESET}")
             for e in self.errors:
                 print(f"  {RED}•{RESET} {e}")
-            print(f"\n{RED}{BOLD}FAILED:{RESET} {len(self.errors)} check(s) failed. Please resolve above issues before committing/deploying.")
+
+        if has_failed:
+            print(f"\n{RED}{BOLD}FAILED:{RESET} Verification checks failed. Resolve issues before committing/deploying.")
             return False
         else:
             print(f"\n{GREEN}{BOLD}✔ ALL CHECKS PASSED:{RESET} {self.passed_checks} verifications succeeded.")
@@ -102,7 +110,7 @@ def check_markdown_content(report: AuditReport, verbose: bool = False):
                 body_text = parts[2]
 
         is_draft = bool(re.search(r"^\s*draft:\s*true", fm_text, re.MULTILINE | re.IGNORECASE))
-        
+
         # Check title
         has_title = bool(re.search(r"^\s*title:\s*.+", fm_text, re.MULTILINE))
         if not has_title:
@@ -140,15 +148,26 @@ def check_markdown_content(report: AuditReport, verbose: bool = False):
                         report.add_error("A11y/SEO Headings", f"Line {idx}: Heading level skipped from h{current_level} to h{level} (cannot skip levels).", rel_path)
                     current_level = level
 
-        # Check images for alt text
+        # Check images for alt text and existence
         for idx, line in enumerate(body_lines, start=1):
             empty_alts = re.findall(r"!\[\s*\]\(([^\)]+)\)", line)
             if empty_alts:
                 report.add_error("A11y/Images", f"Line {idx}: Image missing alt text '{empty_alts[0]}'. All images must have descriptive alt text.", rel_path)
             else:
                 img_matches = re.findall(r"!\[([^\]]+)\]\(([^\)]+)\)", line)
-                if img_matches:
-                    report.pass_check(len(img_matches))
+                for alt, src in img_matches:
+                    report.pass_check()
+                    if not src.startswith(("http://", "https://", "data:")):
+                        clean_src = src.split("?")[0].split("#")[0].lstrip("/")
+                        exists = (
+                            (ROOT_DIR / "static" / clean_src).exists()
+                            or (ROOT_DIR / "assets" / clean_src).exists()
+                            or (md_path.parent / clean_src).exists()
+                        )
+                        if not exists:
+                            report.add_error("Content/Asset", f"Line {idx}: Referenced local image does not exist: '{src}'", rel_path)
+                        else:
+                            report.pass_check()
 
 
 # ----------------------------------------------------------------------
@@ -173,7 +192,7 @@ def check_photo_metadata(report: AuditReport):
         img_file = photos_dir / filename
         if not img_file.exists():
             report.add_error("Gallery/Asset", f"Referenced photo file does not exist: {filename}")
-        
+
         w = meta.get("width")
         h = meta.get("height")
         if not isinstance(w, int) or w <= 0 or not isinstance(h, int) or h <= 0:
@@ -186,10 +205,10 @@ def check_photo_metadata(report: AuditReport):
 # 3. HUGO BUILD EXECUTION
 # ----------------------------------------------------------------------
 def run_hugo_build(report: AuditReport):
-    print(f"\n{BLUE}{BOLD}[3/7] Building Site with Hugo Extended (--gc --minify)...{RESET}")
+    print(f"\n{BLUE}{BOLD}[3/7] Building Site with Hugo Extended (--gc --minify --cleanDestinationDir)...{RESET}")
     try:
         proc = subprocess.run(
-            ["hugo", "--gc", "--minify"],
+            ["hugo", "--gc", "--minify", "--cleanDestinationDir"],
             cwd=str(ROOT_DIR),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -205,7 +224,7 @@ def run_hugo_build(report: AuditReport):
 
 
 # ----------------------------------------------------------------------
-# 4. GENERATED HTML AUDIT (DOM, Headings, Schemas, Images)
+# 4. GENERATED HTML AUDIT (DOM, Headings, Schemas, Images, Links, A11y)
 # ----------------------------------------------------------------------
 class HTMLDOMAuditor(HTMLParser):
     def __init__(self):
@@ -213,11 +232,14 @@ class HTMLDOMAuditor(HTMLParser):
         self.is_redirect = False
         self.title = None
         self.in_title = False
+        self.html_lang = None
+        self.has_viewport = False
         self.metas = {}
         self.canonical = None
         self.h1_count = 0
         self.headings = []
         self.images = []
+        self.links = []
         self.json_ld_scripts = []
         self.in_ldjson = False
         self.cur_ldjson = []
@@ -226,12 +248,16 @@ class HTMLDOMAuditor(HTMLParser):
         attrs_dict = dict(attrs)
         tag_lower = tag.lower()
 
-        if tag_lower == "title":
+        if tag_lower == "html":
+            self.html_lang = attrs_dict.get("lang")
+        elif tag_lower == "title":
             self.in_title = True
         elif tag_lower == "meta":
             http_equiv = attrs_dict.get("http-equiv", "").lower()
             if http_equiv == "refresh":
                 self.is_redirect = True
+            if attrs_dict.get("name", "").lower() == "viewport":
+                self.has_viewport = True
             name = attrs_dict.get("name") or attrs_dict.get("property")
             content = attrs_dict.get("content")
             if name and content:
@@ -244,6 +270,12 @@ class HTMLDOMAuditor(HTMLParser):
             self.headings.append(lvl)
             if lvl == 1:
                 self.h1_count += 1
+        elif tag_lower == "a":
+            href = attrs_dict.get("href")
+            rel = attrs_dict.get("rel", "")
+            target = attrs_dict.get("target", "")
+            if href:
+                self.links.append((href, rel, target))
         elif tag_lower == "script" and attrs_dict.get("type") == "application/ld+json":
             self.in_ldjson = True
             self.cur_ldjson = []
@@ -273,6 +305,7 @@ def audit_html_pages(report: AuditReport):
         return
 
     html_files = sorted(public_dir.glob("**/*.html"))
+    all_public_files = set(str(p.relative_to(public_dir)) for p in public_dir.glob("**/*") if p.is_file())
 
     for html_file in html_files:
         rel_path = str(html_file.relative_to(ROOT_DIR))
@@ -286,16 +319,28 @@ def audit_html_pages(report: AuditReport):
             report.pass_check()
             continue
 
-        # 404 page has specific relaxed expectations
         is_404 = "404.html" in rel_path
 
-        # 1. Check title
+        # 1. Language attribute
+        if not auditor.html_lang:
+            report.add_error("A11y/Language", "Page missing 'lang' attribute on <html> tag", rel_path)
+        else:
+            report.pass_check()
+
+        # 2. Viewport tag
+        if not is_404:
+            if not auditor.has_viewport:
+                report.add_error("A11y/Mobile", "Page missing <meta name='viewport'> tag", rel_path)
+            else:
+                report.pass_check()
+
+        # 3. Check title
         if not auditor.title or not auditor.title.strip():
             report.add_error("SEO/Title", "Page missing <title> tag", rel_path)
         else:
             report.pass_check()
 
-        # 2. Check meta description
+        # 4. Check meta description
         if not is_404:
             desc = auditor.metas.get("description")
             if not desc or not desc.strip():
@@ -303,13 +348,13 @@ def audit_html_pages(report: AuditReport):
             else:
                 report.pass_check()
 
-        # 3. Check canonical
+        # 5. Check canonical
         if not auditor.canonical:
             report.add_error("SEO/Canonical", "Page missing <link rel='canonical'>", rel_path)
         else:
             report.pass_check()
 
-        # 4. Check OpenGraph tags
+        # 6. Check OpenGraph tags
         if not is_404:
             for og_prop in ("og:title", "og:description"):
                 if og_prop not in auditor.metas:
@@ -317,7 +362,7 @@ def audit_html_pages(report: AuditReport):
                 else:
                     report.pass_check()
 
-        # 5. Check Headings Hierarchy
+        # 7. Check Headings Hierarchy
         if not is_404:
             if auditor.h1_count == 0:
                 report.add_error("A11y/SEO Headings", "Page has no <h1> heading tag", rel_path)
@@ -335,16 +380,51 @@ def audit_html_pages(report: AuditReport):
                 else:
                     report.pass_check()
 
-        # 6. Check Images
+        # 8. Check Images (alt and file existence on disk)
         for img in auditor.images:
+            src = img.get("src")
             if "alt" not in img:
-                report.add_error("A11y/Images", f"<img> tag missing 'alt' attribute: {img.get('src')}", rel_path)
+                report.add_error("A11y/Images", f"<img> tag missing 'alt' attribute: {src}", rel_path)
             elif not img["alt"] and not img.get("role") == "presentation":
-                report.add_warning("A11y/Images", f"<img> tag has empty alt='': {img.get('src')}", rel_path)
+                report.add_warning("A11y/Images", f"<img> tag has empty alt='': {src}", rel_path)
             else:
                 report.pass_check()
 
-        # 7. Check Schema.org JSON-LD (AEO)
+            if src and not src.startswith(("http://", "https://", "data:")):
+                clean_src = src.split("?")[0].lstrip("/")
+                if clean_src not in all_public_files:
+                    report.add_error("Asset/Missing", f"Image asset not found on disk: '{src}'", rel_path)
+                else:
+                    report.pass_check()
+
+        # 9. Check Links (Dead link detector & Security)
+        for href, rel, target in auditor.links:
+            if not href:
+                continue
+            if href.startswith(("http://", "https://", "mailto:", "tel:", "javascript:", "#")):
+                if target == "_blank":
+                    rel_lower = rel.lower()
+                    if "noopener" not in rel_lower and "noreferrer" not in rel_lower:
+                        report.add_error("Security/ExternalLink", f"External link target='_blank' missing rel='noopener': {href}", rel_path)
+                    else:
+                        report.pass_check()
+                continue
+
+            clean_url = href.split("#")[0].split("?")[0].lstrip("/")
+            if not clean_url:
+                continue
+
+            candidates = [
+                clean_url,
+                clean_url + "/index.html" if not clean_url.endswith("/") else clean_url + "index.html",
+                clean_url.rstrip("/") + ".html",
+            ]
+            if not any(c in all_public_files for c in candidates):
+                report.add_error("BrokenLink/404", f"Internal link target does not exist: '{href}'", rel_path)
+            else:
+                report.pass_check()
+
+        # 10. Check Schema.org JSON-LD (AEO)
         if not auditor.json_ld_scripts:
             report.add_error("AEO/Schema", "Page missing Schema.org JSON-LD script", rel_path)
         else:
@@ -362,7 +442,7 @@ def audit_html_pages(report: AuditReport):
                     if rel_path == "public/index.html":
                         if "Person" not in types or "WebSite" not in types:
                             report.add_error("AEO/Schema", f"Homepage schema graph missing Person or WebSite types. Found: {types}", rel_path)
-                    
+
                     # Blogs must have BlogPosting
                     elif "blogs/" in rel_path and not rel_path.endswith("blogs/index.html"):
                         if "BlogPosting" not in types:
@@ -388,7 +468,6 @@ def check_robots_and_sitemap(report: AuditReport):
         report.add_error("SEO/Robots", "public/robots.txt not found")
     else:
         text = robots_path.read_text(encoding="utf-8")
-        # Ensure AI bots are configured
         ai_bots = ["GPTBot", "ClaudeBot", "PerplexityBot"]
         for bot in ai_bots:
             if bot.lower() not in text.lower():
@@ -422,7 +501,7 @@ def check_robots_and_sitemap(report: AuditReport):
 # ----------------------------------------------------------------------
 def check_asset_budgets(report: AuditReport):
     print(f"\n{BLUE}{BOLD}[6/7] Auditing Asset Budgets (Image weights, CSS/JS bloat)...{RESET}")
-    MAX_IMAGE_KB = 500  # 500 KB limit for web images
+    MAX_IMAGE_KB = 500
     MAX_CSS_KB = 300
     MAX_JS_KB = 300
 
@@ -431,7 +510,6 @@ def check_asset_budgets(report: AuditReport):
         for img_path in public_dir.glob(f"**/{ext}"):
             size_kb = img_path.stat().st_size / 1024
             rel_path = str(img_path.relative_to(ROOT_DIR))
-            # Ignore archive full-resolution downloads if separated
             if size_kb > MAX_IMAGE_KB:
                 report.add_warning("Performance/AssetSize", f"Image {img_path.name} is {size_kb:.1f} KB (budget: {MAX_IMAGE_KB} KB)", rel_path)
             else:
@@ -458,6 +536,7 @@ def check_asset_budgets(report: AuditReport):
 def main():
     parser = argparse.ArgumentParser(description="Audit site for SEO, AEO, Performance & Accessibility")
     parser.add_argument("--no-build", action="store_true", help="Skip Hugo build command and audit existing public/")
+    parser.add_argument("--strict", action="store_true", help="Strict mode: treat warnings as fatal errors")
     parser.add_argument("--verbose", action="store_true", help="Verbose output")
     args = parser.parse_args()
 
@@ -487,7 +566,7 @@ def main():
     check_asset_budgets(report)
 
     # Summary
-    success = report.print_summary()
+    success = report.print_summary(strict=args.strict)
     sys.exit(0 if success else 1)
 
 

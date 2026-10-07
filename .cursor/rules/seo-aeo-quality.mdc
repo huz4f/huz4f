@@ -1,0 +1,16 @@
+---
+description: Huz4f.com Development, SEO, AEO, Accessibility & Quality Rules
+globs: **/*
+alwaysApply: true
+---
+
+# Huz4f.com Development & Quality Protocols
+
+Before completing any task or proposing changes in this repository:
+1. Always run `python3 scripts/verify_site.py` and ensure 0 errors.
+2. In markdown, never use `# ` (`h1`) inside content. Use `## ` (`h2`) for top sections and avoid skipping heading levels.
+3. Every published page (`draft: false`) must have a frontmatter `description` (50-160 chars).
+4. All images must have non-empty, descriptive alt text. Prefer WebP format.
+5. All photos added to `static/photos/` must have entries in `static/photos/photos.json` with width and height.
+6. Schema.org JSON-LD graph anchored to `https://huz4f.com/#person` must be preserved.
+7. Keep AI crawler allowances in `static/robots.txt` intact.

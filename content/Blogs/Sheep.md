@@ -16,7 +16,7 @@ Every time the flock grazed, this lamb would drift toward the ridges, fascinated
 
 Then, he deliberately broke its leg.
 
-![The Shepherd and the Flock](/blogs/shepherd.jpg)
+![The Shepherd and the Flock](/blogs/shepherd.webp)
 
 It sounds brutal. Cruel, even. \
 *Aren’t shepherds supposed to love their flock?*

@@ -68,7 +68,7 @@ Having spent most of my life with my grandparents, i've always heard stories of 
 ## Education and Employment
 will write..
 ## Cultural deformation
-![Cultural context](/blogs/pk.jpg)
+![Cultural context](/blogs/pk.webp)
 will write..
 
 

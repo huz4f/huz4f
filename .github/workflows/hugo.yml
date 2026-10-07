@@ -62,10 +62,12 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
+            --gc \
             --minify \
+            --cleanDestinationDir \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Verify SEO, AEO, Performance & Accessibility
-        run: python3 scripts/verify_site.py --no-build
+        run: python3 scripts/verify_site.py --no-build --strict
       - name: Upload artifact
         if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
         uses: actions/upload-pages-artifact@v3
