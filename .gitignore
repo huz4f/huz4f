@@ -21,3 +21,5 @@ chrome/
 reports/
 reports_local/
 
+# AI agent local skills
+.agents/skills/

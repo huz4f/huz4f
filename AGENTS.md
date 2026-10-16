@@ -118,3 +118,20 @@ Ensure output displays:
 ✔ ALL CHECKS PASSED: ... verifications succeeded.
 Site is 100% compliant with SEO, AEO, Accessibility & Performance standards!
 ```
+
+---
+
+## 7. AI Engineering Memory System (Obsidian Brain)
+
+This repository is integrated with Huzaif's **Obsidian Engineering Brain**.
+- **Project Knowledge Hub**: `/Users/huz4f/Documents/Engineering-Brain/Projects/Huz4f/`
+- **Global Rules**: `/Users/huz4f/Documents/Engineering-Brain/GLOBAL-RULES.md`
+- **Current State Note**: `/Users/huz4f/Documents/Engineering-Brain/Projects/Huz4f/CURRENT-STATE.md`
+- **Fast CLI Access**: Run `brain get Huz4f` or `brain status` in terminal.
+
+### Agent Workflow:
+1. **Before Coding**: Read `/Users/huz4f/Documents/Engineering-Brain/Projects/Huz4f/CURRENT-STATE.md`. Check architecture notes at `/Users/huz4f/Documents/Engineering-Brain/Projects/Huz4f/ARCHITECTURE.md`.
+2. **During Coding**: Follow all SEO, AEO, heading, and image standards defined in sections 1–6 above.
+3. **After Coding**: Run `python3 scripts/verify_site.py --strict`. Update `/Users/huz4f/Documents/Engineering-Brain/Projects/Huz4f/CURRENT-STATE.md` if status or assets changed.
+
+
