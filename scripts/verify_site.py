@@ -200,6 +200,13 @@ def check_photo_metadata(report: AuditReport):
         else:
             report.pass_check()
 
+    for item in photos_dir.iterdir():
+        if item.is_file() and item.name != "photos.json" and not item.name.startswith("."):
+            if item.name not in data:
+                report.add_warning("Gallery/Unindexed", f"Photo {item.name} not registered in photos.json (run python3 scripts/optimize_images.py)")
+            else:
+                report.pass_check()
+
 
 # ----------------------------------------------------------------------
 # 3. HUGO BUILD EXECUTION

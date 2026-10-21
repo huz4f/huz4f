@@ -10,20 +10,20 @@ draft: false
 
 **Came across this while reading:**
 
-> There was a little lamb in a shepherd’s flock that had a habit of wandering off.
+> it's about a little lamb in a shepherd’s flock with a habit of wandering off.
 
-Every time the flock grazed, this lamb would drift toward the ridges, fascinated by whatever lay past the edge. The shepherd brought it back once, twice, three times.
+Every time the flock grazed, this lamb would drift towards the ridges, fascinated by whatever layed past the edge. The shepherd had to bring him back again and again.
 
 Then, he deliberately broke its leg.
 
-![The Shepherd and the Flock](/blogs/shepherd.webp)
+![The Shepherd and the Flock](/blogs/sheep.jpg)
 
-It sounds brutal. Cruel, even. \
+It sounds brutal and cruel right. \
 *Aren’t shepherds supposed to love their flock?*
 
-But watch what follows. The shepherd doesn't leave it behind. He sets the bone, binds it, and lifts the lamb up onto his shoulders. For weeks, he carries it draped around his neck. He feeds it from his own hand, keeps it warm through the cold mountain nights, and carries its entire weight across the terrain.
+let's see what follows. The shepherd doesn't leave it behind. He sets the bone, binds it, and lifts the lamb up onto his shoulders. For weeks, he carries it draped around his neck. He feeds it from his own hand, keeps it warm through the cold mountain nights, and carries its entire weight across the terrain.
 
-The lamb spends every hour listening to the shepherd's heartbeat, smelling his coat, hearing his voice right beside its ear.
+The lamb spends every hour listening to the shepherd's heartbeat, smelling his coat, hearing his voice right beside it's ear.
 
 By the time the bone heals and the lamb is placed back on the ground, it never runs off again. It stays right at the shepherd's heels. Not out of fear—out of familiarity. It learned whose presence was actually keeping it alive.
 
@@ -31,7 +31,7 @@ By the time the bone heals and the lamb is placed back on the ground, it never r
 
 ## The break we resent
 
-We look at our own lives through the same short lens.
+We look at our own lives through the same lens maybe.
 
 You have ambition. You want to run ahead, explore the ridge, chase whatever is pulling your curiosity. You think you know the terrain better than anyone.
 

@@ -25,10 +25,6 @@
           {{ $height := index $photoMeta "height" | default 600 }}
           {{ $origSrc := printf "/photos/%s" $fileName }}
           {{ $thumbSrc := $origSrc }}
-          {{ with resources.Get (printf "photos/%s" $fileName) }}
-            {{ $thumb := .Resize "600x webp q80" }}
-            {{ $thumbSrc = $thumb.RelPermalink }}
-          {{ end }}
 
           {{ $photoObj := dict "id" $fileName "title" $title "description" $description "album" $album "src" $origSrc "thumb" $thumbSrc "width" $width "height" $height }}
           {{ $photos = $photos | append $photoObj }}
