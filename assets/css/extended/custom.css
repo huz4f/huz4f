@@ -4611,6 +4611,14 @@ body:has(.breadcrumbs a[href*="/blogs"]) .post-content blockquote,
   color: var(--secondary);
 }
 
+body:has(.breadcrumbs a[href*="/blogs"]) .post-content blockquote h2,
+.post-content blockquote h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+
 body:has(.breadcrumbs a[href*="/blogs"]) .post-content ul,
 body:has(.breadcrumbs a[href*="/blogs"]) .post-content ol,
 body:has(.breadcrumbs a[href*="/blogs"]) .post-content li,

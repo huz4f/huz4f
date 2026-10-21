@@ -1,7 +1,7 @@
 ---
 date: 2026-10-18
 title: "oh k"
-description: "i searched for evil in the world and found it in myself ~ kabir das"
+description: "i searched for evil in the world and found it in myself"
 tags: ["words"]
 author: "Huzaif"
 hidesummary: true
@@ -12,15 +12,17 @@ As it starts,
 
 > ## kaisi teri khud-garzi,na dhoop chune na chaaon
 **Kabira** is a song about a traveller who leaves every place without leaving any footprints, \
-it gives a glimpse of how choosing one part of himself means betraying the other. \
+it gives a glimpse of how choosing one part of himself means betraying the other. 
 
 ![Me](/blogs/nln3.jpg)
 
 > ## ban liya apna paigambar, tar liya tu saat samandar
-It also shows how world has given up on him, now they only see what he wanted to show them. \
+what he is, what they think, what he seems 
+
 going into every unkown from what he used to be, \
  he has travelled in so many directions but when he looks back what has he found. \
- it is that thin line between self discovery and self exile. \
+>it is that thin line between self discovery and self exile. 
+
 maybe all he gets at the end is him losing himself. 
 
 ![Me](/blogs/nln2.jpg)
